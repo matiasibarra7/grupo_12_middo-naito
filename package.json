@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/matiasibarra7/grupo_12_ecommerceDH/issues"
   },
-  "homepage": "https://github.com/matiasibarra7/grupo_12_ecommerceDH#readme"
+  "homepage": "https://github.com/matiasibarra7/grupo_12_ecommerceDH#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
