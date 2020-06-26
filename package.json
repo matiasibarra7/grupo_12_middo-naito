@@ -1,0 +1,19 @@
+{
+  "name": "grupo12_clothing_store",
+  "version": "1.0.0",
+  "description": "> Se reemplazará con el nombre de la tienda una vez definido :)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matiasibarra7/grupo_12_ecommerceDH.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matiasibarra7/grupo_12_ecommerceDH/issues"
+  },
+  "homepage": "https://github.com/matiasibarra7/grupo_12_ecommerceDH#readme"
+}
