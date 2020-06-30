@@ -13,7 +13,7 @@ Esta enfocada a los jovenes adultos y adultos (18-50 años) que quieran acceder 
 
 
 
-- Belay, Santiago:
+- Belay, Santiago: Actualmente tengo 18 años y estudio ingeniería en informática, me interesa mucho la estética y aprender cosas nuevas. Este es mi primer proyecto web.
 
 
 
