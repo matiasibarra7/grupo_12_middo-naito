@@ -1,0 +1,13 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+body h1 {
+    align-self: center;
+}
+
+body img {
+    align-self: center;
+}
