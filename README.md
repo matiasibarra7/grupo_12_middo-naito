@@ -23,12 +23,12 @@ Esta enfocada a los jovenes adultos y adultos (18-50 años) que quieran acceder 
 ## Inspiraciones
 
 
- Empresa | Razón de selección
--------------------- | -----------
- Gucci | Al ser una firma de productos de moda de talla mundial, cuenta con una aplicación web muy completa. Principalemente, nos paració muy atractivo el diseño que presenta al exhibir sus productos. URL: https://www.gucci.com/es/es/
- Enlighted | Enlighted cuenta con una aplicación web muy sencilla y atractiva en su versión movil. URL: https://www.enlighted.com.ar/
- Bullbenny | La tienda web de Bullbenny es fácil de usar y presenta los productos de una manera clara y amigable. URL: https://www.bullbenny.com.ar/
- Tienda4 | Sin descripción
- Tienda4 | Sin descripción
-
-
+ Empresa    | Razón de selección
+----------- | -----------
+ Gucci      | Al ser una firma de productos de moda de talla mundial, cuenta con una aplicación web muy completa. Principalemente, nos paració muy atractivo el diseño que presenta al exhibir sus productos. URL: https://www.gucci.com/es/es/
+ Enlighted  | Enlighted cuenta con una aplicación web muy sencilla y atractiva en su versión movil. URL: https://www.enlighted.com.ar/
+ Bullbenny  | La tienda web de Bullbenny es fácil de usar y presenta los productos de una manera clara y amigable. URL: https://www.bullbenny.com.ar/
+ Dafiti     | Sin descripción. URL: https://www.dafiti.com.ar/
+ Modatex    | No tiene carrito, me parece, pero esta buena el interfaz. URL: https://www.modatex.com.ar/
+ Kika       | Sin descripción. URL: https://www.kikamayorista.com.ar/
+ Equus      | Sin descripción. URL: https://www.equus.com.ar/
