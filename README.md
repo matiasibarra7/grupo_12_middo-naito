@@ -9,7 +9,7 @@ Esta enfocada a los jovenes adultos y adultos (18-50 años) que quieran acceder 
 
 ## Integrantes del Grupo 12
 
-- Barriera, Juan:
+- Barriera, Juan: Soy estudiante de Ingenieria Industrial, y este es mi primer proyecto relacionado a la programacion web fullstack. Apasionado en aprender nuevas cosas constantemente.
 
 
 
