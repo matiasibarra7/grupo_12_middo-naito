@@ -5,7 +5,7 @@ En nuestra aplicación vas a disponer de una amplía selección de prendas con d
 
 ## Audiencia objetivo
 
-Esta enfocada a los jovenes adultos y adultos (18-50 años) que quieran acceder a una alternativa sencilla de busqueda y compra de su ropa de moda favorita. Por lo que se buscará un diseño web agradable, accesible y fácil de utilizar. 
+Nuestro Ecommerce se dirige hacia un público jóven-adulto y adolescente, presentando una estética simple y relajada para aquellos que buscan adquirir prendas de diseño y calidad, inspiradas en la década de los '90 y  2000.
 
 ## Integrantes del Grupo 12
 
