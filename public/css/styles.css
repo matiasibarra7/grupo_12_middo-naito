@@ -1,13 +1,24 @@
 body {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
 }
 
 body h1 {
-    align-self: center;
+  align-self: center;
 }
 
 body img {
-    align-self: center;
+  align-self: center;
+}
+
+@font-face {
+  font-family: "bjork";
+  src: url(../design/fonts/AmazObitaenCrazy.ttf);
+}
+
+.test-font {
+  font-family: "bjork";
+  font-size: 80px;
+  padding-left: 10%;
 }
