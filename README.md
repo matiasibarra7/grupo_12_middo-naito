@@ -1,5 +1,4 @@
 # Tienda de ropa Middo Naito
-> Se reemplazará con el nombre de la tienda una vez definido :)
 
 En nuestra aplicación vas a disponer de una amplía selección de prendas con diferentes diseños para cubrir todos tus gustos.
 
