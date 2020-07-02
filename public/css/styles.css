@@ -13,34 +13,12 @@ body img {
 }
 
 @font-face {
-  font-family: "amaz-obitaenCrazy";
-  src: url(../design/fonts/AmazObitaenCrazy.ttf);
-}
-
-@font-face {
-  font-family: "amaz-obitaen";
-  src: url(../design/fonts/AmazObitaen.ttf);
-}
-
-@font-face {
   font-family: "bjork";
   src: url(../design/fonts/BJORKFON.ttf);
-}
-
-.test-font {
-  font-family: "amaz-obitaen";
-  font-size: 80px;
-  padding-left: 10%;
-}
-
-.test-font3 {
-  font-family: "amaz-obitaenCrazy";
-  font-size: 80px;
-  padding-left: 10%;
 }
 
 .test-font2 {
   font-family: "bjork";
   font-size: 80px;
-  padding-left: 10%;
+  text-align: center;
 }
