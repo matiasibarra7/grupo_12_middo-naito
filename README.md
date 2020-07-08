@@ -1,6 +1,6 @@
 # Tienda de ropa Middo Naito
 
-En nuestra aplicación vas a disponer de una amplía selección de prendas con diferentes diseños para cubrir todos tus gustos.
+En nuestra aplicación "Middo Naito" vas a disponer de una amplía selección de prendas con diferentes diseños para cubrir todos tus gustos.
 
 ## Audiencia objetivo
 
