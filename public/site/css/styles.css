@@ -27,6 +27,7 @@ header .bar-menu {
   width: 10%;
   text-align: center;
   font-size: 20px;
+  cursor: pointer;
 }
 
 header .logo {
@@ -39,12 +40,58 @@ header .cart-icon {
   width: 15%;
   font-size: 20px;
   text-align: end;
+  cursor: pointer;
 }
 
 header .search-icon {
   width: 15%;
   font-size: 20px;
   text-align: center;
+  cursor: pointer;
+}
+
+.banner-home img {
+  width: 100%;
+}
+
+.featured-products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /*   background-color: aqua; */
+
+  max-width: 1600px;
+  margin: 0 5%;
+  padding: 12px 5% 0px;
+
+  position: relative;
+}
+
+.section-tittle {
+  text-align: center;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  /* height: 150px; */
+  width: 40%;
+  margin: 18px 0;
+  border: 2px solid grey;
+
+  box-sizing: border-box;
+}
+
+.product .product-details {
+  height: 30%;
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.product img {
+  width: 100%;
 }
 
 @font-face {
