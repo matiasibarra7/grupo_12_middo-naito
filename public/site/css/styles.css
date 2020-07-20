@@ -14,7 +14,7 @@ body img {
 
 @font-face {
   font-family: "bjork";
-  src: url(../design/fonts/BJORKFON.ttf);
+  src: url(../../design/fonts/BJORKFON.ttf);
 }
 
 .test-font2 {
