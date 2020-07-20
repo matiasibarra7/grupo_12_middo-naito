@@ -30,3 +30,5 @@ Nuestro Ecommerce se dirige hacia un público jóven-adulto y adolescente, prese
  Dafiti     | Dispone de una página web con una catalogo muy variado y presenta las categorías productos de dinamica y ordenada. URL: https://www.dafiti.com.ar/
  Kika       | Cuenta con una versión mobile atractiva y dinámica. URL: https://www.kikamayorista.com.ar/
  Equus      | Presenta una distribución de los productos minimalista, con una visualización dinámina del producto. URL: https://www.equus.com.ar/
+
+Tablero del proyecto: https://trello.com/b/0zEIPbVy/middonaito-grupo12
