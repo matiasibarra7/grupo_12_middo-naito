@@ -57,3 +57,39 @@ header .search-icon {
   font-size: 80px;
   text-align: center;
 }
+
+/* productDetails */
+
+main{
+  /* background-color: ; BUSCAR EL ROSA */
+  display: flex;
+}
+
+  /* img */
+
+main article img{
+  width:60%; 
+  height:60% ;
+  margin-left: 54px;
+}
+
+main article .product-data {
+  margin: 6px 6px;
+  border-bottom: 2px solid rgb(36, 10, 10);
+}
+
+main article .btn-talle{
+  margin: 6px 6px;
+  color: black;
+  background-color: lightgray;
+}
+
+.btn-add{
+  margin: 6px 0px;
+  background-color: black;
+  color: antiquewhite;
+  text-align: center;
+  padding: 6px;
+  /* display: flex;
+  align-items: center; */
+}

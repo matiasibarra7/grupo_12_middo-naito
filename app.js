@@ -7,4 +7,8 @@ app.get("/", (req, res) => {
   res.sendFile(`${__dirname}/public/site/html/index.html`);
 });
 
-app.listen(3000);
+app.get("/details", (req, res) => {
+  res.sendFile(`${__dirname}/public/site/html/productDetail.html`);
+});
+
+app.listen(3000, () => {console.log("Servidor escuchando en el puerto 3000")})
