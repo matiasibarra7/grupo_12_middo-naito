@@ -7,6 +7,10 @@ app.get("/", (req, res) => {
   res.sendFile(`${__dirname}/public/site/html/index.html`);
 });
 
+app.get("/cart", (req, res) => {
+  res.sendFile(`${__dirname}/public/site/html/productCart.html`);
+});
+
 app.get("/details", (req, res) => {
   res.sendFile(`${__dirname}/public/site/html/productDetail.html`);
 });

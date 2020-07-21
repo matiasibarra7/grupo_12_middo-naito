@@ -1,8 +1,5 @@
 body {
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -40,6 +37,15 @@ header .cart-icon {
   width: 15%;
   font-size: 20px;
   text-align: end;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+.fa-shopping-cart,
+.fa-search {
   cursor: pointer;
 }
 
@@ -47,11 +53,16 @@ header .search-icon {
   width: 15%;
   font-size: 20px;
   text-align: center;
-  cursor: pointer;
 }
 
 .banner-home img {
   width: 100%;
+}
+
+main.index-main {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
 }
 
 .featured-products {
@@ -90,8 +101,10 @@ header .search-icon {
   text-align: center;
 }
 
-.product img {
+.index-main .product img {
   width: 100%;
+  margin: inherit;
+  height: inherit;
 }
 
 @font-face {
