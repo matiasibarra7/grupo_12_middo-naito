@@ -53,7 +53,7 @@ header .logo img {
   display: flex;
   justify-content: space-around;
   width: 20%;
-/*   font-size: 1.5rem; */
+  /*   font-size: 1.5rem; */
 }
 
 header .cart-icon {
@@ -107,6 +107,11 @@ main.index-main {
   width: calc(50% - 2rem); /* probar usar calc(50% - 1 o 2 rem) */
   margin: 1rem; /* probar usar 1 o 2 rem */
   border: 2px solid grey;
+}
+
+.link-to-product {
+  text-decoration: inherit;
+  color: inherit;
 }
 
 .product .product-details {
@@ -203,9 +208,7 @@ main article .btn-talle {
   align-items: center; */
 }
 
-
-
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .product {
     width: calc(33.33333% - 2rem); /* probar usar calc(50% - 1 o 2 rem) */
   }
