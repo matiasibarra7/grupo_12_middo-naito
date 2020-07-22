@@ -208,8 +208,78 @@ main article .btn-talle {
   align-items: center; */
 }
 
-@media (min-width: 768px) {
+/* Register html */
+
+.form {
+  overflow: auto;
+  margin: 10px;
+}
+
+.button {
+  border: 0;
+  background-color: black;
+  color: white;
+  padding: 12px;
+}
+
+@media (min-width: 1024px) {
   .product {
-    width: calc(33.33333% - 2rem); /* probar usar calc(50% - 1 o 2 rem) */
+    width: calc(50% - 10rem); /* probar usar calc(50% - 1 o 2 rem) */
+    margin: 5rem; /* probar usar 1 o 2 rem */
+    max-width: 40%; /* 
+    margin: initial; */
+  }
+
+  main {
+    padding-top: 4rem;
+  }
+
+  header {
+    width: 100%;
+    position: fixed;
+    height: 4rem;
+
+    z-index: 14;
+  }
+
+  .sidebar {
+    display: block;
+    background-color: transparent;
+    width: 50%;
+    height: auto;
+
+    position: fixed;
+    margin: 0 25%;
+  }
+
+  .sidebar ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  .sidebar nav ul li {
+    border-bottom: none;
+  }
+
+  .sidebar nav ul li a {
+    color: white;
+  }
+
+  .close-sidebar-btn,
+  .bar-menu {
+    display: none;
+  }
+
+  header .logo {
+    justify-content: flex-start;
+    padding-left: 1rem;
+  }
+
+  .container-cart-search {
+    width: 10%;
+  }
+
+  .sidebar.sidebar.close-zone {
+    width: 0;
   }
 }
