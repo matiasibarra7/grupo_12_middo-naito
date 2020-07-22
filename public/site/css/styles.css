@@ -172,6 +172,7 @@ main.index-main {
 main {
   /* background-color: ; BUSCAR EL ROSA */
   display: flex;
+  flex-direction: column;
 }
 
 /* img */
@@ -179,7 +180,8 @@ main {
 main article img {
   width: 60%;
   height: 60%;
-  margin-left: 54px;
+  /* margin-left: 54px; */
+  
 }
 
 main article .product-data {
@@ -187,22 +189,29 @@ main article .product-data {
   border-bottom: 2px solid rgb(36, 10, 10);
 }
 
-main article .btn-talle {
+main .btn-talle {
   margin: 6px 6px;
   color: black;
   background-color: lightgray;
+  width: 10%;
 }
 
+
+
 .btn-add {
-  margin: 6px 0px;
+  margin: 12px 0px;
   background-color: black;
   color: antiquewhite;
   text-align: center;
   padding: 6px;
-  /* display: flex;
-  align-items: center; */
 }
 
+.article-details{
+  display: flex;
+  flex-direction: column;
+  /* height: 150px; */
+  width: 100%;
+}
 
 
 @media (min-width:768px) {
