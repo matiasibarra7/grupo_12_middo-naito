@@ -9,6 +9,57 @@
     <title>Register</title>
 </head>
 <body>
+    <aside class="sidebar">
+        <nav class="nav">
+          <ul>
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/register">Registrate</a></li>
+            <li><a href="/login">Ingresa</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="/cart">Carrito</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#" onclick="closeSidebar()">Cerrar</a></li>
+          </ul>
+        </nav>
+    </aside>
+
+    <!-- Esto no sé si no será muy chancho -->
+    <aside class="sidebar close-zone" onclick="closeSidebar()"> 
+    </aside>
+
+    <header>
+        <div class="bar-menu"><i class="fas fa-bars bar-nav" onclick="openSidebar()"></i></div>
+        <div class="logo"><a href="/"><img src="/design/images/demo-logo.png" alt="middo-naito"></a></div>
+        <div class="container-cart-search">
+            <div class="cart-icon"><a href="/cart"><i class="fas fa-shopping-cart"></i></a></div>
+            <div class="search-icon"><i class="fas fa-search"></i></div>
+        </div>
+    </header>
+    <main>
+        <h2>CREA TU CUENTA</h2>
+<div class="form">
+        <form action="validar.php" method="POST">
+    <div>
+        <label for="fullName">NOMBRE</label><br>
+        <input type="text" name="fullName" id="fullName">
+    </div>
+    <div>
+        <label for="email">E-MAIL</label><br>
+        <input type="email" name="email" id="email">
+    </div>
+    <div>
+        <label for="password">CONTRASEÑA</label><br>
+        <input type="password" name="password" id="passsword">    
+    </div>
+    <div>
+        <label for="confirmPassword"> CONFIRMAR CONTRASEÑA</label><br>
+        <input type="password" name="confirmPassword" id="confirmPassword">  
+    </div><br>
+    <div>
+        <button class="button" type="submit">CREAR CUENTA</button>
+    </div>
+
+    </main>
     
 </body>
 </html>

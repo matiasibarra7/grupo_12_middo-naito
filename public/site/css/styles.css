@@ -203,6 +203,20 @@ main article .btn-talle {
   align-items: center; */
 }
 
+/* Register html */
+
+.form {
+  overflow: auto;
+  margin: 10px;
+}
+
+.button{
+  border: 0;
+  background-color: black;
+  color: white;
+  padding: 12px;
+}
+
 
 
 @media (min-width:768px) {
