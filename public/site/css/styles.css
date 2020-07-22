@@ -173,7 +173,9 @@ main {
   /* background-color: ; BUSCAR EL ROSA */
   display: flex;
   flex-direction: column;
+  padding: 14px;
 }
+
 
 /* img */
 
@@ -204,6 +206,8 @@ main .btn-talle {
   color: antiquewhite;
   text-align: center;
   padding: 6px;
+  display:flex;
+  justify-content: center;
 }
 
 .article-details{

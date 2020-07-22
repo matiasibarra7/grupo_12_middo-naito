@@ -15,6 +15,14 @@ app.get("/details", (req, res) => {
   res.sendFile(`${__dirname}/public/site/html/productDetail.html`);
 });
 
+app.get("/register", (req, res) => {
+  res.sendFile(`${__dirname}/public/site/html/register.html`);
+});
+
+app.get("/login", (req, res) => {
+  res.sendFile(`${__dirname}/public/site/html/login.html`);
+});
+
 app.listen(3000, () => {
   console.log("Servidor escuchando en el puerto 3000");
 });
