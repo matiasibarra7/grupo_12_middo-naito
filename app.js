@@ -15,7 +15,7 @@ app.get("/details", (req, res) => {
   res.sendFile(`${__dirname}/public/site/html/productDetail.html`);
 });
 
-app.get("/registro", (req, res) => {
+app.get("/register", (req, res) => {
   res.sendFile(`${__dirname}/public/site/html/register.html`);
 });
 
