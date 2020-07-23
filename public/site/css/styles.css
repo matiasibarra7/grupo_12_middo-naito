@@ -9,6 +9,12 @@ body {
   position: relative;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+
 body h1 {
   align-self: center;
 }
@@ -169,19 +175,22 @@ main.index-main {
 
 /* productDetails */
 
-main {
-  /* background-color: ; BUSCAR EL ROSA */
+#details {
   display: flex;
   flex-direction: column;
   padding: 14px;
 }
 
+.arrow{
+  background-color: transparent;
+  border: none;
+}
 
 /* img */
 
 main article img {
-  width: 60%;
-  height: 60%;
+  width: 100%;
+  height: 100%;
   /* margin-left: 54px; */
   
 }
@@ -195,19 +204,22 @@ main .btn-talle {
   margin: 6px 6px;
   color: black;
   background-color: lightgray;
-  width: 10%;
+  width: 20%;
 }
 
 
+.add-div{
+  display:flex;
+  justify-content: center;
+}
 
 .btn-add {
   margin: 12px 0px;
   background-color: black;
   color: antiquewhite;
   text-align: center;
-  padding: 6px;
-  display:flex;
-  justify-content: center;
+  padding: 12px;
+  width: 60%;
 }
 
 .article-details{
@@ -217,6 +229,28 @@ main .btn-talle {
   width: 100%;
 }
 
+.product-description{
+  margin: 6px 6px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.description-title{
+  margin: 12px 6px;
+  border-top: 2px solid rgb(36, 10, 10);
+  display: flex;
+  justify-content: center;
+  /* background-color: lightgray;
+  padding: 14px; */
+}
+
+.description-title span{
+  text-align: center;
+  margin: 6px 6px;
+  background-color: lightgray;
+  width: 80%;
+  padding: 3px;
+}
 
 @media (min-width:768px) {
   .product {
