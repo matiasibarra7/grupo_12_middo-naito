@@ -9,6 +9,11 @@ body {
   position: relative;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+}
+
 body h1 {
   align-self: center;
 }
@@ -53,7 +58,7 @@ header .logo img {
   display: flex;
   justify-content: space-around;
   width: 20%;
-/*   font-size: 1.5rem; */
+  /*   font-size: 1.5rem; */
 }
 
 header .cart-icon {
@@ -98,6 +103,9 @@ main.index-main {
 
 .section-tittle {
   text-align: center;
+  font-size: 1.5rem;
+  margin: 1rem 0 0;
+  font-weight: bold;
 }
 
 .product {
@@ -107,6 +115,11 @@ main.index-main {
   width: calc(50% - 2rem); /* probar usar calc(50% - 1 o 2 rem) */
   margin: 1rem; /* probar usar 1 o 2 rem */
   border: 2px solid grey;
+}
+
+.link-to-product {
+  text-decoration: inherit;
+  color: inherit;
 }
 
 .product .product-details {
@@ -128,7 +141,7 @@ main.index-main {
   position: fixed;
   width: 50vw;
   height: 100vh;
-  background: blanchedalmond;
+  background: black;
   font-size: 0.65em;
   z-index: 15;
 }
@@ -147,7 +160,7 @@ main.index-main {
 .sidebar nav a {
   text-decoration: none;
   font-size: 18px;
-  color: firebrick;
+  color: white;
 }
 
 .sidebar.close-zone {
@@ -168,19 +181,24 @@ main.index-main {
 }
 
 
-main {
-  /* background-color: ; BUSCAR EL ROSA */
+#details {
   display: flex;
   flex-direction: column;
+  padding: 14px;
+}
+
+.arrow {
+  background-color: transparent;
+  border: none;
 }
 
 /* productDetails */
 /* img */
 
 main article img {
-  width: 60%;
-  height: 60%;
-  margin-left: 54px;
+  width: 100%;
+  height: 100%;
+  /* margin-left: 54px; */
 }
 
 main article .product-data {
@@ -188,22 +206,56 @@ main article .product-data {
   border-bottom: 2px solid rgb(36, 10, 10);
 }
 
-main article .btn-talle {
+main .btn-talle {
   margin: 6px 6px;
   color: black;
   background-color: lightgray;
+  width: 20%;
+}
+
+.add-div {
+  display: flex;
+  justify-content: center;
 }
 
 .btn-add {
-  margin: 6px 0px;
+  margin: 12px 0px;
   background-color: black;
   color: antiquewhite;
   text-align: center;
-  padding: 6px;
-  /* display: flex;
-  align-items: center; */
+  padding: 12px;
+  width: 60%;
 }
 
+.article-details {
+  display: flex;
+  flex-direction: column;
+  /* height: 150px; */
+  width: 100%;
+}
+
+.product-description {
+  margin: 6px 6px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.description-title {
+  margin: 12px 6px;
+  border-top: 2px solid rgb(36, 10, 10);
+  display: flex;
+  justify-content: center;
+  /* background-color: lightgray;
+  padding: 14px; */
+}
+
+.description-title span {
+  text-align: center;
+  margin: 6px 6px;
+  background-color: lightgray;
+  width: 80%;
+  padding: 3px;
+}
 /* REGISTER Y LOGIN html */
 
 main .session-title{
@@ -226,12 +278,89 @@ main form {
   background-color: black;
   color: white;
   padding: 12px;
+}  
+
+@media (min-width: 768px) {
+  .product .product-details {
+    font-size: 1.65rem;
+  }
 }
 
+@media (min-width: 1024px) {
+  main.index-main {
+    padding-top: 4rem;
+  }
 
+  .section-tittle {
+    font-size: 2.5rem;
+    margin: 2rem 0;
+  }
 
-@media (min-width:768px) {
+  .banner-home {
+    max-height: 38rem;
+    overflow: hidden;
+  }
+
   .product {
-    width: calc(33.33333% - 2rem); /* probar usar calc(50% - 1 o 2 rem) */
+    width: calc(33.33333% - 2rem);
+    margin: 1rem;
+    max-width: 40%;
+  }
+
+  .product .product-details {
+    font-size: 2rem;
+  }
+
+  .product-name {
+    margin: 0.5rem 0 0.5rem;
+  }
+
+  header {
+    width: 100%;
+    position: fixed;
+    height: 4rem;
+
+    z-index: 14;
+  }
+
+  .sidebar {
+    display: block;
+    background-color: transparent;
+    width: 50%;
+    height: auto;
+
+    position: fixed;
+    margin: 0 25%;
+  }
+
+  .sidebar ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  .sidebar nav ul li {
+    border-bottom: none;
+  }
+
+  .sidebar nav ul li a {
+    color: white;
+  }
+
+  .close-sidebar-btn,
+  .bar-menu {
+    display: none;
+  }
+
+  header .logo {
+    justify-content: flex-start;
+    padding-left: 1rem;
+  }
+
+  .container-cart-search {
+    width: 10%;
+  }
+
+  .sidebar.sidebar.close-zone {
+    width: 0;
   }
 }
