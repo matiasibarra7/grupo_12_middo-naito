@@ -167,13 +167,14 @@ main.index-main {
   text-align: center;
 }
 
-/* productDetails */
 
 main {
   /* background-color: ; BUSCAR EL ROSA */
   display: flex;
+  flex-direction: column;
 }
 
+/* productDetails */
 /* img */
 
 main article img {
@@ -203,11 +204,21 @@ main article .btn-talle {
   align-items: center; */
 }
 
-/* Register html */
+/* REGISTER Y LOGIN html */
 
-.form {
+main .session-title{
+  border-bottom: 2px solid rgb(36, 10, 10);
+  font-weight: bold;
+}
+
+main form {
   overflow: auto;
   margin: 10px;
+}
+
+.session-button{
+  display: flex;
+  justify-content: center;
 }
 
 .button{
