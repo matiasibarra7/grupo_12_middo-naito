@@ -85,9 +85,23 @@ header .search-icon {
 }
 
 main.index-main {
-  display: flex;
-  flex-direction: column;
   align-content: center;
+}
+
+.index-about {
+  padding: 1rem;
+}
+
+.index-about .section-tittle{
+  text-align: start;
+}
+
+.team-12 ul li {
+  margin-bottom: 0.5rem;
+}
+
+.team-12 ul li span {
+  font-weight: bold;
 }
 
 .featured-products {
@@ -257,9 +271,19 @@ main .btn-talle {
   padding: 3px;
 }
 
+/* Acá empieza el responsive */
+
 @media (min-width: 768px) {
   .product .product-details {
     font-size: 1.65rem;
+  }
+  
+  .sidebar {
+    width: 20vw;
+  }
+
+  .sidebar.sidebar.close-zone {
+    width: 80vw;
   }
 }
 

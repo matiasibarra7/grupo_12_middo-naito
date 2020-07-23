@@ -11,6 +11,14 @@ app.get("/cart", (req, res) => {
   res.sendFile(`${__dirname}/public/site/html/productCart.html`);
 });
 
+app.get("/us", (req, res) => {
+  res.sendFile(`${__dirname}/public/site/html/about-us.html`);
+});
+
+app.get("/products", (req, res) => {
+  res.sendFile(`${__dirname}/public/site/html/products.html`);
+});
+
 app.get("/details", (req, res) => {
   res.sendFile(`${__dirname}/public/site/html/productDetail.html`);
 });
