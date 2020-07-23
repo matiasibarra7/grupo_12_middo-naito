@@ -273,21 +273,37 @@ main .btn-talle {
 /* REGISTER Y LOGIN html */
 
 main .session-title{
-  border-bottom: 2px solid rgb(36, 10, 10);
+  /* padding-top: 5rem; */
+  border-bottom: 2px solid grey;
   font-weight: bold;
+  font-size: 24px;
+  margin: 10px;
 }
 
 main form {
   overflow: auto;
   margin: 10px;
+  color: grey;
+  font-size: 0.5rem;
 }
-
-.session-button{
+.inputs{
+  border: none;
+  background-color: grey;
+  padding: 2.5% 90vw;
+}
+.btn{
   display: flex;
   justify-content: center;
 }
 
-.button{
+.btn-log{
+  border: 0;
+  background-color: black;
+  color: white;
+  padding: 12px;
+} 
+
+.btn-reg{
   border: 0;
   background-color: black;
   color: white;
