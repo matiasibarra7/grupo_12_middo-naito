@@ -98,6 +98,9 @@ main.index-main {
 
 .section-tittle {
   text-align: center;
+  font-size: 1.5rem;
+  margin: 1rem 0 0;
+  font-weight: bold;
 }
 
 .product {
@@ -133,7 +136,7 @@ main.index-main {
   position: fixed;
   width: 50vw;
   height: 100vh;
-  background: blanchedalmond;
+  background: black;
   font-size: 0.65em;
   z-index: 15;
 }
@@ -152,7 +155,7 @@ main.index-main {
 .sidebar nav a {
   text-decoration: none;
   font-size: 18px;
-  color: firebrick;
+  color: white;
 }
 
 .sidebar.close-zone {
@@ -222,12 +225,35 @@ main article .btn-talle {
   padding: 12px;
 }
 
+@media (min-width: 768px) {
+  .product .product-details {
+    font-size: 1.65rem;
+  }
+}
+
 @media (min-width: 1024px) {
+  .section-tittle {
+    font-size: 2.5rem;
+    margin: 2rem 0;
+  }
+
+  .banner-home {
+    max-height: 38rem;
+    overflow: hidden;
+  }
+
   .product {
-    width: calc(50% - 10rem); /* probar usar calc(50% - 1 o 2 rem) */
-    margin: 5rem; /* probar usar 1 o 2 rem */
-    max-width: 40%; /* 
-    margin: initial; */
+    width: calc(33.33333% - 2rem);
+    margin: 1rem;
+    max-width: 40%;
+  }
+
+  .product .product-details {
+    font-size: 2rem;
+  }
+
+  .product-name {
+    margin: 0.5rem 0 0.5rem;
   }
 
   main {
