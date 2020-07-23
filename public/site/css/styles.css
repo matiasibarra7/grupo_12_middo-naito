@@ -88,7 +88,6 @@ main.index-main {
   display: flex;
   flex-direction: column;
   align-content: center;
-  padding-top: 4rem;
 }
 
 .featured-products {
@@ -265,6 +264,10 @@ main .btn-talle {
 }
 
 @media (min-width: 1024px) {
+  main.index-main {
+    padding-top: 4rem;
+  }
+
   .section-tittle {
     font-size: 2.5rem;
     margin: 2rem 0;
