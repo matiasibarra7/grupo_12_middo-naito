@@ -194,7 +194,6 @@ main.index-main {
   text-align: center;
 }
 
-/* productDetails */
 
 #details {
   display: flex;
@@ -207,6 +206,7 @@ main.index-main {
   border: none;
 }
 
+/* productDetails */
 /* img */
 
 main article img {
@@ -270,6 +270,29 @@ main .btn-talle {
   width: 80%;
   padding: 3px;
 }
+/* REGISTER Y LOGIN html */
+
+main .session-title{
+  border-bottom: 2px solid rgb(36, 10, 10);
+  font-weight: bold;
+}
+
+main form {
+  overflow: auto;
+  margin: 10px;
+}
+
+.session-button{
+  display: flex;
+  justify-content: center;
+}
+
+.button{
+  border: 0;
+  background-color: black;
+  color: white;
+  padding: 12px;
+}  
 
 /* Acá empieza el responsive */
 
