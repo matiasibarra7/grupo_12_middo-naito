@@ -229,6 +229,7 @@ main .btn-talle {
 .add-div {
   display: flex;
   justify-content: center;
+  margin: 0.5em 0em;
 }
 
 .btn-add {
@@ -237,7 +238,10 @@ main .btn-talle {
   color: antiquewhite;
   text-align: center;
   padding: 12px;
-  width: 60%;
+  width: 80%;
+  height: 50%;
+  letter-spacing: 0.5px;
+  border: transparent;
 }
 
 .article-details {
@@ -251,6 +255,7 @@ main .btn-talle {
   margin: 6px 6px;
   display: flex;
   flex-wrap: wrap;
+  text-align: left;
 }
 
 .description-title {
@@ -267,7 +272,7 @@ main .btn-talle {
   margin: 6px 6px;
   background-color: lightgray;
   width: 80%;
-  padding: 3px;
+  font-size: smaller;
 }
 /* REGISTER Y LOGIN html */
 
@@ -275,20 +280,30 @@ main .session-title {
   /* padding-top: 5rem; */
   border-bottom: 2px solid grey;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 1.5rem;
   margin: 10px;
 }
 
 main form {
   overflow: auto;
   margin: 10px;
-  color: grey;
+  color: black;
   font-size: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.input-form{
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem 0;
+  padding-top: 0.5rem;
 }
 .inputs {
   border: none;
-  background-color: grey;
-  padding: 2.5% 90vw;
+  background-color: lightgrey;
+  padding: 2.5% 2.5%;
+  width: 90vw;
+  color: black;
 }
 .btn {
   display: flex;
