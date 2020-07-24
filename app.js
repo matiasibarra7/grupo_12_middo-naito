@@ -34,3 +34,8 @@ app.get("/login", (req, res) => {
 app.listen(3000, () => {
   console.log("Servidor escuchando en el puerto 3000");
 });
+
+app.use(express.urlencoded({extended: false}))
+
+app.post("/", (req, res) => {
+     res.send(req.body);});

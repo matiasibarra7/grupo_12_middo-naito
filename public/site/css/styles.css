@@ -279,7 +279,7 @@ main .session-title{
   margin: 10px;
 }
 
-main form {
+main .session-form {
   overflow: auto;
   margin: 10px;
   color: black;
@@ -299,6 +299,7 @@ main form {
   padding: 2.5% 2.5%;
   width: 90vw;
   color: black;
+  text-align: center;
 }
 .btn{
   display: flex;
