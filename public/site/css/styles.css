@@ -92,7 +92,7 @@ main.index-main {
   padding: 1rem;
 }
 
-.index-about .section-tittle{
+.index-about .section-tittle {
   text-align: start;
 }
 
@@ -194,7 +194,6 @@ main.index-main {
   text-align: center;
 }
 
-
 #details {
   display: flex;
   flex-direction: column;
@@ -272,7 +271,7 @@ main .btn-talle {
 }
 /* REGISTER Y LOGIN html */
 
-main .session-title{
+main .session-title {
   /* padding-top: 5rem; */
   border-bottom: 2px solid grey;
   font-weight: bold;
@@ -286,29 +285,96 @@ main form {
   color: grey;
   font-size: 0.5rem;
 }
-.inputs{
+.inputs {
   border: none;
   background-color: grey;
   padding: 2.5% 90vw;
 }
-.btn{
+.btn {
   display: flex;
   justify-content: center;
 }
 
-.btn-log{
+.btn-log {
   border: 0;
   background-color: black;
   color: white;
   padding: 12px;
-} 
+}
 
-.btn-reg{
+.btn-reg {
   border: 0;
   background-color: black;
   color: white;
   padding: 12px;
-}  
+}
+
+.products-in-cart {
+  display: flex;
+
+  background-color: lightgrey;
+  width: 90%;
+  height: 10rem;
+  margin: 3rem auto;
+}
+
+.image-product-cart {
+  width: calc(33.333333% - 1rem);
+  align-self: center;
+  background-color: yellow;
+}
+
+.image-product-cart img {
+  width: 100%;
+}
+
+.name-amount-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: calc(33.333333% - 1rem);
+  background-color: lightgrey;
+}
+
+.price-product-in-cart {
+  width: calc(33.333333% - 1rem);
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
+}
+
+.price-product-in-cart .far {
+  position: absolute;
+  top: 20%;
+  right: 40%;
+  font-size: 1.5rem;
+}
+
+.price-product-in-cart p {
+  height: 25%;
+  margin: 0;
+}
+
+.products-in-cart div {
+  margin: 0 0.5rem;
+}
+
+.name-product-cart {
+  height: 65%;
+  text-align: center;
+}
+
+.amount-product {
+  height: 25%;
+  text-align: center;
+}
+
+.amount-product .far {
+  cursor: pointer;
+}
 
 /* Acá empieza el responsive */
 
@@ -316,7 +382,7 @@ main form {
   .product .product-details {
     font-size: 1.65rem;
   }
-  
+
   .sidebar {
     width: 20vw;
   }
