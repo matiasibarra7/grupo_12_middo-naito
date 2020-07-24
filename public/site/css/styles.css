@@ -292,7 +292,7 @@ main form {
   display: flex;
   flex-direction: column;
 }
-.input-form{
+.input-form {
   display: flex;
   flex-direction: column;
   margin: 1.5rem 0;
