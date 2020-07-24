@@ -230,6 +230,7 @@ main .btn-talle {
 .add-div {
   display: flex;
   justify-content: center;
+  margin: 0.5em 0em;
 }
 
 .btn-add {
@@ -238,7 +239,10 @@ main .btn-talle {
   color: antiquewhite;
   text-align: center;
   padding: 12px;
-  width: 60%;
+  width: 80%;
+  height: 50%;
+  letter-spacing: 0.5px;
+  border: transparent;
 }
 
 .article-details {
@@ -252,6 +256,7 @@ main .btn-talle {
   margin: 6px 6px;
   display: flex;
   flex-wrap: wrap;
+  text-align: left;
 }
 
 .description-title {
@@ -268,6 +273,7 @@ main .btn-talle {
   margin: 6px 6px;
   background-color: lightgray;
   width: 80%;
+  font-size: smaller;
 }
 /* REGISTER Y LOGIN html */
 
