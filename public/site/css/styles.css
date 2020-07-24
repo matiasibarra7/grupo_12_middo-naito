@@ -96,6 +96,24 @@ main.index-main {
   text-align: start;
 }
 
+.products-in-cart.deliver-type {
+  margin-top: 0;
+}
+
+.total-cart {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 1rem;
+}
+
+.border { 
+  border-top: 2px solid black;
+  width: 90%;
+  align-self: center; 
+  margin: 2rem 0;
+}
+
 .team-12 ul li {
   margin-bottom: 0.5rem;
 }
@@ -328,7 +346,7 @@ main .session-form {
 .products-in-cart {
   display: flex;
 
-  background-color: lightgrey;
+  background-color: rgba(194, 153, 153, 0.7);
   width: 90%;
   height: 10rem;
   margin: 3rem auto;
@@ -350,7 +368,6 @@ main .session-form {
   justify-content: space-between;
 
   width: calc(33.333333% - 1rem);
-  background-color: lightgrey;
 }
 
 .price-product-in-cart {
@@ -372,6 +389,7 @@ main .session-form {
 .price-product-in-cart p {
   height: 25%;
   margin: 0;
+  font-weight: bold;
 }
 
 .products-in-cart div {
