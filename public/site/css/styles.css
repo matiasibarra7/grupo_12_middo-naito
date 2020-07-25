@@ -403,6 +403,10 @@ main .session-form {
   cursor: pointer;
 }
 
+.fa-trash-alt:hover {
+  color: #555555;
+}
+
 .price-quantity-in-cart {
   display: flex;
   position: relative;
@@ -437,6 +441,13 @@ main .session-form {
   font-weight: bold;
 }
 
+.btn-all-prods:hover {
+  background-color: #C2C2C2;
+}
+
+.btn-buy:hover {
+  background-color: #222222;
+}
 /* Acá empieza el responsive */
 
 footer {
@@ -552,6 +563,10 @@ footer i {
 
   .sidebar nav ul li a {
     color: white;
+  }
+
+  .sidebar nav ul li a:hover {
+    text-decoration: underline;
   }
 
   .close-sidebar-btn,
