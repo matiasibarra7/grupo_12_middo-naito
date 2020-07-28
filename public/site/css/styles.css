@@ -387,12 +387,22 @@ main .btn-talle {
 
 /* REGISTER Y LOGIN html */
 
+main.register {
+  max-width: 768px;
+  margin: 0 auto;
+}
+main.login {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
 main .session-title {
   /* padding-top: 5rem; */
   border-bottom: 2px solid grey;
   font-weight: bold;
   font-size: 1.5rem;
   margin: 10px;
+  text-align: center;
 }
 
 main .session-form {
@@ -409,13 +419,18 @@ main .session-form {
   margin: 1.5rem 0;
   padding-top: 0.5rem;
 }
+.input-form label{
+  margin: 0 auto;
+  width: 90%;
+}
 .inputs {
   border: none;
   background-color: lightgrey;
   padding: 2.5% 2.5%;
-  width: 90vw;
+  width: 90%;
   color: black;
   text-align: center;
+  margin: 0 auto;
 }
 .btn {
   display: flex;
@@ -452,6 +467,7 @@ main .session-form {
   color: black; 
 }
 
+/* Product Cart */
 .product-in-cart {
   display: flex;
   align-items: center;
