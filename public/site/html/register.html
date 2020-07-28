@@ -44,29 +44,40 @@
             </a>
         </div>
         <h2 class="session-title">CREA TU CUENTA</h2>
-<form class="session-form" action="/" method="POST">
-    <div class="input-form">
-        <label for="fullName">NOMBRE</label>
-        <input type="text" name="fullName" id="fullName" class="inputs">
-    </div>
-    <div class="input-form">
-        <label for="email">E-MAIL</label>
-        <input type="email" name="email" id="email" class="inputs">
-    </div>
-    <div class="input-form">
-        <label for="password">CONTRASEÑA</label>
-        <input type="password" name="password" id="passsword" class="inputs">    
-    </div>
-    <div class="input-form">
-        <label for="confirmPassword"> CONFIRMAR CONTRASEÑA</label>
-        <input type="password" name="confirmPassword" id="confirmPassword" class="inputs">  
-    </div>
-    <div class="btn">
-        <button type="submit" class="btn-reg">CREAR CUENTA</button>
-    </div>
-</form>
-
+        <form class="session-form" action="/" method="POST">
+            <div class="input-form">
+                <label for="fullName">NOMBRE</label>
+                <input type="text" name="fullName" id="fullName" class="inputs" placeholder="Ingrese su nombre y apellido">
+            </div>
+            <div class="input-form">
+                <label for="email">E-MAIL</label>
+                <input type="email" name="email" id="email" class="inputs" placeholder="Ingrese su e-mail ej: cliente@mail.com">
+            </div>
+            <div class="input-form">
+                <label for="password">CONTRASEÑA</label>
+                <input type="password" name="password" id="passsword" class="inputs" placeholder="Cree una contraseña para su cuenta">    
+            </div>
+            <div class="input-form">
+                <label for="confirmPassword"> CONFIRMAR CONTRASEÑA</label>
+                <input type="password" name="confirmPassword" id="confirmPassword" class="inputs" placeholder="Repita la contraseña creada">  
+            </div>
+            <div class="btn">
+                <button type="submit" class="btn-reg">CREAR CUENTA</button>
+            </div>
+        </form>
+        <div class="yes-account">
+            <a class="no-underline" href="/login">
+              ¿Ya tienes una cuenta? Inicia sesión
+            </a>
+        </div>
     </main>
+    <footer>
+        <div class="border"></div>
+        <div class="contact-us">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-facebook-f"></i>
+        </div>
+    </footer>
     
 </body>
 </html>

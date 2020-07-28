@@ -436,6 +436,22 @@ main .session-form {
   padding: 12px;
 }
 
+.no-account{
+  display: flex;
+  justify-content: center;
+  font-size: 0.5rem;
+}
+
+.yes-account{
+  display: flex;
+  justify-content: center;
+  font-size: 0.5rem;
+}
+.no-underline{
+  text-decoration: none;
+  color: black; 
+}
+
 .product-in-cart {
   display: flex;
   align-items: center;
@@ -579,6 +595,7 @@ footer i {
     flex-grow: 0.8;
     font-size: 1.5rem;
   }
+  
 
 }
 

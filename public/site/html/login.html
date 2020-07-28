@@ -44,22 +44,32 @@
             </a>
         </div>
         <h2 class="session-title">INICIAR SESIÓN</h2>
-    <div class="form">
         <form class="session-form" action="/" method="POST">
-    <div>
-        <label for="email">E-MAIL</label><br>
-        <input type="email" name="email" id="email" class="inputs">
-    </div>
-    <div>
-        <label for="password">CONTRASEÑA</label><br>
-        <input type="password" name="password" id="passsword" class="inputs">    
-    </div><br>
-    <div class="btn">
-        <button type="submit" class="btn-log">INICIAR SESIÓN</button>
-    </div>
-</form>
-
+            <div class="input-form">
+                <label for="email">E-MAIL</label>
+                <input type="email" name="email" id="email" class="inputs" placeholder="mail-de-usuario@ejemplo.com">
+            </div>
+            <div class="input-form">
+                <label for="password">CONTRASEÑA</label>
+                <input type="password" name="password" id="passsword" class="inputs" placeholder="Colocá la contraseña de tu cuenta">    
+            </div>
+            <div class="btn">
+                <button type="submit" class="btn-log">INICIAR SESIÓN</button>
+            </div>
+        </form>
+        <div class="no-account">
+            <a class="no-underline" href="/register">
+              ¿No tiene una cuenta? Cree una aquí
+            </a>
+        </div>
     </main>
-</body>
+    <footer>
+        <div class="border"></div>
+        <div class="contact-us">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-facebook-f"></i>
+        </div>
+    </footer>
 
+</body>
 </html>
