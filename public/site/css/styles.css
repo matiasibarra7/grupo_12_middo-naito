@@ -37,8 +37,8 @@ header {
 }
 
 header .bar-menu {
-  width: 10%;
-  text-align: center;
+  width: 20%;
+  padding: 1rem;
 }
 
 header .logo {
@@ -62,6 +62,7 @@ header .logo img {
 }
 
 header .cart-icon {
+  display: none;
   text-align: end;
 }
 
@@ -88,19 +89,15 @@ main.index-main {
   align-content: center;
 }
 
-.index-about {
-  padding: 1rem;
-}
-
-.index-about .section-title {
-  text-align: start;
-}
-
 .product-in-cart.deliver-type {
   margin-top: 0;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
+  height: 6rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 360px;
 }
 
 .fa-truck {
@@ -112,13 +109,16 @@ main.index-main {
   display: flex;
   justify-content: space-between;
   margin: 0 auto 1rem;
+  padding: 0 1rem;
+  max-width: 768px;
 }
 
 .border { 
-  border-top: 2px solid black;
+  border-top: 1px solid black;
   width: 90%;
   align-self: center; 
   margin: 2rem 0;
+  max-width: 768px;
 }
 
 .team-12 ul li {
@@ -156,7 +156,12 @@ main.index-main {
   flex-direction: column;
   width: calc(50% - 2rem);
   margin: 1rem;
-  border: 2px solid grey;
+
+/*   border: 2px solid grey; */
+}
+
+.product:hover {
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
 .link-to-product {
@@ -433,6 +438,7 @@ main .session-form {
 
 .product-in-cart {
   display: flex;
+  align-items: center;
 
   background-color: rgba(194, 153, 153, 0.7);
   width: 90%;
@@ -443,7 +449,6 @@ main .session-form {
 
 .image-product-cart {
   display: flex;
-  align-self: center;
   width: calc(40% - 1rem);
   height: 75%;
   /* background-color: yellow; */
@@ -454,54 +459,56 @@ main .session-form {
   max-width: 100%;
 }
 
-.name-amount-container {
+.details-product-cart {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-
-  width: calc(35% - 1rem);
+  width: calc(60% - 1rem);
+  height: 75%;
 }
 
-.price-product-in-cart {
-  width: calc(25% - 1rem);
+.name-delete-product {
+  position: relative;
+  flex-grow: 1;
+  padding: 0 1.5rem 0 0.5rem;
+}
+
+.name-delete-product .far {
+  position: absolute;
+  right: 2px;
+  top: 0;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.fa-trash-alt:hover {
+  color: #555555;
+}
+
+.price-quantity-in-cart {
   display: flex;
   position: relative;
-  flex-direction: column;
-  justify-content: flex-end;
+
+  justify-content: space-between;
   text-align: center;
+  padding: 0 0.5rem;
+
+  font-size: 1.2rem;
 }
 
-.price-product-in-cart .far {
-  position: absolute;
-  top: 20%;
-  right: 40%;
-  font-size: 1.5rem;
-}
-
-.price-product-in-cart p {
-  height: 25%;
+.price-quantity-in-cart p {
   margin: 0;
   font-weight: bold;
-  font-size: 1rem;
 }
 
-.product-in-cart div {
+.product-in-cart .section-cart {
   margin: 0 0.5rem;
 }
 
-.name-product-cart {
-  height: 65%;
-  text-align: center;
-  font-size: 0.9rem;  
-}
+/* .quantity {
+  font-size: 1.2rem;
+} */
 
-.amount-product {
-  height: 25%;
-  text-align: center;
-  font-size: 1rem;
-}
-
-.amount-product .far, .btn-all-prods {
+.quantity .far, .btn-all-prods {
   cursor: pointer;
 }
 
@@ -511,6 +518,13 @@ main .session-form {
   font-weight: bold;
 }
 
+.btn-all-prods:hover {
+  background-color: #C2C2C2;
+}
+
+.btn-buy:hover {
+  background-color: #222222;
+}
 /* Acá empieza el responsive */
 
 footer {
@@ -522,11 +536,25 @@ footer {
 
 footer .border {
   margin: 0.5rem 0;
+  border-top: 2px solid black;
+  width: 100%;
 }
 
 footer i {
   margin: 0.5rem;
   font-size: 1.5rem;
+}
+
+@media (min-width: 335px) {
+  header .cart-icon {
+    display: block;
+  }
+}
+
+@media (min-width: 380px) {
+  header .cart-icon {
+    display: block;
+  }
 }
 
 @media (min-width: 768px) {
@@ -542,6 +570,16 @@ footer i {
   .sidebar.sidebar.close-zone {
     width: 80vw;
   }
+
+  .image-product-cart {
+    width: calc(20% - 1rem);
+  }
+
+  .details-product-cart {
+    flex-grow: 0.8;
+    font-size: 1.5rem;
+  }
+
 }
 
 @media (min-width: 1024px) {
@@ -604,6 +642,10 @@ footer i {
     color: white;
   }
 
+  .sidebar nav ul li a:hover {
+    text-decoration: underline;
+  }
+
   .close-sidebar-btn,
   .bar-menu {
     display: none;
@@ -624,5 +666,10 @@ footer i {
 
   .btn-all-prods {
     font-size: initial;
+    margin: 4rem 0;
+  }
+
+  .total-cart {
+    font-size: 1.5rem;
   }
 }
