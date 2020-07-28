@@ -437,31 +437,18 @@ main .session-form {
   justify-content: center;
 }
 
-.btn-log {
+.btn-log, .btn-reg {
   border: 0;
   background-color: black;
   color: white;
   padding: 12px;
 }
 
-.btn-reg {
-  border: 0;
-  background-color: black;
-  color: white;
-  padding: 12px;
-}
-
-.no-account{
+.yes-account, .no-account {    
   display: flex;
   justify-content: center;
-  font-size: 0.5rem;
-}
+  font-size: 0.5rem;   }
 
-.yes-account{
-  display: flex;
-  justify-content: center;
-  font-size: 0.5rem;
-}
 .no-underline{
   text-decoration: none;
   color: black; 
@@ -611,7 +598,7 @@ footer i {
     flex-grow: 0.8;
     font-size: 1.5rem;
   }
-  
+  .yes-account, .no-account, .session-form label {     font-size: 1rem;   }
 
 }
 
