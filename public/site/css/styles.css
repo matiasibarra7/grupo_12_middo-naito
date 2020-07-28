@@ -240,10 +240,9 @@ main.index-main {
 main article img {
   width: 100%;
   height: 100%;
-  /* margin-left: 54px; */
 }
 
-main article .product-data {
+main .product-data {
   margin: 6px 6px;
   border-bottom: 2px solid rgb(36, 10, 10);
 }
@@ -268,9 +267,9 @@ main .btn-talle {
   text-align: center;
   padding: 12px;
   width: 80%;
-  height: 50%;
   letter-spacing: 0.5px;
   border: transparent;
+  cursor: pointer;
 }
 
 .article-details {
@@ -303,6 +302,84 @@ main .btn-talle {
   width: 80%;
   font-size: smaller;
 }
+
+
+  /* VISTA PC */
+
+  @media (min-width: 769px){
+
+    #details{
+        display: flex;
+        flex-direction: row;
+        padding: 14px;
+        margin: 0 20px;
+    }
+
+    .back-arrow{
+      display: none;
+    }
+
+    .article-details {
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+      position: relative;
+      top: 4em;
+  }
+
+   .details-data {
+    position: relative;
+    top: 7em;
+    left: 2em;
+    width: 40%;
+    }
+
+    main .product-data {
+      margin: 6px 6px;
+      border-bottom: 2px solid rgb(36, 10, 10);
+      font-size: 20px;
+      line-height: 24px;
+  }
+
+    main article img {
+      width: 40%;
+      min-width: 500px;
+      margin: 10vh;
+    }
+
+    main .btn-talle {
+      margin: 6px 6px;
+      color: black;
+      background-color: lightgray;
+      width: 40%;
+    }
+
+    .btn-add {
+      margin: 12px 0px;
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      width: 60%;
+      height: 8vh;
+      letter-spacing: 0.5px;
+      border: transparent;
+      cursor: pointer;
+    }
+    
+    .description-title span {
+      text-align: center;
+      margin: 6px 6px;
+      background-color: lightgray;
+      width: 60%;
+      font-size: smaller;
+    }
+
+
+  }
+
+/* FINAL PRODUCT DETAILS */
+
 /* REGISTER Y LOGIN html */
 
 main .session-title {
