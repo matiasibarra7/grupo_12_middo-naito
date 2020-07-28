@@ -129,6 +129,10 @@ main.index-main {
   font-weight: bold;
 }
 
+.shop-desc {
+  padding: 1rem;
+}
+
 .featured-products {
   display: flex;
   flex-wrap: wrap;
@@ -472,7 +476,9 @@ main .session-form {
 }
 
 .btn-buy:hover,
-.btn-add:hover {
+.btn-add:hover,
+.btn-reg:hover,
+.btn-log:hover {
   background-color: #222222;
 }
 /* Acá empieza el responsive */
