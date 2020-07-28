@@ -16,10 +16,10 @@
             <li class="active"><a href="/">Home</a></li>
             <li><a href="/register">Registrate</a></li>
             <li><a href="/login">Ingresa</a></li>
-            <li><a href="#">Productos</a></li>
+            <li><a href="/products">Productos</a></li>
             <li><a href="/cart">Carrito</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#" onclick="closeSidebar()">Cerrar</a></li>
+            <li><a href="/us">About us</a></li>
+            <li class="close-sidebar-btn"><a href="#" onclick="closeSidebar()">Cerrar</a></li>
           </ul>
         </nav>
     </aside>
@@ -46,15 +46,13 @@
             </a>
         </div>
 
+        <div class="container-product-details">
             <article class="article-details">
-                
                 <img src="\design\images\products\buzo.png" alt="Imágen buzo thrasher">
-            
-
             </article>
-
+    
             <div class="details-data">
-
+    
                 <div class="product-data">
                     <strong>
                         <p>Producto de prueba</p>
@@ -62,43 +60,43 @@
                     </strong>
                 </div>
                 
-
+    
                 <div>
                     <select name="select" class="btn-talle">
-                        <option value="Talle" selected>Talle</option>
+                        <option value="Talle" hidden selected>Talle</option>
                         <option value="talle s">S</option> 
                         <option value="talle m">M</option>
                         <option value="talle l">L</option>
                         <option value="talle xl">XL</option>
                         <option value="talle xxl">XXL</option>
-                      </select>
+                        </select>
                 </div>
-
+    
                 <div class="add-div">
                     <button type="submit" class="btn-add"><strong>AGREGAR AL CARRITO</strong></button>
                 </div>
-
-
+    
+    
                 <div class="description-title">
-                   <span><p>DESCRIPCIÓN DEL PRODUCTO<p></span>
+                    <span><p>DESCRIPCIÓN DEL PRODUCTO<p></span>
                 </div>
-
-
+    
+    
                 <div class="product-description">
-
+    
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem odio officiis ipsum sint provident, repudiandae facilis praesentium harum accusantium explicabo esse veritatis modi voluptatum cum sequi hic recusandae tenetur tempore!<br>
                         100% Algodón
                         Hecho en Argentina
                     </p>
                 </div>
-
+    
                 <div class="description-title">
                     <span><p>GUÍA DE TALLES<p></span>
                 </div>
-
+    
                 <div class="product-description">
-
+    
                     <p>
                         <strong>Talle S</strong>: 50 cm de ancho. 66 cm de largo.<br>
                         <strong>Talle M</strong>: 54 cm de ancho. 70 cm de largo.<br>
@@ -107,8 +105,18 @@
                         <strong>Talle XXL</strong>: 68 cm de ancho. 76 cm de largo.<br>
                     </p>
                 </div>
-            </div>
+            </div>  
+        </div>
+
+
 
     </main>
+    <footer class="footer-details">
+        <div class="border"></div>
+        <div class="contact-us">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-facebook-f"></i>
+        </div>
+    </footer>
 </body>
 </html>

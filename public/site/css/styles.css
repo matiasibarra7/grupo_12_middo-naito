@@ -182,6 +182,7 @@ main.index-main {
   width: 100%;
   margin: 0;
   height: inherit;
+  min-width: 0;
 }
 
 .sidebar {
@@ -270,6 +271,7 @@ main .btn-talle {
   background-color: black;
   color: antiquewhite;
   text-align: center;
+  max-width: 12rem;
   padding: 12px;
   width: 80%;
   letter-spacing: 0.5px;
@@ -311,79 +313,7 @@ main .btn-talle {
 
   /* VISTA PC */
 
-  @media (min-width: 769px){
-
-    #details{
-        display: flex;
-        flex-direction: row;
-        padding: 14px;
-        margin: 0 20px;
-    }
-
-    .back-arrow{
-      display: none;
-    }
-
-    .article-details {
-      display: flex;
-      flex-direction: column;
-      width: 60%;
-      position: relative;
-      top: 4em;
-  }
-
-   .details-data {
-    position: relative;
-    top: 7em;
-    left: 2em;
-    width: 40%;
-    }
-
-    main .product-data {
-      margin: 6px 6px;
-      border-bottom: 2px solid rgb(36, 10, 10);
-      font-size: 20px;
-      line-height: 24px;
-  }
-
-    main article img {
-      width: 40%;
-      min-width: 500px;
-      margin: 10vh;
-    }
-
-    main .btn-talle {
-      margin: 6px 6px;
-      color: black;
-      background-color: lightgray;
-      width: 40%;
-    }
-
-    .btn-add {
-      margin: 12px 0px;
-      background-color: black;
-      color: white;
-      text-align: center;
-      padding: 12px;
-      width: 60%;
-      height: 8vh;
-      letter-spacing: 0.5px;
-      border: transparent;
-      cursor: pointer;
-    }
-    
-    .description-title span {
-      text-align: center;
-      margin: 6px 6px;
-      background-color: lightgray;
-      width: 60%;
-      font-size: smaller;
-    }
-
-
-  }
-
-/* FINAL PRODUCT DETAILS */
+  
 
 /* REGISTER Y LOGIN html */
 
@@ -541,7 +471,8 @@ main .session-form {
   background-color: #C2C2C2;
 }
 
-.btn-buy:hover {
+.btn-buy:hover,
+.btn-add:hover {
   background-color: #222222;
 }
 /* Acá empieza el responsive */
@@ -599,6 +530,100 @@ footer i {
     font-size: 1.5rem;
   }
   .yes-account, .no-account, .session-form label {     font-size: 1rem;   }
+
+    /* detalles de producto */
+
+    footer.footer-details {
+      margin-top: 6rem;
+    }
+  
+    .container-product-details {
+      display: flex;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .product-description {
+      padding: 0.5rem;
+    }
+  
+    #details{
+        display: flex;
+        flex-direction: row;
+        padding: 14px;
+        margin: 0 20px;
+    }
+  
+    .back-arrow{
+      display: none;
+    }
+  
+    .article-details {
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+      position: relative;
+      top: 2rem;
+      flex-grow: 1;
+  }
+  
+    .details-data {
+      position: relative;
+      top: 2rem;
+      left: 2rem;
+      width: 40%;
+      max-width: 640px;
+    }
+  
+    main .product-data {
+      margin: 6px 6px;
+      border-bottom: 2px solid rgb(36, 10, 10);
+      font-size: 20px;
+      line-height: 24px;
+  }
+  
+    main article img {
+      /* width: 40%; */
+      /* margin: 10vh; */
+      min-width: 500px;
+      width: 100%;
+      height: inherit;
+      margin: auto 0;
+    }
+  
+    main .btn-talle {
+      margin: 6px 6px;
+      color: black;
+      background-color: lightgray;
+      width: 20%;
+    }
+  
+    .btn-add {
+      margin: 12px 0px;
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      width: 60%;
+      /* height: 8vh; */
+      letter-spacing: 0.5px;
+      border: transparent;
+      cursor: pointer;
+    }
+    
+    .description-title span {
+      text-align: center;
+      margin: 6px 6px;
+      background-color: lightgray;
+      width: 60%;
+      font-size: smaller;
+    }
+  
+    main#details {
+      padding: 0;
+    }
+  
+  /* FINAL PRODUCT DETAILS */
 
 }
 
@@ -692,4 +717,18 @@ footer i {
   .total-cart {
     font-size: 1.5rem;
   }
+
+
+  main#details {
+    padding-top: 4rem;
+  }
+
+  .article-details {
+    width: 40%;
+  }
+
+  .details-data {
+    width: 60%;
+  }
+
 }
