@@ -73,7 +73,8 @@ header a {
 
 .fa-shopping-cart,
 .fa-search,
-.fa-bars {
+.fa-bars,
+.quantity .far {
   cursor: pointer;
 }
 
@@ -267,7 +268,7 @@ main .btn-talle {
 .add-div {
   display: flex;
   justify-content: center;
-  margin: 0.5em 0em;
+  margin: 1.2em 0em;
 }
 
 .btn-add {
@@ -347,16 +348,19 @@ main .session-form {
   display: flex;
   flex-direction: column;
 }
+
 .input-form {
   display: flex;
   flex-direction: column;
   margin: 1.5rem 0;
   padding-top: 0.5rem;
 }
+
 .input-form label{
   margin: 0 auto;
   width: 90%;
 }
+
 .inputs {
   border: none;
   background-color: lightgrey;
@@ -366,16 +370,27 @@ main .session-form {
   text-align: center;
   margin: 0 auto;
 }
+
 .btn {
   display: flex;
   justify-content: center;
 }
 
-.btn-log, .btn-reg {
+.btn a {
+  cursor: auto;
+}
+
+.btn-black {
   border: 0;
   background-color: black;
   color: white;
   padding: 12px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.btn-black:hover {
+  background-color: #222222;
 }
 
 .yes-account, .no-account {    
@@ -457,30 +472,17 @@ main .session-form {
   margin: 0 0.5rem;
 }
 
-/* .quantity {
-  font-size: 1.2rem;
-} */
-
-.quantity .far, .btn-all-prods {
-  cursor: pointer;
-}
-
-.btn-all-prods {
+.btn-grey {
   background-color: lightgray;
   color: black;
   font-weight: bold;
 }
 
-.btn-all-prods:hover {
+.btn-black.btn-grey:hover {
   background-color: #C2C2C2;
 }
 
-.btn-buy:hover,
-.btn-add:hover,
-.btn-reg:hover,
-.btn-log:hover {
-  background-color: #222222;
-}
+
 /* Acá empieza el responsive */
 
 footer {
@@ -604,18 +606,6 @@ footer i {
       width: 20%;
     }
   
-    .btn-add {
-      margin: 12px 0px;
-      background-color: black;
-      color: white;
-      text-align: center;
-      padding: 12px;
-      width: 60%;
-      /* height: 8vh; */
-      letter-spacing: 0.5px;
-      border: transparent;
-      cursor: pointer;
-    }
     
     .description-title span {
       text-align: center;
@@ -715,7 +705,7 @@ footer i {
     width: 0;
   }
 
-  .btn-all-prods {
+  .btn-grey {
     font-size: initial;
     margin: 4rem 0;
   }
@@ -734,7 +724,7 @@ footer i {
   }
 
   .details-data {
-    width: 60%;
+    width: 40%;
   }
 
 }
