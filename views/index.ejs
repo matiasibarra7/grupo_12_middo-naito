@@ -1,41 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <script src="/js/script.js"></script>
-    <title>Middo Naito</title>
-</head>
+<%- include('partials/head', {title: "Middo Naito"}); %>
 <body>
 
-    <aside class="sidebar">
-        <nav class="nav">
-          <ul>
-            <li class="active"><a href="/">Home</a></li>
-            <li><a href="/register">Registrate</a></li>
-            <li><a href="/login">Ingresa</a></li>
-            <li><a href="/products">Productos</a></li>
-            <li><a href="/cart">Carrito</a></li>
-            <li><a href="/us">About us</a></li>
-            <li class="close-sidebar-btn"><a href="#" onclick="closeSidebar()">Cerrar</a></li>
-          </ul>
-        </nav>
-    </aside>
-
-    <!-- Esto no sé si no será muy chancho -->
-    <aside class="sidebar close-zone" onclick="closeSidebar()"> 
-    </aside>
-
-    <header>
-        <div class="bar-menu"><i class="fas fa-bars bar-nav" onclick="openSidebar()"></i></div>
-        <div class="logo"><a href="/"><img src="/images/demo-logo.png" alt="middo-naito"></a></div>
-        <div class="container-cart-search">
-            <div class="cart-icon"><a href="/cart"><i class="fas fa-shopping-cart"></i></a></div>
-            <div class="search-icon"><i class="fas fa-search"></i></div>
-        </div>
-    </header>
+    <%- include('partials/header'); %>
     
 
     <main class="index-main">
@@ -183,13 +151,7 @@
         <a href="/products"><button class="btn-black btn-grey">VER TODOS LOS PRODUCTOS</button></a>
     </div>
     
-    <footer>
-        <div class="border"></div>
-        <div class="contact-us">
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-facebook-f"></i>
-        </div>
-    </footer>
+    <%- include('partials/footer'); %>
     
 </body>
 </html>
