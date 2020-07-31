@@ -6,7 +6,7 @@ const userRoutes = require('./routes/users');
 
 app.use(express.static("public"));
 app.use(express.urlencoded({extended: false}))
-
+app.set('view engine', 'ejs')
 
 app.use('/', mainRoutes);
 app.use('/products', productsRoutes);

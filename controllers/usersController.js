@@ -2,13 +2,13 @@ const path = require("path");
 
 const usersController = {
     cart: (req, res) => {
-        res.sendFile(path.resolve(`${__dirname}/../views/productCart.html`));
+        res.render(path.resolve(`${__dirname}/../views/users/productCart`));
     },
     register:(req, res) => {
-        res.sendFile(path.resolve(`${__dirname}/../views/register.html`));
+        res.render(path.resolve(`${__dirname}/../views/users/register`));
     },
     login: (req, res) => {
-        res.sendFile(path.resolve(`${__dirname}/../views/login.html`));
+        res.render(path.resolve(`${__dirname}/../views/users/login`));
     }
 }
 
