@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <script src="/js/script.js"></script>
+    <title>Detalle de producto</title>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <nav class="nav">
+          <ul>
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/register">Registrate</a></li>
+            <li><a href="/login">Ingresa</a></li>
+            <li><a href="/products">Productos</a></li>
+            <li><a href="/cart">Carrito</a></li>
+            <li><a href="/us">About us</a></li>
+            <li class="close-sidebar-btn"><a href="#" onclick="closeSidebar()">Cerrar</a></li>
+          </ul>
+        </nav>
+    </aside>
+
+    <!-- Esto no sé si no será muy chancho -->
+    <aside class="sidebar close-zone" onclick="closeSidebar()"> 
+    </aside>
+
+    <header>
+        <div class="bar-menu"><i class="fas fa-bars bar-nav" onclick="openSidebar()"></i></div>
+        <div class="logo"><a href="/"><img src="/images/demo-logo.png" alt="middo-naito"></a></div>
+        <div class="container-cart-search">
+            <div class="cart-icon"><a href="/cart"><i class="fas fa-shopping-cart"></i></a></div>
+            <div class="search-icon"><i class="fas fa-search"></i></div>
+        </div>
+    </header>
+
+    <main id="details">
+        <div class="back-arrow">
+            <a href="/">
+                <button class="arrow">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            </a>
+        </div>
+
+        <div class="container-product-details">
+            <article class="article-details">
+                <img src="\images\products\buzo.png" alt="Imágen buzo thrasher">
+            </article>
+    
+            <div class="details-data">
+    
+                <div class="product-data">
+                    <strong>
+                        <p>Producto de prueba</p>
+                        <p>$6.623</p>
+                    </strong>
+                </div>
+                
+    
+                <div>
+                    <select name="select" class="btn-talle">
+                        <option value="Talle" hidden selected>Talle</option>
+                        <option value="talle s">S</option> 
+                        <option value="talle m">M</option>
+                        <option value="talle l">L</option>
+                        <option value="talle xl">XL</option>
+                        <option value="talle xxl">XXL</option>
+                        </select>
+                </div>
+    
+                <div class="add-div">
+                    <a href="/cart"><button class="btn-black"><strong>AGREGAR AL CARRITO</strong></button></a>
+                </div>
+    
+    
+                <div class="description-title">
+                    <span><p>DESCRIPCIÓN DEL PRODUCTO<p></span>
+                </div>
+    
+    
+                <div class="product-description">
+    
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem odio officiis ipsum sint provident, repudiandae facilis praesentium harum accusantium explicabo esse veritatis modi voluptatum cum sequi hic recusandae tenetur tempore!<br>
+                        100% Algodón
+                        Hecho en Argentina
+                    </p>
+                </div>
+    
+                <div class="description-title">
+                    <span><p>GUÍA DE TALLES<p></span>
+                </div>
+    
+                <div class="product-description">
+    
+                    <p>
+                        <strong>Talle S</strong>: 50 cm de ancho. 66 cm de largo.<br>
+                        <strong>Talle M</strong>: 54 cm de ancho. 70 cm de largo.<br>
+                        <strong>Talle L</strong>: 58 cm de ancho. 70 cm de largo.<br>
+                        <strong>Talle XL</strong>: 63 cm de ancho. 73 cm de largo.<br>
+                        <strong>Talle XXL</strong>: 68 cm de ancho. 76 cm de largo.<br>
+                    </p>
+                </div>
+            </div>  
+        </div>
+
+
+
+    </main>
+    <footer class="footer-details">
+        <div class="border"></div>
+        <div class="contact-us">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-facebook-f"></i>
+        </div>
+    </footer>
+</body>
+</html>
