@@ -90,6 +90,11 @@ main.index-main {
   align-content: center;
 }
 
+.index-main.about-us {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
 .product-in-cart.deliver-type {
   margin-top: 0;
   padding: 1.5rem;
@@ -120,6 +125,9 @@ main.index-main {
   align-self: center; 
   margin: 2rem 0;
   max-width: 768px;
+}
+.team-12 ul {
+  padding-right: 40px;
 }
 
 .team-12 ul li {
