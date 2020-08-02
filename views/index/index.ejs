@@ -14,7 +14,12 @@
         <p class="section-title">Productos Destacados</p>
         <section class="featured-products">
             
-<!--             <article class="product">
+            <% productsData.forEach(el => { %>    
+                <% let {name, price, alt, dir} = el %>
+                <%- include('../partials/oneProduct', {name, price, alt, dir}) %>
+            <% }); %>
+
+            <!--<article class="product">
                 <img src="/images/products/remerita.webp" alt="">
                 <div class="product-details">
                     <div class="product-name">Remera Adidas</div>
@@ -22,126 +27,6 @@
                 </div>    
             </article> -->
 
-            <article class="product">
-                <a href="products/details" class="link-to-product">
-                    <img src="/images/products/buzo.png" alt="buzo disagree">
-                    
-                    <div class="product-details">
-                        <div class="product-name">Buzo Disagree</div>
-                        <div class="product-price">$4.790</div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="product">
-                <a href="products/details" class="link-to-product">
-                    <img src="/images/products/remera-3d.png" alt="remera 3D system">
-                    <div class="product-details">
-                        <div class="product-name">Remera 3D System</div>
-                        <div class="product-price">$1.980</div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="product">
-                <a href="products/details" class="link-to-product">
-                    <img src="/images/products/remera-verde.png" alt="Remera verde">
-                    <div class="product-details">
-                        <div class="product-name">Remera Pretty Fly</div>
-                        <div class="product-price">$1.820</div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="product">
-                <a href="products/details" class="link-to-product">
-                    <img src="/images/products/canguro-marron.png" alt="buzo canguro marron">
-                    <div class="product-details">
-                        <div class="product-name">Buzo HDD Format CH</div>
-                        <div class="product-price">$3.490</div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="product">
-                <a href="products/details" class="link-to-product">
-                    <img src="/images/products/hoodie-thrasher.png" alt="">
-                    <div class="product-details">
-                        <div class="product-name">Buzo Thrasher</div>
-                        <div class="product-price">$6.623</div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="product">
-                <a href="products/details" class="link-to-product">
-                    <img src="/images/products/chaleco-tribal.png" alt="chaleco">
-                    <div class="product-details">
-                        <div class="product-name">Chaleco Empathy</div>
-                        <div class="product-price">$3.980</div>
-                    </div>    
-                </a>
-            </article>
-
-            <article class="product">
-                <a href="products/details" class="link-to-product">
-                    <img src="/images/products/campera-rosa.png" alt="camepra rosa">
-                    <div class="product-details">
-                        <div class="product-name">Campera Middle of</div>
-                        <div class="product-price">$3.890</div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="product">
-                <a href="products/details" class="link-to-product">
-                    <img src="/images/products/pants-corderoy.png" alt="pantalones corderoy marron">
-                    <div class="product-details">
-                        <div class="product-name">Pantalones corderoy marrón</div>
-                        <div class="product-price">$3.590</div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="product">
-                <a href="products/details" class="link-to-product">
-                    <img src="/images/products/corderoy-negro.png" alt="pantalones corderoy negro">
-                    <div class="product-details">
-                        <div class="product-name">Pantalones corderoy negro</div>
-                        <div class="product-price">$3.590</div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="product">
-                <a href="products/details" class="link-to-product">
-                    <img src="/images/products/jean-blueroll.png" alt="jean blue">
-                    <div class="product-details">
-                        <div class="product-name">Ultra skinny - Indy</div>
-                        <div class="product-price">$1.820</div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="product">
-                <a href="products/details" class="link-to-product">
-                    <img src="/images/products/pants-woman.jpg" alt="Pantalones de mujer">
-                    <div class="product-details">
-                        <div class="product-name">Pantalones gabardina</div>
-                        <div class="product-price">$1.190</div>
-                    </div>
-                </a>
-            </article>
-
-            <article class="product">
-                <a href="products/details" class="link-to-product">
-                    <img src="/images/products/dress.jpg" alt="vestido de mujer para la noche">
-                    <div class="product-details">
-                        <div class="product-name">Vestido crepé</div>
-                        <div class="product-price">$510</div>
-                    </div>
-                </a>
-            </article>
                                    
         </section>
 
