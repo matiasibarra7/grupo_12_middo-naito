@@ -154,20 +154,23 @@ main.index-main {
 }
 
 .section-title {
-  text-align: center;
-  font-size: 1.5rem;
-  margin: 1rem 0 0;
+  border-bottom: 2px solid grey;
   font-weight: bold;
+  font-size: 1.2rem;
+  margin: 1.5rem auto;
+  text-align: center;
+  max-width: 1440px;
+  width: 90%;
 }
 
-.section-title.cart-title {
-  margin: 1rem;
+.index-main.about-us .section-title {
+  width: 100%;
 }
 
 .product {
   display: flex;
   flex-direction: column;
-  width: calc(50% - 2rem);
+  width: calc(100% - 2rem);
   margin: 1rem;
 
 /*   border: 2px solid grey; */
@@ -185,6 +188,7 @@ main.index-main {
 .product .product-details {
   height: 4rem;
   /* background-color: pink; */
+  font-size: 1.2rem;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -339,7 +343,7 @@ main .session-title {
   border-bottom: 2px solid grey;
   font-weight: bold;
   font-size: 1.5rem;
-  margin: 10px;
+  margin: 1.5rem;
   text-align: center;
 }
 
@@ -347,18 +351,49 @@ main .session-form {
   overflow: auto;
   margin: 10px;
   color: black;
-  font-size: 0.5rem;
   display: flex;
   flex-direction: column;
 }
 
-/* .session-form.newProductForm input{
-  padding: 1% 1%;
-} */
+
+/* New product */
 
 .session-form.newProductForm .btn-talle{
   margin-left: 5%;
 }
+
+.session-form.newProductForm textarea{
+  font-size: 0.8rem;
+  font-family: Arial;
+  resize: none;
+  height: 5rem;
+}
+
+.session-form.newProductForm .btn-talle {
+  height: 45.3333px; /* Exte sale de sumar el padding de 1rem más el font-size de un input normal, turbio*/
+  border: none;
+  padding-left: 1rem;
+}
+
+.two-cols {
+  display: flex;
+  margin: 1.5rem auto;
+  padding-top: 0.5rem;
+  width: 90%;
+  justify-content: space-between;
+}
+
+.two-cols .col {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+.two-cols .col input, .two-cols .col .btn-talle {
+  width: 100%;
+  margin: 0;
+}
+/* End New product */
 
 .input-form {
   display: flex;
@@ -368,18 +403,24 @@ main .session-form {
 }
 
 .input-form label{
-  margin: 0 auto;
+  margin: 0.2rem auto;
   width: 90%;
+  font-size: 1rem;
+  font-size: 1rem; 
 }
 
-.input-form textarea{ 
-  font-family: Arial;
-  font-size: 0.5rem;
+.session-form input, .session-form textarea {
+  border: none;
+  background-color: lightgrey;
+  padding: 1rem;
+  width: 90%;
+  color: black;
   text-align: center;
-  resize: none;
+  margin: 0 auto;
+  border-radius: 4px;
 }
 
-.inputs {
+/* .inputs {
   border: none;
   background-color: lightgrey;
   padding: 2.5% 2.5%;
@@ -387,7 +428,7 @@ main .session-form {
   color: black;
   text-align: center;
   margin: 0 auto;
-}
+} */
 
 .btn {
   display: flex;
@@ -414,7 +455,7 @@ main .session-form {
 .yes-account, .no-account {    
   display: flex;
   justify-content: center;
-  font-size: 0.5rem;   }
+  font-size: 1rem;   }
 
 .no-underline{
   text-decoration: none;
@@ -501,7 +542,6 @@ main .session-form {
 }
 
 
-/* Acá empieza el responsive */
 
 footer {
   margin: 1rem;
@@ -521,6 +561,7 @@ footer i {
   font-size: 1.5rem;
 }
 
+/* Acá empieza el responsive */
 @media (min-width: 335px) {
   header .cart-icon {
     display: block;
@@ -530,6 +571,19 @@ footer i {
 @media (min-width: 380px) {
   header .cart-icon {
     display: block;
+  }
+}
+
+@media (min-width: 424px) {
+  .product .product-details {
+    font-size: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+  .product {
+    width: calc(50% - 2rem);
   }
 }
 
@@ -555,87 +609,85 @@ footer i {
     flex-grow: 0.8;
     font-size: 1.5rem;
   }
-  .yes-account, .no-account, .session-form label {     font-size: 1rem;   }
+
 
     /* detalles de producto */
 
-    footer.footer-details {
-      margin-top: 6rem;
-    }
-  
-    .container-product-details {
-      display: flex;
-      max-width: 1440px;
-      margin: 0 auto;
-    }
+  footer.footer-details {
+    margin-top: 6rem;
+  }
 
-    .product-description {
-      padding: 0.5rem;
-    }
-  
-    #details{
-        display: flex;
-        flex-direction: row;
-        padding: 14px;
-        margin: 0 20px;
-    }
-  
-    .back-arrow{
-      display: none;
-    }
-  
-    .article-details {
-      display: flex;
-      flex-direction: column;
-      width: 60%;
-      position: relative;
-      top: 2rem;
-      flex-grow: 1;
+  .container-product-details {
+    display: flex;
+    max-width: 1440px;
+    margin: 0 auto;
   }
-  
-    .details-data {
-      position: relative;
-      top: 2rem;
-      left: 2rem;
-      width: 40%;
-      max-width: 640px;
-    }
-  
-    main .product-data {
-      margin: 6px 6px;
-      border-bottom: 2px solid rgb(36, 10, 10);
-      font-size: 20px;
-      line-height: 24px;
+
+  .product-description {
+    padding: 0.5rem;
   }
+
+  #details{
+    display: flex;
+    flex-direction: row;
+    padding: 14px;
+    margin: 0 20px;
+  }
+
+  .back-arrow{
+    display: none;
+  }
+
+  .article-details {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    position: relative;
+    top: 2rem;
+    flex-grow: 1;
+  }
+
+  .details-data {
+    position: relative;
+    top: 2rem;
+    /* left: 2rem; */
+    width: 40%;
+    max-width: 640px;
+  }
+
+  main .product-data {
+    margin: 6px 6px;
+    border-bottom: 2px solid rgb(36, 10, 10);
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  main article img {
+    min-width: 400px;
+    width: 100%;
+    height: inherit;
+    margin: auto 0;
+  }
+
+  main .btn-talle {
+    margin: 6px 6px;
+    color: black;
+    background-color: lightgray;
+    width: 20%;
+  }
+
   
-    main article img {
-      /* width: 40%; */
-      /* margin: 10vh; */
-      min-width: 500px;
-      width: 100%;
-      height: inherit;
-      margin: auto 0;
-    }
-  
-    main .btn-talle {
-      margin: 6px 6px;
-      color: black;
-      background-color: lightgray;
-      width: 20%;
-    }
-  
-    
-    .description-title span {
-      text-align: center;
-      margin: 6px 6px;
-      background-color: lightgray;
-      width: 60%;
-      font-size: smaller;
-    }
-  
-    main#details {
-      padding: 0;
-    }
+  .description-title span {
+    text-align: center;
+    margin: 6px 6px;
+    background-color: lightgray;
+    width: 60%;
+    font-size: smaller;
+  }
+
+  main#details {
+    padding: 0;
+  }
   
   /* FINAL PRODUCT DETAILS */
 
@@ -647,12 +699,11 @@ footer i {
   }
 
   .section-title {
-    font-size: 2.5rem;
-    margin: 2rem 0;
+    font-size: 1.5rem;
   }
 
   .banner-home {
-    max-height: 38rem;
+    max-height: 32rem;
     overflow: hidden;
   }
 
@@ -743,6 +794,15 @@ footer i {
 
   .details-data {
     width: 40%;
+  }
+
+  /* New product */
+  .session-form input{
+    text-align: start;
+  }
+
+  .session-form.newProductForm textarea{
+    text-align: start;
   }
 
 }
