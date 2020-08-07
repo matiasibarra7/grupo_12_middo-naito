@@ -2,9 +2,25 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "Raleway-cursive";
+  src: url(../fonts/Raleway-Italic-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url(../fonts/Raleway-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "bjork";
+  src: url(../fonts/BJORKFON.ttf);
+}
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  font-family: Raleway;
   background-color: rgb(255, 217, 199, 0.37);
   position: relative;
 }
@@ -80,6 +96,11 @@ header a {
 
 header .search-icon {
   text-align: center;
+}
+
+.banner-home {
+  max-height: 32rem;
+  overflow: hidden;
 }
 
 .banner-home img {
@@ -235,17 +256,6 @@ main.index-main {
   z-index: 14;
 }
 
-@font-face {
-  font-family: "bjork";
-  src: url(../../design/fonts/BJORKFON.ttf);
-}
-
-.test-font2 {
-  font-family: "bjork";
-  font-size: 80px;
-  text-align: center;
-}
-
 #details {
   display: flex;
   flex-direction: column;
@@ -364,7 +374,7 @@ main .session-form {
 
 .session-form.newProductForm textarea{
   font-size: 0.8rem;
-  font-family: Arial;
+  /* font-family: Arial; */
   resize: none;
   height: 5rem;
 }
@@ -702,10 +712,7 @@ footer i {
     font-size: 1.5rem;
   }
 
-  .banner-home {
-    max-height: 32rem;
-    overflow: hidden;
-  }
+
 
   .product {
     width: calc(33.33333% - 2rem);
