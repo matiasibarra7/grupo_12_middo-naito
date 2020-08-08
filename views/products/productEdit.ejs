@@ -12,38 +12,63 @@
             </a>
         </div>
         <h2 class="session-title">EDITAR UN PRODUCTO</h2>
-        <form class="session-form" action="/" method="POST">
+        <form class="session-form newProductForm" action="/" method="POST">
             <div class="input-form">
                 <label for="productName">NOMBRE</label>
-                <input type="text" name="productName" value="Remera Adidas" id="productName" class="inputs" placeholder="Ingrese el nombre del producto">
+                <input type="text" name="productName" id="productName" class="inputs" placeholder="Escriba el nombre del producto" value="Chaleco Empathy">
             </div>
             <div class="input-form">
                 <label for="productDescription">DESCRIPCIÓN</label>
-                <textarea name="productDescription" id="productDescription" class="inputs" placeholder="Ingrese la descripción del producto"></textarea>
+                <textarea name="productDescription" id="productDescription" class="inputs" placeholder="Realice una descripción del producto">Chaleco negro especial para el invierno....</textarea>
             </div>
-            <div class="input-form">
-                <label for="productPrice">PRECIO</label>
-                <input type="text" name="porductPrice" id="porductPrice" class="inputs" placeholder="Ingrese el precio del producto">    
+            <div class="two-cols">
+                <div class="col">
+                    <label for="productCategory">CATEGORÍA</label>
+                    <select name="productCategory" class="btn-talle">
+                        <option value="" hidden>Seleccione</option>
+                        <option value="t-shirts">Remera</option> 
+                        <option value="shirts">Camisa</option> 
+                        <option value="jackets" selected>Campera</option>
+                        <option value="pants">Pantalón</option>
+                        <option value="accesories">Accesorio</option>
+                    </select>    
+                </div>
+                <div class="col">
+                    <label for="productSize">TALLE</label>
+                    <select name="productSize" class="btn-talle">
+                            <option value="" hidden>Talle</option>
+                            <option value="s">S</option> 
+                            <option value="m" selected>M</option>
+                            <option value="l">L</option>
+                            <option value="xl">XL</option>
+                            <option value="xxl">XXL</option>
+                    </select>    
+                </div>
+                
             </div>
-            <div class="input-form">
-                <label for="productCategory">CATEGORÍA</label>
-                <input type="text" name="productCategory" id="productCategory" class="inputs" placeholder="Ingrese la categoría del producto">    
+
+            <div class="two-cols">
+                <div class="col">
+                    <label for="productPrice">PRECIO</label>
+                    <input type="text" name="porductPrice" id="porductPrice" class="inputs" placeholder="Ingrese el precio del producto" value="3980">        
+                </div>
+                <div class="col">
+                    <label for="productStock">STOCK</label>
+                    <input type="text" name="productStock" id="productStock" class="inputs" placeholder="Ingrese el stock del producto" value="2">    
+                </div>
             </div>
-            <div class="input-form">
-                <label for="productStock">STOCK</label>
-                <input type="text" name="productStock" id="productStock" class="inputs" placeholder="Ingrese el stock del producto">    
-            </div>
-            <div class="input-form">
+
+            <!--<div class="input-form">
                 <label for="productSize">TALLE</label>
-                <select class="inputs" name="select" class="btn-talle">
-                        <option value="Talle" hidden selected>Talle</option>
+                <select name="productSize" class="btn-talle">
+                        <option value="" hidden selected>Talle</option>
                         <option value="talle s">S</option> 
                         <option value="talle m">M</option>
                         <option value="talle l">L</option>
                         <option value="talle xl">XL</option>
                         <option value="talle xxl">XXL</option>
                 </select>    
-            </div>
+            </div> -->
             <div class="input-form">
                 <label for="productIMG">IMAGEN</label>
                 <input type="file" name="productIMG" id="productIMG" class="inputs">

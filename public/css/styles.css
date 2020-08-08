@@ -572,6 +572,18 @@ footer i {
   font-size: 1.5rem;
 }
 
+  /* Probando dropdowns */
+  
+  .dropdown-container {
+    display: none;
+    flex-direction: column;
+    background-color: black;
+  }
+
+
+
+  /* Fin probando dropdowns en mobile */
+
 /* Acá empieza el responsive */
 @media (min-width: 335px) {
   header .cart-icon {
@@ -813,4 +825,20 @@ footer i {
     text-align: start;
   }
 
+  /* Probando dropdowns */
+
+  .dropdown-container {
+    display: none;
+    flex-direction: column;
+    background-color: black;
+  }
+  
+  .dropdown-mn:hover .dropdown-container {
+    display: flex;
+    padding: 1rem 0;
+  }
+
+  .li-mobile {
+    display: none;
+  }
 }
