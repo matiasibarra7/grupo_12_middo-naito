@@ -8,7 +8,7 @@ const productsController = {
         res.render('./products/productDetail');
     },
     cart: (req, res) => {
-        res.render(`./products/productCart`);
+        res.render(`./products/productCart`, {productsData});
     },
     add: (req, res) => {
         res.render(`./products/productAdd`);

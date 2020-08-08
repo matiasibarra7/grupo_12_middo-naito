@@ -2,105 +2,15 @@
 <html lang="en">
 <%- include('../partials/head', {title: "Carrito de Compras"}); %>
 <body>
+
     <%- include('../partials/header'); %>
+
     <main>
         <p class="section-title cart-title">CARRITO DE COMPRAS</p>
 
-        <div class="product-in-cart">
-            <div class="image-product-cart section-cart">
-                <img src="/images/products/remerita.webp" alt="remerita">
-            </div>
-
-            <div class="details-product-cart section-cart">
-
-                <div class="name-delete-product">
-                    Remera Adidas
-                    <i class="far fa-trash-alt"></i>
-                </div>
-    
-                <div class="price-quantity-in-cart">
-                    <div class="quantity">
-                        <i class="far fa-minus-square"></i>
-                        2
-                        <i class="far fa-plus-square"></i>
-                    </div>
-                    <p>$1.999</p>
-                </div>
-                
-            </div>
-        </div>
-
-        <div class="product-in-cart">
-            <div class="image-product-cart section-cart">
-                <img src="/images/products/buzo.png" alt="buzo">
-            </div>
-
-            <div class="details-product-cart section-cart">
-
-                <div class="name-delete-product">
-                    Buzo Disagree
-                    <i class="far fa-trash-alt"></i>
-                </div>
-    
-                <div class="price-quantity-in-cart">
-                    <div class="quantity">
-                        <i class="far fa-minus-square"></i>
-                        1
-                        <i class="far fa-plus-square"></i>
-                    </div>
-                    <p>$4.790</p>
-                </div>
-                
-            </div>
-        </div>
-
-        <div class="product-in-cart">
-            <div class="image-product-cart section-cart">
-                <img src="/images/products/dress.jpg" alt="vestido de mujer para la noche">
-            </div>
-
-            <div class="details-product-cart section-cart">
-
-                <div class="name-delete-product">
-                    Vestido crepé
-                    <i class="far fa-trash-alt"></i>
-                </div>
-    
-                <div class="price-quantity-in-cart">
-                    <div class="quantity">
-                        <i class="far fa-minus-square"></i>
-                        1
-                        <i class="far fa-plus-square"></i>
-                    </div>
-                    <p>$510</p>
-                </div>
-                
-            </div>
-        </div>
-
-        <div class="product-in-cart">
-            <div class="image-product-cart section-cart">
-                <img src="/images/products/pants-corderoy.png" alt="pantalones corderoy">
-            </div>
-
-            <div class="details-product-cart section-cart">
-
-                <div class="name-delete-product">
-                    Pantalones corderoy
-                    <i class="far fa-trash-alt"></i>
-                </div>
-    
-                <div class="price-quantity-in-cart">
-                    <div class="quantity">
-                        <i class="far fa-minus-square"></i>
-                        1
-                        <i class="far fa-plus-square"></i>
-                    </div>
-                    <p>$3.590</p>
-                </div>
-                
-            </div>
-        </div>
+        <% productsData.forEach(el => { %>    
+            <%- include('../partials/oneLineInCart', {product: el}); %>
+        <% }); %>
 
         <div class="total-cart">
             <b>SUBTOTAL (Sin envio)</b><b>$67.200</b>
@@ -119,7 +29,6 @@
                 </select>
             </div>
         </div>
-
 
         <div class="border"></div>
 

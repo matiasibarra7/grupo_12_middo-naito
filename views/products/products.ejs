@@ -11,8 +11,8 @@
         <section class="featured-products">
             
             <% productsData.forEach(el => { %>    
-                <% let {name, price, alt, dir} = el %>
-                <%- include('../partials/oneProduct', {name, price, alt, dir}) %>
+                <% let {name, price, alt, image} = el %>
+                <%- include('../partials/oneProduct', {name, price, alt, image}) %>
             <% }); %>
 
         </section>

@@ -21,6 +21,7 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   font-family: Raleway;
+  font-variant-numeric: lining-nums;
   background-color: rgb(255, 217, 199, 0.37);
   position: relative;
 }
@@ -374,7 +375,7 @@ main .session-form {
 
 .session-form.newProductForm textarea{
   font-size: 0.8rem;
-  /* font-family: Arial; */
+  font-family: Raleway;
   resize: none;
   height: 5rem;
 }
@@ -408,7 +409,7 @@ main .session-form {
 .input-form {
   display: flex;
   flex-direction: column;
-  margin: 1.5rem 0;
+  margin-bottom: 1.5rem;
   padding-top: 0.5rem;
 }
 
