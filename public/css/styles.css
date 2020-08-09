@@ -47,7 +47,6 @@ header {
   height: 3.5rem;
   padding: 0.5rem 0.25rem;
 
-  /* background-color: rgb(5, 5, 5, 0.87); */
   background-color: black;
   color: white;
   font-size: 1.5rem;
@@ -75,7 +74,6 @@ header .logo img {
   display: flex;
   justify-content: space-around;
   width: 20%;
-  /*   font-size: 1.5rem; */
 }
 
 header .cart-icon {
@@ -337,10 +335,6 @@ main .btn-talle {
   width: 80%;
   font-size: smaller;
 }
-
-
-  /* VISTA PC */
-
   
 
 /* REGISTER Y LOGIN, EDIT y ADD PRODUCT html */
@@ -350,7 +344,6 @@ main.register, main.login, main.newProduct{
   margin: 0 auto;
 }
 main .session-title {
-  /* padding-top: 5rem; */
   border-bottom: 2px solid grey;
   font-weight: bold;
   font-size: 1.5rem;
@@ -381,7 +374,7 @@ main .session-form {
 }
 
 .session-form.newProductForm .btn-talle {
-  height: 45.3333px; /* Exte sale de sumar el padding de 1rem más el font-size de un input normal, turbio*/
+  height: 45.3333px; /* Este sale de sumar el padding de 1rem más el font-size de un input normal, turbio*/
   border: none;
   padding-left: 1rem;
 }
@@ -430,16 +423,6 @@ main .session-form {
   margin: 0 auto;
   border-radius: 4px;
 }
-
-/* .inputs {
-  border: none;
-  background-color: lightgrey;
-  padding: 2.5% 2.5%;
-  width: 90%;
-  color: black;
-  text-align: center;
-  margin: 0 auto;
-} */
 
 .btn {
   display: flex;
@@ -552,8 +535,6 @@ main .session-form {
   background-color: #C2C2C2;
 }
 
-
-
 footer {
   margin: 1rem;
   display: flex;
@@ -572,17 +553,15 @@ footer i {
   font-size: 1.5rem;
 }
 
-  /* Probando dropdowns */
-  
-  .dropdown-container {
-    display: none;
-    flex-direction: column;
-    background-color: black;
-  }
+/* Probando dropdowns */
 
+.dropdown-container {
+  display: none;
+  flex-direction: column;
+  background-color: black;
+}
 
-
-  /* Fin probando dropdowns en mobile */
+/* Fin probando dropdowns en mobile */
 
 /* Acá empieza el responsive */
 @media (min-width: 335px) {
@@ -673,7 +652,6 @@ footer i {
   .details-data {
     position: relative;
     top: 2rem;
-    /* left: 2rem; */
     width: 40%;
     max-width: 640px;
   }
@@ -698,7 +676,6 @@ footer i {
     background-color: lightgray;
     width: 20%;
   }
-
   
   .description-title span {
     text-align: center;
@@ -706,10 +683,6 @@ footer i {
     background-color: lightgray;
     width: 60%;
     font-size: smaller;
-  }
-
-  main#details {
-    padding: 0;
   }
   
   /* FINAL PRODUCT DETAILS */
@@ -724,8 +697,6 @@ footer i {
   .section-title {
     font-size: 1.5rem;
   }
-
-
 
   .product {
     width: calc(33.33333% - 2rem);
@@ -801,11 +772,6 @@ footer i {
 
   .total-cart {
     font-size: 1.5rem;
-  }
-
-
-  main#details {
-    padding-top: 4rem;
   }
 
   .article-details {
