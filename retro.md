@@ -13,4 +13,4 @@ La comunicación mejoró de manera notable, y en consecuencia, el ritmo de traba
 
 Presentación que contiene el resultado del desarrollo de la técnica estrella de mar.
 
-https://docs.google.com/presentation/d/1sVbE1fIehd2V69sp-LC8Ig88tWYKwhEibU-3E0jrOF0/edit?usp=sharing
+https://jamboard.google.com/d/1Khj4UZIrJyZ3DbiwY_0vybLB7H1qyaM_SIDqmZvYCgs/viewer

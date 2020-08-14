@@ -1,4 +1,4 @@
-const productsData = require("../JSON/productsObject");
+const productsData = require("../data/productsObject");
 
 const mainController = {
     main: (req, res) => {
