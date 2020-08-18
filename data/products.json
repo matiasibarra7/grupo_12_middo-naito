@@ -1,13 +1,13 @@
 [
     {   "id": 0, 
         "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde, soluta architecto sit voluptatem maxime, labore excepturi, enim facilis quas accusantium. Reprehenderit.", 
-        "category": "jackets",
+        "category": "t-shirts", 
         "stock": 1,
-        "name": "Buzo Disagree", 
-        "price": "4.790", 
-        "alt": "buzo disagree", 
+        "name": "Remera Bleach", 
+        "price": "1.840", 
+        "alt": "Remera Bleach", 
         "size": "m", 
-        "image": "buzo.png" 
+        "image": "remera-bleach.png" 
     },
     {   "id": 1, 
         "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde, soluta architecto sit voluptatem maxime, labore excepturi, enim facilis quas accusantium. Reprehenderit.", 
@@ -41,13 +41,13 @@
     },
     {   "id": 4, 
         "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde, soluta architecto sit voluptatem maxime, labore excepturi, enim facilis quas accusantium. Reprehenderit.", 
-        "category": "jackets", 
+        "category": "jackets",
         "stock": 1,
-        "name": "Buzo Thrasher", 
-        "price": "6.623", 
-        "alt": "buzo thrasher", 
+        "name": "Buzo Disagree", 
+        "price": "4.790", 
+        "alt": "buzo disagree", 
         "size": "m", 
-        "image": "hoodie-thrasher.png" 
+        "image": "buzo.png" 
     },
     {   "id": 5, 
         "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde, soluta architecto sit voluptatem maxime, labore excepturi, enim facilis quas accusantium. Reprehenderit.", 
@@ -101,22 +101,22 @@
     },
     {   "id": 10, 
         "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde, soluta architecto sit voluptatem maxime, labore excepturi, enim facilis quas accusantium. Reprehenderit.", 
-        "category": "", 
+        "category": "accesories", 
         "stock": 1,
-        "name": "Pantalones gabardina", 
-        "price": "1.190", 
-        "alt": "Pantalones de mujer", 
+        "name": "Gorro Beanie 2000", 
+        "price": "990", 
+        "alt": "gorro beanie 2000", 
         "size": "m", 
-        "image": "pants-woman.jpg" 
+        "image": "beanie.png" 
     },
     {   "id": 11, 
         "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde, soluta architecto sit voluptatem maxime, labore excepturi, enim facilis quas accusantium. Reprehenderit.", 
-        "category": "", 
+        "category": "accesories", 
         "stock": 1,
-        "name": "Vestido crepé", 
-        "price": "510", 
-        "alt": "vesto de mujer para la noche", 
+        "name": "Gorro Beanie Khaos", 
+        "price": "1290", 
+        "alt": "gorro beanie khaos", 
         "size": "m", 
-        "image": "dress.jpg" 
+        "image": "beanie-khaos.png" 
     }
 ]
