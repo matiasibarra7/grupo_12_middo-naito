@@ -12,20 +12,20 @@
             </a>
         </div>
         <h2 class="session-title">AÑADIR UN NUEVO PRODUCTO</h2>
-        <form class="session-form newProductForm" action="/" method="POST">
+        <form class="session-form newProductForm" action="/products/add" method="POST" enctype="multipart/form-data">
             <div class="input-form">
                 <label for="productName">NOMBRE</label>
-                <input type="text" name="productName" id="productName" class="inputs" placeholder="Escriba el nombre del producto">
+                <input type="text" name="name" id="productName" class="inputs" placeholder="Escriba el nombre del producto">
             </div>
             <div class="input-form">
                 <label for="productDescription">DESCRIPCIÓN</label>
-                <textarea name="productDescription" id="productDescription" class="inputs" placeholder="Realice una descripción del producto"></textarea>
+                <textarea name="description" id="productDescription" class="inputs" placeholder="Realice una descripción del producto"></textarea>
             </div>
 
             <div class="two-cols">
                 <div class="col">
-                    <label for="productCategory">CATEGORÍA</label>
-                    <select name="productCategory" class="btn-talle">
+                    <label for="category">CATEGORÍA</label>
+                    <select name="category" class="btn-talle">
                         <option value="" hidden selected>Seleccione</option>
                         <option value="t-shirts">Remera</option> 
                         <option value="shirts">Camisa</option> 
@@ -35,8 +35,8 @@
                     </select>    
                 </div>
                 <div class="col">
-                    <label for="productSize">TALLE</label>
-                    <select name="productSize" class="btn-talle">
+                    <label for="size">TALLE</label>
+                    <select name="size" class="btn-talle">
                             <option value="" hidden selected>Talle</option>
                             <option value="s">S</option> 
                             <option value="m">M</option>
@@ -50,18 +50,18 @@
 
             <div class="two-cols">
                 <div class="col">
-                    <label for="productPrice">PRECIO</label>
-                    <input type="number" name="porductPrice" id="porductPrice" class="inputs" placeholder="Ingrese el precio del producto" min="0">        
+                    <label for="price">PRECIO</label>
+                    <input type="number" name="price" id="productPrice" class="inputs" placeholder="Ingrese el precio del producto" min="0">        
                 </div>
                 <div class="col">
-                    <label for="productStock">STOCK</label>
-                    <input type="number" name="productStock" id="productStock" class="inputs" placeholder="Ingrese el stock del producto" min="0">    
+                    <label for="stock">STOCK</label>
+                    <input type="number" name="stock" id="productStock" class="inputs" placeholder="Ingrese el stock del producto" min="0">    
                 </div>
             </div>
 
             <div class="input-form">
-                <label for="productIMG">IMAGEN</label>
-                <input type="file" name="productIMG" id="productIMG" class="inputs">
+                <label for="image">IMAGEN</label>
+                <input type="file" name="image" id="productIMG" class="inputs">
             </div>
             <div class="btn">
                 <button type="submit" class="btn-black">AÑADIR PRODUCTO</button>
