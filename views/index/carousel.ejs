@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/carousel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <script src="/js/script.js"></script>
+    <script src="/js/carousel.js"></script>
+    <title>Prueba de Carousel</title>
+</head>
+
+<body>
+    
+    <%- include('../partials/header'); %>
+
+    <main class="index-main">
+        
+
+        <h2>Manual Slideshow</h2>
+
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade" style="display: block;">
+            <div class="numbertext">1 / 3</div>
+            <img src="https://www.hunterandbligh.com.au/wp-content/uploads/2019/08/london-fashion-week-men-s-street-style-spring-summer-2020-runway-season-10-june-8-1.jpg" style="width:100%">
+            <div class="text">Pantalones blancos</div>
+            </div>
+        
+            <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="/images/banner-home.jpeg" style="width:100%">
+            <div class="text">Middo Naito</div>
+            </div>
+        
+            <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="https://get.wallhere.com/photo/women-outdoors-women-night-urban-outdoors-road-actress-fashion-spring-infrastructure-Michelle-Trachtenberg-light-color-season-photograph-darkness-footwear-screenshot-214127.jpg" style="width:100%">
+            <div class="text">Vestido de noche</div>
+            </div>
+        
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        
+        <!-- The dots/circles -->
+        <div style="text-align:center">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+
+        <h2>Automatic Slideshow</h2>
+
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="myAutoSlides fade" style="display: block;">
+            <div class="numbertext">1 / 3</div>
+            <img src="https://www.hunterandbligh.com.au/wp-content/uploads/2019/08/london-fashion-week-men-s-street-style-spring-summer-2020-runway-season-10-june-8-1.jpg" style="width:100%">
+            <div class="text">Pantalones blancos</div>
+            </div>
+        
+            <div class="myAutoSlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="/images/banner-home.jpeg" style="width:100%">
+            <div class="text">Middo Naito</div>
+            </div>
+        
+            <div class="myAutoSlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="https://get.wallhere.com/photo/women-outdoors-women-night-urban-outdoors-road-actress-fashion-spring-infrastructure-Michelle-Trachtenberg-light-color-season-photograph-darkness-footwear-screenshot-214127.jpg" style="width:100%">
+            <div class="text">Vestido de noche</div>
+            </div>
+
+        </div>
+  
+  
+
+    </main>
+
+    <%- include('../partials/footer'); %>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

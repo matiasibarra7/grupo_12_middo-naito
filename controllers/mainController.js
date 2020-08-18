@@ -8,7 +8,10 @@ const mainController = {
       },
     us: (req, res) => {
         res.render('./index/about-us');
-      }
+      },
+    carousel: (req, res) => {
+      res.render('./index/carousel')
+    }
 }
 
 module.exports = mainController;
