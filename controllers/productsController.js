@@ -19,7 +19,24 @@ const productsController = {
     res.render(`./products/productAdd`);
   },
   edit: (req, res) => {
-    res.render(`./products/productEdit`);
+    res.render(`./products/productEdit`, { product : productsData[req.params.id] });
+  },  
+  update: (req, res) => {
+    let productList = JSON.parse(fs.readFileSync(__dirname + "/../data/products.json"));
+    let indexProduct = productList.findIndex(product => product.id == req.params.id)
+    let foundProduct = productList[indexProduct];
+    let updatedProduct = req.body;
+    updatedProduct.id = foundProduct.id;
+    updatedProduct.image = foundProduct.image;
+    let modifyProducts = productList.map( product => {
+      if(product.id == updatedProduct.id){
+        return updatedProduct;
+      }else{
+        return product;
+      }
+    })
+    fs.writeFileSync(__dirname + "/../data/products.json", JSON.stringify(modifyProducts, null, " "));
+    res.redirect('/products/details/'+ req.params.id);
   },
   store: (req, res) => {
     let id = productsData.pop().id;
@@ -35,7 +52,7 @@ const productsController = {
     fs.writeFileSync(__dirname + "/../data/products.json", JSON.stringify(newProductList, null, " "));
 
     res.redirect("/products");
-  },
+  },  
 };
 
 module.exports = productsController;

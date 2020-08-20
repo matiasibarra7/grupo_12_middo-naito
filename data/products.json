@@ -132,14 +132,13 @@
   "image": "beanie-khaos.png"
  },
  {
-  "name": "medias de prueba",
-  "description": "Estas medias estan para probar si sube esta wea",
+  "name": "Medias cool ",
+  "description": "Prueba de edición de las medias cool",
   "category": "accesories",
-  "size": "m",
-  "price": "72999",
+  "size": "xxl",
+  "price": "729",
   "stock": "21",
   "id": 12,
-  "alt": "medias de prueba",
   "image": "imagen - media ignition 450.png"
  }
 ]
