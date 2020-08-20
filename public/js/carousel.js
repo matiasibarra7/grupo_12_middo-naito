@@ -1,11 +1,11 @@
 let slideIndex
-let slideAutoIndex
+/* let slideAutoIndex */
 document.addEventListener("DOMContentLoaded", function (event) {
     slideIndex = 1;
     showSlides(slideIndex);
 
-    slideAutoIndex= 0;
-    showAutoSlides()
+/*     slideAutoIndex= 0;
+    showAutoSlides() */
 });
   
   
@@ -36,7 +36,7 @@ function showSlides(n) {
 }
 
 
-function showAutoSlides() {
+/* function showAutoSlides() {
   let slides = document.getElementsByClassName("myAutoSlides");
   for (let i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
@@ -45,4 +45,4 @@ function showAutoSlides() {
   if (slideAutoIndex > slides.length) {slideAutoIndex = 1}
   slides[slideAutoIndex-1].style.display = "block";
   setTimeout(showAutoSlides, 3000); // Change image every 3 seconds
-}
+} */

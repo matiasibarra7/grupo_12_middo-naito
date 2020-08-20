@@ -826,3 +826,65 @@ footer i {
     display: none;
   }
 }
+
+/* Fin Probando dropdowns */
+
+/* ESTILOS BANNER DINAMICO */
+
+/* Hide the images by default */
+.myAutoSlides {
+  display: none;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 4rem;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+.container-banner-elements {
+  display: flex;
+}
+
+.container-banner-elements img {
+  width: 100%;
+}
+
+.text-zone {
+  display: none;
+  position: relative;
+  right: 0;
+  width: 20%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.title-peque {
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+}
+
+/* FIN ESTILOS BANNER DINAMICO */
