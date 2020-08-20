@@ -17,15 +17,15 @@
 
         <div class="container-product-details">
             <article class="article-details">
-                <img src="\images\products\buzo.png" alt="Imágen buzo thrasher">
+                <img src="\images\products\<%= productData.image %>" alt="<%= productData.alt %>">
             </article>
     
             <div class="details-data">
     
                 <div class="product-data">
                     <strong>
-                        <p>Producto de prueba</p>
-                        <p>$6.623</p>
+                        <p><%= productData.name %></p>
+                        <p>$ <%= productData.price %></p>
                     </strong>
                 </div>
                 
@@ -54,9 +54,7 @@
                 <div class="product-description">
     
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem odio officiis ipsum sint provident, repudiandae facilis praesentium harum accusantium explicabo esse veritatis modi voluptatum cum sequi hic recusandae tenetur tempore!<br>
-                        100% Algodón
-                        Hecho en Argentina
+                        <%= productData.description %>
                     </p>
                 </div>
     
