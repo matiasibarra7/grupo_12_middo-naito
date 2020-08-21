@@ -83,6 +83,10 @@
                 <button type="submit" class="btn-black">EDITAR PRODUCTO</button>
             </div>
         </form>
+
+        <form class="session-form newProductForm" action="/products/edit/<%= product.id%>?_method=DELETE" method="POST">
+            <button type="submit" class="btn-black">BORRAR PRODUCTO</button>
+        </form>
     </main>
     <%- include('../partials/footer'); %>
 </body>

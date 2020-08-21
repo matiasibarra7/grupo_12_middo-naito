@@ -55,6 +55,18 @@ const productsController = {
 
     res.redirect("/products");
   },  
+  delete: (req, res) =>{
+    let productList = JSON.parse(fs.readFileSync(__dirname + "/../data/products.json"));
+    let indexProduct = req.params.id
+    let deletedProduct= productList.filter(product => {
+      if(product.id != indexProduct){
+        return product
+      }
+    })
+    fs.writeFileSync(__dirname + "/../data/products.json", JSON.stringify(deletedProduct, null, " "));
+    res.redirect('/products');
+
+  }
 };
 
 module.exports = productsController;

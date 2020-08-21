@@ -27,4 +27,6 @@ router.put("/edit/:id", upload.single("image"), productsController.update); // 6
 
 router.get("/details/:id", productsController.details); //3 -- Detalle de un producto particular
 
+router.delete("/edit/:id" , productsController.delete); // 7 -- Eliminar un producto
+
 module.exports = router;
