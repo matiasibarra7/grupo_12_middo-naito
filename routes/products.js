@@ -23,7 +23,7 @@ router.post("/add", upload.single("image"), productsController.store); //4 -- Ac
 
 router.get("/cart", productsController.cart);
 router.get("/edit/:id", productsController.edit);
-router.put("/edit/:id", productsController.update); // 6 -- Edición de un producto
+router.put("/edit/:id", upload.single("image"), productsController.update); // 6 -- Edición de un producto
 
 router.get("/details/:id", productsController.details); //3 -- Detalle de un producto particular
 

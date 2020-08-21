@@ -35,6 +35,8 @@ const productsController = {
         return product;
       }
     })
+    if (req.file) updatedProduct.image = `imagen - ${path.basename(req.file.originalname)}`;
+    /* res.send(req.body) */
     fs.writeFileSync(__dirname + "/../data/products.json", JSON.stringify(modifyProducts, null, " "));
     res.redirect('/products/details/'+ req.params.id);
   },

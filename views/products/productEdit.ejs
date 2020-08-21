@@ -12,7 +12,7 @@
             </a>
         </div>
         <h2 class="session-title">EDITAR UN PRODUCTO</h2>
-        <form class="session-form newProductForm" action="/products/edit/<%= product.id%>?_method=PUT" method="POST">
+        <form class="session-form newProductForm" action="/products/edit/<%= product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
             <div class="input-form">
                 <label for="name">NOMBRE</label>
                 <input type="text" name="name" id="productName" class="inputs" placeholder="Escriba el nombre del producto" value="<%= product.name %> ">
@@ -59,10 +59,26 @@
                 </div>
             </div>
 
-            <!-- <div class="input-form">
-                <label for="productIMG">IMAGEN</label>
-                <input type="file" name="productIMG" id="productIMG" class="inputs">
-            </div> -->
+            <div class="two-cols" style="margin-bottom: 0;">
+                <div>IMAGEN ACTUAL</div>
+                <div>IMAGEN NUEVA</div>
+            </div>
+            <div class="two-cols" style="margin-top: 0;">
+                <div class="col" style="display: flex; align-items: center; border: 1px solid black;">
+                    <div style="width: 50%">
+                        <img src="/images/products/<%= product.image%>" alt="<%= product.alt %>" style="width: 100%;">
+                    </div>      
+                </div>
+                <div class="col" style="justify-content: center; border: 1px solid black;">
+                    <div class="input-form" style="margin: 0; padding: 0;">
+                        <!-- <label for="productIMG">IMAGEN</label> -->
+                        <input type="file" name="image" id="productIMG" class="inputs">
+                    </div>  
+                </div>
+            </div>
+
+            <b style="margin: 0 auto 1rem; width: 90%;">*Si no selecciona una imagen nueva, se conservará la imagen actual.</b>
+
             <div class="btn">
                 <button type="submit" class="btn-black">EDITAR PRODUCTO</button>
             </div>
