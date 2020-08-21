@@ -27,4 +27,6 @@ router.put("/edit/:id", productsController.update); // 6 -- Edición de un produ
 
 router.get("/details/:id", productsController.details); //3 -- Detalle de un producto particular
 
+router.delete("/edit/:id" , productsController.delete); // 7 -- Eliminar un producto
+
 module.exports = router;
