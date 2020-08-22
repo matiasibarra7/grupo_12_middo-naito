@@ -19,7 +19,6 @@ app.use("/users", userRoutes);
 
 
 app.listen(3000, () => {
-  console.log("MIDDO NAITO RUNNING!!");
   console.log("Servidor escuchando en el puerto 3000");
 });
 
