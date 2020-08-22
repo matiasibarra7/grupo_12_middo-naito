@@ -19,14 +19,18 @@ router.get("/", productsController.main); //1 -- Listado de productos
 
 router.get("/add", productsController.add); //2 -- Formulario de creación de productos
 
-router.post("/add", upload.single("image"), productsController.store); //4 -- Acción de creación (a donde se envía el formulario)
-
-router.get("/cart", productsController.cart);
-router.get("/edit/:id", productsController.edit);
-router.put("/edit/:id", upload.single("image"), productsController.update); // 6 -- Edición de un producto
-
 router.get("/details/:id", productsController.details); //3 -- Detalle de un producto particular
 
-router.delete("/edit/:id" , productsController.delete); // 7 -- Eliminar un producto
+router.post("/add", upload.single("image"), productsController.store); //4 -- Acción de creación (a donde se envía el formulario)
+
+router.get("/edit/:id", productsController.edit); // 5 -- Formulario de edición de productos
+
+router.put("/edit/:id", upload.single("image"), productsController.update); // 6 -- Acción de edición (a donde se envía el formulario):
+
+router.delete("/edit/:id" , productsController.delete); // 7 -- Acción de borrado
+
+router.get("/cart", productsController.cart);
+
+
 
 module.exports = router;

@@ -12,7 +12,7 @@
             
             <% productsData.forEach(el => { %>    
                 <% let {name, price, alt, image, id} = el %>
-                <%- include('../partials/oneProduct', {name, price, alt, image, id}) %>
+                <%- include('../partials/oneProduct', {name, price: toThousand(price), alt, image, id}) %>
             <% }); %>
         </section>
 

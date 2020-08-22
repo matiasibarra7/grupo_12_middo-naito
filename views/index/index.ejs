@@ -12,7 +12,6 @@
             
         <!-- Slideshow container renombrado a nuestro banner-home -->
         <div class="banner-home">
-            <!-- <img src="/images/banner-home.jpeg" alt="moda-primavera-2020"> -->
                 
             <div class="myAutoSlides fade" style="display: block;">
                 <div class="numbertext">1 / 4</div>
@@ -27,7 +26,7 @@
             <div class="myAutoSlides fade">
                 <div class="numbertext">2 / 4</div>
                 <div class="container-banner-elements">
-                    <img src="/images/banner-home.jpeg">
+                    <img src="/images/banner-images/banner-home.jpeg">
                     <div class="text-zone">
                         <div class="title-peque">Señorito asiático</div>
                     </div>
@@ -40,7 +39,7 @@
                 <div class="container-banner-elements">
                     <img src="https://cdn.pixabay.com/photo/2015/09/02/13/18/person-918986_960_720.jpg">
                     <div class="text-zone">
-                        <div class="title-peque">Señorita leñadora (?</div>
+                        <div class="title-peque">Señorita leñadora (?)</div>
                     </div>
                 </div>
             </div>
@@ -62,18 +61,9 @@
             
             <% productsData.forEach(el => { %>    
                 <% let {name, price, alt, image, id} = el %>
-                <%- include('../partials/oneProduct', {name, price, alt, image, id}) %>
+                <%- include('../partials/oneProduct', {name, price: toThousand(price), alt, image, id}) %>
             <% }); %>
-
-            <!--<article class="product">
-                <img src="/images/products/remerita.webp" alt="">
-                <div class="product-details">
-                    <div class="product-name">Remera Adidas</div>
-                    <div class="product-price">$1.999</div>
-                </div>    
-            </article> -->
-
-                                   
+                                  
         </section>
 
     </main>
