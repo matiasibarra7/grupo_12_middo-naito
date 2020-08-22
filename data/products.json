@@ -66,14 +66,13 @@
   "image": "chaleco-tribal.png"
  },
  {
-  "id": 6,
-  "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde, soluta architecto sit voluptatem maxime, labore excepturi, enim facilis quas accusantium. Reprehenderit.",
+  "name": "Campera Middle of ",
+  "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde, soluta architecto sit voluptatem maxime, labore excepturi, enim facilis quas accusantium. Reprehenderit. ",
   "category": "jackets",
-  "stock": 1,
-  "name": "Campera Middle of",
-  "price": "3.890",
-  "alt": "campera rosa",
-  "size": "m",
+  "size": "xl",
+  "price": "3891",
+  "stock": "1",
+  "id": 6,
   "image": "campera-rosa.png"
  },
  {
@@ -121,14 +120,13 @@
   "image": "beanie.png"
  },
  {
-  "id": 11,
-  "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde, soluta architecto sit voluptatem maxime, labore excepturi, enim facilis quas accusantium. Reprehenderit.",
+  "name": "Gorro Beanie Khaos  ",
+  "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde, soluta architecto sit voluptatem maxime, labore excepturi, enim facilis quas accusantium. Reprehenderit.  ",
   "category": "accesories",
-  "stock": 1,
-  "name": "Gorro Beanie Khaos",
-  "price": "1290",
-  "alt": "gorro beanie khaos",
-  "size": "m",
+  "size": "xl",
+  "price": "1390",
+  "stock": "1",
+  "id": 11,
   "image": "beanie-khaos.png"
  },
  {
