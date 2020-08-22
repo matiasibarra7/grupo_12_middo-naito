@@ -30,7 +30,12 @@ const productsModel = {
         return product;
       }
     })
-    if (req.file) updatedProduct.image = `imagen - ${path.basename(req.file.originalname)}`;
+    if (req.file) {
+      if (foundProduct.image) {
+        fs.unlinkSync(`${__dirname}/../public/images/products/${foundProduct.image}`)
+      }
+      updatedProduct.image = `imagen - ${path.basename(req.file.originalname)}`;
+    } 
     this.writeFile(modifyProducts);
   },
 
@@ -56,6 +61,12 @@ const productsModel = {
         return product
       }
     })
+
+    let productToDelete = this.getOne(indexProduct)
+    if (productToDelete.image) {
+      fs.unlinkSync(`${__dirname}/../public/images/products/${productToDelete.image}`)
+    }
+
     this.writeFile(deletedProduct);
   }
 }
