@@ -3,25 +3,22 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const productsController = {
   main: (req, res) => {
-    let productsData = productsModel.readFile();
+    let productsData = productsModel.getAll();
     res.render("./products/products", { productsData, toThousand });
   },
   details: (req, res) => {
-    let productsData = productsModel.readFile();
-    let id = req.params.id;
-    res.render("./products/productDetail", { productData: productsData[id], toThousand });
+    let productsData = productsModel.getAll();
+    res.render("./products/productDetail", { productData: productsData[req.params.id], toThousand });
   },
   cart: (req, res) => {
-    let productsData = productsModel.readFile();
-    
+    let productsData = productsModel.getAll(); 
     res.render(`./products/productCart`, { productsData, toThousand });
   },
   add: (req, res) => {
     res.render(`./products/productAdd`);
   },
   edit: (req, res) => {
-    let productsData = productsModel.readFile();
-    
+    let productsData = productsModel.getAll();
     res.render(`./products/productEdit`, { product : productsData[req.params.id] });
   },  
   update: (req, res) => {
@@ -30,13 +27,11 @@ const productsController = {
   },
   store: (req, res) => {
     productsModel.store(req);
-
     res.redirect("/products");
   },  
   delete: (req, res) =>{
     productsModel.delete(req);
     res.redirect('/products');
-
   }
 };
 
