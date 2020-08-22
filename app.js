@@ -9,10 +9,14 @@ app.set("view engine", "ejs");
 const mainRoutes = require("./routes/main");
 const productsRoutes = require("./routes/products");
 const userRoutes = require("./routes/users");
+const methodOverride = require("method-override");
+
+app.use(methodOverride("_method"));
 
 app.use("/", mainRoutes);
 app.use("/products", productsRoutes);
 app.use("/users", userRoutes);
+
 
 app.listen(3000, () => {
   console.log("MIDDO NAITO RUNNING!!");
@@ -22,3 +26,4 @@ app.listen(3000, () => {
 app.post("/", (req, res) => {
   res.send(req.body);
 });
+
