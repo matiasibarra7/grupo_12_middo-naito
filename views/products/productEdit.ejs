@@ -85,7 +85,9 @@
         </form>
 
         <form class="session-form newProductForm" action="/products/edit/<%= product.id%>?_method=DELETE" method="POST">
-            <button type="submit" class="btn-black">BORRAR PRODUCTO</button>
+            <div class="btn">
+                <button type="submit" class="btn-black" style="background-color: red;">BORRAR PRODUCTO</button>
+            </div>
         </form>
     </main>
     <%- include('../partials/footer'); %>

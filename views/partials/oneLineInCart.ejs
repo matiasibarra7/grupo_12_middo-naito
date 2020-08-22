@@ -1,6 +1,6 @@
 <div class="product-in-cart">
     <div class="image-product-cart section-cart">
-        <a href="/products/details"><img src="/images/products/<%= product.image %>" alt="remerita"></a>
+        <a href="/products/details/<%= product.id %>"><img src="/images/products/<%= product.image %>" alt="remerita"></a>
     </div>
 
     <div class="details-product-cart section-cart">
@@ -16,7 +16,7 @@
                 2
                 <i class="far fa-plus-square"></i>
             </div>
-            <p>$<%= product.price %></p>
+            <p>$ <%= toThousand(product.price) %></p>
         </div>
         
     </div>

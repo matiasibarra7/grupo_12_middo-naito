@@ -1,22 +1,20 @@
-const fs = require("fs");
-
-const path = require("path");
-const productsModel = require("../database/productsModel");
+const productsModel = require("../model/productsModel");
+const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const productsController = {
   main: (req, res) => {
     let productsData = productsModel.readFile();
-    res.render("./products/products", { productsData });
+    res.render("./products/products", { productsData, toThousand });
   },
   details: (req, res) => {
     let productsData = productsModel.readFile();
     let id = req.params.id;
-    res.render("./products/productDetail", { productData: productsData[id] });
+    res.render("./products/productDetail", { productData: productsData[id], toThousand });
   },
   cart: (req, res) => {
     let productsData = productsModel.readFile();
     
-    res.render(`./products/productCart`, { productsData });
+    res.render(`./products/productCart`, { productsData, toThousand });
   },
   add: (req, res) => {
     res.render(`./products/productAdd`);

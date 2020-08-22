@@ -5,7 +5,7 @@
   "category": "t-shirts",
   "stock": 1,
   "name": "Remera Bleach",
-  "price": "1.840",
+  "price": 1840,
   "alt": "Remera Bleach",
   "size": "m",
   "image": "remera-bleach.png"
@@ -16,7 +16,7 @@
   "category": "t-shirts",
   "stock": 1,
   "name": "Remera 3D System",
-  "price": "1.980",
+  "price": 1980,
   "alt": "remera 3D system",
   "size": "m",
   "image": "remera-3d.png"
@@ -27,7 +27,7 @@
   "category": "t-shirts",
   "stock": 1,
   "name": "Remera Pretty Fly",
-  "price": "1.820",
+  "price": 1820,
   "alt": "Remera verde",
   "size": "m",
   "image": "remera-verde.png"
@@ -38,7 +38,7 @@
   "category": "jackets",
   "stock": 1,
   "name": "Buzo HDD Format CH",
-  "price": "3.490",
+  "price": 3490,
   "alt": "buzo canguro marron",
   "size": "m",
   "image": "canguro-marron.png"
@@ -49,7 +49,7 @@
   "category": "jackets",
   "stock": 1,
   "name": "Buzo Disagree",
-  "price": "4.790",
+  "price": 4790,
   "alt": "buzo disagree",
   "size": "m",
   "image": "buzo.png"
@@ -60,7 +60,7 @@
   "category": "jackets",
   "stock": 1,
   "name": "Chaleco Empathy",
-  "price": "3.980",
+  "price": 3980,
   "alt": "chaleco",
   "size": "m",
   "image": "chaleco-tribal.png"
@@ -70,7 +70,7 @@
   "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde, soluta architecto sit voluptatem maxime, labore excepturi, enim facilis quas accusantium. Reprehenderit. ",
   "category": "jackets",
   "size": "xl",
-  "price": "3891",
+  "price": 3891,
   "stock": "1",
   "id": 6,
   "image": "campera-rosa.png"
@@ -81,7 +81,7 @@
   "category": "pants",
   "stock": 1,
   "name": "Pantalones corderoy marrón",
-  "price": "3.590",
+  "price": 3590,
   "alt": "pantalones corderoy marron",
   "size": "m",
   "image": "pants-corderoy.png"
@@ -92,7 +92,7 @@
   "category": "pants",
   "stock": 1,
   "name": "Pantalones corderoy negro",
-  "price": "3.590",
+  "price": 3590,
   "alt": "pantalones corderoy negro",
   "size": "m",
   "image": "corderoy-negro.png"
@@ -103,7 +103,7 @@
   "category": "pants",
   "stock": 1,
   "name": "Ultra skinny - Indy",
-  "price": "1.820",
+  "price": 1820,
   "alt": "jean blue",
   "size": "m",
   "image": "jean-blueroll.png"
@@ -114,7 +114,7 @@
   "category": "accesories",
   "stock": 1,
   "name": "Gorro Beanie 2000",
-  "price": "990",
+  "price": 990,
   "alt": "gorro beanie 2000",
   "size": "m",
   "image": "beanie.png"
@@ -124,19 +124,9 @@
   "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde, soluta architecto sit voluptatem maxime, labore excepturi, enim facilis quas accusantium. Reprehenderit.  ",
   "category": "accesories",
   "size": "xl",
-  "price": "1390",
+  "price": 1390,
   "stock": "1",
   "id": 11,
   "image": "beanie-khaos.png"
- },
- {
-  "name": "Medias cool ",
-  "description": "Prueba de edición de las medias cool",
-  "category": "accesories",
-  "size": "xxl",
-  "price": "729",
-  "stock": "21",
-  "id": 12,
-  "image": "imagen - media ignition 450.png"
  }
 ]
