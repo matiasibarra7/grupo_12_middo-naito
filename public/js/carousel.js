@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 });
 
 function showAutoSlides() {
-    let slides = document.getElementsByClassName("myAutoSlides");
+    let slides = document.getElementsByClassName("banner-item");
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
