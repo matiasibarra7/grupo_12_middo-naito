@@ -40,10 +40,8 @@ const productsModel = {
   },
 
   store: function(req) {
-    let productsData = this.getAll();
-    let id = productsData.pop().id;
     let newProduct = req.body;
-    newProduct.id = ++id;
+    newProduct.id = this.lastID() + 1;
     newProduct.alt = req.body.name;
     newProduct.image = "imagen - " + path.basename(req.file.originalname);
 
@@ -68,6 +66,11 @@ const productsModel = {
     }
 
     this.writeFile(deletedProduct);
+  },
+
+  lastID: function() {
+    let productsData = this.getAll();
+    return productsData.pop().id;
   }
 }
 

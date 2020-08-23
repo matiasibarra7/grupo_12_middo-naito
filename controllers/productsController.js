@@ -27,7 +27,7 @@ const productsController = {
   },
   store: (req, res) => {
     productsModel.store(req);
-    res.redirect("/products");
+    res.redirect('/products/details/'+ productsModel.lastID());
   },  
   delete: (req, res) =>{
     productsModel.delete(req);

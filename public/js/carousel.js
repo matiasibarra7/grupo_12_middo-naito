@@ -13,7 +13,7 @@ function showAutoSlides() {
     slideAutoIndex++;
     if (slideAutoIndex > slides.length) {slideAutoIndex = 1}
     slides[slideAutoIndex-1].style.display = "block";
-    setTimeout(showAutoSlides, 5000); // Change image every 3 seconds
+    setTimeout(showAutoSlides, 4000); // Change image every 4 seconds
 }
 
 /* Fin Banner dinámico en home */
