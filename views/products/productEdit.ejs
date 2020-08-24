@@ -12,7 +12,7 @@
             </a>
         </div>
         <h2 class="session-title">EDITAR UN PRODUCTO</h2>
-        <form class="session-form newProductForm" action="/products/edit/<%= product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form class="session-form newProductForm editForm" action="/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
             <div class="input-form">
                 <label for="name">NOMBRE</label>
                 <input type="text" name="name" id="productName" class="inputs" placeholder="Escriba el nombre del producto" value="<%= product.name %> ">
@@ -51,42 +51,41 @@
             <div class="two-cols">
                 <div class="col">
                     <label for="price">PRECIO</label>
-                    <input type="number" name="price" id="productPrice" class="inputs" placeholder="Ingrese el precio del producto" value="<%= product.price%>" min="0">        
+                    <input type="number" name="price" id="productPrice" class="inputs" placeholder="Ingrese el precio del producto" value="<%= product.price %>" min="0">        
                 </div>
                 <div class="col">
                     <label for="stock">STOCK</label>
-                    <input type="number" name="stock" id="productStock" class="inputs" placeholder="Ingrese el stock del producto" value="<%= product.stock%>" min="0">    
+                    <input type="number" name="stock" id="productStock" class="inputs" placeholder="Ingrese el stock del producto" value="<%= product.stock %>" min="0">    
                 </div>
             </div>
 
-            <div class="two-cols" style="margin-bottom: 0;">
+            <div class="two-cols title">
                 <div>IMAGEN ACTUAL</div>
                 <div>IMAGEN NUEVA</div>
             </div>
-            <div class="two-cols" style="margin-top: 0;">
-                <div class="col" style="display: flex; align-items: center; border: 1px solid black;">
-                    <div style="width: 50%">
-                        <img src="/images/products/<%= product.image%>" alt="<%= product.alt %>" style="width: 100%;">
+            <div class="two-cols edit-form-field">
+                <div class="col old-image">
+                    <div class="new-image-container-edit-form">
+                        <img src="/images/products/<%= product.image %>" alt="<%= product.alt %>">
                     </div>      
                 </div>
-                <div class="col" style="justify-content: center; border: 1px solid black;">
-                    <div class="input-form" style="margin: 0; padding: 0;">
-                        <!-- <label for="productIMG">IMAGEN</label> -->
+                <div class="col new-image">
+                    <div class="input-form">
                         <input type="file" name="image" id="productIMG" class="inputs">
                     </div>  
                 </div>
             </div>
 
-            <b style="margin: 0 auto 1rem; width: 90%;">*Si no selecciona una imagen nueva, se conservará la imagen actual.</b>
+            <b class="aclaration-edit-form">*Si no selecciona una imagen nueva, se conservará la imagen actual.</b>
 
             <div class="btn">
-                <button type="submit" class="btn-black">EDITAR PRODUCTO</button>
+                <button type="submit" class="btn-default">EDITAR PRODUCTO</button>
             </div>
         </form>
 
-        <form class="session-form newProductForm" action="/products/edit/<%= product.id%>?_method=DELETE" method="POST">
+        <form class="session-form newProductForm" action="/products/edit/<%= product.id %>?_method=DELETE" method="POST">
             <div class="btn">
-                <button type="submit" class="btn-black" style="background-color: red;">BORRAR PRODUCTO</button>
+                <button type="submit" class="btn-default red">BORRAR PRODUCTO</button>
             </div>
         </form>
     </main>

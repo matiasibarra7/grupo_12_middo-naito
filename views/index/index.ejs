@@ -10,7 +10,7 @@
  
         <%- include('../partials/dinamic-banner'); %>
 
-        <p class="section-title">PRODUCTOS DESTACADOS</p>
+        <p class="section-title" id="featured">PRODUCTOS DESTACADOS</p>
         <section class="featured-products">
             
             <% if (productsData.length > 12) { %>
@@ -35,7 +35,7 @@
     </main>
 
     <div class="btn">
-        <a href="/products"><button class="btn-black btn-grey">VER TODOS LOS PRODUCTOS</button></a>
+        <a href="/products"><button class="btn-default btn-grey">VER TODOS LOS PRODUCTOS</button></a>
     </div>
     
     <%- include('../partials/footer'); %>
