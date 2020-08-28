@@ -23,6 +23,9 @@ const productsModel = {
     let updatedProduct = req.body;
     updatedProduct.id = foundProduct.id;
     updatedProduct.image = foundProduct.image;
+    updatedProduct.price = parseFloat(updatedProduct.price)
+    updatedProduct.stock = parseFloat(updatedProduct.stock)
+
     let modifyProducts = productList.map( product => {
       if (product.id == updatedProduct.id) {
         return updatedProduct;
@@ -44,6 +47,8 @@ const productsModel = {
     newProduct.id = this.lastID() + 1;
     newProduct.alt = req.body.name;
     newProduct.image = "imagen - " + path.basename(req.file.originalname);
+    newProduct.price = parseFloat(newProduct.price)
+    newProduct.stock = parseFloat(newProduct.stock)
 
     let newProductList = this.getAll();
     newProductList.push(newProduct);
