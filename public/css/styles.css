@@ -205,13 +205,19 @@ main.index-main {
 }
 
 .sidebar {
-  display: none;
   position: fixed;
   width: 50vw;
+  left: -50vw;
   height: 100vh;
   background: black;
   font-size: 0.65em;
   z-index: 15;
+  transition: all 0.25s;
+}
+
+.showing-sidebar {
+  display: block;
+  left: 0;
 }
 
 .sidebar nav ul {
@@ -232,9 +238,14 @@ main.index-main {
   color: white;
 }
 
-.sidebar.close-zone {
+.close-zone {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.6);
   right: 0;
+  left: auto;
   z-index: 14;
 }
 
@@ -880,7 +891,9 @@ footer i {
     height: auto;
 
     position: fixed;
+    left: 0;
     margin: 0 25%;
+    transition: none;
   }
 
   .sidebar ul {
