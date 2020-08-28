@@ -7,15 +7,18 @@
 
     <main class="cart">
         <p class="section-title cart-title">CARRITO DE COMPRAS</p>
+        
+        <% let total = 0 %>    
         <% productsData.forEach(el => { %>    
+            <% total += el.price %>    
             <%- include('../partials/oneLineInCart', {product: el}); %>
         <% }); %>
 
         <div class="total-cart">
-            <b>SUBTOTAL (Sin envio)</b><b>$67.200</b>
+            <b>SUBTOTAL (Sin envio)</b><b>$ <%= toThousand(total) %></b>
         </div>
 
-        <div class="product-in-cart deliver-type" >
+        <div class="deliver-type" >
             <div>
                 <i class="fas fa-truck"></i>
                 <span>Opciones de envío</span>            
@@ -32,7 +35,7 @@
         <div class="border"></div>
 
         <div class="total-cart">
-            <b>TOTAL</b><b>$67.200</b>
+            <b>TOTAL</b><b>$ <%= toThousand(total) %></b>
         </div>
 
         <div class="btn">
