@@ -1,12 +1,12 @@
-<div class="product-in-cart">
+<div class="product-in-cart-grid">
     <div class="image-product-cart section-cart">
-        <a href="/products/details/<%= product.id %>"><img src="/images/products/<%= product.image %>" alt="remerita"></a>
+        <a href="/products/details/<%= product.id %>"><img src="/images/products/<%= product.image %>" alt="<%= product.alt %>"></a>
     </div>
 
     <div class="details-product-cart section-cart">
 
         <div class="name-delete-product">
-            <%= product.name %> 
+            <%= product.name %>
             <i class="far fa-trash-alt"></i>
         </div>
 
@@ -16,7 +16,7 @@
                 2
                 <i class="far fa-plus-square"></i>
             </div>
-            <p>$ <%= toThousand(product.price) %></p>
+            <b>$ <%= toThousand(product.price) %></b>
         </div>
         
     </div>

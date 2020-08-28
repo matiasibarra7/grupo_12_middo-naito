@@ -7,6 +7,7 @@
 
     <main class="cart">
         <p class="section-title cart-title">CARRITO DE COMPRAS</p>
+        
         <% productsData.forEach(el => { %>    
             <%- include('../partials/oneLineInCart', {product: el}); %>
         <% }); %>
@@ -15,7 +16,7 @@
             <b>SUBTOTAL (Sin envio)</b><b>$67.200</b>
         </div>
 
-        <div class="product-in-cart deliver-type" >
+        <div class="deliver-type" >
             <div>
                 <i class="fas fa-truck"></i>
                 <span>Opciones de envío</span>            
