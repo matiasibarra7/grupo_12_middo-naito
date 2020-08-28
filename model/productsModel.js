@@ -23,6 +23,7 @@ const productsModel = {
     let updatedProduct = req.body;
     updatedProduct.id = foundProduct.id;
     updatedProduct.image = foundProduct.image;
+    updatedProduct.alt = foundProduct.name;
     updatedProduct.price = parseFloat(updatedProduct.price)
     updatedProduct.stock = parseFloat(updatedProduct.stock)
 

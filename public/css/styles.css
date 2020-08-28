@@ -327,7 +327,10 @@ main .btn-talle {
 }
 /* REGISTER Y LOGIN, EDIT y ADD PRODUCT html */
 
-main.register, main.login, main.newProduct, main.cart{
+main.register, 
+main.login, 
+main.newProduct, 
+main.cart{
   max-width: 768px;
   margin: 0 auto;
 }
@@ -381,7 +384,8 @@ main .session-form {
   width: 45%;
 }
 
-.two-cols .col input, .two-cols .col .btn-talle {
+.two-cols .col input, 
+.two-cols .col .btn-talle {
   width: 100%;
   margin: 0;
 }
@@ -454,7 +458,8 @@ input[type=number] {
   font-size: 1rem; 
 }
 
-.session-form input, .session-form textarea {
+.session-form input, 
+.session-form textarea {
   border: none;
   background-color: lightgrey;
   padding: 1rem;
@@ -487,7 +492,8 @@ input[type=number] {
   background-color: #222222;
 }
 
-.yes-account, .no-account {    
+.yes-account, 
+.no-account {    
   display: flex;
   justify-content: center;
   font-size: 1rem;   }
@@ -520,14 +526,19 @@ input[type=number] {
   position: relative;
   justify-content: space-between;
   text-align: center;
-  padding: 0 0.5rem;
+  padding-left: 0.5rem;
   font-size: 1.2rem;
   align-items: flex-end;
 }
 
 .name-delete-product {
   position: relative;
-  padding: 0 1.7rem 0 0.5rem;
+  font-weight: bold;
+}
+
+.size-container,
+.name-delete-product {
+  padding: 0 1.8rem 0 0.5rem;
 }
 
 .fa-trash-alt {
@@ -538,12 +549,19 @@ input[type=number] {
   cursor: pointer;
 }
 
-.fa-trash-alt:hover, .fa-minus-square:hover, .fa-plus-square:hover {
+.fa-trash-alt:hover, 
+.fa-minus-square:hover, 
+.fa-plus-square:hover, 
+.name-delete-product a:hover {
   color: #555555;
 }
 
 .section-cart {
   display: grid;
+}
+
+.details-product-cart {
+  grid-template-rows: auto 2rem 1.5rem;
 }
 
 .image-product-cart img {
@@ -577,13 +595,15 @@ input[type=number] {
 
 /* FIN product cart with display grid */
 
-.btn-grey, .banner-btn {
+.btn-grey, 
+.banner-btn {
   background-color: lightgray;
   color: black;
   font-weight: bold;
 }
 
-.btn-default.btn-grey:hover, .btn-default.banner-btn:hover {
+.btn-default.btn-grey:hover, 
+.btn-default.banner-btn:hover {
   background-color: #C2C2C2;
 }
 
