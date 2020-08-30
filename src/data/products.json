@@ -1,14 +1,14 @@
 [
  {
-  "id": 0,
-  "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde, soluta architecto sit voluptatem maxime, labore excepturi, enim facilis quas accusantium. Reprehenderit.",
+  "name": "Remera Bleach ",
+  "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde, soluta architecto sit voluptatem maxime, labore excepturi, enim facilis quas accusantium. Reprehenderit. ",
   "category": "t-shirts",
+  "size": "s",
+  "price": 1740,
   "stock": 1,
-  "name": "Remera Bleach",
-  "price": 1840,
-  "alt": "Remera Bleach",
-  "size": "m",
-  "image": "remera-bleach.png"
+  "id": 0,
+  "image": "remera-bleach.png",
+  "alt": "Remera Bleach"
  },
  {
   "id": 1,
