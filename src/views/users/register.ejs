@@ -12,7 +12,7 @@
             </a>
         </div>
         <h2 class="session-title">CREA TU CUENTA</h2>
-        <form class="session-form" action="/" method="POST">
+        <form class="session-form" action="/users/register" method="POST" enctype="multipart/form-data">
             <div class="input-form">
                 <label for="firstName">NOMBRE</label>
                 <input type="text" name="firstName" id="firstName" class="inputs" placeholder="Ingrese su nombre" required>
@@ -32,6 +32,10 @@
             <div class="input-form">
                 <label for="confirmPassword"> CONFIRMAR CONTRASEÑA</label>
                 <input type="password" name="confirmPassword" id="confirmPassword" class="inputs" placeholder="Repita la contraseña creada" required>  
+            </div>
+            <div class="input-form">
+                <label for="image">IMAGEN</label>
+                <input type="file" name="image" id="userIMG" class="inputs">
             </div>
             <div class="btn">
                 <button type="submit" class="btn-default">CREAR CUENTA</button>
