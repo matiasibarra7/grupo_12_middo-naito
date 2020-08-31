@@ -98,8 +98,9 @@ header .search-icon {
 }
 
 .banner-home {
-  max-height: 32rem;
+  max-height: 42rem;
   overflow: hidden;
+  position: relative;
 }
 
 .banner-home img {
@@ -110,33 +111,9 @@ main.index-main {
   align-content: center;
 }
 
-.index-main.about-us {
+.about-us {
   max-width: 768px;
   margin: 0 auto;
-}
-
-.product-in-cart.deliver-type {
-  margin-top: 0;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  height: 6rem;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 360px;
-}
-
-.fa-truck {
-  margin-right: 2rem;
-}
-
-.total-cart {
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto 1rem;
-  padding: 0 1rem;
-  max-width: 768px;
 }
 
 .border { 
@@ -188,7 +165,7 @@ main.index-main {
   width: 100%;
 }
 
-.index-main.about-us .section-title {
+.about-us .section-title {
   width: 100%;
 }
 
@@ -228,13 +205,19 @@ main.index-main {
 }
 
 .sidebar {
-  display: none;
   position: fixed;
   width: 50vw;
+  left: -50vw;
   height: 100vh;
   background: black;
   font-size: 0.65em;
   z-index: 15;
+  transition: all 0.25s;
+}
+
+.showing-sidebar {
+  display: block;
+  left: 0;
 }
 
 .sidebar nav ul {
@@ -249,14 +232,20 @@ main.index-main {
 }
 
 .sidebar nav a {
+  display: block;
   text-decoration: none;
   font-size: 18px;
   color: white;
 }
 
-.sidebar.close-zone {
+.close-zone {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.6);
   right: 0;
+  left: auto;
   z-index: 14;
 }
 
@@ -266,9 +255,15 @@ main.index-main {
   padding: 14px;
 }
 
+.back-arrow {
+  position: absolute;
+  top: 4rem;
+}
+  
 .arrow {
   background-color: transparent;
   border: none;
+  font-size: x-large;
 }
 
 /* productDetails */
@@ -276,7 +271,8 @@ main.index-main {
 
 main article img {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
+  margin: auto;
 }
 
 main .product-data {
@@ -340,11 +336,12 @@ main .btn-talle {
   width: 80%;
   font-size: smaller;
 }
-  
-
 /* REGISTER Y LOGIN, EDIT y ADD PRODUCT html */
 
-main.register, main.login, main.newProduct, main.cart{
+main.register, 
+main.login, 
+main.newProduct, 
+main.cart{
   max-width: 768px;
   margin: 0 auto;
 }
@@ -398,7 +395,8 @@ main .session-form {
   width: 45%;
 }
 
-.two-cols .col input, .two-cols .col .btn-talle {
+.two-cols .col input, 
+.two-cols .col .btn-talle {
   width: 100%;
   margin: 0;
 }
@@ -417,6 +415,46 @@ input[type=number] {
 
 /* End New product */
 
+/* Edit product */
+.two-cols.title {
+  margin-bottom: 0;
+}
+
+.two-cols.edit-form-field {
+  margin-top: 0;
+}
+
+.col.old-image {
+  display: flex; 
+  align-items: center; 
+  border: 1px solid black;
+}
+
+.new-image-container-edit-form {
+  width: 50%;
+}
+
+.col.old-image img {
+  width: 100%;
+}
+
+.col.new-image {
+  justify-content: center; 
+  border: 1px solid black;
+}
+
+.col.new-image .input-form {
+  margin: 0; 
+  padding: 0;
+}
+
+.aclaration-edit-form {
+  margin: 0 auto 1rem; 
+  width: 90%;
+}
+
+/* End Edit product */
+
 .input-form {
   display: flex;
   flex-direction: column;
@@ -431,7 +469,8 @@ input[type=number] {
   font-size: 1rem; 
 }
 
-.session-form input, .session-form textarea {
+.session-form input, 
+.session-form textarea {
   border: none;
   background-color: lightgrey;
   padding: 1rem;
@@ -451,7 +490,7 @@ input[type=number] {
   cursor: auto;
 }
 
-.btn-black {
+.btn-default {
   border: 0;
   background-color: black;
   color: white;
@@ -460,11 +499,12 @@ input[type=number] {
   cursor: pointer;
 }
 
-.btn-black:hover {
+.btn-default:hover {
   background-color: #222222;
 }
 
-.yes-account, .no-account {    
+.yes-account, 
+.no-account {    
   display: flex;
   justify-content: center;
   font-size: 1rem;   }
@@ -474,83 +514,116 @@ input[type=number] {
   color: black; 
 }
 
-/* Product Cart */
-.product-in-cart {
-  display: flex;
-  align-items: center;
 
-  background-color: rgba(194, 153, 153, 0.7);
+/* product cart with display grid */
+.product-in-cart-grid {
+  display: grid;
+  grid-template-columns: minmax(130px, 25%) 1fr;
   width: 90%;
-  max-width: 768px;
-  height: 10rem;
-  margin: 0 auto 1rem;
+  place-self: center;
+  background-color: rgba(194, 153, 153, 0.7);
+
+  padding: 1rem 0.5rem;
+  margin: 0 auto 1rem;;
 }
 
-.image-product-cart {
-  display: flex;
-  width: calc(40% - 1rem);
-  height: 75%;
-  /* background-color: yellow; */
-}
-
-.image-product-cart img {
-  height: 100%;
-  max-width: 100%;
-}
-
-.details-product-cart {
-  display: flex;
-  flex-direction: column;
-  width: calc(60% - 1rem);
-  height: 75%;
-}
-
-.name-delete-product {
-  position: relative;
-  flex-grow: 1;
-  padding: 0 1.5rem 0 0.5rem;
-}
-
-.name-delete-product .far {
-  position: absolute;
-  right: 2px;
-  top: 0;
-  font-size: 1.4rem;
-  cursor: pointer;
-}
-
-.fa-trash-alt:hover {
-  color: #555555;
+.image-product-cart a {
+  display: grid;
+  place-items: center;
 }
 
 .price-quantity-in-cart {
   display: flex;
   position: relative;
-
   justify-content: space-between;
   text-align: center;
-  padding: 0 0.5rem;
-
+  padding-left: 0.5rem;
   font-size: 1.2rem;
+  align-items: flex-end;
 }
 
-.price-quantity-in-cart p {
-  margin: 0;
+.name-delete-product {
+  position: relative;
   font-weight: bold;
 }
 
-.product-in-cart .section-cart {
-  margin: 0 0.5rem;
+.size-container,
+.name-delete-product {
+  padding: 0 1.8rem 0 0.5rem;
 }
 
-.btn-grey {
+.fa-trash-alt {
+  position: absolute;
+  top: 0;
+  right: 0.5rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.fa-trash-alt:hover, 
+.fa-minus-square:hover, 
+.fa-plus-square:hover, 
+.name-delete-product a:hover {
+  color: #555555;
+}
+
+.section-cart {
+  display: grid;
+}
+
+.details-product-cart {
+  grid-template-rows: auto 2rem 1.5rem;
+}
+
+.image-product-cart img {
+  width: 90%;
+}
+
+.deliver-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto 1rem;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 360px;
+  height: 6rem;
+  background-color: rgba(194, 153, 153, 0.7);
+}
+
+.fa-truck {
+  margin-right: 2rem;
+}
+
+.total-cart {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 1rem;
+  padding: 0 1rem;
+  max-width: 768px;
+}
+
+/* FIN product cart with display grid */
+
+.btn-grey, 
+.banner-btn {
   background-color: lightgray;
   color: black;
   font-weight: bold;
 }
 
-.btn-black.btn-grey:hover {
+.btn-default.btn-grey:hover, 
+.btn-default.banner-btn:hover {
   background-color: #C2C2C2;
+}
+
+.btn-default.red {
+  background-color: #ff0000;
+}
+
+.btn-default.red:hover {
+  background-color: #FF3333;
 }
 
 footer {
@@ -580,6 +653,80 @@ footer i {
 }
 
 /* Fin probando dropdowns en mobile */
+
+/* ESTILOS BANNER DINAMICO */
+.banner-item {
+  display: none;
+}
+
+.number-text {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+.image-container {
+  display: flex;
+}
+
+.image-container img {
+  width: 100%;
+}
+
+.text-zone {
+  display: none;
+  width: 30%;
+  height: 100%;
+  
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.title-peque {
+  text-align: center;
+  font-size: 2rem;
+  padding: 0 2rem;
+  margin: 1rem 0;
+
+}
+
+.title-peque a {
+  text-decoration: none;
+  color: white;
+}
+
+.little-paragraph {
+  color:white;
+  padding: 0 4rem;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+/* FIN ESTILOS BANNER DINAMICO */
 
 /* Acá empieza el responsive */
 @media (min-width: 335px) {
@@ -621,15 +768,16 @@ footer i {
     width: 80vw;
   }
 
-  .image-product-cart {
-    width: calc(20% - 1rem);
-  }
+  /* cart */
 
   .details-product-cart {
-    flex-grow: 0.8;
     font-size: 1.5rem;
   }
 
+  .section-cart {
+    padding-right: 0.5rem;
+  }
+  /* END cart */
 
     /* detalles de producto */
 
@@ -663,7 +811,7 @@ footer i {
     flex-direction: column;
     width: 60%;
     position: relative;
-    top: 2rem;
+    /* top: 2rem; */
     flex-grow: 1;
   }
 
@@ -717,7 +865,6 @@ footer i {
   
   
   /* FINAL PRODUCT DETAILS */
-
 }
 
 @media (min-width: 1024px) {
@@ -758,7 +905,9 @@ footer i {
     height: auto;
 
     position: fixed;
+    left: 0;
     margin: 0 25%;
+    transition: none;
   }
 
   .sidebar ul {
@@ -839,4 +988,57 @@ footer i {
   .li-mobile {
     display: none;
   }
+
+  /* Fin Probando dropdowns */
+
+  /* Zona de textos en el banner dinámico */
+  .text-zone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
 }
+
+@media (min-width:1200px) {
+    /* Banner size */
+    .banner-item.fade {
+      position: absolute;
+      bottom: -5rem;
+      width: 100%;
+      top: 0; /* Esto es muy caótico, cuando esta top y bottom juntos, prioriza top, pero sigue usando bottom para ajustar el titulo del texto. No entiendo */
+    }
+
+    .image-container.corrected img {
+      position: relative;
+      bottom: 2rem;
+    }
+  
+    .banner-home {
+      max-height: 48rem;
+      height: 48rem;
+    }
+  
+    main.index-main {
+      padding-top: 0;
+    }
+    
+    .number-text {
+      bottom: 6rem;
+    }
+
+}
+
+/* Esto es muy chancho, lo sé >.< */
+@media (min-width:1400px) {
+  .image-container.corrected img {
+    bottom: 10rem;
+  }
+}
+
+@media (min-width:1600px) {
+  .image-container.corrected img {
+    bottom: 18rem;
+  }
+}
+/* Fin de lo feo >.< */

@@ -1,0 +1,25 @@
+<div class="product-in-cart-grid">
+    <div class="image-product-cart section-cart">
+        <a href="/products/details/<%= product.id %>"><img src="/images/products/<%= product.image %>" alt="<%= product.alt %>"></a>
+    </div>
+
+    <div class="details-product-cart section-cart">
+
+        <div class="name-delete-product">
+            <a href="/products/details/<%= product.id %>" class="link-to-product"><%= product.name %></a>
+            <i class="far fa-trash-alt"></i>
+        </div>
+        <div class="size-container">
+            Talle: <%= product.size.toUpperCase() %>
+        </div>
+        <div class="price-quantity-in-cart">
+            <div class="quantity">
+                <i class="far fa-minus-square"></i>
+                2
+                <i class="far fa-plus-square"></i>
+            </div>
+            <b>$ <%= toThousand(product.price) %></b>
+        </div>
+        
+    </div>
+</div>

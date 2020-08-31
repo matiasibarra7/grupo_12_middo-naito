@@ -5,10 +5,12 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.set("view engine", "ejs");
+app.set("views", "./src/views");
 
-const mainRoutes = require("./routes/main");
-const productsRoutes = require("./routes/products");
-const userRoutes = require("./routes/users");
+
+const mainRoutes = require("./src/routes/main");
+const productsRoutes = require("./src/routes/products");
+const userRoutes = require("./src/routes/users");
 const methodOverride = require("method-override");
 
 app.use(methodOverride("_method"));

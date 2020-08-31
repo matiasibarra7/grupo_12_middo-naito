@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head', {title: "Nuevo Producto"}); %>
+<body>
+    <%- include('../partials/header'); %>
+    <main class="newProduct">
+        <div class="back-arrow">
+            <a href="/">
+                <button class="arrow">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            </a>
+        </div>
+        <h2 class="session-title">AÑADIR UN NUEVO PRODUCTO</h2>
+        <form class="session-form newProductForm" action="/products/add" method="POST" enctype="multipart/form-data">
+            <div class="input-form">
+                <label for="productName">NOMBRE</label>
+                <input type="text" name="name" id="productName" class="inputs" placeholder="Escriba el nombre del producto">
+            </div>
+            <div class="input-form">
+                <label for="productDescription">DESCRIPCIÓN</label>
+                <textarea name="description" id="productDescription" class="inputs" placeholder="Realice una descripción del producto"></textarea>
+            </div>
+
+            <div class="two-cols">
+                <div class="col">
+                    <label for="category">CATEGORÍA</label>
+                    <select name="category" class="btn-talle">
+                        <option value="" hidden selected>Seleccione</option>
+                        <option value="t-shirts">Remera</option> 
+                        <option value="shirts">Camisa</option> 
+                        <option value="jackets">Campera</option>
+                        <option value="pants">Pantalón</option>
+                        <option value="accesories">Accesorio</option>
+                    </select>    
+                </div>
+                <div class="col">
+                    <label for="size">TALLE</label>
+                    <select name="size" class="btn-talle">
+                            <option value="" hidden selected>Talle</option>
+                            <option value="s">S</option> 
+                            <option value="m">M</option>
+                            <option value="l">L</option>
+                            <option value="xl">XL</option>
+                            <option value="xxl">XXL</option>
+                    </select>    
+                </div>
+                
+            </div>
+
+            <div class="two-cols">
+                <div class="col">
+                    <label for="price">PRECIO</label>
+                    <input type="number" name="price" id="productPrice" class="inputs" placeholder="Ingrese el precio del producto" min="0">        
+                </div>
+                <div class="col">
+                    <label for="stock">STOCK</label>
+                    <input type="number" name="stock" id="productStock" class="inputs" placeholder="Ingrese el stock del producto" min="0">    
+                </div>
+            </div>
+
+            <div class="input-form">
+                <label for="image">IMAGEN</label>
+                <input type="file" name="image" id="productIMG" class="inputs">
+            </div>
+            <div class="btn">
+                <button type="submit" class="btn-default">AÑADIR PRODUCTO</button>
+            </div>
+        </form>
+    </main>
+    <%- include('../partials/footer'); %>
+</body>
+</html>

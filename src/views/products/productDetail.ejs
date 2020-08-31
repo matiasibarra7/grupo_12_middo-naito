@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head', {title: "Detalle de producto"}); %>
+
+<body>
+
+    <%- include('../partials/header'); %>
+
+    <main>
+        <div class="back-arrow">
+            <a href="/">
+                <button class="arrow">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            </a>
+        </div>
+
+        <div class="container-product-details">
+            <article class="article-details">
+                <img src="\images\products\<%= productData.image %>" alt="<%= productData.alt %>">
+            </article>
+    
+            <div class="details-data">
+    
+                <div class="product-data">
+                    <strong>
+                        <p><%= productData.name %></p>
+                        <p>$ <%= toThousand(productData.price) %></p>
+                    </strong>
+                </div>
+                
+    
+                <div>
+                    <select name="select" class="btn-talle">
+                        <option value="Talle" hidden selected>Talle</option>
+                        <option value="talle s">S</option> 
+                        <option value="talle m">M</option>
+                        <option value="talle l">L</option>
+                        <option value="talle xl">XL</option>
+                        <option value="talle xxl">XXL</option>
+                        </select>
+                </div>
+    
+                <div class="add-div">
+                    <input type="submit" class="btn-black" value="AGREGAR AL CARRITO">
+                </div>
+    
+    
+                <div class="description-title">
+                    <span><p>DESCRIPCIÓN DEL PRODUCTO<p></span>
+                </div>
+    
+    
+                <div class="product-description">
+    
+                    <p>
+                        <%= productData.description %>
+                    </p>
+                </div>
+    
+                <div class="size-table-title description-title" onclick="toggleSizeTable()">
+                    <span><p>GUÍA DE TALLES<p></span>
+                </div>
+    
+                <div class="product-size-table" style="display: none;">
+    
+                    <p>
+                        <strong>Talle S</strong>: 50 cm de ancho. 66 cm de largo.<br>
+                        <strong>Talle M</strong>: 54 cm de ancho. 70 cm de largo.<br>
+                        <strong>Talle L</strong>: 58 cm de ancho. 70 cm de largo.<br>
+                        <strong>Talle XL</strong>: 63 cm de ancho. 73 cm de largo.<br>
+                        <strong>Talle XXL</strong>: 68 cm de ancho. 76 cm de largo.<br>
+                    </p>
+                </div>
+                <div class="add-div">
+                    <a href="/products/edit/<%= productData.id %>"><button class="btn-default"><strong>EDITAR</strong></button></a>
+                </div>
+            </div>  
+        </div>
+
+
+
+    </main>
+    <%- include('../partials/footer'); %>
+</body>
+</html>

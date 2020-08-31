@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head', {title: "Middo Naito"}); %>
+<body>
+
+    <%- include('../partials/header'); %>
+    
+
+    <main class="index-main">
+ 
+        <%- include('../partials/dinamic-banner'); %>
+
+        <p class="section-title" id="featured">PRODUCTOS DESTACADOS</p>
+        <section class="featured-products">
+            
+            <% if (productsData.length > 12) { %>
+
+                <% for (let i = 0; i < 12; i++) { %>
+                    <% let {name, price, alt, image, id} = productsData[i] %>
+                    <%- include('../partials/oneProduct', {name, price: toThousand(price), alt, image, id}) %>
+                <% } %>
+
+            <% } else { %>
+
+                <% productsData.forEach(el => { %>
+                    <% let {name, price, alt, image, id} = el %>
+                    <%- include('../partials/oneProduct', {name, price: toThousand(price), alt, image, id}) %>
+                <% }); %>
+
+            <% }; %>
+            
+                                  
+        </section>
+
+    </main>
+
+    <div class="btn">
+        <a href="/products"><button class="btn-default btn-grey">VER TODOS LOS PRODUCTOS</button></a>
+    </div>
+    
+    <%- include('../partials/footer'); %>
+    
+</body>
+</html>
