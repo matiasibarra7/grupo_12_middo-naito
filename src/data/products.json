@@ -162,14 +162,14 @@
   "alt": "Pantalón The Ozz"
  },
  {
-  "name": "Gorra Oblivion   ",
-  "description": "Gorra de tela, bien diseñada y cómoda.    ",
+  "name": "Gorra Oblivion     ",
+  "description": "Gorra de tela, bien diseñada y cómoda.      ",
   "category": "accesories",
   "size": "m",
   "price": 780,
   "stock": 2,
   "id": 15,
   "image": "imagen - imagen - gorra_oblivion.png",
-  "alt": "Gorra Oblivion  "
+  "alt": "Gorra Oblivion    "
  }
 ]

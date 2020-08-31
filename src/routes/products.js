@@ -6,7 +6,7 @@ const path = require("path");
 const multer = require("multer");
 let storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, `${__dirname}/../public/images/products`);
+    cb(null, `${__dirname}/../../public/images/products`);
   },
   filename: function (req, file, cb) {
     cb(null, "imagen - " + path.basename(file.originalname));
@@ -27,10 +27,8 @@ router.get("/edit/:id", productsController.edit); // 5 -- Formulario de edición
 
 router.put("/edit/:id", upload.single("image"), productsController.update); // 6 -- Acción de edición (a donde se envía el formulario):
 
-router.delete("/edit/:id" , productsController.delete); // 7 -- Acción de borrado
+router.delete("/edit/:id", productsController.delete); // 7 -- Acción de borrado
 
 router.get("/cart", productsController.cart);
-
-
 
 module.exports = router;

@@ -11,7 +11,7 @@ const productsController = {
     res.render("./products/productDetail", { productData: productsData[req.params.id], toThousand });
   },
   cart: (req, res) => {
-    let productsData = productsModel.getAll(); 
+    let productsData = productsModel.getAll();
     res.render(`./products/productCart`, { productsData, toThousand });
   },
   add: (req, res) => {
@@ -19,20 +19,20 @@ const productsController = {
   },
   edit: (req, res) => {
     let productsData = productsModel.getAll();
-    res.render(`./products/productEdit`, { product : productsData[req.params.id] });
-  },  
+    res.render(`./products/productEdit`, { product: productsData[req.params.id] });
+  },
   update: (req, res) => {
     productsModel.update(req);
-    res.redirect('/products/details/'+ req.params.id);
+    res.redirect("/products/details/" + req.params.id);
   },
   store: (req, res) => {
     productsModel.store(req);
-    res.redirect('/products/details/'+ productsModel.lastID());
-  },  
-  delete: (req, res) =>{
+    res.redirect("/products/details/" + productsModel.lastID());
+  },
+  delete: (req, res) => {
     productsModel.delete(req);
-    res.redirect('/products');
-  }
+    res.redirect("/products");
+  },
 };
 
 module.exports = productsController;
