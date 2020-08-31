@@ -829,18 +829,19 @@ footer i {
     line-height: 24px;
   }
 
-/*   main article img {
-     min-width: 400px; 
+  main article img {
+    min-width: 400px;
+    max-width: 600px;
     width: 100%;
     height: inherit;
     margin: auto 0;
-  } */
+  }
 
   main .btn-talle {
-    margin: 6px 6px;
+    margin: 30px 6px;
     color: black;
     background-color: lightgray;
-    width: 20%;
+    width: 50%;
   }
   
   .description-title span {
@@ -850,6 +851,19 @@ footer i {
     width: 60%;
     font-size: smaller;
   }
+
+  .btn-black {
+    border: 0;
+    background-color: black;
+    color: white;
+    padding: 12px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    width: 95%;
+    height: 3rem;
+  }
+  
+  
   /* FINAL PRODUCT DETAILS */
 }
 
@@ -945,7 +959,8 @@ footer i {
   }
 
   .details-data {
-    width: 40%;
+    width: 35%;
+    margin-left: 30px;
   }
 
   /* New product */
