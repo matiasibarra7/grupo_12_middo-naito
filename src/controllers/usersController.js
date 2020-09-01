@@ -1,4 +1,5 @@
 const usersModel = require("../model/usersModel");
+
 const usersController = {
   register: (req, res) => {
     res.render("./users/register");
@@ -8,7 +9,11 @@ const usersController = {
   },
   store: (req, res) => {
     usersModel.store(req);
-    res.send(req.body);
+    res.redirect("/users/usersList");
+  },
+  usersList: (req, res) => {
+    let usersData = usersModel.getAll();
+    res.render("./users/usersList", { usersData });
   },
 };
 

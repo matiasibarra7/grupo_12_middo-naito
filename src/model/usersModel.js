@@ -46,8 +46,9 @@ const usersModel = {
   store: function (req) {
     let newUser = req.body;
     newUser.id = this.lastID() + 1;
-    newUser.alt = req.body.name;
-    newUser.image = "imagen - Perfil" + path.basename(req.file.originalname);
+    newUser.alt = req.body.firtName;
+    newUser.image = "imagen - perfil " + path.basename(req.file.originalname);
+    newUser.admin = false;
 
     let newUserList = this.getAll();
     newUserList.push(newUser);

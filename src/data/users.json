@@ -187,5 +187,25 @@
   "confirmPassword": "asdasdasdasd",
   "id": 21,
   "image": "imagen - Perfilsicko born from pain logo original.jpg"
+ },
+ {
+  "firstName": "userExample",
+  "lastName": "1",
+  "email": "correofalso123@hotmail.com",
+  "password": "123",
+  "confirmPassword": "123",
+  "id": 22,
+  "image": "imagen - perfil photo-1597799103501-8a421a387cc5.jpg",
+  "admin": false
+ },
+ {
+  "firstName": "userExample",
+  "lastName": "2",
+  "email": "correofalso789@gmail.com",
+  "password": "123",
+  "confirmPassword": "123",
+  "id": 23,
+  "image": "imagen - perfil photo-1597689530931-a8edd8a31808.jpg",
+  "admin": false
  }
 ]

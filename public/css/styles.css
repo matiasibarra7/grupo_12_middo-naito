@@ -728,6 +728,50 @@ footer i {
 }
 /* FIN ESTILOS BANNER DINAMICO */
 
+/* ESTILOS LISTA USUARIOS */
+.adm-body {
+  background-color: #2C2A4A;
+  color: #7FDEFF;
+}
+
+.section-users-list {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.profile-container {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  background-color: #4F518C;;
+  padding: 1rem; margin: 1rem 0;
+  overflow: auto;
+}
+
+.image-container-users-list {
+  display: grid;
+  place-content: center;
+  width: 100px; 
+  height: 100px;
+}
+
+.image-container-users-list img {
+  height: inherit; 
+  max-width: 100%;
+}
+
+.user-details-users-list {
+  display: grid;
+}
+
+.little-title-users-list {
+  text-align: center;
+  background-color: #1F1D34;
+  padding: 1rem 0;
+  width: 90%;
+  margin: 1rem auto;
+}
+/* FIN ESTILOS LISTA USUARIOS *
+
 /* Acá empieza el responsive */
 @media (min-width: 335px) {
   header .cart-icon {
@@ -829,7 +873,7 @@ footer i {
     line-height: 24px;
   }
 
-  main article img {
+  .container-product-details article img {
     min-width: 400px;
     max-width: 600px;
     width: 100%;

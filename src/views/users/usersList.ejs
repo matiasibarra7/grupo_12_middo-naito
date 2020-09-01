@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head', {title: "Lista de Usuarios"}); %>
+<body class="adm-body">
+    
+    <%- include('../partials/header'); %>
+
+    <main class="cart">
+        
+        <p class="section-title">Usuarios Registrados</p>
+        <div class="little-title-users-list">Espero que seas un admin, ehhh</div>
+        <section class="section-users-list">
+            <% usersData.forEach(el => { %>    
+                <div class="profile-container">
+                    <div class="image-container-users-list">
+                        <img src="/images/users/<%= el.image? el.image : "unnamed.png" %>" alt="<%= el.firstName %>">
+                    </div>
+
+                    <div class="user-details-users-list">
+                        <span>ID: <%= el.id %></span>
+                        <span>Nombre: <%= el.firstName + " " + el.lastName %></span>
+                        <span>Email: <%= el.email %></span>
+                        <span>¿Superpoderes? <%= el.admin %></span>
+                    </div>
+                </div>
+            <% }); %>
+        </section>
+
+    </main>
+
+    <%- include('../partials/footer'); %>
+
+</body>
+</html>
