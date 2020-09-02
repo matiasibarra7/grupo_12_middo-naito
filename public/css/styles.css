@@ -74,11 +74,16 @@ header .logo img {
   display: flex;
   justify-content: space-around;
   width: 20%;
+  max-width: 300px;
 }
 
 header .cart-icon {
   display: none;
   text-align: end;
+}
+
+.user-icon {
+  display: none
 }
 
 header a {
@@ -89,6 +94,7 @@ header a {
 .fa-shopping-cart,
 .fa-search,
 .fa-bars,
+.fa-user,
 .quantity .far {
   cursor: pointer;
 }
@@ -770,7 +776,19 @@ footer i {
   width: 90%;
   margin: 1rem auto;
 }
-/* FIN ESTILOS LISTA USUARIOS *
+/* FIN ESTILOS LISTA USUARIOS */
+
+.user-sidebar {
+  display: flex; 
+}
+
+.user-sidebar i {
+  padding-right: 0.5rem; 
+}
+
+.user-sidebar.li-mobile a {
+  font-size: 1rem;
+}
 
 /* Acá empieza el responsive */
 @media (min-width: 335px) {
@@ -979,10 +997,22 @@ footer i {
   header .logo {
     justify-content: flex-start;
     padding-left: 1rem;
+    max-width: 210px;
+    width: 20%;
   }
 
+  header .user-name {
+    font-size: 1rem;
+    vertical-align: middle;
+  }
+
+
   .container-cart-search {
-    width: 10%;
+    width: 22%;
+  }
+
+  .user-icon {
+    display: block;
   }
 
   .sidebar.sidebar.close-zone {
@@ -1029,7 +1059,7 @@ footer i {
     padding: 1rem 3px;
   }
 
-  .li-mobile {
+  .li-mobile, .user-sidebar.li-mobile {
     display: none;
   }
 

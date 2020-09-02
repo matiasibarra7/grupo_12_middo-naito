@@ -1,6 +1,10 @@
 <aside class="sidebar">
     <nav class="nav">
       <ul>
+
+        <!-- Este solo aparece en mobile -->
+        <li class="user-sidebar li-mobile"><a href="#"><i class="fas fa-user"></i></a><a href="#">userExample</a></li>    
+
         <li><a href="/">Home</a></li>
         <li class="dropdown-mn">
           <a href="/users/register">Registrate</a>
@@ -13,7 +17,6 @@
         <li class="dropdown-mn">
           <a href="/products/add">Nuevo</a>
         </li>
-        <li><a href="/products/cart">Carrito</a></li>
         <li><a href="/us">About us</a></li>
         <li class="close-sidebar-btn"><a href="#" onclick="closeSidebar()">Cerrar</a></li>
       </ul>
@@ -28,7 +31,11 @@
     <div class="bar-menu"><i class="fas fa-bars bar-nav" onclick="openSidebar()"></i></div>
     <div class="logo"><a href="/"><img src="/images/demo-logo.png" alt="middo-naito"></a></div>
     <div class="container-cart-search">
-        <div class="cart-icon"><a href="/products/cart"><i class="fas fa-shopping-cart"></i></a></div>
-        <div class="search-icon"><i class="fas fa-search"></i></div>
+      <div class="user-icon">
+        <i class="fas fa-user"></i>
+        <span class="user-name">userExample</span>
+      </div>
+      <div class="cart-icon"><a href="/products/cart"><i class="fas fa-shopping-cart"></i></a></div>
+      <div class="search-icon"><i class="fas fa-search"></i></div>
     </div>
 </header>
