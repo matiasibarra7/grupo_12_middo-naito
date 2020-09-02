@@ -3,15 +3,27 @@
       <ul>
 
         <!-- Este solo aparece en mobile -->
-        <li class="user-sidebar li-mobile"><a href="#"><i class="fas fa-user"></i></a><a href="#">userExample</a></li>    
+        <li class="user-sidebar li-mobile">
+          <a href="/users/login" style="padding: 1rem 8px;">
+            <i class="fas fa-user"></i>
+            <span><!-- userExample -->Iniciar Sesión</span>
+          </a>
+        </li>    
 
         <li><a href="/">Home</a></li>
         <li class="dropdown-mn">
           <a href="/users/register">Registrate</a>
-          <div class="dropdown-container">
-            <a href="/users/login">Ingresa</a>  <!-- Este solo aparece en Desktop en el dropdown -->
-          </div>
         </li>
+
+        <!-- Esto era el dropdown probado en el header -->
+        <!-- <li class="dropdown-mn">
+          <a href="/users/register">Registrate</a>
+          <div class="dropdown-container">
+            <a href="/users/login">Ingresa</a>   Este solo aparece en Desktop en el dropdown 
+          </div>
+        </li> -->
+
+
         <li class="li-mobile"><a href="/users/login">Ingresa</a></li> <!-- Este solo aparece en mobile -->   
         <li><a href="/products">Productos</a></li>
         <li class="dropdown-mn">
@@ -31,9 +43,11 @@
     <div class="bar-menu"><i class="fas fa-bars bar-nav" onclick="openSidebar()"></i></div>
     <div class="logo"><a href="/"><img src="/images/demo-logo.png" alt="middo-naito"></a></div>
     <div class="container-cart-search">
-      <div class="user-icon">
-        <i class="fas fa-user"></i>
-        <span class="user-name">userExample</span>
+      <div class="user-icon"> <!-- Esto aparece solo en Desktop -->
+        <a href="/users/login">
+          <i class="fas fa-user"></i>
+          <span class="user-name"><!-- userExample -->Iniciar Sesión</span>
+        </a>
       </div>
       <div class="cart-icon"><a href="/products/cart"><i class="fas fa-shopping-cart"></i></a></div>
       <div class="search-icon"><i class="fas fa-search"></i></div>
