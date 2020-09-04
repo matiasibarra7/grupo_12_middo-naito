@@ -48,7 +48,11 @@ const usersModel = {
     let newUser = req.body;
     newUser.id = this.lastID() + 1;
     newUser.alt = req.body.firstName;
-    if(req.file){newUser.image = "imagen - perfil " + path.basename(req.file.originalname)};
+    if(req.file){
+      newUser.image = "imagen - perfil " + path.basename(req.file.originalname)
+    } else{
+      newUser.image = null;
+    };
     newUser.admin = false;
     if(newUser.password !== newUser.confirmPassword){
       return false

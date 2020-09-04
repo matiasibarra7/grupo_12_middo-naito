@@ -1,5 +1,10 @@
 const express = require("express");
 const app = express();
+const session = require("express-session");
+const auth = require("./src/middlewares/auth");
+
+
+app.use(session({secret: "Admin", resave: false, saveUninitialized: true}));
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
@@ -15,9 +20,12 @@ const methodOverride = require("method-override");
 
 app.use(methodOverride("_method"));
 
+app.use(auth);
+
 app.use("/", mainRoutes);
 app.use("/products", productsRoutes);
 app.use("/users", userRoutes);
+
 
 
 app.listen(3000, () => {

@@ -1,5 +1,6 @@
 const usersModel = require("../model/usersModel");
-const path = require("path")
+const path = require("path");
+const bcryptjs = require("bcryptjs");
 
 const usersController = {
   register: (req, res) => {
@@ -18,8 +19,7 @@ const usersController = {
     res.render("./users/usersList", { usersData });
   },
   profile: (req, res) => {
-    let usersData = usersModel.getAll();
-    res.render("./users/profile", { userData: usersData[req.params.n]});
+    res.render("./users/profile");
   },
   profileEdit: (req, res) => {
     let usersData = usersModel.getAll();
@@ -36,6 +36,22 @@ const usersController = {
   delete: (req, res) => {
     usersModel.delete(req);
     res.redirect("/users/usersList");
+  },
+  authenticate: (req,res) => {
+    let usersData = usersModel.getAll();
+    let found
+    usersData.forEach(user =>{
+      
+      if(user.email === req.body.email){
+        if(bcryptjs.compareSync(req.body.password, user.password)){
+          req.session.user = user;
+          found = true;
+        }
+      }
+    });
+    if(found){res.redirect("/users/profile");}
+    else{res.redirect('/users/login')}
+    
   }
 };
 

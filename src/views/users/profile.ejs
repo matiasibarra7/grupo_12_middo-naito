@@ -10,19 +10,23 @@
         <p class="section-title">Perfil de Usuario</p>
         <div class="profile-container">
             <figure class="profile-pic-container">
-                <img src="/images/users/<%= userData.image? userData.image : "unnamed.png"%>" alt="" style="width: 100%">
+                <% if(locals.user.image) { %> 
+                <img src="/images/users/<%= locals.user.image %>" alt="" style="width: 100%">
+                <% } else { %>
+                <img src="/images/users/unnamed.png" alt="" style="width: 100%">
+                <% } %> 
             </figure>
             <div class="user-details-in-profile">
-                <p><b>Nombre:</b> <%= userData.firstName %> <%= userData.lastName %> </p>
-                <p><b>Email:</b> <%= userData.email %> </p>
-                <p><b>Provincia:</b> <%= userData.province? userData.province : "Sin especificar"%> </p>
-                <p><b>Localidad:</b> <%= userData.location? userData.location : "Sin especificar"%> </p>
+                <p><b>Nombre:</b> <%= locals.user.firstName %> <%= locals.user.lastName %> </p>
+                <p><b>Email:</b> <%= locals.user.email %> </p>
+                <p><b>Provincia:</b> <%= locals.user.province? locals.user.province : "Sin especificar"%> </p>
+                <p><b>Localidad:</b> <%= locals.user.location? locals.user.location : "Sin especificar"%> </p>
                 <p><b>Edad:</b> No ha ingresado fecha de nacimiento</p>
                 <% let y = new Date %>
-                <p><b>Genero: </b> <%= userData.gender? userData.gender : "Sin especificar"%></p>
+                <p><b>Genero: </b> <%= locals.user.gender? locals.user.gender : "Sin especificar"%></p>
                 <p><b>Registrado el: </b> <%= (y.getMonth() + 1) + " del " +  (y.getYear() + 1900)  %> </p>
                 <div class="btn">
-                    <a href="/users/profile/edit/<%= userData.id - 1 %>"><button class="btn-default">EDITAR INFO.</button></a>
+                    <a href="/users/profile/edit/<%= locals.user.id - 1 %>"><button class="btn-default">EDITAR INFO.</button></a>
                 </div>
             </div>
         </div>

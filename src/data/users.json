@@ -62,7 +62,28 @@
   "email": "juabarriera@hotmail.com",
   "password": "$2a$10$OiW.UZzBOCOIYQIOiRAmu.pN40rzIMOJ.RJx7IPb1v7SR1QBm6Wc2",
   "id": 8,
+  "image": "imagen - perfil 01-shutterstock_476340928-irina-bg-1024x683-1.jpg",
   "alt": "Juan",
+  "admin": false
+ },
+ {
+  "firstName": "Nahue",
+  "lastName": "Ibarra",
+  "email": "nah@123.com",
+  "password": "$2a$10$EpfKbyi9D7tokKSbNwxxOeC./2j03AfD781irTogCeKNDQndGXqa6",
+  "id": 9,
+  "image": null,
+  "alt": "Nahue",
+  "admin": false
+ },
+ {
+  "firstName": "Santi",
+  "lastName": "Martino",
+  "email": "sm@123.com",
+  "password": "$2a$10$ZF.n/m2C4RVMW9S/T/gGHOH7wW.mgQ8MsYkgydYD/X3k9mNB3kybO",
+  "id": 10,
+  "alt": "Santi",
+  "image": null,
   "admin": false
  }
 ]
