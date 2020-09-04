@@ -17,6 +17,12 @@ let storage = multer.diskStorage({
 upload = multer({ storage });
 
 router.get("/usersList", usersController.usersList)
+// router.get("/profile", usersController.profile)
+
+
+router.get("/profile/:n", usersController.profile)  /* ESTO ES SOLO DE PRUEBA, DESPUES BORRAR Y ACCEDER POR POST */
+router.get("/profile/edit/:n", usersController.profileEdit)  /* ESTO ES SOLO DE PRUEBA, DESPUES BORRAR Y ACCEDER POR POST */
+router.put("/profile/edit/:id", upload.single("image"), usersController.uploadProfile)  /* ESTO ES SOLO DE PRUEBA, DESPUES BORRAR Y ACCEDER POR POST */
 router.get("/register", usersController.register);
 router.get("/login", usersController.login);
 

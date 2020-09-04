@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head', {title: "Perfil"}); %>
+<body>
+    
+    <%- include('../partials/header'); %>
+
+    <main class="main-profile">
+        <p class="section-title">Editando Perfil</p>
+        <div class="profile-container">
+            <figure class="profile-pic-container">
+                <img src="/images/users/<%= userData.image? userData.image : "unnamed.png"%>" alt="" style="width: 100%">
+            </figure>
+
+            <div class="user-details-in-profile-edit" style="display: grid;">
+                <form action="/users/profile/edit/<%= userData.id - 1 %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <p class="edit-field-profile">
+                        <b>Nombre:</b>
+                        <input type="text" name= "firstName" value="<%= userData.firstName %>">
+                    </p>
+                    <p class="edit-field-profile">
+                        <b>Apellido:</b>
+                        <input type="text" name= "lastName" value="<%= userData.lastName %>"> 
+                    </p>
+                    <p class="edit-field-profile">
+                        <b>Email:</b>
+                        <input type="text" name= "email" value="<%= userData.email %>"> 
+                    </p>
+                    <p class="edit-field-profile">
+                        <b>Provincia:</b>
+                        <input type="text" name= "province" value="<%= userData.province? userData.province : "" %>"> 
+                    </p>
+                    <p class="edit-field-profile">
+                        <b>Localidad:</b>
+                        <input type="text" name= "location" value="<%= userData.location? userData.location : "" %>"> 
+                    </p>
+                    <p class="edit-field-profile" name= "birthday">
+                        <b>Fecha de Nac:</b>
+                        <input type="date" style="max-height: 1.4rem;">
+                    </p>
+                    <p class="edit-field-profile">
+                        <b>Genero: </b>
+                        <select name="gender" id="">
+                            <option value="male">Hombre</option>
+                            <option value="female">Mujer</option>
+                            <option value="unicorn">Unicornio</option>
+                            <option value="undefined">Sin especificar</option>
+                        </select>
+                    </p>
+    
+                    <div class="btn">
+                        <button type="submit" class="btn-default">CONFIRMAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <%- include('../partials/footer'); %>
+
+</body>
+</html>

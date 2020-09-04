@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head', {title: "Perfil"}); %>
+<body>
+    
+    <%- include('../partials/header'); %>
+
+    <main class="main-profile">
+        
+        <p class="section-title">Perfil de Usuario</p>
+        <div class="profile-container">
+            <figure class="profile-pic-container">
+                <img src="/images/users/<%= userData.image? userData.image : "unnamed.png"%>" alt="" style="width: 100%">
+            </figure>
+            <div class="user-details-in-profile">
+                <p><b>Nombre:</b> <%= userData.firstName %> <%= userData.lastName %> </p>
+                <p><b>Email:</b> <%= userData.email %> </p>
+                <p><b>Provincia:</b> <%= userData.province? userData.province : "Sin especificar"%> </p>
+                <p><b>Localidad:</b> <%= userData.location? userData.location : "Sin especificar"%> </p>
+                <p><b>Edad:</b> No ha ingresado fecha de nacimiento</p>
+                <% let y = new Date %>
+                <p><b>Genero: </b> <%= userData.gender? userData.gender : "Sin especificar"%></p>
+                <p><b>Registrado el: </b> <%= (y.getMonth() + 1) + " del " +  (y.getYear() + 1900)  %> </p>
+                <div class="btn">
+                    <a href="/users/profile/edit/<%= userData.id - 1 %>"><button class="btn-default">EDITAR INFO.</button></a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <%- include('../partials/footer'); %>
+
+</body>
+</html>

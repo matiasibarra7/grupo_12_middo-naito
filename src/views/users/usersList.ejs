@@ -11,16 +11,16 @@
         <div class="little-title-users-list">Espero que seas un admin, ehhh</div>
         <section class="section-users-list">
             <% usersData.forEach(el => { %>    
-                <div class="profile-container">
+                <div class="profile-container-list">
                     <div class="image-container-users-list">
-                        <img src="/images/users/<%= el.image? el.image : "unnamed.png" %>" alt="<%= el.firstName %>">
+                        <a href="/users/profile/<%= el.id - 1 %>" alt="<%= el.firstName %>"><img src="/images/users/<%= el.image? el.image : "unnamed.png" %>" alt="<%= el.firstName %>"></a>
                     </div>
 
                     <div class="user-details-users-list">
                         <span>ID: <%= el.id %></span>
                         <span>Nombre: <%= el.firstName + " " + el.lastName %></span>
                         <span>Email: <%= el.email %></span>
-                        <span>¿Superpoderes? <%= el.admin %></span>
+                        <span>¿Superpoderes? <%= el.admin? "YEEAAHH" : "Nope" %></span>
                     </div>
                 </div>
             <% }); %>
