@@ -1,4 +1,5 @@
 const usersModel = require("../model/usersModel");
+const path = require("path")
 
 const usersController = {
   register: (req, res) => {
@@ -26,7 +27,10 @@ const usersController = {
   uploadProfile: (req, res) => {
     let userData = req.body;
     userData.id= req.params.id
-    res.send(req.body)
+    if (req.file) {
+      userData.image = "imagen - perfil " + path.basename(req.file.originalname)
+    }
+    res.send(userData)
   }  
 };
 
