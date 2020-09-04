@@ -10,6 +10,7 @@ const usersController = {
   },
   store: (req, res) => {
     usersModel.store(req);
+    
     res.redirect("/users/usersList");
   },
   usersList: (req, res) => {
@@ -31,7 +32,11 @@ const usersController = {
       userData.image = "imagen - perfil " + path.basename(req.file.originalname)
     }
     res.send(userData)
-  }  
+  },
+  delete: (req, res) => {
+    usersModel.delete(req);
+    res.redirect("/users/usersList");
+  }
 };
 
 module.exports = usersController;

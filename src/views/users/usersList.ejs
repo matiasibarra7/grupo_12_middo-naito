@@ -21,6 +21,11 @@
                         <span>Nombre: <%= el.firstName + " " + el.lastName %></span>
                         <span>Email: <%= el.email %></span>
                         <span>¿Superpoderes? <%= el.admin? "YEEAAHH" : "Nope" %></span>
+                        <form class="session-form newProductForm" action="/users/edit/<%= el.id %>?_method=DELETE" method="POST">
+                            <div class="btn">
+                                <button type="submit" class="btn-default red">BORRAR USUARIO</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             <% }); %>

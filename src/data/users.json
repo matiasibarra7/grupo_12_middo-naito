@@ -9,15 +9,6 @@
   "image": null
  },
  {
-  "id": 2,
-  "firstName": "Charlotta",
-  "lastName": "Benfell",
-  "email": "cbenfelli@imgur.com",
-  "password": "6f5Kz1X0",
-  "admin": true,
-  "image": null
- },
- {
   "id": 3,
   "firstName": "Mikel",
   "lastName": "Whitwham",
@@ -64,5 +55,14 @@
   "id": 7,
   "image": "imagen - perfil 01-shutterstock_476340928-irina-bg-1024x683-1.jpg",
   "admin": true
+ },
+ {
+  "firstName": "Juan",
+  "lastName": "Barriera",
+  "email": "juabarriera@hotmail.com",
+  "password": "$2a$10$OiW.UZzBOCOIYQIOiRAmu.pN40rzIMOJ.RJx7IPb1v7SR1QBm6Wc2",
+  "id": 8,
+  "alt": "Juan",
+  "admin": false
  }
 ]
