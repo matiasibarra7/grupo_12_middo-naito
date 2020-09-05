@@ -20,6 +20,7 @@ upload = multer({ storage });
 router.get("/usersList", usersController.usersList)
 // router.get("/profile", usersController.profile)
 
+router.get("/panelAdmin", usersController.panelAdmin);
 
 router.get("/profile/", usersController.profile)  /* ESTO ES SOLO DE PRUEBA, DESPUES BORRAR Y ACCEDER POR POST */
 router.get("/profile/edit/:n", usersController.profileEdit)  /* ESTO ES SOLO DE PRUEBA, DESPUES BORRAR Y ACCEDER POR POST */

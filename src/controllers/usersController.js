@@ -55,7 +55,10 @@ const usersController = {
   },
   logout: (req, res) => {      
     req.session.destroy();
-    return res.redirect('/');}
+    return res.redirect('/');},
+  panelAdmin: (req, res) => {
+    res.render('./users/panelAdmin');
+  }  
 
 };
 

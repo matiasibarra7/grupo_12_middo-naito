@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head', {title: "Lista de Usuarios"}); %>
+<body class="adm-body">
+    
+    <%- include('../partials/header'); %>
+
+    <main class="cart">
+        
+        <p class="section-title">Panel administrador</p>
+       
+        <section class="section-panel-admin">
+            <a href="/users/usersList"><article class="panel-element">Lista de Usuarios</article></a>
+            <a href="/products/add"><article class="panel-element">Añadir un nuevo producto</article></a>
+            <a href="/users/logout"><article class="panel-element">Cerrar Sesion como administrador</article></a>
+        </section>
+
+    </main>
+
+    <%- include('../partials/footer'); %>
+
+</body>
+</html>

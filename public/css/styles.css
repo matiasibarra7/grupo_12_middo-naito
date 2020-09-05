@@ -988,10 +988,32 @@ footer i {
 
   /* FIN EDIT DE USUARIO */
 }
+  /* INICIO PANEL DE ADMINISTRADOR */
+.section-panel-admin {
+  display: flex;
+  max-width: 1024px;
+  flex-wrap: wrap;
+}
+
+.section-panel-admin a {
+  margin: 0 auto;
+  text-decoration: none;
+  color: black;
+}
+
+.panel-element {
+  display: flex;
+  width: 150px;
+  height: 150px;
+  background-color: burlywood;
+  align-items: center;
+  padding: 1rem;
+}
 
 @media (min-width: 1024px) {
   main {
     padding-top: 4rem;
+    min-height: calc(100vh - 7rem);
   }
 
   .section-title {
