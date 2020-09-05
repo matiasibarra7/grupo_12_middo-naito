@@ -49,9 +49,15 @@ const usersController = {
         }
       }
     });
-    if(found){res.redirect("/users/profile");}
-    else{res.redirect('/users/login')}
-    
+    if(found){
+      if (req.session.user.admin){
+        res.redirect("/users/panelAdmin");
+      } else  {
+        res.redirect("/users/profile");
+      }  
+    } else  {
+      res.redirect('/users/login')
+    } 
   },
   logout: (req, res) => {      
     req.session.destroy();
