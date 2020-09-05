@@ -1,12 +1,15 @@
 const usersModel = require("../model/usersModel");
 const path = require("path");
 const bcryptjs = require("bcryptjs");
+const crypto = require("crypto")
+const tokensModel = require("../model/tokensModel");
 
 const usersController = {
   register: (req, res) => {
     res.render("./users/register");
   },
   login: (req, res) => {
+    console.log(tokensModel.getAll());
     res.render("./users/login");
   },
   store: (req, res) => {
@@ -45,17 +48,30 @@ const usersController = {
         }
       }
     });
-    if(found){
-      if (req.session.user.admin){
-        res.redirect("/users/panelAdmin");
+      if(found){
+        if (req.session.user.admin){
+          res.redirect("/users/panelAdmin");
+        } else  {
+
+            if(req.body.remember){
+
+              const token = crypto.randomBytes(64).toString('base64');
+
+              tokensModel.store(req, token);
+
+              // Seteamos una cookie en el navegador   msec   seg  min  hs  dias  meses
+              res.cookie('userToken', token, { maxAge: 1000 * 60 * 60 * 24 * 30 * 3} )
+            }
+
+          res.redirect("/users/profile");
+        }  
       } else  {
-        res.redirect("/users/profile");
-      }  
-    } else  {
-      res.redirect('/users/login')
-    } 
+        res.redirect('/users/login')
+      } 
   },
-  logout: (req, res) => {      
+  logout: (req, res) => { 
+    tokensModel.delete(req.session.user.email); 
+    res.clearCookie("userToken");
     req.session.destroy();
     return res.redirect('/');},
   panelAdmin: (req, res) => {

@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const session = require("express-session");
 const auth = require("./src/middlewares/auth");
+const cookieParser = require('cookie-parser');
 
 
 app.use(session({secret: "Admin", resave: false, saveUninitialized: true}));
@@ -19,6 +20,8 @@ const userRoutes = require("./src/routes/users");
 const methodOverride = require("method-override");
 
 app.use(methodOverride("_method"));
+
+app.use(cookieParser());
 
 app.use(auth);
 
