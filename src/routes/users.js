@@ -27,6 +27,7 @@ router.put("/profile/edit/:id", upload.single("image"), usersController.uploadPr
 router.get("/register", usersController.register);
 router.get("/login", usersController.login);
 router.post("/login",/*validate.login*/ usersController.authenticate);
+router.get("/logout", usersController.logout)
 
 
 router.delete("/edit/:id", usersController.delete); // 7 -- Acción de borrado

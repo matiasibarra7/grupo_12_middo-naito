@@ -18,9 +18,11 @@
         </li>    
 
         <li><a href="/">Home</a></li>
-        <li class="dropdown-mn">
-          <a href="/users/register">Registrate</a>
-        </li>
+        <% if(!locals.user) { %> 
+             <li class="close-sidebar-btn">
+              <a href="/users/register">Registrate</a>
+            </li>
+          <% } %> 
 
         <!-- Esto era el dropdown probado en el header -->
         <!-- <li class="dropdown-mn">
@@ -38,6 +40,9 @@
         </li>
         <li><a href="/us">About us</a></li>
         <li class="close-sidebar-btn"><a href="#" onclick="closeSidebar()">Cerrar</a></li>
+        <% if(locals.user) { %> 
+        <li class="close-sidebar-btn"><a href="/users/logout">Cerrar sesión</a></li>
+        <% } %>
       </ul>
     </nav>
 </aside>
@@ -52,16 +57,36 @@
     <div class="container-cart-search">
       <div class="user-icon"> <!-- Esto aparece solo en Desktop -->
         <% if(locals.user) { %> 
-          <a href="/users/profile">
+          <div class="dropdown-mn">
+           <a href="/users/profile" >
             <i class="fas fa-user"></i>
-            <span><%= locals.user.firstName %></span>
-          </a>
+            <span><%= locals.user.firstName %> <i class="fas fa-chevron-down"></i></span>
+           </a>
+              <div class="dropdown-container">
+                <a href="/users/profile">Mi cuenta</a>
+                <a href="/users/logout">Cerrar sesión</a> 
+              </div>
+          </div>
           <% }else { %> 
-          <a href="/users/login">
+
+            <div class="dropdown-mn">
+              <a href="/users/login" >
+               <i class="fas fa-user"></i>
+               <span>Iniciar sesión<i class="fas fa-chevron-down"></i></span>
+              </a>
+                 <div class="dropdown-container">
+                   <a href="/users/register">Registrate</a>
+                 </div>
+             </div>
+
+
+          <!-- <a href="/users/login">
             <i class="fas fa-user"></i>
             <span>Iniciar Sesión</span>
-          </a>
-        <% } %> 
+          </a> -->
+
+          <% } %>
+          
       </div>
       <div class="cart-icon"><a href="/products/cart"><i class="fas fa-shopping-cart"></i></a></div>
       <div class="search-icon"><i class="fas fa-search"></i></div>

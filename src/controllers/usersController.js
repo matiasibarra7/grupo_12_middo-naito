@@ -52,7 +52,11 @@ const usersController = {
     if(found){res.redirect("/users/profile");}
     else{res.redirect('/users/login')}
     
-  }
+  },
+  logout: (req, res) => {      
+    req.session.destroy();
+    return res.redirect('/');}
+
 };
 
 module.exports = usersController;

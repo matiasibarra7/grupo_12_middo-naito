@@ -1033,6 +1033,11 @@ footer i {
   .sidebar ul {
     display: flex;
     justify-content: center;
+    margin: 0;
+  }
+
+  .sidebar nav {
+    margin-top: 0.5rem;
   }
 
   .sidebar nav ul li {
@@ -1070,7 +1075,9 @@ footer i {
   }
 
   .user-icon {
-    display: block;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
   }
 
   .sidebar.sidebar.close-zone {
@@ -1110,6 +1117,12 @@ footer i {
     display: none;
     flex-direction: column;
     background-color: black;
+    position: absolute;
+  }
+
+  .dropdown-container a {
+    margin: 10px;
+    font-size: 1rem;
   }
   
   .dropdown-mn:hover .dropdown-container {
@@ -1119,6 +1132,10 @@ footer i {
 
   .li-mobile, .user-sidebar.li-mobile {
     display: none;
+  }
+
+  .user-icon span{
+    vertical-align: middle; /*Provisorio*/
   }
 
   /* Fin Probando dropdowns */
