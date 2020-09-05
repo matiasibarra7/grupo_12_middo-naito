@@ -17,6 +17,16 @@ const usersModel = {
     let indexUser = usersList.findIndex((user) => user.id == id);
     return usersList[indexUser];
   },
+  getOneByEmail: function (email) {
+    let usersList = this.getAll();
+    let userFound
+    usersList.forEach(user => {
+      if (user.email == email) {
+        userFound = user
+      }
+    });
+    return userFound;
+  },
 
    update: function (req) {
     let userData = req.body;
@@ -69,6 +79,9 @@ const usersModel = {
     let newUserList = this.getAll();
     newUserList.push(newUser);
     this.writeFile(newUserList);
+
+    delete newUser.password
+    return newUser
   },
 
   delete: function (req) {

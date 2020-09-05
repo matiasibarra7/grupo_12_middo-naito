@@ -28,16 +28,6 @@
  },
  {
   "firstName": "userExample",
-  "lastName": "1",
-  "email": "correofalso123@hotmail.com",
-  "password": "123",
-  "confirmPassword": "123",
-  "id": 5,
-  "image": "imagen - perfil photo-1597799103501-8a421a387cc5.jpg",
-  "admin": false
- },
- {
-  "firstName": "userExample",
   "lastName": "2",
   "email": "correofalso789@gmail.com",
   "password": "123",
@@ -85,5 +75,35 @@
   "alt": "Santi",
   "image": null,
   "admin": true
+ },
+ {
+  "firstName": "super",
+  "lastName": "admin",
+  "email": "admin@middo.com",
+  "password": "$2a$10$jTpWggEpLxgIjDzXQG.OB.mdeIpwiem4zvRtAFlf900tYc2LCgcKq",
+  "id": 11,
+  "alt": "super",
+  "image": null,
+  "admin": false
+ },
+ {
+  "firstName": "example",
+  "lastName": "example",
+  "email": "example@example.com",
+  "password": "$2a$10$f6pll3RBuFpojMGfzjzIDu5aDvdsS6leVFNHi.6HephHSXsSTel1W",
+  "id": 12,
+  "alt": "example",
+  "image": null,
+  "admin": false
+ },
+ {
+  "firstName": "newUser",
+  "lastName": "newUser",
+  "email": "newUser@newUser.com",
+  "password": "$2a$10$qtw6q5nsgsr1azB1PisonubpVpKIDBo0AVrqG9s4CMR5O48XRv5TG",
+  "id": 13,
+  "alt": "newUser",
+  "image": null,
+  "admin": false
  }
 ]

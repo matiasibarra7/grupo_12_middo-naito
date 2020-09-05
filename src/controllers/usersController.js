@@ -9,13 +9,13 @@ const usersController = {
     res.render("./users/register");
   },
   login: (req, res) => {
-    console.log(tokensModel.getAll());
     res.render("./users/login");
   },
   store: (req, res) => {
-    usersModel.store(req);
-    
-    res.redirect("/users/usersList");
+    newUser = usersModel.store(req);
+    req.session.user = newUser;
+    res.locals.user = newUser;
+    res.redirect("/users/profile");
   },
   usersList: (req, res) => {
     let usersData = usersModel.getAll();

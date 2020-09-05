@@ -20,7 +20,7 @@ let storage = multer.diskStorage({
 
 upload = multer({ storage });
 
-router.get("/usersList", adminRoute, usersController.usersList)
+router.get("/usersList", userRoute, adminRoute, usersController.usersList)
 // router.get("/profile", usersController.profile)
 
 router.get("/panelAdmin",adminRoute, usersController.panelAdmin);
