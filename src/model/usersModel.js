@@ -18,31 +18,38 @@ const usersModel = {
     return usersList[indexUser];
   },
 
-  //  update: function (req) {
-  //   let usersList = this.getAll();
-  //   let foundusers = this.getOne(req.params.id);
-  //   let updatedusers = req.body;
-  //   updatedusers.id = foundusers.id;
-  //   updatedusers.image = foundusers.image;
-  //   updatedusers.alt = foundusers.name;
-  //   updatedusers.price = parseFloat(updatedusers.price);
-  //   updatedusers.stock = parseFloat(updatedusers.stock);
-
-  //   let modifyuserss = usersList.map((users) => {
-  //     if (users.id == updatedusers.id) {
-  //       return updatedusers;
-  //     } else {
-  //       return users;
-  //     }
-  //   });
-  //   if (req.file) {
-  //     if (foundusers.image) {
-  //       fs.unlinkSync(`${__dirname}/../../public/images/userss/${foundusers.image}`);
-  //     }
-  //     updatedusers.image = `imagen - ${path.basename(req.file.originalname)}`;
-  //   }
-  //   this.writeFile(modifyuserss);
-  // },
+   update: function (req) {
+    let userData = req.body;
+    userData.id= req.session.user.id;
+    if (req.file) {
+      userData.image = "imagen - perfil " + path.basename(req.file.originalname)
+    } else if (req.session.user.image){
+      userData.image = req.session.user.image;
+    } else {
+      userDate.image = null;
+    }  
+    
+    let usersList = this.getAll();
+    let foundUser = this.getOne(userData.id);
+    userData.password = foundUser.password;
+    
+    let modifyUsers = usersList.map((user) => {
+      if (user.id == userData.id) {
+        return userData;
+      } else {
+        return user;
+      }
+    });
+    if (req.file) {
+      if (foundUser.image) {
+        fs.unlinkSync(`${__dirname}/../../public/images/users/${foundUser.image}`);
+      }
+      userData.image = "imagen - perfil " + path.basename(req.file.originalname);
+    }
+    this.writeFile(modifyUsers);
+    req.session.user = userData;
+   
+  },
 
   store: function (req) {
     let newUser = req.body;

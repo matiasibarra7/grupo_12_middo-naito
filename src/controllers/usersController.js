@@ -23,15 +23,11 @@ const usersController = {
   },
   profileEdit: (req, res) => {
     let usersData = usersModel.getAll();
-    res.render("./users/profileEdit", { userData: usersData[req.params.n]});
+    res.render("./users/profileEdit");
   },
   uploadProfile: (req, res) => {
-    let userData = req.body;
-    userData.id= req.params.id
-    if (req.file) {
-      userData.image = "imagen - perfil " + path.basename(req.file.originalname)
-    }
-    res.send(userData)
+    usersModel.update(req);
+    res.redirect("/users/profile");
   },
   delete: (req, res) => {
     usersModel.delete(req);

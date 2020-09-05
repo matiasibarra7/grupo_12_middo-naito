@@ -21,12 +21,12 @@
                 <p><b>Email:</b> <%= locals.user.email %> </p>
                 <p><b>Provincia:</b> <%= locals.user.province? locals.user.province : "Sin especificar"%> </p>
                 <p><b>Localidad:</b> <%= locals.user.location? locals.user.location : "Sin especificar"%> </p>
-                <p><b>Edad:</b> No ha ingresado fecha de nacimiento</p>
+                <p><b>Edad:</b><%= locals.user.birthday? locals.user.birthday : "Sin especificar"%></p>
                 <% let y = new Date %>
                 <p><b>Genero: </b> <%= locals.user.gender? locals.user.gender : "Sin especificar"%></p>
                 <p><b>Registrado el: </b> <%= (y.getMonth() + 1) + " del " +  (y.getYear() + 1900)  %> </p>
                 <div class="btn">
-                    <a href="/users/profile/edit/<%= locals.user.id - 1 %>"><button class="btn-default">EDITAR INFO.</button></a>
+                    <a href="/users/profile/edit"><button class="btn-default">EDITAR INFO.</button></a>
                 </div>
             </div>
         </div>
