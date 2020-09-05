@@ -3,6 +3,8 @@ const router = express.Router();
 const productsController = require("../controllers/productsController");
 const path = require("path");
 const adminRoute = require("../middlewares/adminRoute");
+const guestRoute = require("../middlewares/guestRoute");
+const userRoute = require("../middlewares/userRoute");
 
 
 const multer = require("multer");
@@ -29,8 +31,8 @@ router.get("/edit/:id",adminRoute, productsController.edit); // 5 -- Formulario 
 
 router.put("/edit/:id", upload.single("image"), productsController.update); // 6 -- Acción de edición (a donde se envía el formulario):
 
-router.delete("/edit/:id", productsController.delete); // 7 -- Acción de borrado
+router.delete("/edit/:id", adminRoute, productsController.delete); // 7 -- Acción de borrado
 
-router.get("/cart", productsController.cart);
+router.get("/cart", userRoute, productsController.cart);
 
 module.exports = router;

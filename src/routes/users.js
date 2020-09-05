@@ -4,6 +4,8 @@ const usersController = require("../controllers/usersController");
 const path = require("path");
 const validate = require("../validators/users");
 const adminRoute = require("../middlewares/adminRoute");
+const guestRoute = require("../middlewares/guestRoute");
+const userRoute = require("../middlewares/userRoute");
 
 const multer = require("multer");
 
@@ -23,18 +25,19 @@ router.get("/usersList", adminRoute, usersController.usersList)
 
 router.get("/panelAdmin",adminRoute, usersController.panelAdmin);
 
-router.get("/profile/", usersController.profile)  /* ESTO ES SOLO DE PRUEBA, DESPUES BORRAR Y ACCEDER POR POST */
-router.get("/profile/edit", usersController.profileEdit)  /* ESTO ES SOLO DE PRUEBA, DESPUES BORRAR Y ACCEDER POR POST */
+
+router.get("/profile/",userRoute, usersController.profile)  /* ESTO ES SOLO DE PRUEBA, DESPUES BORRAR Y ACCEDER POR POST */
+router.get("/profile/edit", userRoute, usersController.profileEdit)  /* ESTO ES SOLO DE PRUEBA, DESPUES BORRAR Y ACCEDER POR POST */
 router.put("/profile/edit", upload.single("image"), usersController.uploadProfile)  /* ESTO ES SOLO DE PRUEBA, DESPUES BORRAR Y ACCEDER POR POST */
-router.get("/register", usersController.register);
-router.get("/login", usersController.login);
+router.get("/register", guestRoute, usersController.register);
+router.get("/login", guestRoute, usersController.login);
 router.post("/login",/*validate.login*/ usersController.authenticate);
-router.get("/logout", usersController.logout)
+router.get("/logout", userRoute, usersController.logout);
 
 
 
 
-router.delete("/edit/:id", usersController.delete); // 7 -- Acción de borrado
+router.delete("/edit/:id", adminRoute , usersController.delete); // 7 -- Acción de borrado
 
 
 router.post("/register", upload.single("image"), usersController.store);

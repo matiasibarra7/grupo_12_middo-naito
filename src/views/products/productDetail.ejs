@@ -72,10 +72,12 @@
                         <strong>Talle XXL</strong>: 68 cm de ancho. 76 cm de largo.<br>
                     </p>
                 </div>
-                <% if(locals.user.admin) {%> 
+                <% if(locals.user){ %>
+                   <% if (locals.user.admin) {%> 
                     <div class="add-div">
                         <a href="/products/edit/<%= productData.id %>"><button class="btn-default"><strong>EDITAR</strong></button></a>
                     </div>
+                    <% } %> 
                 <% } %>      
             </div>  
         </div>
