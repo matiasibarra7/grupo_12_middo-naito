@@ -298,7 +298,7 @@ main .btn-talle {
   margin: 1.2em 0em;
 }
 
-.btn-add {
+.btn-black {
   margin: 12px 0px;
   background-color: black;
   color: antiquewhite;
@@ -960,6 +960,8 @@ footer i {
     cursor: pointer;
     width: 95%;
     height: 3rem;
+    max-width: none;
+    margin: auto;
   }
   
   
