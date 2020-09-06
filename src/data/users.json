@@ -42,11 +42,13 @@
   "firstName": "Nahue",
   "lastName": "Ibarra",
   "email": "nah@123.com",
-  "password": "$2a$10$EpfKbyi9D7tokKSbNwxxOeC./2j03AfD781irTogCeKNDQndGXqa6",
+  "province": "Corrientes",
+  "location": "Corrientes",
+  "birthday": "1993-04-11",
+  "gender": "male",
   "id": 9,
   "image": null,
-  "alt": "Nahue",
-  "admin": false
+  "password": "$2a$10$EpfKbyi9D7tokKSbNwxxOeC./2j03AfD781irTogCeKNDQndGXqa6"
  },
  {
   "firstName": "Santi",

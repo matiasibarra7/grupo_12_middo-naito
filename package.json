@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "startdev": "nodemon app.js -e ejs, js"
+    "startdev": "nodemon app.js -e ejs,js"
   },
   "repository": {
     "type": "git",

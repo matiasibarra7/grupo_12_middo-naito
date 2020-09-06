@@ -86,6 +86,14 @@ header .cart-icon {
   display: none
 }
 
+.link-profile-mobile {
+  padding: 1rem 0.5rem;
+}
+
+.login-spam {
+  margin: 0 4px;
+}
+
 header a {
   color: white;
   text-decoration: none;
@@ -1010,6 +1018,9 @@ footer i {
   padding: 1rem;
 }
 
+  /* FIN PANEL DE ADMINISTRADOR */
+
+
 @media (min-width: 1024px) {
   main {
     padding-top: 4rem;
@@ -1138,20 +1149,27 @@ footer i {
   /* Probando dropdowns */
 
   .dropdown-container {
-    display: none;
+    display: flex;
     flex-direction: column;
     background-color: black;
     position: absolute;
+    
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear; 
   }
 
   .dropdown-container a {
-    margin: 10px;
     font-size: 1rem;
+    margin-bottom: 0.5rem;
   }
   
   .dropdown-mn:hover .dropdown-container {
-    display: flex;
-    padding: 1rem 3px;
+    visibility: visible;
+    opacity: 1;
+
+    padding: 1rem 0.5rem 0;
+    min-width: 10rem;
   }
 
   .li-mobile, .user-sidebar.li-mobile {

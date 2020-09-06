@@ -4,22 +4,22 @@
 
         <!-- Este solo aparece en mobile -->
         <li class="user-sidebar li-mobile">
-          <% if(locals.user) { %> 
-          <a href="/users/profile" style="padding: 1rem 8px;">
-            <i class="fas fa-user"></i>
-            <span><%= locals.user.firstName %></span>
-          </a>
-          <% }else { %> 
-          <a href="/users/login" style="padding: 1rem 8px;">
-            <i class="fas fa-user"></i>
-            <span>Iniciar Sesión</span>
-          </a>
-        <% } %> 
+          <% if (locals.user) { %> 
+            <a href="/users/profile" class="link-profile-mobile">
+              <i class="fas fa-user"></i>
+              <span><%= locals.user.firstName %></span>
+            </a>
+          <% } else { %> 
+            <a href="/users/login" class="link-profile-mobile">
+              <i class="fas fa-user"></i>
+              <span>Iniciar Sesión</span>
+            </a>
+          <% } %> 
         </li>    
 
         <li><a href="/">Home</a></li>
-        <% if(!locals.user) { %> 
-             <li class="close-sidebar-btn">
+        <% if (!locals.user) { %> 
+            <li class="close-sidebar-btn">
               <a href="/users/register">Registrate</a>
             </li>
           <% } %> 
@@ -33,7 +33,7 @@
         </li> -->
 
 
-        <li class="li-mobile"><a href="/users/login">Ingresa</a></li> <!-- Este solo aparece en mobile -->   
+        <!-- <li class="li-mobile"><a href="/users/login">Ingresa</a></li> --> <!-- Este solo aparece en mobile -->   
         <li><a href="/products">Productos</a></li>
         <!-- <li class="dropdown-mn">
           <a href="/products/add">Nuevo</a>
@@ -41,7 +41,7 @@
         <li><a href="/us">About us</a></li>
         <li class="close-sidebar-btn"><a href="#" onclick="closeSidebar()">Cerrar</a></li>
         <% if(locals.user) { %> 
-        <li class="close-sidebar-btn"><a href="/users/logout">Cerrar sesión</a></li>
+          <li class="close-sidebar-btn"><a href="/users/logout">Cerrar sesión</a></li>
         <% } %>
       </ul>
     </nav>
@@ -60,24 +60,28 @@
           <div class="dropdown-mn">
            <a href="/users/profile" >
             <i class="fas fa-user"></i>
-            <span><%= locals.user.firstName %> <i class="fas fa-chevron-down"></i></span>
+            <span class="login-spam"><%= locals.user.firstName %> </span>
+            <i class="fas fa-chevron-down"></i>
            </a>
               <div class="dropdown-container">
                 <a href="/users/profile">Mi cuenta</a>
                 <a href="/users/logout">Cerrar sesión</a> 
               </div>
           </div>
-          <% }else { %> 
+          <% } else { %> 
 
             <div class="dropdown-mn">
               <a href="/users/login" >
                <i class="fas fa-user"></i>
-               <span>Iniciar sesión<i class="fas fa-chevron-down"></i></span>
+               <span class="login-spam">Iniciar sesión</span>
+               <i class="fas fa-chevron-down"></i>
               </a>
-                 <div class="dropdown-container">
-                   <a href="/users/register">Registrate</a>
-                 </div>
-             </div>
+              <div class="dropdown-container">
+                <div class="element-dropdown">
+                  <a href="/users/register"><i class="fas fa-user-plus"></i> Registrate</a>
+                </div>
+              </div>
+            </div>
 
 
           <!-- <a href="/users/login">
