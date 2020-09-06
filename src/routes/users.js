@@ -14,33 +14,41 @@ let storage = multer.diskStorage({
     cb(null, `${__dirname}/../../public/images/users`);
   },
   filename: function (req, file, cb) {
-    cb(null, "imagen - perfil " + path.basename(file.originalname));
+    cb(null, "prof-img-" + path.basename(file.originalname));
   },
 });
 
 upload = multer({ storage });
 
-router.get("/usersList", userRoute, adminRoute, usersController.usersList)
-// router.get("/profile", usersController.profile)
+// guestRoutes ↓
+router.get("/register", guestRoute, usersController.register); // Formulario de regitro
 
-router.get("/panelAdmin", adminRoute, usersController.panelAdmin);
+router.post("/register", upload.single("image"), usersController.store); // Acción de registrarse (a donde se envía el formulario)
+
+router.get("/login", guestRoute, usersController.login); // Formulario de login
+
+router.post("/login",/*validate.login*/ usersController.authenticate); // Autenticación de existencia y tipo de usuario
+
+// userRoutes ↓
+router.get("/profile/", userRoute, usersController.profile)  // Vista de perfil
+
+router.get("/profile/edit", userRoute, usersController.profileEdit)  // Formulario de edición de perfil
+
+router.put("/profile/edit", upload.single("image"), usersController.uploadProfile) // Acción de edición (a donde se envía el formulario)
+
+router.get("/logout", userRoute, usersController.logout); // Deslogueo
+
+// adminRoutes ↓
+router.get("/panelAdmin", userRoute, adminRoute, usersController.panelAdmin); // Ver panel de administrador
+
+router.get("/usersList", userRoute, adminRoute, usersController.usersList) // Listado de usuarios registrados
+
+router.delete("/edit/:id", adminRoute , usersController.delete); // 7 -- Acción de borrar un usuario
 
 
-router.get("/profile/", userRoute, usersController.profile)  /* ESTO ES SOLO DE PRUEBA, DESPUES BORRAR Y ACCEDER POR POST */
-router.get("/profile/edit", userRoute, usersController.profileEdit)  /* ESTO ES SOLO DE PRUEBA, DESPUES BORRAR Y ACCEDER POR POST */
-router.put("/profile/edit", upload.single("image"), usersController.uploadProfile)  /* ESTO ES SOLO DE PRUEBA, DESPUES BORRAR Y ACCEDER POR POST */
-router.get("/register", guestRoute, usersController.register);
-router.get("/login", guestRoute, usersController.login);
-router.post("/login",/*validate.login*/ usersController.authenticate);
-router.get("/logout", userRoute, usersController.logout);
 
 
 
-
-router.delete("/edit/:id", adminRoute , usersController.delete); // 7 -- Acción de borrado
-
-
-router.post("/register", upload.single("image"), usersController.store);
 
 
 

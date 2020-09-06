@@ -8,12 +8,12 @@
     <main class="cart">
         
         <p class="section-title">Usuarios Registrados</p>
-        <div class="little-title-users-list">Espero que seas un admin, ehhh</div>
+        <div class="little-title-users-list" style="display: none;">Espero que seas un admin, ehhh</div>
         <section class="section-users-list">
             <% usersData.forEach(el => { %>    
                 <div class="profile-container-list">
                     <div class="image-container-users-list">
-                        <a href="/users/profile/<%= el.id - 1 %>" alt="<%= el.firstName %>"><img src="/images/users/<%= el.image? el.image : "unnamed.png" %>" alt="<%= el.firstName %>"></a>
+                        <a href="/users/profile/<%= el.id - 1 %>" alt="<%= el.firstName %>"><img src="/images/users/<%= el.image? el.image : "unnamed.jpg" %>" alt="<%= el.firstName %>"></a>
                     </div>
 
                     <div class="user-details-users-list">
@@ -21,7 +21,7 @@
                         <span>Nombre: <%= el.firstName + " " + el.lastName %></span>
                         <span>Email: <%= el.email %></span>
                         <span>¿Superpoderes? <%= el.admin? "YEEAAHH" : "Nope" %></span>
-                        <form class="session-form newProductForm" action="/users/edit/<%= el.id %>?_method=DELETE" method="POST">
+                        <form class="session-form new-product-form" action="/users/edit/<%= el.id %>?_method=DELETE" method="POST">
                             <div class="btn">
                                 <button type="submit" class="btn-default red">BORRAR USUARIO</button>
                             </div>

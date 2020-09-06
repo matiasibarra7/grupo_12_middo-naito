@@ -32,7 +32,7 @@ const usersModel = {
     let userData = req.body;
     userData.id= req.session.user.id;
     if (req.file) {
-      userData.image = "imagen - perfil " + path.basename(req.file.originalname)
+      userData.image = "prof-img-" + path.basename(req.file.originalname)
     } else if (req.session.user.image){
       userData.image = req.session.user.image;
     } else {
@@ -54,7 +54,7 @@ const usersModel = {
       if (foundUser.image) {
         fs.unlinkSync(`${__dirname}/../../public/images/users/${foundUser.image}`);
       }
-      userData.image = "imagen - perfil " + path.basename(req.file.originalname);
+      userData.image = "prof-img-" + path.basename(req.file.originalname);
     }
     this.writeFile(modifyUsers);
     req.session.user = userData;
@@ -66,7 +66,7 @@ const usersModel = {
     newUser.id = this.lastID() + 1;
     newUser.alt = req.body.firstName;
     if(req.file){
-      newUser.image = "imagen - perfil " + path.basename(req.file.originalname)
+      newUser.image = "prof-img-" + path.basename(req.file.originalname)
     } else{
       newUser.image = null;
     };

@@ -376,19 +376,23 @@ main .session-form {
 
 
 /* New product */
+.session-form.new-product-form {
+  color: #7FDEFF;
+}
 
-.session-form.newProductForm .btn-talle{
+
+.session-form.new-product-form .btn-talle{
   margin-left: 5%;
 }
 
-.session-form.newProductForm textarea{
+.session-form.new-product-form textarea{
   font-size: 0.8rem;
   font-family: Raleway;
   resize: none;
   height: 5rem;
 }
 
-.session-form.newProductForm .btn-talle {
+.session-form.new-product-form .btn-talle {
   height: 45.3333px; /* Este sale de sumar el padding de 1rem más el font-size de un input normal, turbio*/
   border: none;
   padding-left: 1rem;
@@ -1016,6 +1020,7 @@ footer i {
   background-color: burlywood;
   align-items: center;
   padding: 1rem;
+  text-align: center;
 }
 
   /* FIN PANEL DE ADMINISTRADOR */
@@ -1142,7 +1147,7 @@ footer i {
     text-align: start;
   }
 
-  .session-form.newProductForm textarea{
+  .session-form.new-product-form textarea{
     text-align: start;
   }
 
@@ -1164,6 +1169,10 @@ footer i {
     margin-bottom: 0.5rem;
   }
   
+  .fas.fa-chevron-down {
+    font-size: 1rem;
+  }
+
   .dropdown-mn:hover .dropdown-container {
     visibility: visible;
     opacity: 1;

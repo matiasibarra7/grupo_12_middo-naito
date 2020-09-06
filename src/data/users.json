@@ -1,40 +1,11 @@
 [
  {
-  "firstName": "Ppeito",
-  "lastName": "Martino",
-  "email": "Sanmb182@gmail.com",
-  "password": "asdasdasdasd",
-  "confirmPassword": "asdasdasdasd",
-  "id": 4,
-  "image": "imagen - Perfilsicko born from pain logo original.jpg"
- },
- {
-  "firstName": "userExample",
-  "lastName": "2",
-  "email": "correofalso789@gmail.com",
-  "password": "123",
-  "confirmPassword": "123",
-  "id": 6,
-  "image": "imagen - perfil photo-1597689530931-a8edd8a31808.jpg",
-  "admin": false
- },
- {
-  "firstName": "Jennifer",
-  "lastName": "Wallace",
-  "email": "correorefalso123@gmail.com",
-  "password": "123123",
-  "confirmPassword": "123123",
-  "id": 7,
-  "image": "imagen - perfil 01-shutterstock_476340928-irina-bg-1024x683-1.jpg",
-  "admin": true
- },
- {
   "firstName": "Juan",
   "lastName": "Barriera",
   "email": "juabarriera@hotmail.com",
   "password": "$2a$10$OiW.UZzBOCOIYQIOiRAmu.pN40rzIMOJ.RJx7IPb1v7SR1QBm6Wc2",
   "id": 8,
-  "image": "imagen - perfil 01-shutterstock_476340928-irina-bg-1024x683-1.jpg",
+  "image": null,
   "alt": "Juan",
   "admin": false
  },
@@ -59,5 +30,65 @@
   "alt": "Santi",
   "image": null,
   "admin": true
+ },
+ {
+  "firstName": "Jennifer",
+  "lastName": "Wallace",
+  "email": "jen@falso.com",
+  "password": "$2a$10$QVuvb4umhFOQIpR.asgj9O30RcgWkc/No9/N3eOE4bHlpxvH8uHRW",
+  "id": 11,
+  "alt": "Jennifer",
+  "image": "prof-img-square.jpg",
+  "admin": false
+ },
+ {
+  "firstName": "userExample",
+  "lastName": "2",
+  "email": "user@user.com",
+  "password": "$2a$10$7QTVes6i6s9x5O7fOOpep.Z.rXB/t9y9iU.JwElrI085Y8dC27Z.2",
+  "id": 12,
+  "alt": "userExample",
+  "image": "prof-img-photo-1597689530931-a8edd8a31808.jpg",
+  "admin": false
+ },
+ {
+  "firstName": "userExample",
+  "lastName": "3",
+  "email": "user3@user.com",
+  "password": "$2a$10$udu4PraGE4RUO7Y8DYH99ulvD5dd21lZu1OCu.3RK927BZD1nZ4oO",
+  "id": 13,
+  "alt": "userExample",
+  "image": "prof-img-photo-1597799103501-8a421a387cc5.jpg",
+  "admin": false
+ },
+ {
+  "firstName": "userExample",
+  "lastName": "4",
+  "email": "user4@user.com",
+  "password": "$2a$10$pnDvXqEkyOjNFPX4vLwNPOLoYWCKmbxCcHACRNacxXq72EGv9FNQm",
+  "id": 14,
+  "alt": "userExample",
+  "image": "prof-img-photo-1587464196619-4bb33b420536.jpg",
+  "admin": false
+ },
+ {
+  "firstName": "userExample",
+  "lastName": "5",
+  "email": "user5@user.com",
+  "password": "$2a$10$ayjCdnCI58REB3UHJyCXHe7XOOSF7ljnxflIQvFxBjoTYOmNHN.ry",
+  "id": 15,
+  "alt": "userExample",
+  "image": "prof-img-photo-1598371839743-fd2112ddac08.jpg",
+  "admin": false
+ },
+ {
+  "firstName": "userExample",
+  "lastName": "6",
+  "email": "user6@user.com",
+  "password": "$2a$10$RLfFg.ydkDvFSUHHEyourOxPjdBY9XhF4Bg4bhv.6u9GAqTRkJdBa",
+  "id": 16,
+  "alt": "userExample",
+  "image": "prof-img-photo-1556474835-b0f3ac40d4d1.jpg",
+  "admin": false
  }
 ]

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head', {title: "Editar producto"}); %>
-<body>
+<body class="adm-body">
     <%- include('../partials/header'); %>
     <main class="newProduct">
         <div class="back-arrow">
@@ -12,7 +12,7 @@
             </a>
         </div>
         <h2 class="session-title">EDITAR UN PRODUCTO</h2>
-        <form class="session-form newProductForm editForm" action="/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form class="session-form new-product-form" action="/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
             <div class="input-form">
                 <label for="name">NOMBRE</label>
                 <input type="text" name="name" id="productName" class="inputs" placeholder="Escriba el nombre del producto" value="<%= product.name %> ">
@@ -83,7 +83,7 @@
             </div>
         </form>
 
-        <form class="session-form newProductForm" action="/products/edit/<%= product.id %>?_method=DELETE" method="POST">
+        <form class="session-form new-product-form" action="/products/edit/<%= product.id %>?_method=DELETE" method="POST">
             <div class="btn">
                 <button type="submit" class="btn-default red">BORRAR PRODUCTO</button>
             </div>

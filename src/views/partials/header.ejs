@@ -58,30 +58,31 @@
       <div class="user-icon"> <!-- Esto aparece solo en Desktop -->
         <% if(locals.user) { %> 
           <div class="dropdown-mn">
-           <a href="/users/profile" >
-            <i class="fas fa-user"></i>
-            <span class="login-spam"><%= locals.user.firstName %> </span>
-            <i class="fas fa-chevron-down"></i>
-           </a>
-              <div class="dropdown-container">
-                <a href="/users/profile">Mi cuenta</a>
-                <a href="/users/logout">Cerrar sesión</a> 
-              </div>
-          </div>
-          <% } else { %> 
-
-            <div class="dropdown-mn">
-              <a href="/users/login" >
-               <i class="fas fa-user"></i>
-               <span class="login-spam">Iniciar sesión</span>
-               <i class="fas fa-chevron-down"></i>
-              </a>
-              <div class="dropdown-container">
-                <div class="element-dropdown">
-                  <a href="/users/register"><i class="fas fa-user-plus"></i> Registrate</a>
-                </div>
-              </div>
+            <a href="/users/profile" >
+              <i class="fas fa-user"></i>
+              <span class="login-spam"><%= locals.user.firstName %> </span>
+              <i class="fas fa-chevron-down"></i>
+            </a>
+            <div class="dropdown-container">
+              <a href="/users/profile">Mi cuenta</a>
+              <% if(locals.user.admin) { %>
+                <a href="/users/panelAdmin"> Panel admin </a>
+              <% } %>
+              <a href="/users/logout">Cerrar sesión</a> 
             </div>
+          </div>
+        <% } else { %> 
+
+          <div class="dropdown-mn">
+            <a href="/users/login" >
+              <i class="fas fa-user"></i>
+              <span class="login-spam">Iniciar sesión</span>
+              <i class="fas fa-chevron-down" style="font-size: 1rem"></i>
+            </a>
+            <div class="dropdown-container">           
+              <a href="/users/register"><i class="fas fa-user-plus"></i> Registrate</a>
+            </div>
+          </div>
 
 
           <!-- <a href="/users/login">
@@ -89,7 +90,7 @@
             <span>Iniciar Sesión</span>
           </a> -->
 
-          <% } %>
+        <% } %>
           
       </div>
       <div class="cart-icon"><a href="/products/cart"><i class="fas fa-shopping-cart"></i></a></div>
