@@ -4,7 +4,8 @@
   "description": "> Se reemplazará con el nombre de la tienda una vez definido :)",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "startdev": "nodemon app.js -e ejs, js"
   },
   "repository": {
     "type": "git",

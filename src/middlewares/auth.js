@@ -11,9 +11,9 @@ module.exports = (req, res, next) => {
 
         let token = tokensModel.getOne(req.cookies.userToken)
         let userFull = usersModel.getOneByEmail(token.user)
-        console.log("yse asdlhjas jlkd",userFull)
-
+        
         delete userFull.password
+        console.log("Cookie detectada, usuario completo: ", userFull)
         req.session.user = userFull;
         res.locals.user = userFull;
 

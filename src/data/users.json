@@ -1,23 +1,5 @@
 [
  {
-  "id": 1,
-  "firstName": "Waylan",
-  "lastName": "Parmley",
-  "email": "wparmley0@nyu.edu",
-  "password": "PgE6km2TFk",
-  "admin": false,
-  "image": null
- },
- {
-  "id": 3,
-  "firstName": "Mikel",
-  "lastName": "Whitwham",
-  "email": "mwhitwhamj@yale.edu",
-  "password": "6hQY4p",
-  "admin": true,
-  "image": null
- },
- {
   "firstName": "Ppeito",
   "lastName": "Martino",
   "email": "Sanmb182@gmail.com",
@@ -75,35 +57,5 @@
   "alt": "Santi",
   "image": null,
   "admin": true
- },
- {
-  "firstName": "super",
-  "lastName": "admin",
-  "email": "admin@middo.com",
-  "password": "$2a$10$jTpWggEpLxgIjDzXQG.OB.mdeIpwiem4zvRtAFlf900tYc2LCgcKq",
-  "id": 11,
-  "alt": "super",
-  "image": null,
-  "admin": false
- },
- {
-  "firstName": "example",
-  "lastName": "example",
-  "email": "example@example.com",
-  "password": "$2a$10$f6pll3RBuFpojMGfzjzIDu5aDvdsS6leVFNHi.6HephHSXsSTel1W",
-  "id": 12,
-  "alt": "example",
-  "image": null,
-  "admin": false
- },
- {
-  "firstName": "newUser",
-  "lastName": "newUser",
-  "email": "newUser@newUser.com",
-  "password": "$2a$10$qtw6q5nsgsr1azB1PisonubpVpKIDBo0AVrqG9s4CMR5O48XRv5TG",
-  "id": 13,
-  "alt": "newUser",
-  "image": null,
-  "admin": false
  }
 ]
