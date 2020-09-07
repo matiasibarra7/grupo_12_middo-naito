@@ -21,17 +21,17 @@ upload = multer({ storage });
 
 router.get("/", productsController.main); //1 -- Listado de productos
 
-router.get("/add", adminRoute, productsController.add); //2 -- Formulario de creación de productos
+router.get("/add", userRoute, adminRoute, productsController.add); //2 -- Formulario de creación de productos
 
 router.get("/details/:id", productsController.details); //3 -- Detalle de un producto particular
 
 router.post("/add", upload.single("image"), productsController.store); //4 -- Acción de creación (a donde se envía el formulario)
 
-router.get("/edit/:id",adminRoute, productsController.edit); // 5 -- Formulario de edición de productos
+router.get("/edit/:id", userRoute, adminRoute, productsController.edit); // 5 -- Formulario de edición de productos
 
 router.put("/edit/:id", upload.single("image"), productsController.update); // 6 -- Acción de edición (a donde se envía el formulario):
 
-router.delete("/edit/:id", adminRoute, productsController.delete); // 7 -- Acción de borrado
+router.delete("/edit/:id", userRoute, adminRoute, productsController.delete); // 7 -- Acción de borrado
 
 router.get("/cart", userRoute, productsController.cart);
 

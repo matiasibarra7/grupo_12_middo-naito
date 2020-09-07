@@ -899,7 +899,7 @@ footer i {
   .container-product-details {
     display: flex;
     max-width: 1440px;
-    margin: 0 auto;
+    margin: auto;
   }
 
   .product-description {
