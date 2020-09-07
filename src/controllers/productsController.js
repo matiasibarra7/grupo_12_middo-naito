@@ -7,8 +7,8 @@ const productsController = {
     res.render("./products/products", { productsData, toThousand });
   },
   details: (req, res) => {
-    let productsData = productsModel.getAll();
-    res.render("./products/productDetail", { productData: productsData[req.params.id], toThousand });
+    let productData = productsModel.getOne(req.params.id);
+    res.render("./products/productDetail", { productData, toThousand }); 
   },
   cart: (req, res) => {
     let productsData = productsModel.getAll();
@@ -18,8 +18,8 @@ const productsController = {
     res.render(`./products/productAdd`);
   },
   edit: (req, res) => {
-    let productsData = productsModel.getAll();
-    res.render(`./products/productEdit`, { product: productsData[req.params.id] });
+    let productData = productsModel.getOne(req.params.id);
+    res.render(`./products/productEdit`, { product: productData });
   },
   update: (req, res) => {
     productsModel.update(req);
