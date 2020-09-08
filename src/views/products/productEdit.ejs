@@ -3,6 +3,8 @@
 <%- include('../partials/head', {title: "Editar producto"}); %>
 <body class="adm-body">
     <%- include('../partials/header'); %>
+
+    <div class="cover-modal" onclick=closeModal()></div>
     <main class="newProduct">
         <div class="back-arrow">
             <a href="/">
@@ -83,11 +85,26 @@
             </div>
         </form>
 
-        <form class="session-form new-product-form" action="/products/edit/<%= product.id %>?_method=DELETE" method="POST">
-            <div class="btn">
-                <button type="submit" class="btn-default red">BORRAR PRODUCTO</button>
+        <div class="btn">
+            <button type="submit" class="btn-default red" onclick="newNote()">BORRAR PRODUCTO</button>
+        </div>
+
+        <div class="modal-naito">  
+            <div class="close-zone-modal" onclick=closeModal()>X</div>
+            <div>
+                <p style="color: black;">¿Estás seguro que quieres eliminar "<%= product.name %>"?</p>
             </div>
-        </form>
+            <div class="field-modal">
+                <div class="btn">
+                    <button type="submit" class="btn-default" onclick="closeModal()">Cancelar</button>
+                </div>
+                <form class="session-form new-product-form" action="/products/edit/<%= product.id %>?_method=DELETE" method="POST" style="margin: 0;">
+                    <div class="btn">
+                        <button type="submit" class="btn-default red">BORRAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </main>
     <%- include('../partials/footer'); %>
 </body>
