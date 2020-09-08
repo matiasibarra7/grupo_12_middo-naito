@@ -839,6 +839,30 @@ footer i {
 }
 /* FIN EDICION PERFIL DE USUARIO */
 
+/* INICIO PANEL DE ADMINISTRADOR */
+.section-panel-admin {
+  display: flex;
+  max-width: 1024px;
+  flex-wrap: wrap;
+}
+
+.section-panel-admin a {
+  margin: 0 auto;
+  text-decoration: none;
+  color: black;
+}
+
+.panel-element {
+  display: flex;
+  width: 150px;
+  height: 150px;
+  background-color: burlywood;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+/* FIN PANEL DE ADMINISTRADOR */
+
 /* Acá empieza el responsive */
 @media (min-width: 335px) {
   header .cart-icon {
@@ -1000,31 +1024,6 @@ footer i {
 
   /* FIN EDIT DE USUARIO */
 }
-  /* INICIO PANEL DE ADMINISTRADOR */
-.section-panel-admin {
-  display: flex;
-  max-width: 1024px;
-  flex-wrap: wrap;
-}
-
-.section-panel-admin a {
-  margin: 0 auto;
-  text-decoration: none;
-  color: black;
-}
-
-.panel-element {
-  display: flex;
-  width: 150px;
-  height: 150px;
-  background-color: burlywood;
-  align-items: center;
-  padding: 1rem;
-  text-align: center;
-}
-
-  /* FIN PANEL DE ADMINISTRADOR */
-
 
 @media (min-width: 1024px) {
   main {
@@ -1171,6 +1170,8 @@ footer i {
   
   .fas.fa-chevron-down {
     font-size: 1rem;
+    position: relative;
+    top: 2px;
   }
 
   .dropdown-mn:hover .dropdown-container {
