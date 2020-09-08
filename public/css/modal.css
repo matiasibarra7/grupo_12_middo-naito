@@ -1,54 +1,54 @@
 /* ESTILOS MODAL */
 .modal-naito {
-	display: flex;
+  display: flex;
 
-	opacity: 0.4;
-	visibility: hidden;
-	transition: visibility 0s, opacity 1s ease; 
-	
-	flex-direction: column;
-	width: 80%;
-	max-width: 400px;
-	padding: 1rem;
-	background-color: lavenderblush;
+  opacity: 0.4;
+  visibility: hidden;
+  transition: visibility 0s, opacity 1s ease; 
+    
+  flex-direction: column;
+  width: 80%;
+  max-width: 400px;
+  padding: 1rem;
+  background-color: lavenderblush;
 
-	justify-content: center;
-	align-self: center;
+  justify-content: center;
+  align-self: center;
 
-	position: fixed;
-	top: 20%;
-	z-index: 10;	
+  position: fixed;
+  top: 20%;
+  z-index: 10;  
 }
 
 .close-zone-modal {
-	color: black;
-	font-size: 13px;
-	font-weight: bold;
-	position: absolute;
-	right: 1rem;
-	top: 1rem;
+  color: black;
+  font-size: 13px;
+  font-weight: bold;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
 }
 
 .close-zone-modal:hover,
 .close-zone-modal:focus {
-	color: grey;
-	text-decoration: none;
-	cursor: pointer;
+  color: grey;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .cover-modal {
-	display: none;
-	background-color: rgba(0, 0, 0, 0.5);
-	width: 100vw;
-	height: 100vh;
-	position: fixed;
-	z-index: 9;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 9;
 }
 
 .field-modal {
-	display: flex;
-	justify-content: space-between; 
-	margin: 2rem auto 0; 
-	width: 100%;
+  display: flex;
+  justify-content: space-between; 
+  margin: 2rem auto 0; 
+  width: 100%;
 }
 /* FIN ESTILOS MODAL */

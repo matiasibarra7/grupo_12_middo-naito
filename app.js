@@ -17,9 +17,9 @@ const methodOverride = require("method-override");
 app.use(methodOverride("_method"));
 
 app.use(session({
-  secret: "Middo Naito",
-  resave: false,
-  saveUninitialized: true
+    secret: "Middo Naito",
+    resave: false,
+    saveUninitialized: true
 }));
 
 app.use(cookieParser());
@@ -36,10 +36,10 @@ app.use("/users", userRoutes);
 
 
 app.listen(3000, () => {
-  console.log("Middo Naito en marcha en puerto 3000");
+    console.log("Middo Naito en marcha en puerto 3000");
 });
 
 app.post("/", (req, res) => {
-  res.send(req.body);
+    res.send(req.body);
 });
 

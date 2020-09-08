@@ -6,7 +6,7 @@ router.get("/", mainController.main);
 router.get("/us", mainController.us);
 router.get("/carousel", mainController.carousel);
 router.get("/modal", (req, res) => {
-    res.render("./index/modalTest");
+  res.render("./index/modalTest");
 });
 
 module.exports = router;
