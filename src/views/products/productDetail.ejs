@@ -6,6 +6,8 @@
 
     <%- include('../partials/header'); %>
 
+    <div class="cover-modal" onclick=toggleModal()></div>
+
     <main>
         <div class="back-arrow">
             <a href="/">
@@ -74,20 +76,22 @@
                     </p>
                 </div>
     
-                <div class="size-table-title description-title" onclick="toggleSizeTable()" style="display: none;">
+                <div class="size-table-title description-title" onclick="toggleModal()">
                     <span><p>GUÍA DE TALLES<p></span>
                 </div>
     
-                <div class="product-size-table" style="display: none;">
-    
-                    <p>
-                        <strong>Talle S</strong>: 50 cm de ancho. 66 cm de largo.<br>
-                        <strong>Talle M</strong>: 54 cm de ancho. 70 cm de largo.<br>
-                        <strong>Talle L</strong>: 58 cm de ancho. 70 cm de largo.<br>
-                        <strong>Talle XL</strong>: 63 cm de ancho. 73 cm de largo.<br>
-                        <strong>Talle XXL</strong>: 68 cm de ancho. 76 cm de largo.<br>
-                    </p>
+
+                <div class="modal-naito">
+                    <div class="close-icon-modal" onclick=toggleModal()>X</div>
+                    <div>
+                        <b>Talle S</b>: 50 cm de ancho. 66 cm de largo.<br>
+                        <b>Talle M</b>: 54 cm de ancho. 70 cm de largo.<br>
+                        <b>Talle L</b>: 58 cm de ancho. 70 cm de largo.<br>
+                        <b>Talle XL</b>: 63 cm de ancho. 73 cm de largo.<br>
+                        <b>Talle XXL</b>: 68 cm de ancho. 76 cm de largo.<br>
+                    </div>
                 </div>
+
                 <% if(locals.user){ %>
                    <% if (locals.user.admin) {%> 
                     <div class="add-div">
