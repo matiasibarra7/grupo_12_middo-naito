@@ -90,7 +90,7 @@ header .cart-icon {
   padding: 1rem 0.5rem;
 }
 
-.login-spam {
+.login-span {
   margin: 0 4px;
 }
 
@@ -752,7 +752,7 @@ footer i {
 /* ESTILOS LISTA USUARIOS */
 .adm-body {
   background-color: #2C2A4A;
-  color: #7FDEFF;
+  color: #CDDDDD;
 }
 
 .section-users-list {
@@ -1055,7 +1055,7 @@ footer i {
   display: flex;
   width: 150px;
   height: 150px;
-  background-color: burlywood;
+  background-color: #A599B5;
   align-items: center;
   padding: 1rem;
   text-align: center;
