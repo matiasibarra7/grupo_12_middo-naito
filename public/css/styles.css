@@ -90,7 +90,7 @@ header .cart-icon {
   padding: 1rem 0.5rem;
 }
 
-.login-spam {
+.login-span {
   margin: 0 4px;
 }
 
@@ -262,6 +262,18 @@ main.index-main {
   z-index: 14;
 }
 
+.sidebar nav ul li.back-arrow-sidebar { 
+  color: white;
+  font-size: 18px;
+  margin: 0px 7px;
+  border-bottom: none;
+  text-align: end;
+}
+
+.user-sidebar.li-mobile {
+  border-top: 1px solid grey;
+}
+
 #details {
   display: flex;
   flex-direction: column;
@@ -334,21 +346,13 @@ main .btn-talle {
 }
 
 .description-title {
-  margin: 12px 6px;
+  margin: 6px 6px;
+  margin-bottom: -15px;
   border-top: 2px solid rgb(36, 10, 10);
   display: flex;
-  justify-content: center;
-  /* background-color: lightgray;
-  padding: 14px; */
+  font-size: 1em;
 }
 
-.description-title span {
-  text-align: center;
-  margin: 6px 6px;
-  background-color: lightgray;
-  width: 80%;
-  font-size: smaller;
-}
 /* REGISTER Y LOGIN, EDIT y ADD PRODUCT html */
 
 main.register, 
@@ -748,7 +752,7 @@ footer i {
 /* ESTILOS LISTA USUARIOS */
 .adm-body {
   background-color: #2C2A4A;
-  color: #7FDEFF;
+  color: #CDDDDD;
 }
 
 .section-users-list {
@@ -839,6 +843,7 @@ footer i {
 }
 /* FIN EDICION PERFIL DE USUARIO */
 
+<<<<<<< HEAD
 /* INICIO PANEL DE ADMINISTRADOR */
 .section-panel-admin {
   display: flex;
@@ -862,6 +867,41 @@ footer i {
   text-align: center;
 }
 /* FIN PANEL DE ADMINISTRADOR */
+=======
+/* BOTONES RADIO CHECKED IN DETAILS */
+.buttons-checks {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.buttons-checks label {
+  width: 15%;
+  max-width: 3.5rem;
+  margin: 0.25rem;
+  background-color:#EFEFEF;
+  border-radius: 4px;
+  border: 1px solid #D0D0D0;
+  font-weight: bold
+}
+
+.buttons-checks label span {
+  display: block;
+  text-align: center;
+  font-size:  1rem;
+  padding:  0.5rem;
+}
+
+.buttons-checks label input {
+  position: absolute;
+  visibility: hidden;
+}
+
+.buttons-checks input:checked + span {
+  background-color:#404040;
+  color:#F7F7F7;
+}
+/* FIN BOTONES RADIO CHECKED IN DETAILS */
+>>>>>>> b9f78786f0ac32aa9236cd1defbf612eae7d300d
 
 /* Acá empieza el responsive */
 @media (min-width: 335px) {
@@ -979,12 +1019,12 @@ footer i {
     width: 50%;
   }
   
-  .description-title span {
-    text-align: center;
+  .description-title {
     margin: 6px 6px;
-    background-color: lightgray;
-    width: 60%;
-    font-size: smaller;
+    margin-bottom: -15px;
+    border-top: 2px solid rgb(36, 10, 10);
+    display: flex;
+    font-size: 18px;
   }
 
   .btn-black {
@@ -1024,6 +1064,34 @@ footer i {
 
   /* FIN EDIT DE USUARIO */
 }
+<<<<<<< HEAD
+=======
+  /* INICIO PANEL DE ADMINISTRADOR */
+.section-panel-admin {
+  display: flex;
+  max-width: 1024px;
+  flex-wrap: wrap;
+}
+
+.section-panel-admin a {
+  margin: 0 auto 1.5rem;
+  text-decoration: none;
+  color: black;
+}
+
+.panel-element {
+  display: flex;
+  width: 150px;
+  height: 150px;
+  background-color: #A599B5;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+  /* FIN PANEL DE ADMINISTRADOR */
+
+>>>>>>> b9f78786f0ac32aa9236cd1defbf612eae7d300d
 
 @media (min-width: 1024px) {
   main {

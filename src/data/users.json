@@ -73,16 +73,6 @@
  },
  {
   "firstName": "userExample",
-  "lastName": "5",
-  "email": "user5@user.com",
-  "password": "$2a$10$ayjCdnCI58REB3UHJyCXHe7XOOSF7ljnxflIQvFxBjoTYOmNHN.ry",
-  "id": 15,
-  "alt": "userExample",
-  "image": "prof-img-photo-1598371839743-fd2112ddac08.jpg",
-  "admin": false
- },
- {
-  "firstName": "userExample",
   "lastName": "6",
   "email": "user6@user.com",
   "password": "$2a$10$RLfFg.ydkDvFSUHHEyourOxPjdBY9XhF4Bg4bhv.6u9GAqTRkJdBa",

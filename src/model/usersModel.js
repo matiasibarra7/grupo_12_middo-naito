@@ -28,21 +28,21 @@ const usersModel = {
     return userFound;
   },
 
-   update: function (req) {
+  update: function (req) {
     let userData = req.body;
-    userData.id= req.session.user.id;
+    userData.id = req.session.user.id;
     if (req.file) {
       userData.image = "prof-img-" + path.basename(req.file.originalname)
-    } else if (req.session.user.image){
+    } else if (req.session.user.image) {
       userData.image = req.session.user.image;
     } else {
-      userDate.image = null;
-    }  
-    
+      userData.image = null;
+    }
+
     let usersList = this.getAll();
     let foundUser = this.getOne(userData.id);
     userData.password = foundUser.password;
-    
+
     let modifyUsers = usersList.map((user) => {
       if (user.id == userData.id) {
         return userData;
@@ -58,20 +58,20 @@ const usersModel = {
     }
     this.writeFile(modifyUsers);
     req.session.user = userData;
-   
+
   },
 
   store: function (req) {
     let newUser = req.body;
     newUser.id = this.lastID() + 1;
     newUser.alt = req.body.firstName;
-    if(req.file){
+    if (req.file) {
       newUser.image = "prof-img-" + path.basename(req.file.originalname)
-    } else{
+    } else {
       newUser.image = null;
     };
     newUser.admin = false;
-    if(newUser.password !== newUser.confirmPassword){
+    if (newUser.password !== newUser.confirmPassword) {
       return false
     }
     newUser.password = bcryptjs.hashSync(newUser.password, 10);

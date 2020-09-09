@@ -28,17 +28,33 @@
                         <p>$ <%= toThousand(productData.price) %></p>
                     </strong>
                 </div>
-                
     
-                <div>
-                    <select name="select" class="btn-talle">
-                        <option value="Talle" hidden selected>Talle</option>
-                        <option value="talle s">S</option> 
-                        <option value="talle m">M</option>
-                        <option value="talle l">L</option>
-                        <option value="talle xl">XL</option>
-                        <option value="talle xxl">XXL</option>
-                        </select>
+                <div class="buttons-checks">  
+                    <label for="size_s">
+                        <input type="radio" id="size_s" name="size_toggle">
+                            <span>S</span>
+                        </input>
+                    </label>
+                    <label for="size_m">
+                        <input type="radio" id="size_m" name="size_toggle">
+                            <span>M</span>
+                        </input>
+                    </label>
+                    <label for="size_l">
+                        <input type="radio" id="size_l" name="size_toggle">
+                            <span>L</span>
+                        </input>
+                    </label>
+                    <label for="size_xl">
+                        <input type="radio" id="size_xl" name="size_toggle">
+                            <span>XL</span>
+                        </input>
+                    </label>
+                    <label for="size_xxl">
+                        <input type="radio" id="size_xxl" name="size_toggle">
+                            <span>XXL</span>
+                        </input>
+                    </label>
                 </div>
     
                 <div class="add-div">
@@ -47,7 +63,7 @@
     
     
                 <div class="description-title">
-                    <span><p>DESCRIPCIÓN DEL PRODUCTO<p></span>
+                    <p><b>Descripción del producto</b><p>
                 </div>
     
     
@@ -58,7 +74,7 @@
                     </p>
                 </div>
     
-                <div class="size-table-title description-title" onclick="toggleSizeTable()">
+                <div class="size-table-title description-title" onclick="toggleSizeTable()" style="display: none;">
                     <span><p>GUÍA DE TALLES<p></span>
                 </div>
     

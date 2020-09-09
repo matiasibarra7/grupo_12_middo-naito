@@ -1,8 +1,10 @@
 <aside class="sidebar">
     <nav class="nav">
       <ul>
-
         <!-- Este solo aparece en mobile -->
+        <li class="back-arrow-sidebar close-sidebar-btn"><i class="fas fa-arrow-left" onclick="closeSidebar()"></i></li> <!-- No hay decisión aún -->
+        
+        <!-- Perfil del usuario -->
         <li class="user-sidebar li-mobile">
           <% if (locals.user) { %> 
             <a href="/users/profile" class="link-profile-mobile">
@@ -17,12 +19,14 @@
           <% } %> 
         </li>    
 
+        <!-- Regreso a la home -->
         <li><a href="/">Home</a></li>
         <% if (!locals.user) { %> 
             <li class="close-sidebar-btn">
               <a href="/users/register">Registrate</a>
             </li>
-          <% } %> 
+        <% } %> 
+
 
         <!-- Esto era el dropdown probado en el header -->
         <!-- <li class="dropdown-mn">
@@ -32,17 +36,32 @@
           </div>
         </li> -->
 
-
-        <!-- <li class="li-mobile"><a href="/users/login">Ingresa</a></li> --> <!-- Este solo aparece en mobile -->   
+        <!-- <li class="li-mobile"><a href="/users/login">Ingresa</a></li> --> <!-- Este solo aparece en mobile --> 
+        
+        
+        <!-- Listado de productos -->
         <li><a href="/products">Productos</a></li>
-        <!-- <li class="dropdown-mn">
-          <a href="/products/add">Nuevo</a>
-        </li> -->
+
+        <!-- Panel de administrador -->
+        <% if(locals.user) { %> 
+          <% if(locals.user.admin) { %> 
+            <li><a href="/users/panelAdmin"> Panel admin </a></li>
+          <% } %>
+        <% } %>
+
+        <!-- Acerca de nosotros -->
         <li><a href="/us">About us</a></li>
-        <li class="close-sidebar-btn"><a href="#" onclick="closeSidebar()">Cerrar</a></li>
+
+        <!-- Antiguo texto para cerrar el slide -->
+        <li class="close-sidebar-btn" style="display: none;"><a href="#" onclick="closeSidebar()">Cerrar</a></li>
+
+        <!-- Opción de cerrar sesión si esta logueado -->
         <% if(locals.user) { %> 
           <li class="close-sidebar-btn"><a href="/users/logout">Cerrar sesión</a></li>
         <% } %>
+
+        <!-- Esta para el debate -->
+        <li class="back-arrow-sidebar close-sidebar-btn"  style="display: none;"><i class="fas fa-arrow-left" onclick="closeSidebar()"></i></li> <!-- No hay decisión aún -->
       </ul>
     </nav>
 </aside>
@@ -55,12 +74,13 @@
     <div class="bar-menu"><i class="fas fa-bars bar-nav" onclick="openSidebar()"></i></div>
     <div class="logo"><a href="/"><img src="/images/demo-logo.png" alt="middo-naito"></a></div>
     <div class="container-cart-search">
-      <div class="user-icon"> <!-- Esto aparece solo en Desktop -->
+      <!-- Esto aparece solo en Desktop -->
+      <div class="user-icon"> 
         <% if(locals.user) { %> 
           <div class="dropdown-mn">
             <a href="/users/profile" >
               <i class="fas fa-user"></i>
-              <span class="login-spam"><%= locals.user.firstName %> </span>
+              <span class="login-span"><%= locals.user.firstName %> </span>
               <i class="fas fa-chevron-down"></i>
             </a>
             <div class="dropdown-container">
@@ -76,7 +96,7 @@
           <div class="dropdown-mn">
             <a href="/users/login" >
               <i class="fas fa-user"></i>
-              <span class="login-spam">Iniciar sesión</span>
+              <span class="login-span">Iniciar sesión</span>
               <i class="fas fa-chevron-down" style="font-size: 1rem"></i>
             </a>
             <div class="dropdown-container">           
@@ -84,14 +104,7 @@
             </div>
           </div>
 
-
-          <!-- <a href="/users/login">
-            <i class="fas fa-user"></i>
-            <span>Iniciar Sesión</span>
-          </a> -->
-
-        <% } %>
-          
+        <% } %> 
       </div>
       <div class="cart-icon"><a href="/products/cart"><i class="fas fa-shopping-cart"></i></a></div>
       <div class="search-icon"><i class="fas fa-search"></i></div>
