@@ -3,7 +3,7 @@
       <ul>
 
         <!-- Este solo aparece en mobile -->
-        <li class="back-arrow-sidebar close-sidebar-btn"><i class="fas fa-arrow-left" onclick="closeSidebar()"></i></li>
+        <li class="back-arrow-sidebar close-sidebar-btn"><i class="fas fa-arrow-left" onclick="closeSidebar()"></i></li> <!-- No hay decisión aún -->
         <li class="user-sidebar li-mobile">
           <% if (locals.user) { %> 
             <a href="/users/profile" class="link-profile-mobile">
@@ -44,6 +44,7 @@
         <% if(locals.user) { %> 
           <li class="close-sidebar-btn"><a href="/users/logout">Cerrar sesión</a></li>
         <% } %>
+        <li class="back-arrow-sidebar close-sidebar-btn"  style="display: none;"><i class="fas fa-arrow-left" onclick="closeSidebar()"></i></li> <!-- No hay decisión aún -->
       </ul>
     </nav>
 </aside>
