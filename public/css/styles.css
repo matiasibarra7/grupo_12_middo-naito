@@ -843,7 +843,6 @@ footer i {
 }
 /* FIN EDICION PERFIL DE USUARIO */
 
-<<<<<<< HEAD
 /* INICIO PANEL DE ADMINISTRADOR */
 .section-panel-admin {
   display: flex;
@@ -867,7 +866,7 @@ footer i {
   text-align: center;
 }
 /* FIN PANEL DE ADMINISTRADOR */
-=======
+
 /* BOTONES RADIO CHECKED IN DETAILS */
 .buttons-checks {
   display: flex;
@@ -901,7 +900,6 @@ footer i {
   color:#F7F7F7;
 }
 /* FIN BOTONES RADIO CHECKED IN DETAILS */
->>>>>>> b9f78786f0ac32aa9236cd1defbf612eae7d300d
 
 /* Acá empieza el responsive */
 @media (min-width: 335px) {
@@ -1064,34 +1062,6 @@ footer i {
 
   /* FIN EDIT DE USUARIO */
 }
-<<<<<<< HEAD
-=======
-  /* INICIO PANEL DE ADMINISTRADOR */
-.section-panel-admin {
-  display: flex;
-  max-width: 1024px;
-  flex-wrap: wrap;
-}
-
-.section-panel-admin a {
-  margin: 0 auto 1.5rem;
-  text-decoration: none;
-  color: black;
-}
-
-.panel-element {
-  display: flex;
-  width: 150px;
-  height: 150px;
-  background-color: #A599B5;
-  align-items: center;
-  padding: 1rem;
-  text-align: center;
-}
-
-  /* FIN PANEL DE ADMINISTRADOR */
-
->>>>>>> b9f78786f0ac32aa9236cd1defbf612eae7d300d
 
 @media (min-width: 1024px) {
   main {
