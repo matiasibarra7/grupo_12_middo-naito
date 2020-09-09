@@ -381,7 +381,7 @@ main .session-form {
 
 /* New product */
 .session-form.new-product-form {
-  color: #7FDEFF;
+  color: #CDDDDD;
 }
 
 
@@ -860,7 +860,7 @@ footer i {
   display: flex;
   width: 150px;
   height: 150px;
-  background-color: burlywood;
+  background-color: #A599B5;
   align-items: center;
   padding: 1rem;
   text-align: center;
@@ -952,7 +952,7 @@ footer i {
   }
   /* END cart */
 
-    /* detalles de producto */
+  /* detalles de producto */
 
   footer.footer-details {
     margin-top: 6rem;
@@ -1037,9 +1037,8 @@ footer i {
     max-width: none;
     margin: auto;
   }
-  
-  
-  /* FINAL PRODUCT DETAILS */
+  /* fin detalles de producto */
+
 
   /* PERFIL DE USUARIO */
   .profile-container {
@@ -1056,11 +1055,6 @@ footer i {
   }
   /* FIN PERFIL DE USUARIO */
 
-  /* EDIT DE USUARIO */
-
-
-
-  /* FIN EDIT DE USUARIO */
 }
 
 @media (min-width: 1024px) {
@@ -1240,31 +1234,31 @@ footer i {
 }
 
 @media (min-width:1200px) {
-    /* Banner size */
-    .banner-item.fade {
-      position: absolute;
-      bottom: -5rem;
-      width: 100%;
-      top: 0; /* Esto es muy caótico, cuando esta top y bottom juntos, prioriza top, pero sigue usando bottom para ajustar el titulo del texto. No entiendo */
-    }
+  /* Banner size */
+  .banner-item.fade {
+    position: absolute;
+    bottom: -5rem;
+    width: 100%;
+    top: 0; /* Esto es muy caótico, cuando esta top y bottom juntos, prioriza top, pero sigue usando bottom para ajustar el titulo del texto. No entiendo */
+  }
 
-    .image-container.corrected img {
-      position: relative;
-      bottom: 2rem;
-    }
+  .image-container.corrected img {
+    position: relative;
+    bottom: 2rem;
+  }
+
+  .banner-home {
+    max-height: 48rem;
+    height: 48rem;
+  }
+
+  main.index-main {
+    padding-top: 0;
+  }
   
-    .banner-home {
-      max-height: 48rem;
-      height: 48rem;
-    }
-  
-    main.index-main {
-      padding-top: 0;
-    }
-    
-    .number-text {
-      bottom: 6rem;
-    }
+  .number-text {
+    bottom: 6rem;
+  }
 
 }
 
