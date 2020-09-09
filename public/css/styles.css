@@ -1012,7 +1012,7 @@ footer i {
 }
 
 .section-panel-admin a {
-  margin: 0 auto;
+  margin: 0 auto 1.5rem;
   text-decoration: none;
   color: black;
 }
