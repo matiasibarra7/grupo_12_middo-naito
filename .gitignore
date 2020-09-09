@@ -1,5 +1,7 @@
 node_modules
 public/css/carousel.css
+public/css/modal.css
 public/js/twoCarousel.js
-views/index/carousel.ejs
+src/views/index/carousel.ejs
+src/views/index/modalTest.ejs
 public/images/banner-test
