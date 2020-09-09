@@ -262,6 +262,18 @@ main.index-main {
   z-index: 14;
 }
 
+.sidebar nav ul li.back-arrow-sidebar { 
+  color: white;
+  font-size: 18px;
+  margin: 0px 7px;
+  border-bottom: none;
+  text-align: end;
+}
+
+.user-sidebar.li-mobile {
+  border-top: 1px solid grey;
+}
+
 #details {
   display: flex;
   flex-direction: column;
@@ -334,21 +346,13 @@ main .btn-talle {
 }
 
 .description-title {
-  margin: 12px 6px;
+  margin: 6px 6px;
+  margin-bottom: -15px;
   border-top: 2px solid rgb(36, 10, 10);
   display: flex;
-  justify-content: center;
-  /* background-color: lightgray;
-  padding: 14px; */
+  font-size: 1em;
 }
 
-.description-title span {
-  text-align: center;
-  margin: 6px 6px;
-  background-color: lightgray;
-  width: 80%;
-  font-size: smaller;
-}
 /* REGISTER Y LOGIN, EDIT y ADD PRODUCT html */
 
 main.register, 
@@ -955,12 +959,12 @@ footer i {
     width: 50%;
   }
   
-  .description-title span {
-    text-align: center;
+  .description-title {
     margin: 6px 6px;
-    background-color: lightgray;
-    width: 60%;
-    font-size: smaller;
+    margin-bottom: -15px;
+    border-top: 2px solid rgb(36, 10, 10);
+    display: flex;
+    font-size: 18px;
   }
 
   .btn-black {

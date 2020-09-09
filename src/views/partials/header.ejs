@@ -3,6 +3,7 @@
       <ul>
 
         <!-- Este solo aparece en mobile -->
+        <li class="back-arrow-sidebar close-sidebar-btn"><i class="fas fa-arrow-left" onclick="closeSidebar()"></i></li>
         <li class="user-sidebar li-mobile">
           <% if (locals.user) { %> 
             <a href="/users/profile" class="link-profile-mobile">
@@ -39,7 +40,7 @@
           <a href="/products/add">Nuevo</a>
         </li> -->
         <li><a href="/us">About us</a></li>
-        <li class="close-sidebar-btn"><a href="#" onclick="closeSidebar()">Cerrar</a></li>
+        <li class="close-sidebar-btn" style="display: none;"><a href="#" onclick="closeSidebar()">Cerrar</a></li>
         <% if(locals.user) { %> 
           <li class="close-sidebar-btn"><a href="/users/logout">Cerrar sesión</a></li>
         <% } %>
