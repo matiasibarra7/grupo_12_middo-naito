@@ -532,11 +532,11 @@ input[type=number] {
   background-color: #222222;
 }
 
-.yes-account, 
-.no-account {    
+.text-link-form {    
   display: flex;
   justify-content: center;
-  font-size: 1rem;   }
+  font-size: 1rem;   
+}
 
 .no-underline{
   text-decoration: none;
@@ -662,7 +662,7 @@ footer {
   align-items: center;
   background-color: black;
   color: white;
-  height: 6rem;
+  height: 6.5rem;
 }
 
 footer .border {
@@ -865,6 +865,14 @@ footer i {
   bottom: 12px;
 }
 /* FIN EDICION PERFIL DE USUARIO */
+
+/* EDICION PASS USUARIO */
+.text-link-form.in-pass {
+  margin-top: 1rem; 
+  font-weight: bold;
+}
+
+/* EDICION PASS USUARIO */
 
 /* INICIO PANEL DE ADMINISTRADOR */
 .section-panel-admin {
@@ -1126,7 +1134,7 @@ footer i {
   /* PERFIL DE USUARIO */
   .profile-container {
     display: grid;
-    grid-template-columns: minmax(100px, 50%) 1fr;
+    grid-template-columns: minmax(100px, 40%) 1fr;
     place-items: center;
   }
   
@@ -1140,7 +1148,7 @@ footer i {
   .user-details-in-profile-edit {
     display: grid;
     padding-left: 1rem;
-    min-width: initial;
+/*     min-width: initial; */
   }
   /* FIN PERFIL DE USUARIO */
 

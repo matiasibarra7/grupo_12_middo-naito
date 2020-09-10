@@ -18,20 +18,20 @@
 
             <div class="user-details-in-profile-edit">
                 <form action="/users/profile/edit?_method=PUT" method="POST" enctype="multipart/form-data">
-                    <p class="edit-field-profile">
+                    <p style="display: grid; grid-template-columns: auto 55%;">
                         <b>Contraseña anterior:</b>
                         <input type="password" name= "oldPass">
                     </p>
-                    <p class="edit-field-profile">
+                    <p style="display: grid; grid-template-columns: auto 55%;">
                         <b>Nueva contraseña:</b>
                         <input type="password" name= "newPass"> 
                     </p>
-                    <p class="edit-field-profile">
-                        <b>Repetir nueva contraseña:</b>
+                    <p style="display: grid; grid-template-columns: auto 55%;">
+                        <b>Repetir contraseña:</b>
                         <input type="password" name= "confirmNewPass"> 
                     </p>
                     <div class="btn">
-                        <button type="submit" class="btn-default">CONFIRMAR</button>
+                        <button type="" class="btn-default">CONFIRMAR</button>
                     </div>
                 </form>
                     
