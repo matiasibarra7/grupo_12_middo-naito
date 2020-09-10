@@ -76,7 +76,10 @@ const usersController = {
     return res.redirect('/');},
   panelAdmin: (req, res) => {
     res.render('./users/panelAdmin');
-  }  
+  },
+  changePass: (req,res) => {
+    res.render('./users/changePass');
+  }
 
 };
 

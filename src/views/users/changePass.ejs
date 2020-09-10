@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head', {title: "Perfil"}); %>
+<body>
+    
+    <%- include('../partials/header'); %>
+
+    <main class="main-profile">
+        <p class="section-title">Editando Contraseña</p>
+        <div class="profile-container">
+            <figure class="profile-pic-container">
+                <% if(locals.user.image) { %> 
+                    <img src="/images/users/<%= locals.user.image %>" alt="<%= locals.user.firstName %>">
+                <% } else { %>
+                    <img src="/images/users/unnamed.jpg" alt="annon pic">
+                <% } %>
+            </figure>
+
+            <div class="user-details-in-profile-edit">
+                <form action="/users/profile/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <p class="edit-field-profile">
+                        <b>Contraseña anterior:</b>
+                        <input type="password" name= "oldPass">
+                    </p>
+                    <p class="edit-field-profile">
+                        <b>Nueva contraseña:</b>
+                        <input type="password" name= "newPass"> 
+                    </p>
+                    <p class="edit-field-profile">
+                        <b>Repetir nueva contraseña:</b>
+                        <input type="password" name= "confirmNewPass"> 
+                    </p>
+                    <div class="btn">
+                        <button type="submit" class="btn-default">CONFIRMAR</button>
+                    </div>
+                </form>
+                    
+            </div>
+        </div>
+
+    </main>
+
+    <%- include('../partials/footer'); %>
+
+</body>
+</html>

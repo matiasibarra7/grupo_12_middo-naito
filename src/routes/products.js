@@ -33,6 +33,6 @@ router.put("/edit/:id", upload.single("image"), productsController.update); // 6
 
 router.delete("/edit/:id", userRoute, adminRoute, productsController.delete); // 7 -- Acción de borrado
 
-router.get("/cart", userRoute, productsController.cart);
+router.get("/cart", productsController.cart); 
 
 module.exports = router;

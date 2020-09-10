@@ -38,6 +38,8 @@ router.put("/profile/edit", upload.single("image"), usersController.uploadProfil
 
 router.get("/logout", userRoute, usersController.logout); // Deslogueo
 
+router.get("/changePass", userRoute, usersController.changePass); // Cambio de contraseña del usuario
+
 // adminRoutes ↓
 router.get("/panelAdmin", userRoute, adminRoute, usersController.panelAdmin); // Ver panel de administrador
 
