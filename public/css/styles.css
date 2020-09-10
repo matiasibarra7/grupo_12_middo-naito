@@ -233,15 +233,22 @@ main.index-main {
   left: 0;
 }
 
+.fas.fa-times{
+  display: none;
+}
+
 .sidebar nav ul {
   list-style: none;
   padding-left: 0;
+  margin-top: 1rem;
 }
 
 .sidebar nav ul li {
-  margin: 8px 0;
   border-bottom: 1px solid grey;
-  padding: 8px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  height: 3rem;
 }
 
 .sidebar nav a {
@@ -256,7 +263,7 @@ main.index-main {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   right: 0;
   left: auto;
   z-index: 14;
@@ -268,11 +275,15 @@ main.index-main {
   margin: 0px 7px;
   border-bottom: none;
   text-align: end;
+  position: absolute;
+  left: 12rem;
+  top: 1rem;
 }
 
 .user-sidebar.li-mobile {
-  border-top: 1px solid grey;
+  padding: 0px;
 }
+
 
 #details {
   display: flex;

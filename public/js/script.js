@@ -2,11 +2,13 @@
 function openSidebar() {
   document.querySelector(".sidebar").classList.add("showing-sidebar")
   document.querySelector(".close-zone").style.display = "block";
+  document.querySelector(".fas.fa-times").style.display = "block";
 }
 
 function closeSidebar() {
   document.querySelector(".sidebar").classList.remove("showing-sidebar")
   document.querySelector(".close-zone").style.display = "none";
+  document.querySelector(".fas.fa-times").style.display = "none";
 }
 
 function toggleSizeTable() {
