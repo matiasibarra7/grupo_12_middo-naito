@@ -815,6 +815,7 @@ footer i {
 
 /* ESTILOS PERFIL DE USUARIO */
 .main-profile {
+  width: 90%;
   max-width: 1024px;
   margin: 0 auto;
   min-height: calc(100vh - 5rem - 2.5rem); /* 5rem el header y 2.5rem el footer (Esto solo funciona bien el desktop) */
@@ -833,6 +834,10 @@ footer i {
   border-radius: 50%;
 }
 
+.profile-pic-container img {
+  width: 100%;
+}
+
 .user-details-in-profile {
   padding: 1rem 0 0 1rem;
   min-width: 90%;
@@ -841,13 +846,20 @@ footer i {
 
 /* EDICION PERFIL DE USUARIO */
 .user-details-in-profile-edit {
-  padding: 1rem 0 0 1rem;
+  display: block;
+  padding-top: 1rem;
   min-width: 90%;
 }
 
 .edit-field-profile {
   display: grid;
   grid-template-columns: auto 70%;
+}
+
+.note-profile-edit {
+  font-size: 12px; 
+  position: relative; 
+  bottom: 12px;
 }
 /* FIN EDICION PERFIL DE USUARIO */
 
@@ -1120,6 +1132,12 @@ footer i {
     overflow: hidden;
     border-radius: 50%;
     background-color: white;
+  }
+
+  .user-details-in-profile-edit {
+    display: grid;
+    padding-left: 1rem;
+    min-width: initial;
   }
   /* FIN PERFIL DE USUARIO */
 

@@ -10,13 +10,13 @@
         <div class="profile-container">
             <figure class="profile-pic-container">
                 <% if(locals.user.image) { %> 
-                    <img src="/images/users/<%= locals.user.image %>" alt="" style="width: 100%">
+                    <img src="/images/users/<%= locals.user.image %>" alt="<%= locals.user.firstName %>">
                 <% } else { %>
-                    <img src="/images/users/unnamed.jpg" alt="" style="width: 100%">
+                    <img src="/images/users/unnamed.jpg" alt="annon pic">
                 <% } %>
             </figure>
 
-            <div class="user-details-in-profile-edit" style="display: grid;">
+            <div class="user-details-in-profile-edit">
                 <form action="/users/profile/edit?_method=PUT" method="POST" enctype="multipart/form-data">
                     <p class="edit-field-profile">
                         <b>Nombre:</b>
@@ -57,7 +57,7 @@
                         <input type="file" name="image" class="inputs">
                     </p>
                     
-                    <b style="font-size: 12px; position: relative; bottom: 12px;">*Si no selecciona una imagen nueva, se conservará la imagen actual.</b>
+                    <b class="note-profile-edit">*Si no selecciona una imagen nueva, se conservará la imagen actual.</b>
 
                     <div class="btn">
                         <button type="submit" class="btn-default">CONFIRMAR</button>
