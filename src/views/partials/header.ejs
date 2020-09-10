@@ -2,7 +2,7 @@
     <nav class="nav">
       <ul>
         <!-- Este solo aparece en mobile -->
-        <li class="back-arrow-sidebar close-sidebar-btn"><i class="fas fa-times" onclick="closeSidebar()"></i></li> <!-- No hay decisión aún -->
+        <div class="close-icon-sidebar" onclick="closeSidebar()"><i class="fas fa-times"></i></div> <!-- No hay decisión aún -->
         
         <!-- Perfil del usuario -->
         <li class="user-sidebar li-mobile">
@@ -22,7 +22,7 @@
         <!-- Regreso a la home -->
         <li><a href="/">Home</a></li>
         <% if (!locals.user) { %> 
-            <li class="close-sidebar-btn">
+            <li class="li-mobile">
               <a href="/users/register">Registrate</a>
             </li>
         <% } %> 
@@ -53,15 +53,13 @@
         <li><a href="/us">About us</a></li>
 
         <!-- Antiguo texto para cerrar el slide -->
-        <li class="close-sidebar-btn" style="display: none;"><a href="#" onclick="closeSidebar()">Cerrar</a></li>
+        <!-- <li class="close-sidebar-btn" style="display: none;"><a href="#" onclick="closeSidebar()">Cerrar</a></li> -->
 
         <!-- Opción de cerrar sesión si esta logueado -->
         <% if(locals.user) { %> 
-          <li class="close-sidebar-btn"><a href="/users/logout">Cerrar sesión</a></li>
+          <li class="li-mobile" ><a href="/users/logout">Cerrar sesión</a></li>
         <% } %>
 
-        <!-- Esta para el debate -->
-        <li class="back-arrow-sidebar close-sidebar-btn"  style="display: none;"><i class="fas fa-arrow-left" onclick="closeSidebar()"></i></li> <!-- No hay decisión aún -->
       </ul>
     </nav>
 </aside>
