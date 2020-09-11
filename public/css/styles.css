@@ -955,6 +955,7 @@ footer i {
   text-align: center;
   font-size:  1rem;
   padding:  0.5rem;
+  user-select: none;
 }
 
 .buttons-checks label input {
@@ -1035,17 +1036,7 @@ footer i {
   }
 }
 
-@media (min-width: 380px) {
-  header .cart-icon {
-    display: block;
-  }
-}
-
 @media (min-width: 424px) {
-  .product .product-details {
-    font-size: 1.5rem;
-  }
-
   .section-title {
     font-size: 1.5rem;
   }

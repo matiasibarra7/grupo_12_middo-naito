@@ -21,7 +21,7 @@
                 <p><b>Email:</b> <%= locals.user.email %> </p>
                 <p><b>Provincia:</b> <%= locals.user.province? locals.user.province : "Sin especificar"%> </p>
                 <p><b>Localidad:</b> <%= locals.user.location? locals.user.location : "Sin especificar"%> </p>
-                <p><b>Edad: -En construcción- </b><%= locals.user.birthday? locals.user.birthday : "Sin especificar"%></p>
+                <p><b>Edad: </b><%= locals.user.age? locals.user.age : "Sin especificar"%></p>
                 <% let y = new Date %>
                 <p><b>Genero: </b> <%= locals.user.gender? locals.user.gender : "Sin especificar"%></p>
                 <p><b>Registrado el: -En construcción- </b> <%= (y.getMonth() + 1) + " del " +  (y.getYear() + 1900)  %> </p>
