@@ -25,11 +25,13 @@
   "firstName": "Santi",
   "lastName": "Martino",
   "email": "sm@123.com",
-  "password": "$2a$10$ZF.n/m2C4RVMW9S/T/gGHOH7wW.mgQ8MsYkgydYD/X3k9mNB3kybO",
+  "province": "",
+  "location": "",
+  "birthday": "1990-04-03",
+  "gender": "male",
   "id": 10,
-  "alt": "Santi",
   "image": null,
-  "admin": true
+  "password": "$2a$10$ZF.n/m2C4RVMW9S/T/gGHOH7wW.mgQ8MsYkgydYD/X3k9mNB3kybO"
  },
  {
   "firstName": "Jennifer",

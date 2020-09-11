@@ -14,6 +14,12 @@ La comunicación mejoró de manera notable, y en consecuencia, el ritmo de traba
 
 Finalizamos las actividades de este sprint de manera eficiente y rápida gracias a la metodología de trabajo que fuimos adquiriendo de etapas anteriores. Un punto importante a tener en cuenta fue la actividad de la clase sincrónica en la pudimos enseñar el trabajo realizado a otro equipo; esto nos brindó la oportunidad de obtener un feedback externo con consideraciones que pasaron desapercibidas por nuestro grupo. Esta experiencia nos resultó agradable y aspiramos a seguir compartiendo nuestro trabajo con el fin de utilizar el feedback recolectado para mejorar la calidad y experiencia de uso de nuestro producto. 
 
-Presentación que contiene el resultado del desarrollo de la técnica estrella de mar.
+## Retro sprint 5: 
+A diferencia de sprints anteriores, en este realizamos las actividades en los últimos días previos a la entrega. A pesar de ello, nos vimos capaces de cumplir con todas las tareas requeridas y mantuvimos el buen ambiente de trabajo. Otro aspecto destacable de este sprint fue que realizamos una presentación similar a la hecha en el sprint anterior con la diferencia de que en esta ocasión fue frente a todo el curso, dándonos la posibilidad de tener un feedback más amplío, a partir del cual logramos desarrollar cambios positivos en nuestro proyecto, principalmente en el aspecto de usabilidad web. Además notamos la importancia de ver la presentación de otros grupos para identificar que aspectos de nuestro sitio podiamos mejorar, tomándolos como inspiración. Nos proponemos a realizar ambas tareas más seguido.
+
+
+Presentación que contiene el resultado del desarrollo de la técnica estrella de mar para cada sprint.
 
 https://jamboard.google.com/d/1Khj4UZIrJyZ3DbiwY_0vybLB7H1qyaM_SIDqmZvYCgs/viewer
+
+

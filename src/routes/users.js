@@ -47,7 +47,7 @@ router.get("/usersList", userRoute, adminRoute, usersController.usersList) // Li
 
 router.delete("/edit/:id", userRoute, adminRoute , usersController.delete); // 7 -- Acción de borrar un usuario
 
-router.put("/editUser", userRoute, adminRoute , usersController.toggleAdm); // 7 -- Acción de borrar un usuario
+router.put("/editUser", userRoute, adminRoute , usersController.toggleAdm); // Dar permiso a un usuario
 
 
 
