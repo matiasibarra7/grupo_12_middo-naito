@@ -8,24 +8,57 @@
     <main class="cart">
         
         <p class="section-title">Usuarios Registrados</p>
-        <div class="little-title-users-list" style="display: none;">Espero que seas un admin, ehhh</div>
+
         <section class="section-users-list">
         <% usersData.forEach(el => { %>    
             <div class="profile-container-list">
-                <div class="image-container-users-list">
-                <a href="/users/profile/<%= el.id - 1 %>" alt="<%= el.firstName %>"><img src="/images/users/<%= el.image? el.image : "unnamed.jpg" %>" alt="<%= el.firstName %>"></a>
+                <div class="image-container-users-list">                  
+                    <img src="/images/users/<%= el.image? el.image : "unnamed.jpg" %>" alt="<%= el.firstName %>">
                 </div>
 
                 <div class="user-details-users-list">
-                <span>ID: <%= el.id %></span>
-                <span>Nombre: <%= el.firstName + " " + el.lastName %></span>
-                <span>Email: <%= el.email %></span>
-                <span>¿Superpoderes? <%= el.admin? "YEEAAHH" : "Nope" %></span>
-                <form class="session-form new-product-form" action="/users/edit/<%= el.id %>?_method=DELETE" method="POST">
-                    <div class="btn">
-                        <button type="submit" class="btn-default red">BORRAR USUARIO</button>
-                    </div>
-                </form>
+                    <span>
+                        <b>ID:</b>
+                        <%= el.id %>
+                    </span>
+                    <span>
+                        <b>Nombre:</b>
+                        <%= el.firstName + " " + el.lastName %>
+                    </span>
+                    <span>
+                        <b>Email:</b>
+                        <%= el.email %>
+                    </span>
+                    <span>
+                        <b>Administrador:</b>
+                        <%= el.admin? "Si" : "No" %>
+                    </span>
+                </div>
+                <div class="adm-options">
+                    <% if (el.admin) { %>
+
+                        <form action="/users/editUser?_method=PUT" method="POST">
+                            <input type="number" name="id" value="<%= el.id %>" style="display: none;">
+                            <div class="btn">                        
+                                <button type="submit" class="btn-default <%= el.id == locals.user.id? "disabled" : "" %>" <%= el.id == locals.user.id? "disabled" : "" %>>QUITAR ADMIN</button>
+                            </div>
+                        </form>
+
+                    <% } else { %>
+
+                        <form action="/users/editUser?_method=PUT" method="POST">
+                            <input type="number" name="id" value="<%= el.id %>" style="display: none;">
+                            <div class="btn">                        
+                                <button type="submit" class="btn-default">VOLVER ADMIN</button>
+                            </div>
+                        </form>
+                    <% } %>
+
+                    <form action="/users/edit/<%= el.id %>?_method=DELETE" method="POST">
+                        <div class="btn">
+                            <button type="submit" class="btn-default red">BORRAR USUARIO</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         <% }); %>

@@ -29,6 +29,7 @@ body {
 main {
   display: flex;
   flex-direction: column;
+  min-height: calc(100vh - 10.5rem);
 }
 
 body h1 {
@@ -655,6 +656,15 @@ input[type=number] {
   background-color: #FF3333;
 }
 
+.btn-default.disabled {
+  opacity: 0.5;
+}
+
+.btn-default.disabled:hover {
+  background-color: black;
+}
+
+
 footer {
   margin-top: 1rem;
   display: flex;
@@ -662,7 +672,7 @@ footer {
   align-items: center;
   background-color: black;
   color: white;
-  height: 6.5rem;
+  height: 6rem;
 }
 
 footer .border {
@@ -760,7 +770,7 @@ footer i {
 }
 /* FIN ESTILOS BANNER DINAMICO */
 
-/* ESTILOS LISTA USUARIOS */
+/* ESTILOS LISTA USUARIOS ADMIN */
 .adm-body {
   background-color: #2C2A4A;
   color: #CDDDDD;
@@ -774,16 +784,40 @@ footer i {
 .profile-container-list {
   display: grid;
   grid-template-columns: 120px 1fr;
-  background-color: #4F518C;;
+  grid-template-rows: auto 4rem;
+  grid-template-areas: 
+  'photo description'
+  'options options'  ;
+
+  background-color: #4F518C;
   padding: 1rem; margin: 1rem 0;
   overflow: auto;
 }
 
+.user-details-users-list {
+  display: grid;
+  grid-area: description;
+}
+
 .image-container-users-list {
   display: grid;
+  grid-area: photo;
   place-content: center;
   width: 100px; 
   height: 100px;
+}
+
+.adm-options {
+  display: flex;
+  grid-area: options;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.adm-options .btn-default {
+  margin: 10px;
+  height: 2.5rem;
+  text-decoration: none;
 }
 
 .image-container-users-list img {
@@ -791,9 +825,6 @@ footer i {
   max-width: 100%;
 }
 
-.user-details-users-list {
-  display: grid;
-}
 
 .little-title-users-list {
   text-align: center;
@@ -802,7 +833,7 @@ footer i {
   width: 90%;
   margin: 1rem auto;
 }
-/* FIN ESTILOS LISTA USUARIOS */
+/* FIN ESTILOS LISTA USUARIOS ADMIN */
 
 .user-sidebar {
   display: flex; 
@@ -821,7 +852,7 @@ footer i {
   width: 90%;
   max-width: 1024px;
   margin: 0 auto;
-  min-height: calc(100vh - 5rem - 2.5rem); /* 5rem el header y 2.5rem el footer (Esto solo funciona bien el desktop) */
+  min-height: calc(100vh - 7rem); /* 5rem el header y 2.5rem el footer (Esto solo funciona bien el desktop) */
 }
 
 .profile-container {

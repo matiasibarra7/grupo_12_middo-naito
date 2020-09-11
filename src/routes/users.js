@@ -45,7 +45,10 @@ router.get("/panelAdmin", userRoute, adminRoute, usersController.panelAdmin); //
 
 router.get("/usersList", userRoute, adminRoute, usersController.usersList) // Listado de usuarios registrados
 
-router.delete("/edit/:id", adminRoute , usersController.delete); // 7 -- Acción de borrar un usuario
+router.delete("/edit/:id", userRoute, adminRoute , usersController.delete); // 7 -- Acción de borrar un usuario
+
+router.put("/editUser", userRoute, adminRoute , usersController.toggleAdm); // 7 -- Acción de borrar un usuario
+
 
 
 

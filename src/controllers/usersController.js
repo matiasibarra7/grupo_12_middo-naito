@@ -25,7 +25,7 @@ const usersController = {
     res.render("./users/profile");
   },
   profileEdit: (req, res) => {
-    let usersData = usersModel.getAll();
+    /* let usersData = usersModel.getAll(); */
     res.render("./users/profileEdit");
   },
   uploadProfile: (req, res) => {
@@ -77,8 +77,23 @@ const usersController = {
   panelAdmin: (req, res) => {
     res.render('./users/panelAdmin');
   },
-  changePass: (req,res) => {
+  changePass: (req, res) => {
     res.render('./users/changePass');
+  },
+  toggleAdm: (req, res) => {
+
+    let usersList = usersModel.getAll()
+
+    let modifyUsers = usersList.map((user) => {
+      if (user.id == req.body.id) {
+        user.admin = !user.admin
+      }
+      return user;
+    });
+    
+    usersModel.writeFile(modifyUsers)
+
+    res.redirect("/users/usersList")
   }
 
 };
