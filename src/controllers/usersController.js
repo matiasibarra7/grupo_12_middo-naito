@@ -94,6 +94,27 @@ const usersController = {
     usersModel.writeFile(modifyUsers)
 
     res.redirect("/users/usersList")
+  },
+  editPass: (req,res) => {
+    let userFull = usersModel.getOneByEmail(res.locals.user.email);
+    let dataNewPass = req.body;
+    
+    if(bcryptjs.compareSync(dataNewPass.oldPass, userFull.password)){
+      if (dataNewPass.newPass !== dataNewPass.confirmNewPass) {
+        return false
+      }
+      let usersList = usersModel.getAll()
+      let modifiedUsers = usersList.map((user) => {
+        if (user.id == res.locals.user.id) {
+          user.password = bcryptjs.hashSync(dataNewPass.newPass, 10);  
+        }
+        return user;
+      });
+      usersModel.writeFile(modifiedUsers);
+    }else {
+      res.send("Contraseña ingresada erronea");
+    }
+    res.redirect("/users/profile");  
   }
 
 };

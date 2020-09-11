@@ -38,7 +38,9 @@ router.put("/profile/edit", upload.single("image"), usersController.uploadProfil
 
 router.get("/logout", userRoute, usersController.logout); // Deslogueo
 
-router.get("/changePass", userRoute, usersController.changePass); // Cambio de contraseña del usuario
+router.get("/changePass", userRoute, usersController.changePass); // Formulario de cambio de contraseña del usuario
+
+router.put("/changePass", userRoute, usersController.editPass); // Acción de cambio de contraseña
 
 // adminRoutes ↓
 router.get("/panelAdmin", userRoute, adminRoute, usersController.panelAdmin); // Ver panel de administrador
