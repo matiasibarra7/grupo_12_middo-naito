@@ -658,10 +658,15 @@ input[type=number] {
 
 .btn-default.disabled {
   opacity: 0.5;
+  cursor: initial;
 }
 
 .btn-default.disabled:hover {
   background-color: black;
+}
+
+.btn-default.red.disabled:hover {
+  background-color: #ff0000;
 }
 
 

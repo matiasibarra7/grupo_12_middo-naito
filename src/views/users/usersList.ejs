@@ -5,6 +5,7 @@
     
 <%- include('../partials/header'); %>
 
+    <div class="cover-modal" onclick="toggleModal()"></div>
     <main class="cart">
         
         <p class="section-title">Usuarios Registrados</p>
@@ -54,19 +55,24 @@
                         </form>
                     <% } %>
 
-                    <form action="/users/edit/<%= el.id %>?_method=DELETE" method="POST">
-                        <div class="btn">
-                            <button type="submit" class="btn-default red">BORRAR USUARIO</button>
-                        </div>
-                    </form>
+                    <div class="btn">
+                        <button type="submit" class="btn-default red <%= el.id == locals.user.id? "disabled" : "" %>" <%= el.id == locals.user.id? "disabled" : "" %>
+                            onclick="generateModal('<%= el.firstName %> <%= el.lastName %>', '<%= el.id %>')">
+                                BORRAR USUARIO
+                        </button>
+                    </div>
+
                 </div>
             </div>
         <% }); %>
         </section>
 
+        <div class="modal-naito">  
+        </div>
     </main>
 
 <%- include('../partials/footer'); %>
 
+<script src="/js/modal.js"></script>
 </body>
 </html>
