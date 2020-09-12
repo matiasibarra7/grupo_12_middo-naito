@@ -42,6 +42,11 @@ const usersModel = {
     let usersList = this.getAll();
     let foundUser = this.getOne(userData.id);
     userData.password = foundUser.password;
+    if (foundUser.admin) {
+      userData.admin = foundUser.admin;
+    } else {
+      userData.admin = false
+    }
 
     let modifyUsers = usersList.map((user) => {
       if (user.id == userData.id) {

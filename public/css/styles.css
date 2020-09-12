@@ -669,21 +669,21 @@ input[type=number] {
   background-color: #ff0000;
 }
 
+/* ESTILOS FOOTER */
 footer {
   display: flex;
-  height: 7rem;
+  margin-top: 4rem;
+  flex-direction: column;
   background-color: black;
   color: white;
 }
 
 .footer-section {
-  width: calc(33% - 1rem);
-  /* border: 1px solid white; */
-  margin: 0 1rem;
-  align-items: center;
+  margin: 1rem 2rem;
+  align-items: flex-start;
   justify-content: center;
   display: flex;
-  flex-direction: column
+  flex-direction: column;
 }
 
 .footer-section i {
@@ -691,10 +691,12 @@ footer {
 }
 
 .footer-section.shop {
-  align-items: flex-start;
-  padding: 0px 1rem;
   font-size: 0.9rem;
   color: #bfbfbf;
+}
+
+.footer-section.shop div {
+  margin-bottom: 0.4rem;
 }
 
 .footer-section.shop b {
@@ -702,31 +704,25 @@ footer {
   color: white;
 }
 
-.footer-section.contact {
-  align-items: flex-end;
-  padding-right: 1rem;
-  
-}
-/* footer {
-  margin-top: 1rem;
+.footer-contact-block {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: flex-start;
+}
+
+.footer-contact-block .btn {
   align-items: center;
-  background-color: black;
-  color: white;
-  height: 6rem;
-}
-
-footer .border {
   margin: 0.5rem 0;
-  border-top: 2px solid black;
-  width: 100%;
 }
 
-footer i {
-  margin: 0.5rem;
-  font-size: 1.5rem;
-} */
+.footer-contact-block .btn .btn-default {
+  border: 2px solid white;
+  border-radius: 14px;
+  padding: 4px;
+}
+/* FIN ESTILOS FOOTER */
+
 
 /* Probando dropdowns */
 
@@ -1108,11 +1104,6 @@ footer i {
   /* END cart */
 
   /* detalles de producto */
-
-  /* footer.footer-details {
-    margin-top: 6rem;
-  } */
-
   .container-product-details {
     display: flex;
     max-width: 1440px;
@@ -1212,9 +1203,41 @@ footer i {
   .user-details-in-profile-edit {
     display: grid;
     padding-left: 1rem;
-/*     min-width: initial; */
+  /*     min-width: initial; */
   }
   /* FIN PERFIL DE USUARIO */
+
+  /* FOOTER DESKTOP */
+  footer {
+    flex-direction: row;
+    height: 7rem;
+  }
+
+  .footer-section {
+    width: calc(33% - 1rem);
+    margin: 0 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-section.shop {
+    align-items: flex-start;
+    padding-left: 1rem;
+  }
+
+  .footer-section.shop div {
+    margin-bottom: initial;
+  }
+
+  .footer-section.shop .buy-title {
+    margin-bottom: 0.4rem;
+  }
+
+  .footer-section.contact {
+    align-items: flex-end;
+    padding-right: 1rem;
+  }
+  /* FIN FOOTER DESKTOP */
 
 }
 
@@ -1390,6 +1413,8 @@ footer i {
     flex-direction: column;
     justify-content: center;
   }
+
+  
 
 }
 
