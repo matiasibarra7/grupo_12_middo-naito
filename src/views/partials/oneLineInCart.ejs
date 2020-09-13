@@ -13,10 +13,10 @@
             Talle: <%= product.size.toUpperCase() %>
         </div>
         <div class="price-quantity-in-cart">
-            <div class="quantity">
-                <i class="far fa-minus-square black-shine"></i>
-                2
-                <i class="far fa-plus-square black-shine"></i>
+            <div class="quantity" style="user-select: none;">
+                <i class="far fa-minus-square black-shine" onclick="changeQuantity(this)"></i>
+                    <span>2</span>
+                <i class="far fa-plus-square black-shine" onclick="changeQuantity(this)"></i>
             </div>
             <b>$ <%= toThousand(product.price) %></b>
         </div>
