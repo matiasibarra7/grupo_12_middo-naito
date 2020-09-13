@@ -35,4 +35,6 @@ router.delete("/edit/:id", userRoute, adminRoute, productsController.delete); //
 
 router.get("/cart", productsController.cart); 
 
+router.get("/productListAdmin", userRoute, adminRoute, productsController.listAdmin); 
+
 module.exports = router;

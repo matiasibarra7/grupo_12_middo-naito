@@ -33,6 +33,10 @@ const productsController = {
     productsModel.delete(req);
     res.redirect("/products");
   },
+  listAdmin: (req, res) => {
+    let productsData = productsModel.getAll();
+    res.render(`./products/productListAdmin`, { productsData, toThousand })
+  }
 };
 
 module.exports = productsController;

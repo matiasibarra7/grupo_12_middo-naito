@@ -6,17 +6,17 @@
     <div class="details-product-cart section-cart">
 
         <div class="name-delete-product">
-            <a href="/products/details/<%= product.id %>" class="link-to-product"><%= product.name %></a>
-            <i class="far fa-trash-alt"></i>
+            <a href="/products/details/<%= product.id %>" class="link-unformatted black-shine"><%= product.name %></a>
+            <i class="far fa-trash-alt black-shine"></i>
         </div>
         <div class="size-container">
             Talle: <%= product.size.toUpperCase() %>
         </div>
         <div class="price-quantity-in-cart">
             <div class="quantity">
-                <i class="far fa-minus-square"></i>
+                <i class="far fa-minus-square black-shine"></i>
                 2
-                <i class="far fa-plus-square"></i>
+                <i class="far fa-plus-square black-shine"></i>
             </div>
             <b>$ <%= toThousand(product.price) %></b>
         </div>
