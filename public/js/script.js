@@ -11,3 +11,10 @@ function closeSidebar() {
   document.querySelector(".close-icon-sidebar").style.display = "none";
 }
 /* Fin Barra de menú en mobile */
+
+
+function toggleSearcher() {
+  let divSerachField = document.querySelector(".searcher-field");
+  divSerachField.classList.toggle("active")
+}
+

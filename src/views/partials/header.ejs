@@ -71,7 +71,7 @@
 <header>
     <div class="bar-menu"><i class="fas fa-bars bar-nav" onclick="openSidebar()"></i></div>
     <div class="logo"><a href="/"><img src="/images/demo-logo.png" alt="middo-naito"></a></div>
-    <div class="container-cart-search">
+    <div class="container-cart-search" style="position: relative;">
       <!-- Esto aparece solo en Desktop -->
       <div class="user-icon"> 
         <% if(locals.user) { %> 
@@ -105,7 +105,10 @@
         <% } %> 
       </div>
       <div class="cart-icon"><a href="/products/cart"><i class="fas fa-shopping-cart"></i></a></div>
-      <div class="search-icon"><i class="fas fa-search"></i></div>
+      <div class="search-icon" onclick="toggleSearcher()"><label for="searcher"><i class="fas fa-search"></i></label</div>
+    </div>
+    <div class="searcher-field">
+      <input type="text" id="searcher">
     </div>
 </header>
 <div class="cover-modal" onclick="toggleModal()"></div>

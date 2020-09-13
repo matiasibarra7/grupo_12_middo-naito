@@ -634,6 +634,11 @@ input[type=number] {
   max-width: 768px;
 }
 
+.footer-cart {
+  display: flex;
+  flex-direction: column;
+}
+
 /* FIN product cart with display grid */
 
 .btn-grey, 
@@ -1061,6 +1066,37 @@ footer {
 }
 /* FIN ESTILOS MODAL */
 
+/* ESTILOS INPUT BUSCADOR */
+.searcher-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15.5rem;
+  height: 2.5rem;
+
+  position: absolute;
+  bottom: -3.3rem;
+  right: -4px;
+  z-index: 1;
+
+  background-color: black;
+  border-radius: 5px;
+  
+  transition: all 0.5s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.searcher-field.active {
+  bottom: -3.3rem;
+  visibility: visible;
+  opacity: 1;
+}
+
+.searcher-field input {
+  width: 14rem;
+}
+/* FIN ESTILOS INPUT BUSCADOR */
 
 /* Acá empieza el responsive */
 @media (min-width: 335px) {
@@ -1092,6 +1128,9 @@ footer {
     width: 80vw;
   }
 
+  footer {
+    margin-top: 0;
+  }
   /* cart */
 
   .details-product-cart {
@@ -1114,7 +1153,7 @@ footer {
     padding: 0.5rem;
   }
 
-  #details{
+  #details {
     display: flex;
     flex-direction: row;
     padding: 14px;
@@ -1239,6 +1278,9 @@ footer {
   }
   /* FIN FOOTER DESKTOP */
 
+  .footer-cart {
+    margin-bottom: 4rem;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -1414,8 +1456,9 @@ footer {
     justify-content: center;
   }
 
-  
-
+  .searcher-field.active {
+    z-index: -1;
+  }
 }
 
 @media (min-width:1200px) {
