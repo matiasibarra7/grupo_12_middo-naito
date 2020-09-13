@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head', {title: "Lista de Productos"}); %>
+<body class="adm-body">
+
+    <%- include('../partials/header'); %>
+
+    <main class="main-profile">
+        <p class="section-title cart-title">PRODUCTOS CARGADOS</p>
+          
+        <% productsData.forEach(el => { %>    
+
+            <div class="element-prod-list-adm">
+
+
+                <div class="image-product-cart section-cart">
+                    <a href="/products/details/<%= el.id %>"><img src="/images/products/<%= el.image %>" alt="<%= el.alt %>"></a>
+                </div>
+            
+                <div class="details">
+            
+                    <div class="name">
+                        <%= el.name %>
+                    </div>
+
+                    <div class="size">
+                        Talle: <%= el.size.toUpperCase() %>
+                    </div>
+                    
+                    <div class="price">
+                        <b>$ <%= toThousand(el.price) %></b>
+                    </div>
+                    
+                    <div class="edit">
+                        <a href="/products/edit/<%= el.id %>" class="link-unformatted"><i class="far fa-edit black-shine"></i></a>
+                    </div>
+
+                    <div class="delete">
+                        <i class="far fa-trash-alt black-shine"></i>
+                    </div>
+                </div>
+
+
+            </div>
+
+        <% }); %>
+
+    </main>
+
+    <%- include('../partials/footer'); %>
+    
+</body>
+</html>
