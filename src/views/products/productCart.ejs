@@ -18,29 +18,32 @@
             <b>SUBTOTAL (Sin envio)</b><b>$ <%= toThousand(total) %></b>
         </div>
 
-        <div class="deliver-type" >
-            <div>
-                <i class="fas fa-truck"></i>
-                <span>Opciones de envío</span>            
+        <div class="footer-cart">
+            <div class="deliver-type" >
+                <div>
+                    <i class="fas fa-truck"></i>
+                    <span>Opciones de envío</span>            
+                </div>
+                <div>
+                    <select id="">
+                        <option value="directo">Retiro en local</option>
+                        <option value="correo-local">Envio por correo a sucursal</option>
+                        <option value="correo-casa">Envio por correo a domicilio</option>
+                    </select>
+                </div>
             </div>
-            <div>
-                <select id="">
-                    <option value="directo">Retiro en local</option>
-                    <option value="correo-local">Envio por correo a sucursal</option>
-                    <option value="correo-casa">Envio por correo a domicilio</option>
-                </select>
+    
+            <div class="border"></div>
+    
+            <div class="total-cart">
+                <b>TOTAL</b><b>$ <%= toThousand(total) %></b>
+            </div>
+    
+            <div class="btn">
+                <a href="/"><button class="btn-default">CONTINUAR COMPRA</button></a>
             </div>
         </div>
 
-        <div class="border"></div>
-
-        <div class="total-cart">
-            <b>TOTAL</b><b>$ <%= toThousand(total) %></b>
-        </div>
-
-        <div class="btn">
-            <a href="/"><button class="btn-default">CONTINUAR COMPRA</button></a>
-        </div>
     </main>
 
     <%- include('../partials/footer'); %>

@@ -105,10 +105,10 @@
         <% } %> 
       </div>
       <div class="cart-icon"><a href="/products/cart"><i class="fas fa-shopping-cart"></i></a></div>
-      <div class="search-icon"><label for="searcher"><i class="fas fa-search"></i></label</div>
+      <div class="search-icon" onclick="toggleSearcher()"><label for="searcher"><i class="fas fa-search"></i></label</div>
     </div>
-    <div  style="position: absolute; bottom: -3rem; right: -0.5rem; width: 16rem; height: 2rem; background-color: grey; display: flex; align-items: center; justify-content: center;">
-      <input type="text" style="width: 15rem;" id="searcher">
+    <div class="searcher-field">
+      <input type="text" id="searcher">
     </div>
 </header>
 <div class="cover-modal" onclick="toggleModal()"></div>
