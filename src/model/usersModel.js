@@ -50,6 +50,10 @@ const usersModel = {
       userData.admin = false
     }
 
+    if (foundUser.registerDate) {
+      userData.registerDate = foundUser.registerDate;
+    }
+
     let modifyUsers = usersList.map((user) => {
       if (user.id == userData.id) {
         return userData;
