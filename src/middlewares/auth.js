@@ -4,6 +4,7 @@ const moment = require("moment");
 
 module.exports = (req, res, next) => {
   // Si hay un usuario en sesión
+  console.log(req.session.user);
   if (req.session.user) {
     // Se lo paso a la vista
     res.locals.user = req.session.user;
@@ -19,16 +20,16 @@ module.exports = (req, res, next) => {
     // El texto que imprimimos por genero
     switch (req.session.user.gender) {
       case "male":
-        res.locals.user.gender = "Hombre"
+        res.locals.user.genderSpa = "Hombre"
         break;
       case "female":
-        res.locals.user.gender = "Mujer"
+        res.locals.user.genderSpa = "Mujer"
         break;
       case "unicorn":
-        res.locals.user.gender = "Unicornio"
+        res.locals.user.genderSpa = "Unicornio"
         break;
       default:
-        res.locals.user.gender = "Sin especificar"
+        res.locals.user.genderSpa = "Sin especificar"
         break;
     }
 
@@ -52,21 +53,21 @@ module.exports = (req, res, next) => {
     // El texto que imprimimos por genero
     switch (userFull.gender) {
       case "male":
-        userFull.gender = "Hombre"
+        userFull.genderSpa = "Hombre"
         break;
       case "female":
-        userFull.gender = "Mujer"
+        userFull.genderSpa = "Mujer"
         break;
       case "unicorn":
-        userFull.gender = "Unicornio"
+        userFull.genderSpa = "Unicornio"
         break;
       default:
-        res.locals.user.gender = "Sin especificar"
+        userFull.genderSpa = "Sin especificar"
         break;
     }
-
+    
+    
     req.session.user = userFull;
-    res.locals.user = userFull;
 
   } else {
     res.clearCookie('userToken');

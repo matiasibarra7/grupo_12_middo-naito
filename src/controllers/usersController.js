@@ -14,7 +14,7 @@ const usersController = {
   store: (req, res) => {
     newUser = usersModel.store(req);
     req.session.user = newUser;
-    res.locals.user = newUser;
+
     res.redirect("/users/profile");
   },
   usersList: (req, res) => {
@@ -43,6 +43,7 @@ const usersController = {
       
       if(user.email === req.body.email){
         if(bcryptjs.compareSync(req.body.password, user.password)){
+          delete user.password
           req.session.user = user;
           found = true;
         }
