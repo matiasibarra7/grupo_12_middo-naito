@@ -1,6 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 const bcryptjs = require("bcryptjs");
+const moment = require("moment");
+
 
 const usersModel = {
   getAll: function () {
@@ -62,6 +64,9 @@ const usersModel = {
       userData.image = "prof-img-" + path.basename(req.file.originalname);
     }
     this.writeFile(modifyUsers);
+
+    delete userData.password
+
     req.session.user = userData;
 
   },
@@ -76,6 +81,7 @@ const usersModel = {
       newUser.image = null;
     };
     newUser.admin = false;
+    newUser.registerDate = moment().format("DD-MM-YYYY")
     if (newUser.password !== newUser.confirmPassword) {
       return false
     }

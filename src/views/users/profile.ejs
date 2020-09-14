@@ -23,8 +23,9 @@
                 <p><b>Localidad:</b> <%= locals.user.location? locals.user.location : "Sin especificar"%> </p>
                 <p><b>Edad: </b><%= locals.user.age? locals.user.age : "Sin especificar"%></p>
                 <% let y = new Date %>
-                <p><b>Genero: </b> <%= locals.user.gender? locals.user.gender : "Sin especificar"%></p>
-                <p><b>Registrado el: -En construcción- </b> <%= (y.getMonth() + 1) + " del " +  (y.getYear() + 1900)  %> </p>
+                <p><b>Genero: </b> <%= locals.user.genderSpa %></p>
+                <p><b>Registrado el: </b> <%= locals.user.registerDate? locals.user.registerDate : "Sin datos" %> </p>
+                <!-- <p><b>Registrado el: -En construcción- </b> <%= (y.getMonth() + 1) + " del " +  (y.getYear() + 1900)  %> </p> -->
                 <div class="btn">
                     <a href="/users/profile/edit"><button class="btn-default">EDITAR INFO.</button></a>
                 </div>
