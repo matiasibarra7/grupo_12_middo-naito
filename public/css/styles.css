@@ -360,6 +360,8 @@ main .btn-talle {
   border-top: 2px solid rgb(36, 10, 10);
   display: flex;
   font-size: 1em;
+  justify-content: center;
+  padding-top: 1rem;
 }
 
 /* REGISTER Y LOGIN, EDIT y ADD PRODUCT html */
@@ -1069,11 +1071,11 @@ footer {
   font-size: 13px;
   font-weight: bold;
   position: absolute;
-  right: 1rem;
+  right: 0rem;
   top: 1rem;
   width: 2rem;
   height: 1.5rem;
-  text-align: end;
+  text-align: center;
 }
 
 .close-icon-modal:hover,
@@ -1098,6 +1100,12 @@ footer {
   justify-content: space-between; 
   margin: 2rem auto 0; 
   width: 100%;
+}
+
+.modal-naito.size-table {
+  padding: 1.5rem;
+  right: 10%;
+  top: 40%;
 }
 /* FIN ESTILOS MODAL */
 
@@ -1132,6 +1140,23 @@ footer {
   width: 14rem;
 }
 /* FIN ESTILOS INPUT BUSCADOR */
+
+/* ESTILOS MENSAJE POP UP */
+.inserted-msg {
+  display: grid;
+  place-content: center;
+  width: 90%;
+  max-width: 500px;
+  height: 3rem;
+  
+  background-color: #bee5bf;
+  position: fixed;
+  top: calc(8vh);
+  right: 5%;
+  z-index: 15;
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+/* FIN ESTILOS MENSAJE POP UP */
 
 /* Acá empieza el responsive */
 @media (min-width: 335px) {
@@ -1235,11 +1260,10 @@ footer {
   }
   
   .description-title {
-    margin: 6px 6px;
-    margin-bottom: -15px;
-    border-top: 2px solid rgb(36, 10, 10);
-    display: flex;
     font-size: 18px;
+    justify-content: flex-start;
+    padding-top: 0;
+    padding-left: 1rem;
   }
 
   .btn-black {

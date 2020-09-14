@@ -37,15 +37,12 @@ function generateModal(userName = "usuario", idUser = "1") {
   console.log(modal);
 }
 
-function generateMessage(title = "Ejemplo de mje", msg= "Título de la alerta") {
+function generateSimpleMessage(title = "Ejemplo de mje") {
   let divBody = document.querySelector("body");
   let message = `
-  <div class="inserted-msg" style="position: absolute; display: flex; flex-direction: column; width: 400px; height: 100px; background-color: gray; top: 0; right: 0; z-index: 15;">
-    <div style="background-color: lightseagreen; height: 35%;">
-      ${title}
-    </div>
-    <div style="background-color: lightgray; height: 65%;">
-      ${msg}
+  <div class="inserted-msg">
+    <div>
+      <b>${title}</b>
     </div>
   </div>
   `
@@ -53,5 +50,5 @@ function generateMessage(title = "Ejemplo de mje", msg= "Título de la alerta") 
   setTimeout(() => {
     let divMsg = document.querySelector(".inserted-msg");
     divMsg.remove()
-  }, 4000)
+  }, 3000)
 }

@@ -58,7 +58,7 @@
                 </div>
     
                 <div class="add-div">
-                    <input type="submit" class="btn-black" value="AGREGAR AL CARRITO" onclick="generateMessage('¡Producto agregado con éxito!', 'El producto ha sido agregado correctamente. Ve al carrito si quieres ver los productos ya añadidos')">
+                    <input type="submit" class="btn-black" value="AGREGAR AL CARRITO" onclick="generateSimpleMessage('¡Producto agregado al carrito!')">
                 </div>
     
     
@@ -74,12 +74,19 @@
                     </p>
                 </div>
     
-                <div class="size-table-title description-title" onclick="toggleModal()">
-                    <span><p>GUÍA DE TALLES<p></span>
+                <div class="size-table-title description-title">
+                    
+                    <div class="btn" >
+                        <div class="btn-default btn-grey" onclick="toggleModal()">
+                            <span><i class="fas fa-tshirt"></i> GUÍA DE TALLES</span>
+                        </div>
+                    </div>
+
+                    
                 </div>
     
 
-                <div class="modal-naito">
+                <div class="modal-naito size-table">
                     <div class="close-icon-modal" onclick=toggleModal()>X</div>
                     <div>
                         <b>Talle S</b>: 50 cm de ancho. 66 cm de largo.<br>
