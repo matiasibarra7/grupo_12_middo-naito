@@ -14,7 +14,7 @@ function toggleModal() {
 
 }
 
-function generateModal(userName = "matias", idUser = "1") {
+function generateModal(userName = "usuario", idUser = "1") {
   let modal = `
     <div class="close-icon-modal" onclick=toggleModal()>X</div>
     <div>
@@ -35,4 +35,23 @@ function generateModal(userName = "matias", idUser = "1") {
   divModalNaito.innerHTML = modal
   toggleModal()
   console.log(modal);
+}
+
+function generateMessage(title = "Ejemplo de mje", msg= "Título de la alerta") {
+  let divBody = document.querySelector("body");
+  let message = `
+  <div class="inserted-msg" style="position: absolute; display: flex; flex-direction: column; width: 400px; height: 100px; background-color: gray; top: 0; right: 0; z-index: 15;">
+    <div style="background-color: lightseagreen; height: 35%;">
+      ${title}
+    </div>
+    <div style="background-color: lightgray; height: 65%;">
+      ${msg}
+    </div>
+  </div>
+  `
+  divBody.innerHTML += message
+  setTimeout(() => {
+    let divMsg = document.querySelector(".inserted-msg");
+    divMsg.remove()
+  }, 4000)
 }
