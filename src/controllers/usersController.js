@@ -4,6 +4,8 @@ const bcryptjs = require("bcryptjs");
 const crypto = require("crypto")
 const tokensModel = require("../model/tokensModel");
 
+let db = require("../../database/models")
+
 const usersController = {
   register: (req, res) => {
     res.render("./users/register");
@@ -37,38 +39,32 @@ const usersController = {
     res.redirect("/users/usersList");
   },
   authenticate: (req,res) => {
-    let usersData = usersModel.getAll();
-    let found
-    usersData.forEach(user =>{
-      
-      if(user.email === req.body.email){
+    db.user.findOne({
+      where: {email: req.body.email}
+    }).then(user => { 
+      if (user) {
         if(bcryptjs.compareSync(req.body.password, user.password)){
           delete user.password
           req.session.user = user;
-          found = true;
+        } else {
+          res.redirect("/users/login")
         }
-      }
-    });
-      if(found){
+  
         if (req.session.user.admin){
           res.redirect("/users/panelAdmin");
         } else  {
-
-            if(req.body.remember){
-
-              const token = crypto.randomBytes(64).toString('base64');
-
-              tokensModel.store(req, token);
-
-              // Seteamos una cookie en el navegador   msec   seg  min  hs  dias  meses
-              res.cookie('userToken', token, { maxAge: 1000 * 60 * 60 * 24 * 30 * 3} )
-            }
-
+          if(req.body.remember){
+            const token = crypto.randomBytes(64).toString('base64');
+            tokensModel.store(req, token);
+            // Seteamos una cookie en el navegador   msec   seg  min  hs  dias  meses
+            res.cookie('userToken', token, { maxAge: 1000 * 60 * 60 * 24 * 30 * 3} )
+          }
           res.redirect("/users/profile");
-        }  
-      } else  {
-        res.redirect('/users/login')
-      } 
+        }
+      } else {
+        res.redirect("/users/login")
+      }
+    })
   },
   logout: (req, res) => { 
     tokensModel.delete(req.session.user.email); 

@@ -9,7 +9,7 @@
           <% if (locals.user) { %> 
             <a href="/users/profile" class="link-profile-mobile">
               <i class="fas fa-user"></i>
-              <span><%= locals.user.firstName %></span>
+              <span><%= locals.user.first_name %></span>
             </a>
           <% } else { %> 
             <a href="/users/login" class="link-profile-mobile">
@@ -78,7 +78,7 @@
           <div class="dropdown-mn">
             <a href="/users/profile" >
               <i class="fas fa-user"></i>
-              <span class="login-span"><%= locals.user.firstName %> </span>
+              <span class="login-span"><%= locals.user.first_name %> </span>
               <i class="fas fa-chevron-down"></i>
             </a>
             <div class="dropdown-container">
