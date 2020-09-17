@@ -155,7 +155,6 @@ const usersController = {
     db.user.findOne({
       where: {id: req.body.id}
     }).then(user => {
-      console.log(user)
       let newValue = !user.admin
       db.user.update(
         {admin : newValue},
