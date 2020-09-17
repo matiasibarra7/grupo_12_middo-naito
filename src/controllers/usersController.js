@@ -1,10 +1,12 @@
-const usersModel = require("../model/usersModel");
 const path = require("path");
 const bcryptjs = require("bcryptjs");
 const crypto = require("crypto")
 const tokensModel = require("../model/tokensModel");
+const moment = require("moment");
+const fs = require("fs");
 
-let db = require("../../database/models")
+
+let db = require("../../database/models");
 
 const usersController = {
   register: (req, res) => {
@@ -14,29 +16,101 @@ const usersController = {
     res.render("./users/login");
   },
   store: (req, res) => {
-    newUser = usersModel.store(req);
+    if (req.body.password !== req.body.confirmPassword) {
+      return false
+    }
+    let newUser = req.body;
+    newUser.alt = req.body.firstName;
+
+    if (req.file) {
+      newUser.image = "prof-img-" + path.basename(req.file.originalname)
+    } else {
+      newUser.image = null;
+    };
+    newUser.admin = false;
+    newUser.registerDate = moment().format("DD-MM-YYYY")
+    newUser.password = bcryptjs.hashSync(newUser.password, 10);
+    
+    delete newUser.confirmPassword;
+    
+    db.user.create(newUser)
+
+
+    delete newUser.password
     req.session.user = newUser;
 
     res.redirect("/users/profile");
   },
   usersList: (req, res) => {
-    let usersData = usersModel.getAll();
-    res.render("./users/usersList", { usersData });
+    db.user.findAll()
+      .then(usersData => {
+        res.render("./users/usersList", { usersData });
+      })
   },
   profile: (req, res) => {
     res.render("./users/profile");
   },
   profileEdit: (req, res) => {
-    /* let usersData = usersModel.getAll(); */
     res.render("./users/profileEdit");
   },
   uploadProfile: (req, res) => {
-    usersModel.update(req);
-    res.redirect("/users/profile");
+    let updatedUser = req.body;
+    updatedUser.id = req.session.user.id;
+
+    if (req.file) {
+      updatedUser.image = "prof-img-" + path.basename(req.file.originalname)
+    } else if (req.session.user.image) {
+      updatedUser.image = req.session.user.image;
+    } else {
+      updatedUser.image = null;
+    }
+
+    db.user.findOne({
+      where: {email: req.body.email}
+    }).then(user => {
+
+      if (user.admin) {
+        updatedUser.admin = user.admin;
+      } else {
+        updatedUser.admin = false
+      }
+      if (user.registerDate) {
+        updatedUser.registerDate = user.registerDate;
+      }
+
+      db.user.update(updatedUser,
+        {where: {id: req.session.user.id}})
+
+      delete updatedUser.password
+      req.session.user = updatedUser
+      
+      res.redirect("/users/profile");
+    })
+
   },
   delete: (req, res) => {
-    usersModel.delete(req);
-    res.redirect("/users/usersList");
+
+    let idUser = parseInt(req.params.id)
+
+    db.user.findOne({
+      where: {id: idUser}
+    }).then(user => {
+      if (user.image) {
+        fs.unlinkSync(`${__dirname}/../../public/images/users/${user.image}`);
+      }
+
+      db.user.destroy({
+        where: {id: idUser}
+      }).then(() =>{
+        res.redirect("/users/usersList");
+      })
+
+    })
+    .catch(error => {return console.log(error)})
+
+
+
+
   },
   authenticate: (req,res) => {
     db.user.findOne({
@@ -78,42 +152,46 @@ const usersController = {
     res.render('./users/changePass');
   },
   toggleAdm: (req, res) => {
-
-    let usersList = usersModel.getAll()
-
-    let modifyUsers = usersList.map((user) => {
-      if (user.id == req.body.id) {
-        user.admin = !user.admin
-      }
-      return user;
-    });
-    
-    usersModel.writeFile(modifyUsers)
-
-    res.redirect("/users/usersList")
+    db.user.findOne({
+      where: {id: req.body.id}
+    }).then(user => {
+      console.log(user)
+      let newValue = !user.admin
+      db.user.update(
+        {admin : newValue},
+        {where: {id: req.body.id}})
+        .then(() => {
+          res.redirect("/users/usersList")
+        })
+    })
   },
   editPass: (req,res) => {
-    let userFull = usersModel.getOneByEmail(res.locals.user.email);
-    let dataNewPass = req.body;
-    
-    if(bcryptjs.compareSync(dataNewPass.oldPass, userFull.password)){
-      if (dataNewPass.newPass !== dataNewPass.confirmNewPass) {
-        return false
-      }
-      let usersList = usersModel.getAll()
-      let modifiedUsers = usersList.map((user) => {
-        if (user.id == res.locals.user.id) {
-          user.password = bcryptjs.hashSync(dataNewPass.newPass, 10);  
-        }
-        return user;
-      });
-      usersModel.writeFile(modifiedUsers);
-    }else {
-      res.send("Contraseña ingresada erronea");
-    }
-    res.redirect("/users/profile");  
-  }
 
+    db.user.findOne({
+      where: {email: res.locals.user.email}
+    }).then(user => {
+      let dataNewPass = req.body;
+
+      
+      if(bcryptjs.compareSync(dataNewPass.oldPass, user.password)) {
+        if (dataNewPass.newPass !== dataNewPass.confirmNewPass) {
+          res.send("Contraseña nueva y confirmación distintas");
+        } else {
+
+          let newPassToWrite = bcryptjs.hashSync(dataNewPass.newPass, 10)
+
+          db.user.update(
+            {password : newPassToWrite},
+            {where: {email: res.locals.user.email}})
+              .then(() => {
+                res.redirect("/users/profile");
+              })
+        }
+      } else {
+        res.send("Contraseña ingresada erronea");
+      }
+    })
+  }
 };
 
 module.exports = usersController;
