@@ -46,6 +46,9 @@ const usersController = {
       .then(usersData => {
         res.render("./users/usersList", { usersData });
       })
+      .catch(error => {
+        res.send(error)
+      })
   },
   profile: (req, res) => {
     res.render("./users/profile");
@@ -67,7 +70,8 @@ const usersController = {
 
     db.user.findOne({
       where: {email: req.body.email}
-    }).then(user => {
+    })
+    .then(user => {
 
       if (user.admin) {
         updatedUser.admin = user.admin;
@@ -85,6 +89,9 @@ const usersController = {
       req.session.user = updatedUser
       
       res.redirect("/users/profile");
+    })
+    .catch(error => {
+      res.send(error)
     })
 
   },
@@ -106,16 +113,16 @@ const usersController = {
       })
 
     })
-    .catch(error => {return console.log(error)})
-
-
-
-
+    .catch(error => {
+      res.send(error)
+    })
   },
   authenticate: (req,res) => {
     db.user.findOne({
       where: {email: req.body.email}
-    }).then(user => { 
+    })
+    .then(user => { 
+      console.log(user)
       if (user) {
         if(bcryptjs.compareSync(req.body.password, user.password)){
           delete user.password
@@ -139,6 +146,9 @@ const usersController = {
         res.redirect("/users/login")
       }
     })
+    .catch(error => {
+      res.send(error)
+    })
   },
   logout: (req, res) => { 
     tokensModel.delete(req.session.user.email); 
@@ -154,7 +164,8 @@ const usersController = {
   toggleAdm: (req, res) => {
     db.user.findOne({
       where: {id: req.body.id}
-    }).then(user => {
+    })
+    .then(user => {
       let newValue = !user.admin
       db.user.update(
         {admin : newValue},
@@ -163,12 +174,16 @@ const usersController = {
           res.redirect("/users/usersList")
         })
     })
+    .catch(error => {
+      res.send(error)
+    })
   },
   editPass: (req,res) => {
 
     db.user.findOne({
       where: {email: res.locals.user.email}
-    }).then(user => {
+    })
+    .then(user => {
       let dataNewPass = req.body;
 
       
@@ -189,6 +204,9 @@ const usersController = {
       } else {
         res.send("Contraseña ingresada erronea");
       }
+    })
+    .catch(error => {
+      res.send(error)
     })
   }
 };

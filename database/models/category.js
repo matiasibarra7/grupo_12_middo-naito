@@ -2,7 +2,6 @@
 const {
   Model
 } = require('sequelize');
-const product = require('./product');
 module.exports = (sequelize, DataTypes) => {
   class category extends Model {
     /**
@@ -11,7 +10,9 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      //category.hasMany(models.product, {foreignKey: category.id,as: product})
+      // define association here
+      this.hasMany(models.product, {as:"products"})
+
     }
   };
   category.init({

@@ -14,7 +14,7 @@ module.exports = {
       description: {
         type: Sequelize.STRING
       },
-      category: {
+      category_id: {
         type: Sequelize.INTEGER
       },
       price: {
@@ -25,14 +25,6 @@ module.exports = {
       },
       alt: {
         type: Sequelize.STRING
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
       }
     });
   },

@@ -10,22 +10,30 @@ const productsController = {
     db.product.findAll()
       .then(productsData => {
         res.render("./products/products", { productsData, toThousand });
-      
+      })
+      .catch(error => {
+        res.send(error)
       })
   },
   details: (req, res) => {
-   db.product.findOne({
-    where: {id: req.params.id}}
-    ).then(productData => {
+    db.product.findOne({
+      where: {id: req.params.id}
+    }).then(productData => {
       res.render("./products/productDetail", { productData, toThousand });
+    })
+    .catch(error => {
+      res.send(error)
     })
     
   },
   cart: (req, res) => {
-    db.product.findAll()
+    db.category.findAll({include: 'products'})
       .then(productsData => {
         //res.render(`./products/productCart`, { productsData, toThousand });
         res.send(productsData);
+      })
+      .catch(error => {
+        res.send(error)
       })
   },
   add: (req, res) => {
