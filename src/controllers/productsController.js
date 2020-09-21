@@ -60,9 +60,10 @@ const productsController = {
       let updatedProduct = {
         name: req.body.name,
         description: req.body.description,
+        category_id: parseInt(req.body.category),
         price: parseFloat(req.body.price),
-        alt: req.body.name,
-        category_id: req.body.category
+        image: null,
+        alt: req.body.name  
       }
       if (req.file) {
         if (foundProduct.image) {
@@ -72,17 +73,19 @@ const productsController = {
       } else {
         updatedProduct.image = foundProduct.image;
       }
-      db.product.update({
-        where: {id: updatedProduct.id}
-      })
+      db.product.update(
+        updatedProduct,
+        {where: {id: req.params.id}}
+      )
       .then(()=>{
-        
+        console.log(req.body.size);
         db.products_sizes.upsert(
-          {stock: req.body.stock}, 
-          {where: {product_id: updatedProduct.id, size_id: req.body.size}}
+          {product_id: req.params.id, size_id: req.body.size, stock: req.body.stock}, 
+          {where: {product_id: req.params.id, size_id: req.body.size}}
         )
-        .then(()=>{
-          res.redirect("/products/details/" + req.params.id); 
+        .then((resault)=>{
+          res.send(resault);
+          //res.redirect("/products/details/" + req.params.id); 
         })
         .catch(error => {
           res.send(error)
