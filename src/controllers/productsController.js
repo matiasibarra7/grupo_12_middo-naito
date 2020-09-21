@@ -27,7 +27,7 @@ const productsController = {
     
   },
   cart: (req, res) => {
-    db.category.findAll({include: 'products'})
+    db.product.findAll({include: ['category','sizes']})
       .then(productsData => {
         //res.render(`./products/productCart`, { productsData, toThousand });
         res.send(productsData);
@@ -48,21 +48,33 @@ const productsController = {
     res.redirect("/products/details/" + req.params.id);
   },
   store: (req, res) => {
-    //Faltan modelos de stock y de talle
-    //productsModel.store(req);
-    let newProduct = req.body;
-    newProduct.alt = req.body.name;
-    newProduct.image = "imagen - " + path.basename(req.file.originalname);
-    newProduct.price = parseFloat(newProduct.price);
-    newProduct.stock = parseInt(newProduct.stock);
-    
-    db.product.create(newProduct
-    ).then(product => {
-      res.redirect("/products/details/" + product.id);  
+    let newProduct = {
+      name: req.body.name,
+      description: req.body.description,
+      price: parseFloat(req.body.price),
+      image: "imagen - " + path.basename(req.file.originalname),
+      alt: req.body.name,
+      category_id: req.body.category
+    }
+    db.product.create(newProduct)
+    .then(product => {
+      let newRelation = {
+        sizeId: parseInt(req.body.size),
+        stock: parseInt(req.body.stock),
+        productId: product.id
+      }
+      db.products_sizes.create(newRelation)
+      .then(result => {
+        res.redirect("/products/details/" + product.id);  
+      })
+      .catch(error => {
+        res.send(error)
+      });
+    })
+    .catch(error => {
+      res.send(error)
     });
-    // db.product.findOne({
-    //   where: {name: req.body.name}
-    // })
+    
   },
   delete: (req, res) => {
     productsModel.delete(req);
