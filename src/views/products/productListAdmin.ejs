@@ -20,11 +20,15 @@
                 <div class="details">
             
                     <div class="name">
-                        <%= el.name %>
+                        <b><%= el.name %></b>
                     </div>
 
                     <div class="size">
-                        Talle: <%= el.sizes[0].name.toUpperCase() %>
+                        <b style="width: 100%;">Talles</b>
+                        <% el.sizes.forEach(size => { %> 
+                            <span style="margin: 0; width: 50%;"><%= size.name.toUpperCase() + ':' %></span>
+                            <span style="margin: 0; width: 50%;"><%= size.products_sizes.stock %></span>
+                        <% }) %> 
                     </div>
                     
                     <div class="price">

@@ -1343,6 +1343,28 @@ footer {
   .element-prod-list-adm .details div.price {
     width: 20%;
   }
+
+  .element-prod-list-adm .details .size {
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    padding-left: 1.5rem;
+  }
+
+  .element-prod-list-adm .details .size b {
+    width: 100%;
+  }
+
+  .element-prod-list-adm .details .size span {
+    margin: 0;
+    width: 50%;
+  }
+
+  .element-prod-list-adm .details .price,
+  .element-prod-list-adm .details .edit,
+  .element-prod-list-adm .details .delete {
+    width: 15%; align-self: center;
+  }
   /* FIN ESTILOS LISTA PRODUCTOS ADMIN */
 }
 
