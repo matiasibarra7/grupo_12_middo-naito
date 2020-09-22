@@ -77,15 +77,13 @@ const productsController = {
         updatedProduct,
         {where: {id: req.params.id}}
       )
-      .then(()=>{
-        console.log(req.body.size);
+      .then(() => {
         db.products_sizes.upsert(
-          {product_id: req.params.id, size_id: req.body.size, stock: req.body.stock}, 
-          {where: {product_id: req.params.id, size_id: req.body.size}}
+          {productId: req.params.id, sizeId: req.body.size, stock: req.body.stock}, 
+          {where: {productId: req.params.id, sizeId: req.body.size}}
         )
-        .then((resault)=>{
-          res.send(resault);
-          //res.redirect("/products/details/" + req.params.id); 
+        .then((result)=>{
+          res.redirect("/products/details/" + req.params.id); 
         })
         .catch(error => {
           res.send(error)
