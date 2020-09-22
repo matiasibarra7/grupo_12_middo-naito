@@ -60,7 +60,7 @@ const productsController = {
       let updatedProduct = {
         name: req.body.name,
         description: req.body.description,
-        category_id: parseInt(req.body.category),
+        categoryId: parseInt(req.body.category),
         price: parseFloat(req.body.price),
         image: null,
         alt: req.body.name  
@@ -104,7 +104,7 @@ const productsController = {
       price: parseFloat(req.body.price),
       image: "imagen - " + path.basename(req.file.originalname),
       alt: req.body.name,
-      category_id: req.body.category
+      categoryId: req.body.category
     }
     db.product.create(newProduct)
     .then(product => {
