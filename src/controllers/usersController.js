@@ -122,7 +122,6 @@ const usersController = {
       where: {email: req.body.email}
     })
     .then(user => { 
-      console.log(user)
       if (user) {
         if(bcryptjs.compareSync(req.body.password, user.password)){
           delete user.password

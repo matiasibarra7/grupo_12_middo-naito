@@ -957,7 +957,7 @@ footer {
   margin-bottom: 1.5rem;
   text-decoration: none;
   color: black;
-  width: calc(33% - 1rem);
+  width: 33%;
   min-width: 168px;
   display: flex;
   justify-content: center;
@@ -971,6 +971,13 @@ footer {
   align-items: center;
   padding: 1rem;
   text-align: center;
+}
+
+.aclaration-admin {
+  margin: 0 auto 1.5rem;
+  background-color: rgba(205, 221, 221, 0.2);
+  max-width: 1440px;
+  width: 90%; padding: 1rem;
 }
 /* FIN PANEL DE ADMINISTRADOR */
 
@@ -1157,6 +1164,23 @@ footer {
   box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 /* FIN ESTILOS MENSAJE POP UP */
+
+/* ESTILOS DE PAGINACIÓN EN PRODUCTOS */
+.pagination {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.3rem;
+  margin-top: 3.5rem;
+}
+
+.pagination .info-pag {
+  margin-right: 0.5rem;
+}
+.pagination .page-number {
+  width: 1.5rem;
+}
+/* FIN ESTILOS DE PAGINACIÓN EN PRODUCTOS */
 
 /* Acá empieza el responsive */
 @media (min-width: 335px) {

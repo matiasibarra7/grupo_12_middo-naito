@@ -15,7 +15,24 @@
                 <%- include('../partials/oneProduct', {name, price: toThousand(price), alt, image, id}) %>
             <% }); %>
         </section>
-
+        
+        <!-- Páginado -->
+        <div class="pagination">
+            <div class="info-pag">Página <%= currentPage + 1  %> de <%= totalPages %> |</div>
+            <% for(let i = 0; i < totalPages; i++) { %> 
+                <% if (currentPage == i) { %> 
+                    <b class="page-number">
+                        <%= i + 1  %>
+                    </b>
+                <% } else { %> 
+                    <a href="/products?page=<%= i  %>">
+                        <div class="page-number">
+                            <%= i + 1  %>
+                        </div>
+                    </a>
+                <% } %> 
+            <% }; %>
+        </div>
     </main>
 
     <%- include('../partials/footer'); %>

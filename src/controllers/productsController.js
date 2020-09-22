@@ -7,9 +7,17 @@ const db = require("../../database/models");
 
 const productsController = {
   main: (req, res) => {
-    db.product.findAll()
+    db.product.findAndCountAll({
+      limit: 12,
+      offset: req.query.page? req.query.page * 12 : 0
+    })
       .then(productsData => {
-        res.render("./products/products", { productsData, toThousand });
+        let totalPages = Math.ceil(productsData.count / 12)
+        let currentPage
+        req.query.page? currentPage = parseInt(req.query.page) : currentPage = 0
+
+        //res.send(productsData)
+        res.render("./products/products", { productsData: productsData.rows, toThousand, totalPages, currentPage });
       })
       .catch(error => {
         res.send(error)

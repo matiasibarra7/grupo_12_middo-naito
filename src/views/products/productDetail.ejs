@@ -23,10 +23,10 @@
             <div class="details-data">
     
                 <div class="product-data">
-                    <strong>
+                    <b>
                         <p><%= productData.name %></p>
                         <p>$ <%= toThousand(productData.price) %></p>
-                    </strong>
+                    </b>
                 </div>
     
                 <div class="buttons-checks">  
@@ -100,7 +100,7 @@
                 <% if(locals.user){ %>
                    <% if (locals.user.admin) {%> 
                     <div class="add-div">
-                        <a href="/products/edit/<%= productData.id %>"><button class="btn-default"><strong>EDITAR</strong></button></a>
+                        <a href="/products/edit/<%= productData.id %>"><button class="btn-default"><b>EDITAR</b></button></a>
                     </div>
                     <% } %> 
                 <% } %>      
