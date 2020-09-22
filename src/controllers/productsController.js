@@ -80,9 +80,9 @@ const productsController = {
       .then(() => {
         db.products_sizes.upsert(
           {productId: req.params.id, sizeId: req.body.size, stock: req.body.stock}, 
-          {where: {productId: req.params.id, sizeId: req.body.size}}
+          {where: {productId: parseInt(req.params.id), sizeId: parseInt(req.body.size)}}
         )
-        .then((result)=>{
+        .then(() => {
           res.redirect("/products/details/" + req.params.id); 
         })
         .catch(error => {
@@ -115,6 +115,7 @@ const productsController = {
       }
       db.products_sizes.create(newRelation)
       .then(result => {
+        console.log(result)
         res.redirect("/products/details/" + product.id);  
       })
       .catch(error => {
