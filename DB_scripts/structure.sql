@@ -34,6 +34,13 @@ CREATE TABLE products (
     alt  VARCHAR(200),
     FOREIGN KEY (category_id) REFERENCES categories(id)
 ); 
+DELIMITER //
+CREATE TRIGGER delete_carts_by_prod BEFORE DELETE ON products FOR EACH ROW 
+BEGIN
+	DELETE FROM carts WHERE product_id = OLD.id;
+	DELETE FROM products_sizes WHERE product_id = OLD.id;
+END; //
+DELIMITER ;
 
 CREATE TABLE carts (
     id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -44,6 +51,7 @@ CREATE TABLE carts (
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (product_id) REFERENCES products(id)
 ); 
+CREATE UNIQUE INDEX idx_cart_userxproduct ON carts (user_id, product_id);
 
 CREATE TABLE sizes (
     id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
