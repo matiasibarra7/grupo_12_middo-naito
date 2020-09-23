@@ -132,12 +132,10 @@ const usersController = {
         } else  {
           if(req.body.remember){
             const token = crypto.randomBytes(64).toString('base64');
+            // Seteamos una cookie en el navegador   msec   seg  min  hs  dias  meses
+            res.cookie('userToken', token, { maxAge: 1000 * 60 * 60 * 24 * 30 * 3} )
+            
             db.token.create({name: token, userId: user.id})
-            .then(()=>{
-              // Seteamos una cookie en el navegador   msec   seg  min  hs  dias  meses
-              res.cookie('userToken', token, { maxAge: 1000 * 60 * 60 * 24 * 30 * 3} )
-              console.log(token);
-            })
             .catch(error => {
               res.send(error)
             })

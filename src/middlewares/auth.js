@@ -1,5 +1,4 @@
 const usersModel = require("../model/usersModel");
-
 const moment = require("moment");
 const db = require("../../database/models");
 
@@ -36,46 +35,48 @@ module.exports = (req, res, next) => {
 
   // O si tiene la cookie de recordar
   } else if (req.cookies.userToken) {
-
-    let token = tokensModel.getOne(req.cookies.userToken)
-    //db.token.findOne({where : {userId : req.cookies.userToken}})
-    if (token) {
-
-      let userFull = usersModel.getOneByEmail(token.user)
+    
+    db.token.findOne({where : {name : req.cookies.userToken}})
+    .then((token)=>{
       
-      delete userFull.password
-      console.log("Cookie detectada, usuario completo: ", userFull)
-  
-      // Aca calculamos la edad en base a nacimiento
-      if (userFull.birthday) {
-        let formatBirth = moment(userFull.birthday);
-        let age = moment().diff(formatBirth) / 31536000000;
-        age = parseInt(age)
-        userFull.age = age;
-      }
-  
-      // El texto que imprimimos por genero
-      switch (userFull.gender) {
-        case "male":
-          userFull.genderSpa = "Hombre"
-          break;
-        case "female":
-          userFull.genderSpa = "Mujer"
-          break;
-        case "unicorn":
-          userFull.genderSpa = "Unicornio"
-          break;
-        default:
-          userFull.genderSpa = "Sin especificar"
-          break;
-      }
-      
-      req.session.user = userFull;
-      req.locals.user = userFull;
+      if (token) {
+        db.user.findOne({where : {id : token.userId}})
+        .then((userFull)=>{
+          
+          delete userFull.password
 
-    } else {
-      res.clearCookie('userToken');
-    };
+           // Aca calculamos la edad en base a nacimiento
+          if (userFull.birthday) {
+            let formatBirth = moment(userFull.birthday);
+            let age = moment().diff(formatBirth) / 31536000000;
+            age = parseInt(age)
+            userFull.age = age;
+          }
+      
+          // El texto que imprimimos por genero
+          switch (userFull.gender) {
+            case "male":
+              userFull.genderSpa = "Hombre"
+              break;
+            case "female":
+              userFull.genderSpa = "Mujer"
+              break;
+            case "unicorn":
+              userFull.genderSpa = "Unicornio"
+              break;
+            default:
+              userFull.genderSpa = "Sin especificar"
+              break;
+          }
+          
+          req.session.user = userFull;
+          res.locals.user = userFull;
+        })
+      } else {
+        res.clearCookie('userToken');
+      };
+    })
+    
 
   };
   next();
