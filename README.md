@@ -31,4 +31,43 @@ Nuestro Ecommerce se dirige hacia un público jóven-adulto y adolescente, prese
  Kika       | Cuenta con una versión mobile atractiva y dinámica. URL: https://www.kikamayorista.com.ar/
  Equus      | Presenta una distribución de los productos minimalista, con una visualización dinámina del producto. URL: https://www.equus.com.ar/
 
-Tablero del proyecto: https://trello.com/b/0zEIPbVy/middonaito-grupo12
+## Instrucciones para instalación de Middo Naito
+
+1. Clonar el proyecto a través de una consola con el comando:
+
+    > git clone https://github.com/matiasibarra7/grupo_12_middo-naito.git
+
+2. Acceder mediante la consola a la carpeta del proyecto e instalar las dependencias (Debes ubicarte donde se encuentran los archivos '*package.json*' y '*app.js*'), con el comando: 
+
+    > npm install
+
+3. Deberás de disponer de los programas necesarios para correr un servidor en MySQL
+
+4. Ejecutar el script '*structure.sql*' encontrado en la carpeta '*DB_scripts*' con alguna herramienta de gestión de bases de datos. Esta acción creará la base de datos del sistema.
+
+5. Ejecutar el script '*data.sql*' encontrado en la carpeta '*DB_scripts*' con alguna herramienta de gestión de bases de datos. Este script insertará datos de ejemplo de usuarios y productos, necesario para probar el sistema con sus funcionalidades.
+
+6. Ejecutar la aplicación mediante una terminal (Previamente ubicado en la carpeta donde se encuentra el archivo *package.json*), utilizando el comando: 
+    
+    > npm run start
+
+    **Ten en cuenta que debes tener el servidor de MySQL corriendo en el puerto 3306**
+
+7. Acceder mediante tu navegador a la siguiente url: 
+
+    > http://localhost:3000/
+
+
+    ¡Y listo! Ya podrás navegar por la aplicación web Middo Naito. Puedes probar la navegación y creación de un nuevo usuario o utilizar alguno de los siguientes para probar sus funcionalidades:
+
+
+    Usuario    | Contraseña | Tipo de Usuario
+    -----------| -----------| ----------
+    user_default@middo.com | UsuarioMiddo | Normal
+    user_admin@middo.com | AdminMiddo | Administrador
+
+<br>
+
+## Seguimiento del proyecto
+
+Tablero del proyecto: [Trello](https://trello.com/b/0zEIPbVy/middonaito-grupo12)
