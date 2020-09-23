@@ -1,12 +1,9 @@
 const path = require("path");
 const bcryptjs = require("bcryptjs");
 const crypto = require("crypto")
-const tokensModel = require("../model/tokensModel");
 const moment = require("moment");
 const fs = require("fs");
-
-
-let db = require("../../database/models");
+const db = require("../../database/models");
 
 const usersController = {
   register: (req, res) => {
@@ -135,9 +132,15 @@ const usersController = {
         } else  {
           if(req.body.remember){
             const token = crypto.randomBytes(64).toString('base64');
-            tokensModel.store(req, token);
-            // Seteamos una cookie en el navegador   msec   seg  min  hs  dias  meses
-            res.cookie('userToken', token, { maxAge: 1000 * 60 * 60 * 24 * 30 * 3} )
+            db.token.create({name: token, userId: user.id})
+            .then(()=>{
+              // Seteamos una cookie en el navegador   msec   seg  min  hs  dias  meses
+              res.cookie('userToken', token, { maxAge: 1000 * 60 * 60 * 24 * 30 * 3} )
+              console.log(token);
+            })
+            .catch(error => {
+              res.send(error)
+            })
           }
           res.redirect("/users/profile");
         }
@@ -150,10 +153,16 @@ const usersController = {
     })
   },
   logout: (req, res) => { 
-    tokensModel.delete(req.session.user.email); 
-    res.clearCookie("userToken");
-    req.session.destroy();
-    return res.redirect('/');},
+    db.token.destroy({where: {userId : req.session.user.id}})
+    .then(()=>{
+      res.clearCookie("userToken");
+      req.session.destroy();
+      return res.redirect('/');
+    })
+    .catch(error => {
+      res.send(error)
+    })
+  }, 
   panelAdmin: (req, res) => {
     res.render('./users/panelAdmin');
   },

@@ -1,6 +1,8 @@
 const usersModel = require("../model/usersModel");
-const tokensModel = require("../model/tokensModel");
+
 const moment = require("moment");
+const db = require("../../database/models");
+
 
 module.exports = (req, res, next) => {
   // Si hay un usuario en sesión
@@ -36,7 +38,7 @@ module.exports = (req, res, next) => {
   } else if (req.cookies.userToken) {
 
     let token = tokensModel.getOne(req.cookies.userToken)
-
+    //db.token.findOne({where : {userId : req.cookies.userToken}})
     if (token) {
 
       let userFull = usersModel.getOneByEmail(token.user)

@@ -6,7 +6,7 @@ CREATE TABLE users(
 id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
 first_name VARCHAR(150) NOT NULL,
 last_name VARCHAR(150) NOT NULL,
-email VARCHAR(200) NOT NULL,
+email VARCHAR(200) NOT NULL UNIQUE,
 password VARCHAR(200) NOT NULL,
 province VARCHAR(150),
 location VARCHAR(150),
@@ -60,7 +60,12 @@ CREATE TABLE products_sizes (
 ); 
 CREATE UNIQUE INDEX idx_ps_si ON products_sizes (product_id, size_id);
 
-
+CREATE TABLE tokens (
+    id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    user_id INTEGER NOT NULL,
+	name VARCHAR(200) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+); 
 
 
 
