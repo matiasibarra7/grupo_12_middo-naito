@@ -7,7 +7,9 @@
 
         <div class="name-delete-product">
             <a href="/products/details/<%= product.product.id %>" class="link-unformatted black-shine"><%= product.product.name %></a>
-            <i class="far fa-trash-alt black-shine"></i>
+            <form action="/products/removeFromCart/<%= product.product.id %>?_method=DELETE" method="POST">
+                <button type="submit" class="container-trash"><i class="far fa-trash-alt black-shine"></i></button> 
+            </form>
         </div>
         <div class="size-container">
             Talle: <%= product.size.name.toUpperCase() %>

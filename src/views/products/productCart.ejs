@@ -10,7 +10,7 @@
         
         <% let total = 0 %>    
         <% productsData.forEach(el => { %>    
-            <% total += el.price %>    
+            <% total += el.product.price %>    
             <%- include('../partials/oneLineInCart', {product: el}); %>
         <% }); %>
 

@@ -41,36 +41,36 @@ const productsController = {
       where: {'userId': res.locals.user.id }
     })
     .then(productsData => {
-      //res.send(productsData)
+      // res.send(productsData)
       res.render(`./products/productCart`, { productsData, toThousand });
     })
     .catch(error => {
       res.send(error)
     })
-
-
-    /* db.product.findAll({ 
-      include: [
-        {
-        model: db.user, 
-        where: { 'id' : 3 }
-        },
-        {
-        model: db.size, 
-        where: { 'id' : 3 }
-        },
-        'category']
+  },
+  addToCart: (req,res)=>{
+    let newCartItem = req.body;
+    newCartItem.userId = res.locals.user? res.locals.user.id: "anon" ;
+    // res.send(newCartItem)
+    db.cart.create(newCartItem)
+    .then(()=>{
+      res.redirect("/products/cart");
     })
-      .then(productsData => {
-        productsData.forEach(element => {
-          console.log(element.name)
-        });
-        //res.send(productsData[0]);
-        res.render(`./products/productCart`, { productsData, toThousand });
-      })
-      .catch(error => {
-        res.send(error)
-      }) */
+    .catch(error => {
+      res.send(error)
+    })
+  },
+  removeFromCart: (req,res)=>{
+    db.cart.destroy({where: {
+      userId: res.locals.user.id,
+      productId: req.params.productId,
+    }})
+    .then(()=>{
+      res.redirect("/products/cart")
+    })
+    .catch(error => {
+      res.send(error)
+    })
   },
   add: (req, res) => {
     res.render(`./products/productAdd`);

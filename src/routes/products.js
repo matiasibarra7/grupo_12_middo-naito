@@ -37,4 +37,8 @@ router.get("/cart", productsController.cart);
 
 router.get("/productListAdmin", userRoute, adminRoute, productsController.listAdmin); 
 
+router.post("/addToCart", productsController.addToCart);
+
+router.delete("/removeFromCart/:productId", productsController.removeFromCart)
+
 module.exports = router;

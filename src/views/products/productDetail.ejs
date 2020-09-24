@@ -28,39 +28,44 @@
                         <p>$ <%= toThousand(productData.price) %></p>
                     </b>
                 </div>
-    
-                <div class="buttons-checks">  
-                    <label for="size_s">
-                        <input type="radio" id="size_s" name="size_toggle">
-                            <span>S</span>
-                        </input>
-                    </label>
-                    <label for="size_m">
-                        <input type="radio" id="size_m" name="size_toggle" checked>
-                            <span>M</span>
-                        </input>
-                    </label>
-                    <label for="size_l">
-                        <input type="radio" id="size_l" name="size_toggle">
-                            <span>L</span>
-                        </input>
-                    </label>
-                    <label for="size_xl">
-                        <input type="radio" id="size_xl" name="size_toggle">
-                            <span>XL</span>
-                        </input>
-                    </label>
-                    <label for="size_xxl">
-                        <input type="radio" id="size_xxl" name="size_toggle">
-                            <span>XXL</span>
-                        </input>
-                    </label>
-                </div>
-    
-                <div class="add-div">
-                    <input type="submit" class="btn-black" value="AGREGAR AL CARRITO" onclick="generateSimpleMessage('¡Producto agregado al carrito!')">
-                </div>
-    
+                
+                <form action="/products/addToCart" method="POST">
+                    <input type="text" name="productId" value="<%=productData.id%>" hidden>
+                    <input type="text" name="quantity" value="1" hidden>
+
+                    <div class="buttons-checks">  
+                        <label for="size_s">
+                            <input type="radio" id="size_s" name="sizeId" value="1">
+                                <span>S</span>
+                            </input>
+                        </label>
+                        <label for="size_m">
+                            <input type="radio" id="size_m" name="sizeId" value="2" checked>
+                                <span>M</span>
+                            </input>
+                        </label>
+                        <label for="size_l">
+                            <input type="radio" id="size_l" name="sizeId" value="3">
+                                <span>L</span>
+                            </input>
+                        </label>
+                        <label for="size_xl">
+                            <input type="radio" id="size_xl" name="sizeId" value="4">
+                                <span>XL</span>
+                            </input>
+                        </label>
+                        <label for="size_xxl">
+                            <input type="radio" id="size_xxl" name="sizeId" value="5">
+                                <span>XXL</span>
+                            </input>
+                        </label>
+                    </div>
+                        <div class="add-div">
+                            <!-- <input type="submit" class="btn-black" value="AGREGAR AL CARRITO" onclick="generateSimpleMessage('¡Producto agregado al carrito!')"> -->
+                            <button type="submit" class="btn-black">AGREGAR AL CARRITO</button>
+
+                        </div>
+                </form>
     
                 <div class="description-title">
                     <p><b>Descripción del producto</b><p>

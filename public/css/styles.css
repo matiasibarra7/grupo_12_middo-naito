@@ -584,10 +584,15 @@ input[type=number] {
   padding: 0 1.8rem 0 0.5rem;
 }
 
-.name-delete-product .fa-trash-alt {
+.container-trash{
   position: absolute;
   top: 0;
   right: 0.5rem;
+  background: none;
+  border: none;
+}
+
+.name-delete-product .fa-trash-alt {
   font-size: 1.4rem;
   cursor: pointer;
 }
