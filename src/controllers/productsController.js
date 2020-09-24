@@ -102,7 +102,6 @@ const productsController = {
     })
   },
   update: (req, res) => {
-    //productsModel.update(req);
     db.product.findOne({
       where: {id: req.params.id}
     })
@@ -178,7 +177,6 @@ const productsController = {
     
   },
   delete: (req, res) => {
-    //productsModel.delete(req);
     db.products_sizes.destroy({
       where: {product_id: req.params.id}
     })

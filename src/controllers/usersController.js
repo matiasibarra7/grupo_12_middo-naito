@@ -31,12 +31,18 @@ const usersController = {
     delete newUser.confirmPassword;
     
     db.user.create(newUser)
+    .then((userCreated)=>{
+      delete newUser.password
+      newUser.id = userCreated.id
 
+      req.session.user = newUser;
 
-    delete newUser.password
-    req.session.user = newUser;
+      res.redirect("/users/profile");
+    })
+    .catch(error => {
+      res.send(error)
+    })
 
-    res.redirect("/users/profile");
   },
   usersList: (req, res) => {
     db.user.findAll()
@@ -57,13 +63,7 @@ const usersController = {
     let updatedUser = req.body;
     updatedUser.id = req.session.user.id;
 
-    if (req.file) {
-      updatedUser.image = "prof-img-" + path.basename(req.file.originalname)
-    } else if (req.session.user.image) {
-      updatedUser.image = req.session.user.image;
-    } else {
-      updatedUser.image = null;
-    }
+
 
     db.user.findOne({
       where: {email: req.body.email}
@@ -77,6 +77,17 @@ const usersController = {
       }
       if (user.registerDate) {
         updatedUser.registerDate = user.registerDate;
+      }
+
+      if (req.file) {
+        if (user.image) {
+          fs.unlinkSync(`${__dirname}/../../public/images/users/${user.image}`);
+        }
+        updatedUser.image = "prof-img-" + path.basename(req.file.originalname)
+      } else if (req.session.user.image) {
+        updatedUser.image = req.session.user.image;
+      } else {
+        updatedUser.image = null;
       }
 
       db.user.update(updatedUser,
@@ -107,6 +118,9 @@ const usersController = {
         where: {id: idUser}
       }).then(() =>{
         res.redirect("/users/usersList");
+      })
+      .catch(error => {
+        res.send(error)
       })
 
     })
@@ -153,9 +167,9 @@ const usersController = {
   logout: (req, res) => { 
     db.token.destroy({where: {userId : req.session.user.id}})
     .then(()=>{
-      res.clearCookie("userToken");
       req.session.destroy();
-      return res.redirect('/');
+      res.clearCookie("userToken");
+      res.redirect('/');
     })
     .catch(error => {
       res.send(error)

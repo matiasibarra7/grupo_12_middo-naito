@@ -1,5 +1,3 @@
-const fs = require("fs");
-const productsModel = require("../model/productsModel");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const db = require("../../database/models");
 

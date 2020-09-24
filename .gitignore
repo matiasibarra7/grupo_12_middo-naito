@@ -5,3 +5,4 @@ public/js/twoCarousel.js
 src/views/index/carousel.ejs
 src/views/index/modalTest.ejs
 public/images/banner-test
+database/config/config.js

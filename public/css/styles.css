@@ -1153,6 +1153,19 @@ footer {
 .searcher-field input {
   width: 14rem;
 }
+
+.searcher-field form {
+  display: flex;
+}
+
+.searcher-field form button{
+  position: absolute;
+  right: 0.8rem;
+  border: none;
+  top: 0.7rem;
+  height: 1.1rem;
+}
+
 /* FIN ESTILOS INPUT BUSCADOR */
 
 /* ESTILOS MENSAJE POP UP */

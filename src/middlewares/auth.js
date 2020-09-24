@@ -1,7 +1,5 @@
-const usersModel = require("../model/usersModel");
 const moment = require("moment");
 const db = require("../../database/models");
-
 
 module.exports = (req, res, next) => {
   // Si hay un usuario en sesión

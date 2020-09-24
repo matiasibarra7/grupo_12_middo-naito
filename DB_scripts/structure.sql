@@ -77,6 +77,13 @@ CREATE TABLE tokens (
     FOREIGN KEY (user_id) REFERENCES users(id)
 ); 
 
+DELIMITER //
+CREATE TRIGGER delete_carts_by_users BEFORE DELETE ON users FOR EACH ROW 
+BEGIN
+	DELETE FROM carts WHERE user_id = OLD.id;
+END; //
+DELIMITER ;
+
 
 
 
