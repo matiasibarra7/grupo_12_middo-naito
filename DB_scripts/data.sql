@@ -140,3 +140,23 @@ insert into products_sizes (id, product_id, size_id, stock) values (null, 16, 2,
 insert into products_sizes (id, product_id, size_id, stock) values (null, 16, 3, 9);
 insert into products_sizes (id, product_id, size_id, stock) values (null, 16, 4, 5);
 insert into products_sizes (id, product_id, size_id, stock) values (null, 16, 5, 5);
+
+-- carts
+
+INSERT INTO carts VALUES 
+(DEFAULT, 1, 1, 1, 2),
+(DEFAULT, 1, 2, 1, 2),
+(DEFAULT, 1, 3, 2, 3),
+(DEFAULT, 1, 4, 3, 1),
+(DEFAULT, 2, 5, 1, 2),
+(DEFAULT, 2, 6, 2, 2),
+(DEFAULT, 2, 7, 3, 1),
+(DEFAULT, 2, 8, 4, 4),
+(DEFAULT, 6, 5, 5, 1),
+(DEFAULT, 6, 6, 2, 2),
+(DEFAULT, 6, 7, 3, 1),
+(DEFAULT, 6, 8, 4, 4),
+(DEFAULT, 8, 5, 5, 1),
+(DEFAULT, 8, 6, 4, 2),
+(DEFAULT, 8, 7, 3, 1),
+(DEFAULT, 8, 8, 4, 4);

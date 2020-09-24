@@ -1,4 +1,3 @@
-const productsModel = require("../model/productsModel");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const path = require("path");
 const fs = require("fs");
