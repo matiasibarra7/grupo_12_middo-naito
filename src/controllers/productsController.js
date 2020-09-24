@@ -36,14 +36,41 @@ const productsController = {
   },
   cart: (req, res) => {
     //Falta ordenar la vista
-    db.cart.findAll({where: {"user_id" : res.locals.user.id}},{include: [/*'category','sizes',*/ 'users', 'product']})
+    db.cart.findAll({
+      include: ['product', 'size'],
+      where: {'userId': res.locals.user.id }
+    })
+    .then(productsData => {
+      //res.send(productsData)
+      res.render(`./products/productCart`, { productsData, toThousand });
+    })
+    .catch(error => {
+      res.send(error)
+    })
+
+
+    /* db.product.findAll({ 
+      include: [
+        {
+        model: db.user, 
+        where: { 'id' : 3 }
+        },
+        {
+        model: db.size, 
+        where: { 'id' : 3 }
+        },
+        'category']
+    })
       .then(productsData => {
-        //res.render(`./products/productCart`, { productsData, toThousand });
-        res.send(productsData);
+        productsData.forEach(element => {
+          console.log(element.name)
+        });
+        //res.send(productsData[0]);
+        res.render(`./products/productCart`, { productsData, toThousand });
       })
       .catch(error => {
         res.send(error)
-      })
+      }) */
   },
   add: (req, res) => {
     res.render(`./products/productAdd`);

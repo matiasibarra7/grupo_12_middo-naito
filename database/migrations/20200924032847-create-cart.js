@@ -14,8 +14,8 @@ module.exports = {
       productId: {
         type: Sequelize.INTEGER
       },
-      total: {
-        type: Sequelize.FLOAT
+      sizeId: {
+        type: Sequelize.INTEGER
       },
       quantity: {
         type: Sequelize.INTEGER

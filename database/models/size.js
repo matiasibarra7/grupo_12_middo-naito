@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.belongsToMany(models.product, {through: 'products_sizes'} )
+      
+      //this.belongsToMany(models.user, {through: 'cart'} )
     }
   };
   size.init({

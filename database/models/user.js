@@ -11,7 +11,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.hasMany(models.token);
-      this.belongsToMany(models.product, {through: "cart"})
+
+      //this.belongsToMany(models.product, {through: "cart"});
+      //this.belongsToMany(models.size, {through: "cart"});
     }
   };
   User.init({

@@ -1,24 +1,24 @@
 <div class="product-in-cart-grid">
     <div class="image-product-cart section-cart">
-        <a href="/products/details/<%= product.id %>"><img src="/images/products/<%= product.image %>" alt="<%= product.alt %>"></a>
+        <a href="/products/details/<%= product.product.id %>"><img src="/images/products/<%= product.product.image %>" alt="<%= product.alt %>"></a>
     </div>
 
     <div class="details-product-cart section-cart">
 
         <div class="name-delete-product">
-            <a href="/products/details/<%= product.id %>" class="link-unformatted black-shine"><%= product.name %></a>
+            <a href="/products/details/<%= product.product.id %>" class="link-unformatted black-shine"><%= product.product.name %></a>
             <i class="far fa-trash-alt black-shine"></i>
         </div>
         <div class="size-container">
-            Talle: <%= product.size.toUpperCase() %>
+            Talle: <%= product.size.name.toUpperCase() %>
         </div>
         <div class="price-quantity-in-cart">
             <div class="quantity" style="user-select: none;">
                 <i class="far fa-minus-square black-shine" onclick="changeQuantity(this)"></i>
-                    <span>2</span>
+                    <span> <%= product.quantity %></span>
                 <i class="far fa-plus-square black-shine" onclick="changeQuantity(this)"></i>
             </div>
-            <b>$ <%= toThousand(product.price) %></b>
+            <b>$ <%= toThousand(product.product.price) %></b>
         </div>
         
     </div>

@@ -42,16 +42,6 @@ BEGIN
 END; //
 DELIMITER ;
 
-CREATE TABLE carts (
-    id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    user_id INT,
-    product_id INT,
-    total FLOAT,
-    quantity INT,
-    FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (product_id) REFERENCES products(id)
-); 
-CREATE UNIQUE INDEX idx_cart_userxproduct ON carts (user_id, product_id);
 
 CREATE TABLE sizes (
     id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -67,6 +57,18 @@ CREATE TABLE products_sizes (
     FOREIGN KEY (product_id) REFERENCES products(id)
 ); 
 CREATE UNIQUE INDEX idx_ps_si ON products_sizes (product_id, size_id);
+
+CREATE TABLE carts (
+    id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    user_id INT,
+    product_id INT,
+    size_id INTEGER,
+    quantity INT,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (product_id) REFERENCES products(id),
+	FOREIGN KEY (size_id) REFERENCES sizes(id)
+); 
+CREATE UNIQUE INDEX idx_cart_userxproduct ON carts (user_id, product_id);
 
 CREATE TABLE tokens (
     id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
