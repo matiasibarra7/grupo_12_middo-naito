@@ -36,7 +36,7 @@ const productsController = {
   },
   cart: (req, res) => {
     //Falta ordenar la vista
-    db.product.findAll({include: ['category','sizes']})
+    db.cart.findAll({where: {"user_id" : res.locals.user.id}},{include: [/*'category','sizes',*/ 'users', 'product']})
       .then(productsData => {
         //res.render(`./products/productCart`, { productsData, toThousand });
         res.send(productsData);
