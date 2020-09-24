@@ -21,6 +21,8 @@ upload = multer({ storage });
 
 router.get("/", productsController.main); //1 -- Listado de productos
 
+router.get("/search", productsController.search) // -- Buscador de productos
+
 router.get("/add", userRoute, adminRoute, productsController.add); //2 -- Formulario de creación de productos
 
 router.get("/details/:id", productsController.details); //3 -- Detalle de un producto particular
@@ -33,7 +35,7 @@ router.put("/edit/:id", upload.single("image"), productsController.update); // 6
 
 router.delete("/edit/:id", userRoute, adminRoute, productsController.delete); // 7 -- Acción de borrado
 
-router.get("/cart", productsController.cart); 
+router.get("/cart", userRoute , productsController.cart); 
 
 router.get("/productListAdmin", userRoute, adminRoute, productsController.listAdmin); 
 

@@ -3,6 +3,7 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const path = require("path");
 const fs = require("fs");
 const db = require("../../database/models");
+const Op = db.Sequelize.Op;
 
 
 const productsController = {
@@ -22,6 +23,21 @@ const productsController = {
       .catch(error => {
         res.send(error)
       })
+  },
+  search: (req, res) => {
+    db.product.findAndCountAll({where :{
+      name: {[Op.like]: `%${req.query.search}%`}
+    }, limit: 12,
+    offset: req.query.page? req.query.page * 12 : 0}
+    )
+    .then((productsData)=>{
+      // res.send(data)
+      let totalPages = Math.ceil(productsData.count / 12)
+      let currentPage
+      req.query.page? currentPage = parseInt(req.query.page) : currentPage = 0
+      
+      res.render("./products/products", { productsData: productsData.rows, toThousand, totalPages, currentPage });
+    });
   },
   details: (req, res) => {
     db.product.findOne({

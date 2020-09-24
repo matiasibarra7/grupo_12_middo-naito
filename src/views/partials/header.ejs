@@ -108,7 +108,10 @@
       <div class="search-icon" onclick="toggleSearcher()"><label for="searcher"><i class="fas fa-search"></i></label</div>
     </div>
     <div class="searcher-field">
-      <input type="text" id="searcher">
+      <form action="/products/search" method="GET" style="display: flex;">
+        <button type="submit" style="position: absolute;right: 0.5rem;"><i class="fas fa-arrow-right"></i></button>
+        <input type="text" id="searcher" name="search">
+      </form> 
     </div>
 </header>
 <div class="cover-modal" onclick="toggleModal()"></div>
