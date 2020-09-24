@@ -33,10 +33,8 @@ module.exports = (req, res, next) => {
 
   // O si tiene la cookie de recordar
   } else if (req.cookies.userToken) {
-    
     db.token.findOne({where : {name : req.cookies.userToken}})
     .then((token)=>{
-      
       if (token) {
         db.user.findOne({where : {id : token.userId}})
         .then((userFull)=>{
@@ -70,6 +68,9 @@ module.exports = (req, res, next) => {
           req.session.user = userFull;
           res.locals.user = userFull;
         })
+        .catch(error => {
+          res.send(error)
+        })
       } else {
         res.clearCookie('userToken');
       };
@@ -77,5 +78,9 @@ module.exports = (req, res, next) => {
     
 
   };
-  next();
+
+  setTimeout(()=> {
+    next()
+  }, 50);
+  //next()
 };
