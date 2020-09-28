@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const session = require("express-session");
 const auth = require("./src/middlewares/auth");
+const history = require("./src/middlewares/history");
 const cookieParser = require('cookie-parser');
 
 
@@ -25,6 +26,7 @@ app.use(session({
 app.use(cookieParser());
 
 app.use(auth);
+app.use(history);
 
 const mainRoutes = require("./src/routes/main");
 const productsRoutes = require("./src/routes/products");

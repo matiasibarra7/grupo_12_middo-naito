@@ -42,6 +42,8 @@ Nuestro Ecommerce se dirige hacia un público jóven-adulto y adolescente, prese
     > npm install
 
 3. Deberás de disponer de los programas necesarios para correr un servidor en MySQL
+<br>
+*(En la ruta del proyecto "database/config" existe un ejemplo de como se debe configurar el archivo config, si utilizas un servidor de MySQL con un usuario diferente al default, deberas reemplazar los campos correspondientes en un nuevo archivo 'config.js', caso contrario, solo renombra el archivo 'config.js.example' a 'config.js')*
 
 4. Ejecutar el script '*structure.sql*' encontrado en la carpeta '*DB_scripts*' con alguna herramienta de gestión de bases de datos. Esta acción creará la base de datos del sistema.
 

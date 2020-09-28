@@ -13,9 +13,9 @@
         <p class="section-title" id="featured">PRODUCTOS DESTACADOS</p>
         <section class="featured-products">
             
-            <% if (productsData.length > 12) { %>
+            <% if (productsData.length > 9) { %>
 
-                <% for (let i = 0; i < 12; i++) { %>
+                <% for (let i = 0; i < 9; i++) { %>
                     <% let {name, price, alt, image, id} = productsData[i] %>
                     <%- include('../partials/oneProduct', {name, price: toThousand(price), alt, image, id}) %>
                 <% } %>

@@ -8,11 +8,11 @@ const Op = db.Sequelize.Op;
 const productsController = {
   main: (req, res) => {
     db.product.findAndCountAll({
-      limit: 12,
-      offset: req.query.page? req.query.page * 12 : 0
+      limit: 9,
+      offset: req.query.page? req.query.page * 9 : 0
     })
       .then(productsData => {
-        let totalPages = Math.ceil(productsData.count / 12)
+        let totalPages = Math.ceil(productsData.count / 9)
         let currentPage
         req.query.page? currentPage = parseInt(req.query.page) : currentPage = 0
 
@@ -26,8 +26,8 @@ const productsController = {
   search: (req, res) => {
     db.product.findAndCountAll({where :{
       name: {[Op.like]: `%${req.query.search}%`}
-    }, limit: 12,
-    offset: req.query.page? req.query.page * 12 : 0}
+    }, limit: 9,
+    offset: req.query.page? req.query.page * 9 : 0}
     )
     .then((productsData)=>{
       // res.send(data)
@@ -164,7 +164,6 @@ const productsController = {
       }
       db.products_sizes.create(newRelation)
       .then(result => {
-        console.log(result)
         res.redirect("/products/details/" + product.id);  
       })
       .catch(error => {
@@ -177,34 +176,28 @@ const productsController = {
     
   },
   delete: (req, res) => {
-    db.products_sizes.destroy({
-      where: {product_id: req.params.id}
+
+    db.product.findOne({
+      where: {id: req.params.id}
     })
-    .then(() => {
-      db.product.findOne({
+    .then(productToDelete => {
+      if (productToDelete.image) {
+        fs.unlinkSync(`${__dirname}/../../public/images/products/${productToDelete.image}`);
+      }
+      db.product.destroy({
         where: {id: req.params.id}
       })
-      .then(productToDelete => {
-        if (productToDelete.image) {
-          fs.unlinkSync(`${__dirname}/../../public/images/products/${productToDelete.image}`);
-        }
-        db.product.destroy({
-          where: {id: req.params.id}
-        })
-        .then(()=> {
-          res.redirect("/products");
-        })
-        .catch(error => {
-          res.send(error)
-        })
+      .then( () => {
+        res.redirect("/products");
       })
       .catch(error => {
         res.send(error)
-      })      
+      })
     })
     .catch(error => {
       res.send(error)
-    })
+    })      
+
   },
   listAdmin: (req, res) => {
     db.product.findAll({include: ['category','sizes']})

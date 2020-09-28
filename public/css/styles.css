@@ -1176,6 +1176,7 @@ footer {
   max-width: 500px;
   height: 3rem;
   
+  color: black;
   background-color: #bee5bf;
   position: fixed;
   top: calc(8vh);

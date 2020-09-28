@@ -154,7 +154,17 @@ const usersController = {
               res.send(error)
             })
           }
-          res.redirect("/users/profile");
+
+          // Este fragmento revisa las rutas visitadas y redirecciona según a donde quiso entrar el anónimo sin loguearse antes
+          let urls = req.session.history.filter(url => url != '/users/login')
+
+          let theUrl = urls.pop()
+
+          if (theUrl) {
+            res.redirect(theUrl);
+          } else {
+            res.redirect("/users/profile");
+          }
         }
       } else {
         res.redirect("/users/login")
