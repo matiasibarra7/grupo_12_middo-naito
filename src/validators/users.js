@@ -1,6 +1,6 @@
 const { check } = require('express-validator');
 const path = require('path')
-// Creamos una propiedad por cada formulario que queramos validar
+
 module.exports = {
   register:[
     check('firstName')
