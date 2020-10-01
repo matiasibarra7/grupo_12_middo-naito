@@ -5,6 +5,8 @@ const moment = require("moment");
 const fs = require("fs");
 const db = require("../../database/models");
 
+const { validationResult } = require('express-validator');
+
 const usersController = {
   register: (req, res) => {
     res.render("./users/register");
@@ -13,35 +15,45 @@ const usersController = {
     res.render("./users/login");
   },
   store: (req, res) => {
-    if (req.body.password !== req.body.confirmPassword) {
-      return false
-    }
-    let newUser = req.body;
-    newUser.alt = req.body.firstName;
+    let { errors } = validationResult(req)
+    // res.send(errors);
 
-    if (req.file) {
-      newUser.image = "prof-img-" + path.basename(req.file.originalname)
+    if (errors.length > 1){
+      res.send(errors); 
+    } else if (errors.length == 1 && errors[0].msg != "Cannot read property 'originalname' of undefined"){
+      res.send(errors)
     } else {
-      newUser.image = null;
-    };
-    newUser.admin = false;
-    newUser.registerDate = moment().format("DD-MM-YYYY")
-    newUser.password = bcryptjs.hashSync(newUser.password, 10);
-    
-    delete newUser.confirmPassword;
-    
-    db.user.create(newUser)
-    .then((userCreated)=>{
-      delete newUser.password
-      newUser.id = userCreated.id
-
-      req.session.user = newUser;
-
-      res.redirect("/users/profile");
-    })
-    .catch(error => {
-      res.send(error)
-    })
+      
+      if (req.body.password !== req.body.confirmPassword) {
+        return false
+      }
+      let newUser = req.body;
+      newUser.alt = req.body.firstName;
+  
+      if (req.file) {
+        newUser.image = "prof-img-" + path.basename(req.file.originalname)
+      } else {
+        newUser.image = null;
+      };
+      newUser.admin = false;
+      newUser.registerDate = moment().format("DD-MM-YYYY")
+      newUser.password = bcryptjs.hashSync(newUser.password, 10);
+      
+      delete newUser.confirmPassword;
+      
+      db.user.create(newUser)
+      .then((userCreated)=>{
+        delete newUser.password
+        newUser.id = userCreated.id
+  
+        req.session.user = newUser;
+  
+        res.redirect("/users/profile");
+      })
+      .catch(error => {
+        res.send(error)
+      })
+    }
 
   },
   usersList: (req, res) => {

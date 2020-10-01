@@ -7,6 +7,7 @@ const adminRoute = require("../middlewares/adminRoute");
 const guestRoute = require("../middlewares/guestRoute");
 const userRoute = require("../middlewares/userRoute");
 
+
 const multer = require("multer");
 
 let storage = multer.diskStorage({
@@ -23,7 +24,7 @@ upload = multer({ storage });
 // guestRoutes ↓
 router.get("/register", guestRoute, usersController.register); // Formulario de regitro
 
-router.post("/register", upload.single("image"), usersController.store); // Acción de registrarse (a donde se envía el formulario)
+router.post("/register", upload.single("image"), validate.register, usersController.store); // Acción de registrarse (a donde se envía el formulario)
 
 router.get("/login", guestRoute, usersController.login); // Formulario de login
 
