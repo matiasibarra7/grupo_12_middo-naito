@@ -19,6 +19,8 @@ module.exports = {
     .notEmpty().withMessage('Debes completar el campo de Contraseña').bail()
     .isLength({ min: 8 }).withMessage('Debes ingresar una contraseña con al menos 8 carácteres'),
 
+    // Validación de la imagen
+    // Créditos Grupo 1: 6pimientas
     check('image')
         .custom((value, { req }) => {
             const acceptedExtensions = [".jpg", ".jpeg", ".png"];

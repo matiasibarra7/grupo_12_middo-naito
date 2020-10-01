@@ -3,7 +3,6 @@ const router = express.Router();
 const productsController = require("../controllers/productsController");
 const path = require("path");
 const adminRoute = require("../middlewares/adminRoute");
-const guestRoute = require("../middlewares/guestRoute");
 const userRoute = require("../middlewares/userRoute");
 
 const validate = require('../validators/product')
