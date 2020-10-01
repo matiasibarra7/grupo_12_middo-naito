@@ -6,6 +6,8 @@ const adminRoute = require("../middlewares/adminRoute");
 const guestRoute = require("../middlewares/guestRoute");
 const userRoute = require("../middlewares/userRoute");
 
+const validate = require('../validators/product')
+
 
 const multer = require("multer");
 let storage = multer.diskStorage({
@@ -27,7 +29,7 @@ router.get("/add", userRoute, adminRoute, productsController.add); //2 -- Formul
 
 router.get("/details/:id", productsController.details); //3 -- Detalle de un producto particular
 
-router.post("/add", upload.single("image"), productsController.store); //4 -- Acción de creación (a donde se envía el formulario)
+router.post("/add", upload.single("image"), validate.validateNewProduct , productsController.store); //4 -- Acción de creación (a donde se envía el formulario)
 
 router.get("/edit/:id", userRoute, adminRoute, productsController.edit); // 5 -- Formulario de edición de productos
 

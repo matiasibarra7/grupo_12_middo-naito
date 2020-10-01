@@ -4,6 +4,7 @@ const fs = require("fs");
 const db = require("../../database/models");
 const Op = db.Sequelize.Op;
 
+const { validationResult } = require('express-validator');
 
 const productsController = {
   main: (req, res) => {
@@ -147,32 +148,51 @@ const productsController = {
     });   
   },
   store: (req, res) => {
-    let newProduct = {
-      name: req.body.name,
-      description: req.body.description,
-      price: parseFloat(req.body.price),
-      image: "imagen - " + path.basename(req.file.originalname),
-      alt: req.body.name,
-      categoryId: req.body.category
-    }
-    db.product.create(newProduct)
-    .then(product => {
-      let newRelation = {
-        sizeId: parseInt(req.body.size),
-        stock: parseInt(req.body.stock),
-        productId: product.id
+    
+    let { errors } = validationResult(req)
+    console.log(errors.length);
+
+    if (errors.length > 0) {
+
+      res.send(errors)
+
+      // si se sube un archivo y el formulario trae errores, eliminamos el archivo subido
+      if (req.file) {
+        fs.unlinkSync(`${__dirname}/../../public/images/products/imagen - ${path.basename(req.file.originalname)}`)
       }
-      db.products_sizes.create(newRelation)
-      .then(result => {
-        res.redirect("/products/details/" + product.id);  
+
+      //subida normal de producto
+    } else {
+      
+      let newProduct = {
+        name: req.body.name,
+        description: req.body.description,
+        price: parseFloat(req.body.price),
+        image: "imagen - " + path.basename(req.file.originalname),
+        alt: req.body.name,
+        categoryId: req.body.category
+      }
+      db.product.create(newProduct)
+      .then(product => {
+        let newRelation = {
+          sizeId: parseInt(req.body.size),
+          stock: parseInt(req.body.stock),
+          productId: product.id
+        }
+        db.products_sizes.create(newRelation)
+        .then(result => {
+          res.redirect("/products/details/" + product.id);  
+        })
+        .catch(error => {
+          res.send(error)
+        });
       })
       .catch(error => {
         res.send(error)
       });
-    })
-    .catch(error => {
-      res.send(error)
-    });
+
+    }
+
     
   },
   delete: (req, res) => {
