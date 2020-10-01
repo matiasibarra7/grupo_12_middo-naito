@@ -36,5 +36,8 @@ module.exports = {
             "La imagen debe tener uno de los siguientes formatos: JPG, JPEG, PNG"
         )
 
+    ],
+    validateEdit : [
+        
     ]
 }

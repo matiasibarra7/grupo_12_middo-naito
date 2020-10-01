@@ -33,7 +33,7 @@ router.post("/add", upload.single("image"), validate.validateNewProduct , produc
 
 router.get("/edit/:id", userRoute, adminRoute, productsController.edit); // 5 -- Formulario de edición de productos
 
-router.put("/edit/:id", upload.single("image"), productsController.update); // 6 -- Acción de edición (a donde se envía el formulario):
+router.put("/edit/:id", upload.single("image"), validate.validateNewProduct ,productsController.update); // 6 -- Acción de edición (a donde se envía el formulario):
 
 router.delete("/edit/:id", userRoute, adminRoute, productsController.delete); // 7 -- Acción de borrado
 

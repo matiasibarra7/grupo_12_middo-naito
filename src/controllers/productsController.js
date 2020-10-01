@@ -103,37 +103,56 @@ const productsController = {
     })
   },
   update: (req, res) => {
-    db.product.findOne({
-      where: {id: req.params.id}
-    })
-    .then((foundProduct)=>{
-      let updatedProduct = {
-        name: req.body.name,
-        description: req.body.description,
-        categoryId: parseInt(req.body.category),
-        price: parseFloat(req.body.price),
-        image: null,
-        alt: req.body.name  
-      }
+    let { errors } = validationResult(req)
+    // res.send(errors);
+
+    if (errors.length > 1){
       if (req.file) {
-        if (foundProduct.image) {
-          fs.unlinkSync(`${__dirname}/../../public/images/products/${foundProduct.image}`);
-        }
-        updatedProduct.image = `imagen - ${path.basename(req.file.originalname)}`;
-      } else {
-        updatedProduct.image = foundProduct.image;
+        fs.unlinkSync(`${__dirname}/../../public/images/products/imagen - ${path.basename(req.file.originalname)}`)
       }
-      db.product.update(
-        updatedProduct,
-        {where: {id: req.params.id}}
-      )
-      .then(() => {
-        db.products_sizes.upsert(
-          {productId: req.params.id, sizeId: req.body.size, stock: req.body.stock}, 
-          {where: {productId: parseInt(req.params.id), sizeId: parseInt(req.body.size)}}
+      res.send(errors); 
+    } else if (errors.length == 1 && errors[0].msg != "Debes ingresar una imagen para tu producto"){
+      res.send(errors)
+      if (req.file) {
+        fs.unlinkSync(`${__dirname}/../../public/images/products/imagen - ${path.basename(req.file.originalname)}`)
+      }
+    } else{
+      
+      db.product.findOne({
+        where: {id: req.params.id}
+      })
+      .then((foundProduct)=>{
+        let updatedProduct = {
+          name: req.body.name,
+          description: req.body.description,
+          categoryId: parseInt(req.body.category),
+          price: parseFloat(req.body.price),
+          image: null,
+          alt: req.body.name  
+        }
+        if (req.file) {
+          if (foundProduct.image) {
+            fs.unlinkSync(`${__dirname}/../../public/images/products/${foundProduct.image}`);
+          }
+          updatedProduct.image = `imagen - ${path.basename(req.file.originalname)}`;
+        } else {
+          updatedProduct.image = foundProduct.image;
+        }
+        db.product.update(
+          updatedProduct,
+          {where: {id: req.params.id}}
         )
         .then(() => {
-          res.redirect("/products/details/" + req.params.id); 
+          db.products_sizes.upsert(
+            {productId: req.params.id, sizeId: req.body.size, stock: req.body.stock}, 
+            {where: {productId: parseInt(req.params.id), sizeId: parseInt(req.body.size)}}
+          )
+          .then(() => {
+            res.redirect("/products/details/" + req.params.id); 
+          })
+          .catch(error => {
+            res.send(error)
+          });
         })
         .catch(error => {
           res.send(error)
@@ -141,11 +160,8 @@ const productsController = {
       })
       .catch(error => {
         res.send(error)
-      });
-    })
-    .catch(error => {
-      res.send(error)
-    });   
+      });   
+    }
   },
   store: (req, res) => {
     
