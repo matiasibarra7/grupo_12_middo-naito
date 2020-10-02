@@ -35,7 +35,7 @@ router.get("/profile/", userRoute, usersController.profile)  // Vista de perfil
 
 router.get("/profile/edit", userRoute, usersController.profileEdit)  // Formulario de edición de perfil
 
-router.put("/profile/edit", upload.single("image"), usersController.uploadProfile) // Acción de edición (a donde se envía el formulario)
+router.put("/profile/edit", upload.single("image"), validate.edit, usersController.updateProfile) // Acción de edición (a donde se envía el formulario)
 
 router.get("/logout", userRoute, usersController.logout); // Deslogueo
 

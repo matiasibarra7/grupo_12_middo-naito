@@ -71,48 +71,54 @@ const usersController = {
   profileEdit: (req, res) => {
     res.render("./users/profileEdit");
   },
-  uploadProfile: (req, res) => {
-    let updatedUser = req.body;
-    updatedUser.id = req.session.user.id;
-
-
-
-    db.user.findOne({
-      where: {email: req.body.email}
-    })
-    .then(user => {
-
-      if (user.admin) {
-        updatedUser.admin = user.admin;
-      } else {
-        updatedUser.admin = false
-      }
-      if (user.registerDate) {
-        updatedUser.registerDate = user.registerDate;
-      }
-
-      if (req.file) {
-        if (user.image) {
-          fs.unlinkSync(`${__dirname}/../../public/images/users/${user.image}`);
+  updateProfile: (req, res) => {
+    let { errors } = validationResult(req)
+    
+    if (errors.length){
+      res.send(errors);
+    } else {
+      let updatedUser = req.body;
+      updatedUser.id = req.session.user.id;
+  
+      db.user.findOne({
+        where: {email: req.body.email}
+      })
+      .then(user => {
+  
+        if (user.admin) {
+          updatedUser.admin = user.admin;
+        } else {
+          updatedUser.admin = false
         }
-        updatedUser.image = "prof-img-" + path.basename(req.file.originalname)
-      } else if (req.session.user.image) {
-        updatedUser.image = req.session.user.image;
-      } else {
-        updatedUser.image = null;
-      }
+        if (user.registerDate) {
+          updatedUser.registerDate = user.registerDate;
+        }
+  
+        if (req.file) {
+          if (user.image) {
+            fs.unlinkSync(`${__dirname}/../../public/images/users/${user.image}`);
+          }
+          updatedUser.image = "prof-img-" + path.basename(req.file.originalname)
+        } else if (req.session.user.image) {
+          updatedUser.image = req.session.user.image;
+        } else {
+          updatedUser.image = null;
+        }
+  
+        db.user.update(updatedUser,
+          {where: {id: req.session.user.id}})
+  
+        delete updatedUser.password
+        req.session.user = updatedUser
+        
+        res.redirect("/users/profile");
+      })
+      .catch(error => {
+        res.send(error)
+      })
+  
+    }
 
-      db.user.update(updatedUser,
-        {where: {id: req.session.user.id}})
-
-      delete updatedUser.password
-      req.session.user = updatedUser
-      
-      res.redirect("/users/profile");
-    })
-    .catch(error => {
-      res.send(error)
-    })
 
   },
   delete: (req, res) => {

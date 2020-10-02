@@ -38,4 +38,17 @@ module.exports = {
     check('password')
       .notEmpty().withMessage('Debes completar el campo de password').bail()
   ],
+  edit: [
+    check('firstName')
+    .notEmpty().withMessage('Debes completar el campo Nombre').bail()
+    .isLength({ min: 2 }).withMessage('Debes completar el campo con al menos 2 carácteres'),
+
+    check('lastName')
+    .notEmpty().withMessage('Debes completar el campo Apellido').bail()
+    .isLength({ min: 2 }).withMessage('Debes completar el campo con al menos 2 carácteres'),
+
+    check('email')
+    .notEmpty().withMessage('Debes completar el campo de email').bail()
+    .isEmail().withMessage('Debes completar un email válido')
+  ]
 }
