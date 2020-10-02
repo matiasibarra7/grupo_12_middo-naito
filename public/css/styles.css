@@ -447,6 +447,22 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.inputs.warning-input {
+  border: 2px solid red;
+}
+.session-form.new-product-form .btn-talle.warning-input {
+  border: 2px solid red;
+}
+
+.span-warning-msg{
+  color: #d3d3d3;
+  font-weight: bold;
+  width: 90%;
+  display: block;
+  margin: 0.5rem auto 0;
+}
+
+
 /* End New product */
 
 /* Edit product */
