@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head', {title: "Nuevo Producto"}); %>
+<script src="/js/validators.js"></script>
 <body class="adm-body">
     <%- include('../partials/header'); %>
     <main class="newProduct">
@@ -12,38 +13,42 @@
             </a>
         </div>
         <h2 class="session-title">AÑADIR UN NUEVO PRODUCTO</h2>
-        <form class="session-form new-product-form" action="/products/add" method="POST" enctype="multipart/form-data">
+        <form class="session-form new-product-form" id="newProduct" action="/products/add" method="POST" enctype="multipart/form-data">
             <div class="input-form">
                 <label for="productName">NOMBRE</label>
                 <input type="text" name="name" id="productName" class="inputs" placeholder="Escriba el nombre del producto">
+                <span class="span-warning-msg"></span>
             </div>
             <div class="input-form">
                 <label for="productDescription">DESCRIPCIÓN</label>
                 <textarea name="description" id="productDescription" class="inputs" placeholder="Realice una descripción del producto"></textarea>
+                <span class="span-warning-msg"></span>
             </div>
 
             <div class="two-cols">
                 <div class="col">
                     <label for="category">CATEGORÍA</label>
-                    <select name="category" class="btn-talle">
+                    <select name="category" class="btn-talle" id="productCategory">
                         <option value="" hidden selected>Seleccione</option>
                         <option value="1">Remera</option> 
                         <option value="2">Camisa</option> 
                         <option value="3">Campera</option>
                         <option value="4">Pantalón</option>
                         <option value="5">Accesorio</option>
-                    </select>    
+                    </select>
+                    <span class="span-warning-msg"></span>
                 </div>
                 <div class="col">
                     <label for="size">TALLE</label>
-                    <select name="size" class="btn-talle">
+                    <select name="size" class="btn-talle" id="productSize">
                             <option value="" hidden selected>Talle</option>
                             <option value="1">S</option> 
                             <option value="2">M</option>
                             <option value="3">L</option>
                             <option value="4">XL</option>
                             <option value="5">XXL</option>
-                    </select>    
+                    </select>
+                    <span class="span-warning-msg"></span>
                 </div>
                 
             </div>
@@ -52,16 +57,19 @@
                 <div class="col">
                     <label for="price">PRECIO</label>
                     <input type="number" name="price" id="productPrice" class="inputs" placeholder="Ingrese el precio del producto" min="0">        
+                    <span class="span-warning-msg"></span>
                 </div>
                 <div class="col">
                     <label for="stock">STOCK</label>
                     <input type="number" name="stock" id="productStock" class="inputs" placeholder="Ingrese el stock del producto" min="0">    
+                    <span class="span-warning-msg"></span>
                 </div>
             </div>
 
             <div class="input-form">
                 <label for="image">IMAGEN</label>
-                <input type="file" name="image" id="productIMG" class="inputs">
+                <input type="file" name="image" id="productIMG" class="inputs" accept="image/png,image/jpeg,image/jpg">
+                <span class="span-warning-msg"></span>
             </div>
             <div class="btn">
                 <button type="submit" class="btn-default">AÑADIR PRODUCTO</button>
