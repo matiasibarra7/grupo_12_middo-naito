@@ -166,7 +166,6 @@ const productsController = {
   store: (req, res) => {
     
     let { errors } = validationResult(req)
-    console.log(errors.length);
 
     if (errors.length > 0) {
 
