@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head', {title: "Registrarse"}); %>
+<script src="/js/validators/registerValidation.js"></script>
 <body>
     <%- include('../partials/header'); %>
     <main class="register">
@@ -12,30 +13,36 @@
             </a>
         </div>
         <h2 class="session-title">CREA TU CUENTA</h2>
-        <form class="session-form" action="/users/register" method="POST" enctype="multipart/form-data">
+        <form class="session-form" action="/users/register" method="POST" enctype="multipart/form-data" id="registerForm"> 
             <div class="input-form">
                 <label for="firstName">NOMBRE</label>
                 <input type="text" name="firstName" id="firstName" class="inputs" placeholder="Ingrese su nombre">
+                <span class="span-warning-msg"></span>
             </div>
             <div class="input-form">
                 <label for="lastName">APELLIDO</label>
                 <input type="text" name="lastName" id="lastName" class="inputs" placeholder="Ingrese su apellido">
+                <span class="span-warning-msg"></span>
             </div>
             <div class="input-form">
                 <label for="email">E-MAIL</label>
                 <input type="email" name="email" id="email" class="inputs" placeholder="Ingrese su e-mail ej: cliente@mail.com">
+                <span class="span-warning-msg"></span>
             </div>
             <div class="input-form">
                 <label for="password">CONTRASEÑA</label>
-                <input type="password" name="password" id="passsword" class="inputs" placeholder="Cree una contraseña para su cuenta">    
+                <input type="password" name="password" id="password" class="inputs" placeholder="Cree una contraseña para su cuenta">    
+                <span class="span-warning-msg"></span>
             </div>
             <div class="input-form">
                 <label for="confirmPassword"> CONFIRMAR CONTRASEÑA</label>
                 <input type="password" name="confirmPassword" id="confirmPassword" class="inputs" placeholder="Repita la contraseña creada">  
+                <span class="span-warning-msg"></span>
             </div>
             <div class="input-form">
                 <label for="image">IMAGEN</label>
                 <input type="file" name="image" id="userIMG" class="inputs">
+                <span class="span-warning-msg"></span>
             </div>
             <div class="btn">
                 <button type="submit" class="btn-default">CREAR CUENTA</button>
