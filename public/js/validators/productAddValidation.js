@@ -93,9 +93,15 @@ function validateNewProduct() {
 
   divForm.addEventListener('submit', function(e) {
       if (Object.keys(errors).length) {
-        e.preventDefault()
         // console.log('Se ataja el submit');
-        console.log(errors);
+        e.preventDefault()
+
+        // Al utilizar el innerHtml con el body, este evento se borra y permite el envio del formulario sin validar antes.
+        /* if (Object.keys(errors).length == 7) {
+          generateSimpleMessage('Debes completar los campos con los detalles del producto')
+        } */
+
+        console.log(Object.keys(errors));
       }
   })
 }
