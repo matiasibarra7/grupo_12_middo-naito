@@ -952,8 +952,16 @@ footer {
 .edit-field-profile {
   display: grid;
   grid-template-columns: auto 70%;
+  grid-template-areas: 
+  'title input'
+  'void warning' ;
 }
-
+.edit-field-profile span {
+  grid-area: warning;
+  font-weight: 600;
+  color: red;
+  font-size: 0.8rem;
+}
 .note-profile-edit {
   font-size: 12px; 
   position: relative; 
