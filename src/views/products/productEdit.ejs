@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head', {title: "Editar producto"}); %>
+<script src="/js/validators/productEditValidation.js"></script>
 <body class="adm-body">
     <%- include('../partials/header'); %>
 
@@ -13,19 +14,21 @@
             </a>
         </div>
         <h2 class="session-title">EDITAR UN PRODUCTO</h2>
-        <form class="session-form new-product-form" action="/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form class="session-form new-product-form" action="/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data" id="editProduct">
             <div class="input-form">
                 <label for="name">NOMBRE</label>
                 <input type="text" name="name" id="productName" class="inputs" placeholder="Escriba el nombre del producto" value="<%= product.name %> ">
+                <span class="span-warning-msg"></span>
             </div>
             <div class="input-form">
                 <label for="description">DESCRIPCIÓN</label>
                 <textarea name="description" id="productDescription" class="inputs" placeholder="Realice una descripción del producto"><%= product.description %> </textarea>
+                <span class="span-warning-msg"></span>
             </div>
             <div class="two-cols">
                 <div class="col">
                     <label for="category">CATEGORÍA</label>
-                    <select name="category" class="btn-talle">
+                    <select name="category" class="btn-talle" id="productCategory">
                         <option value="" hidden>Seleccione</option>
                         <option value="1"<%= product.categoryId == "1"? "selected":"" %> >Remera</option> 
                         <option value="2" <%= product.categoryId == "2"? "selected":"" %>>Camisa</option> 
@@ -33,11 +36,12 @@
                         <option value="4"<%= product.categoryId == "4"? "selected":"" %>>Pantalón</option>
                         <option value="5"<%= product.categoryId == "5"? "selected":"" %>>Accesorio</option>
                     </select>    
+                    <span class="span-warning-msg"></span>
                 </div>
                 
                 <div class="col">
                     <label for="size">TALLE</label>
-                    <select name="size" class="btn-talle">
+                    <select name="size" class="btn-talle" id="productSize">
                             <option value="" hidden>Talle</option>
                             <option value="1"<%= product.size == "1"? "selected":"" %>>S</option> 
                             <option value="2"<%= product.size == "2"? "selected":"" %>>M</option>
@@ -45,6 +49,7 @@
                             <option value="4"<%= product.size == "4"? "selected":"" %>>XL</option>
                             <option value="5"<%= product.size == "5"? "selected":"" %>>XXL</option>
                     </select>    
+                    <span class="span-warning-msg"></span>
                 </div>
                 
             </div>
@@ -53,10 +58,12 @@
                 <div class="col">
                     <label for="price">PRECIO</label>
                     <input type="number" name="price" id="productPrice" class="inputs" placeholder="Ingrese el precio del producto" value="<%= product.price %>" min="0">        
+                    <span class="span-warning-msg"></span>
                 </div>
                 <div class="col">
                     <label for="stock">STOCK</label>
                     <input type="number" name="stock" id="productStock" class="inputs" placeholder="Ingrese el stock del producto" value="<%= product.stock %>" min="0" required>    
+                    <span class="span-warning-msg"></span>
                 </div>
             </div>
 
@@ -73,6 +80,7 @@
                 <div class="col new-image">
                     <div class="input-form">
                         <input type="file" name="image" id="productIMG" class="inputs">
+                        <span class="span-warning-msg"></span>
                     </div>  
                 </div>
             </div>
