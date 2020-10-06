@@ -50,5 +50,14 @@ module.exports = {
     check('email')
     .notEmpty().withMessage('Debes completar el campo de email').bail()
     .isEmail().withMessage('Debes completar un email válido')
+  ],
+  changePass: [
+    check('oldPass')
+    .notEmpty().withMessage('Debes completar el campo').bail(),
+    check('newPass')
+    .notEmpty().withMessage('Debes completar el campo con tu nueva Contraseña').bail()
+    .isLength({ min: 8 }).withMessage('Debes completar el campo con al menos 8 carácteres'),
+    check('confirmNewPass')
+    .notEmpty().withMessage('Debes repetir tu nueva Contraseña').bail()
   ]
 }

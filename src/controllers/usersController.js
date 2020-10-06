@@ -228,34 +228,41 @@ const usersController = {
   },
   editPass: (req,res) => {
 
-    db.user.findOne({
-      where: {email: res.locals.user.email}
-    })
-    .then(user => {
-      let dataNewPass = req.body;
-
-      
-      if(bcryptjs.compareSync(dataNewPass.oldPass, user.password)) {
-        if (dataNewPass.newPass !== dataNewPass.confirmNewPass) {
-          res.send("Contraseña nueva y confirmación distintas");
+    let { errors } = validationResult(req)
+    
+    if (errors.length){
+      res.send(errors);
+    } else {
+      db.user.findOne({
+        where: {email: res.locals.user.email}
+      })
+      .then(user => {
+        let dataNewPass = req.body;
+  
+        
+        if(bcryptjs.compareSync(dataNewPass.oldPass, user.password)) {
+          if (dataNewPass.newPass !== dataNewPass.confirmNewPass) {
+            res.redirect("/users/changePass");
+          } else {
+  
+            let newPassToWrite = bcryptjs.hashSync(dataNewPass.newPass, 10)
+  
+            db.user.update(
+              {password : newPassToWrite},
+              {where: {email: res.locals.user.email}})
+                .then(() => {
+                  res.redirect("/users/profile");
+                })
+          }
         } else {
-
-          let newPassToWrite = bcryptjs.hashSync(dataNewPass.newPass, 10)
-
-          db.user.update(
-            {password : newPassToWrite},
-            {where: {email: res.locals.user.email}})
-              .then(() => {
-                res.redirect("/users/profile");
-              })
+          // res.send("Contraseña ingresada erronea");
+          res.redirect("/users/changePass");
         }
-      } else {
-        res.send("Contraseña ingresada erronea");
-      }
-    })
-    .catch(error => {
-      res.send(error)
-    })
+      })
+      .catch(error => {
+        res.send(error)
+      })
+    }
   }
 };
 

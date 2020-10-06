@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head', {title: "Perfil"}); %>
+<script src="/js/validators/changePassValidation.js"></script>
 <body>
     
     <%- include('../partials/header'); %>
@@ -17,18 +18,21 @@
             </figure>
 
             <div class="user-details-in-profile-edit">
-                <form action="/users/changePass?_method=PUT" method="POST">
-                    <p style="display: grid; grid-template-columns: auto 55%;">
+                <form action="/users/changePass?_method=PUT" method="POST" id="changePass" class="change-pass">
+                    <p class="change-pass-field">
                         <b>Contraseña anterior:</b>
-                        <input type="password" name= "oldPass">
+                        <input type="password" name= "oldPass" id="oldPass">
+                        <span class="span-warning-msg"></span>
                     </p>
-                    <p style="display: grid; grid-template-columns: auto 55%;">
+                    <p class="change-pass-field">
                         <b>Nueva contraseña:</b>
-                        <input type="password" name= "newPass"> 
+                        <input type="password" name= "newPass" id="newPass"> 
+                        <span class="span-warning-msg"></span>
                     </p>
-                    <p style="display: grid; grid-template-columns: auto 55%;">
+                    <p class="change-pass-field">
                         <b>Repetir contraseña:</b>
-                        <input type="password" name= "confirmNewPass"> 
+                        <input type="password" name= "confirmNewPass" id="confirmNewPass"> 
+                        <span class="span-warning-msg"></span>
                     </p>
                     <div class="btn">
                         <button type="" class="btn-default">CONFIRMAR</button>

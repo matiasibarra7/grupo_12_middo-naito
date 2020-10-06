@@ -956,7 +956,7 @@ footer {
   'title input'
   'void warning' ;
 }
-.edit-field-profile span {
+.edit-field-profile span, .change-pass-field span {
   grid-area: warning;
   font-weight: 600;
   color: red;
@@ -967,6 +967,16 @@ footer {
   position: relative; 
   bottom: 12px;
 }
+
+.change-pass-field{
+  display: grid; 
+  grid-template-columns: auto 55%;
+  grid-template-areas: 
+    'title input'
+    'void warning' ;
+}
+
+
 /* FIN EDICION PERFIL DE USUARIO */
 
 /* EDICION PASS USUARIO */
