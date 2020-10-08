@@ -455,7 +455,7 @@ input[type=number] {
 }
 
 .span-warning-msg{
-  color: #d3d3d3;
+  /* color: #d3d3d3; */
   font-weight: bold;
   width: 90%;
   display: block;

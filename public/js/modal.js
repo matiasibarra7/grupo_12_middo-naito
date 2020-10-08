@@ -34,7 +34,6 @@ function generateModal(userName = "usuario", idUser = "1") {
   let divModalNaito = document.querySelector(".modal-naito")
   divModalNaito.innerHTML = modal
   toggleModal()
-  console.log(modal);
 }
 
 function generateSimpleMessage(title = "Ejemplo de mje") {

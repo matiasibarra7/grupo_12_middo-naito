@@ -74,14 +74,14 @@ const usersController = {
   updateProfile: (req, res) => {
     let { errors } = validationResult(req)
     
-    if (errors.length){
+    if (errors.length) {
       res.send(errors);
     } else {
       let updatedUser = req.body;
       updatedUser.id = req.session.user.id;
   
       db.user.findOne({
-        where: {email: req.body.email}
+        where: {id: res.locals.user.id}
       })
       .then(user => {
   
@@ -106,7 +106,7 @@ const usersController = {
         }
   
         db.user.update(updatedUser,
-          {where: {id: req.session.user.id}})
+          {where: {id: res.locals.user.id}})
   
         delete updatedUser.password
         req.session.user = updatedUser
