@@ -38,11 +38,12 @@ function validateRegister() {
     }
   })
 
-  password.addEventListener('blur',function() {
-    if (this.value.length < 8) {
-      handleFeedback(this,"*La contraseña ingresada debe tener al menos 8 caracteres")
-    } else {
+  password.addEventListener('keyup',function() {
+    const validationPass = /^(?=.*\d)(?=.*[!@#\$%\^\&*\)\(+=._-])(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
+    if (validationPass.test(this.value)) {
       handleFeedback(this)
+    } else {
+      handleFeedback(this,"*La contraseña debe tener una mayúscula, un número, un carácter especial y tener al menos 8 carácteres")
     }
   })
 
