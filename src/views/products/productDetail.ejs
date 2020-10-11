@@ -34,37 +34,59 @@
                     <input type="text" name="quantity" value="1" hidden>
 
                     <div class="buttons-checks">  
-                        <label for="size_s">
+                        <label for="size_s" class="<%= productData.sizes[0].products_sizes.stock == 0? "no-stock" : ""%>">
                             <input type="radio" id="size_s" name="sizeId" value="1">
                                 <span>S</span>
                             </input>
                         </label>
-                        <label for="size_m">
+                        <label for="size_m" class="<%= productData.sizes[1].products_sizes.stock == 0? "no-stock" : ""%>">
                             <input type="radio" id="size_m" name="sizeId" value="2" checked>
                                 <span>M</span>
                             </input>
                         </label>
-                        <label for="size_l">
+                        <label for="size_l" class="<%= productData.sizes[2].products_sizes.stock == 0? "no-stock" : ""%>">
                             <input type="radio" id="size_l" name="sizeId" value="3">
                                 <span>L</span>
                             </input>
                         </label>
-                        <label for="size_xl">
+                        <label for="size_xl" class="<%= productData.sizes[3].products_sizes.stock == 0? "no-stock" : ""%>">
                             <input type="radio" id="size_xl" name="sizeId" value="4">
                                 <span>XL</span>
                             </input>
                         </label>
-                        <label for="size_xxl">
+                        <label for="size_xxl" class="<%= productData.sizes[4].products_sizes.stock == 0? "no-stock" : ""%>">
                             <input type="radio" id="size_xxl" name="sizeId" value="5">
                                 <span>XXL</span>
                             </input>
                         </label>
                     </div>
-                        <div class="add-div">
-                            <!-- <input type="submit" class="btn-black" value="AGREGAR AL CARRITO" onclick="generateSimpleMessage('¡Producto agregado al carrito!')"> -->
-                            <button type="submit" class="btn-black">AGREGAR AL CARRITO</button>
+                    <% if(locals.user){ %>
+                        <% if (locals.user.admin) {%> 
+                            <div class="buttons-checks">  
+                                <label for="">
+                                    <span><%= productData.sizes[0].products_sizes.stock%></span>
+                                </label>
+                                <label for="">
+                                    <span><%= productData.sizes[1].products_sizes.stock%></span>
+                                </label>
+                                <label for="">
+                                    <span><%= productData.sizes[2].products_sizes.stock%></span>
+                                </label>
+                                <label for="">
+                                    <span><%= productData.sizes[3].products_sizes.stock%></span>
+                                </label>
+                                <label for="">
+                                    <span><%= productData.sizes[4].products_sizes.stock%></span>
+                                </label>
+                            </div>
+                         <% } %> 
+                     <% } %>    
+                    
+                    <div class="add-div">
+                        <!-- <input type="submit" class="btn-black" value="AGREGAR AL CARRITO" onclick="generateSimpleMessage('¡Producto agregado al carrito!')"> -->
+                        <button type="submit" class="btn-black">AGREGAR AL CARRITO</button>
 
-                        </div>
+                    </div>
                 </form>
     
                 <div class="description-title">

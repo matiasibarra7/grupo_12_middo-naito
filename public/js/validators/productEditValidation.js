@@ -3,16 +3,14 @@ window.addEventListener('load', function(){
 })
 
 function validateEditProduct() {
-  const errors = {size: ""};
+  const errors = {};
 
   const divForm = document.getElementById("editProduct")
 
   const productName = document.getElementById("productName");
   const productDescription = document.getElementById("productDescription");
   const productCategory = document.getElementById("productCategory");
-  const productSize = document.getElementById("productSize");
   const productPrice = document.getElementById("productPrice");
-  const productStock = document.getElementById("productStock");
   const productIMG = document.getElementById("productIMG");
 
   productName.addEventListener('blur', function() {
@@ -39,25 +37,10 @@ function validateEditProduct() {
     }
   })
 
-  productSize.addEventListener('blur',function() {
-    if (!this.value) {
-      handleFeedback(this,"*Debe elegir un talle")
-    } else {
-      handleFeedback(this)
-    }
-  })
 
   productPrice.addEventListener('blur',function() {
     if (!this.value) {
       handleFeedback(this, "*Debe ingresar un precio")
-    } else {
-      handleFeedback(this)
-    }
-  })
-
-  productStock.addEventListener('blur',function() {
-    if (!this.value) {
-      handleFeedback(this,"*Debe ingresar el stock")
     } else {
       handleFeedback(this)
     }
@@ -85,7 +68,6 @@ function validateEditProduct() {
       delete errors[inputElement.name];
     }
     msgContainer.innerText = msg;
-    canSubmit = true
 
     console.log(errors);
   }

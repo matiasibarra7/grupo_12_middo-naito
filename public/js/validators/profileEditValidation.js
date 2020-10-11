@@ -58,7 +58,6 @@ function validateProfileEdit() {
       delete errors[inputElement.name];
     }
     msgContainer.innerText = msg;
-    canSubmit = true
 
     console.log(errors);
   }

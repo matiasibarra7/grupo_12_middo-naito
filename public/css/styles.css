@@ -462,6 +462,31 @@ input[type=number] {
   margin: 0.5rem auto 0;
 }
 
+.table-stocks {
+  width: 90%;
+  margin: 0 auto; 
+  max-width: 250px;
+  background-color: darkgray;
+}
+
+.table-stocks th,
+.table-stocks td {
+  padding: 10px;
+  background-color: #2C2A4A;
+}
+
+.size-stock-input {
+  width: 50%;
+}
+
+.session-form .table-stocks td input {
+  height: 1.2rem;
+  width: 100%;
+}
+
+.title-table {
+  text-align: center;
+}
 
 /* End New product */
 
@@ -1090,6 +1115,11 @@ footer {
   background-color:#404040;
   color:#F7F7F7;
 }
+
+.no-stock {
+  pointer-events: none;
+  opacity: 0.5;
+}
 /* FIN BOTONES RADIO CHECKED IN DETAILS */
 
 /* ESTILOS MODAL */
@@ -1569,6 +1599,10 @@ footer {
 
   .session-form.new-product-form textarea{
     text-align: start;
+  }
+
+  .session-form .table-stocks td input {
+    text-align: center;
   }
 
   /* Probando dropdowns */

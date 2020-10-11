@@ -28,11 +28,11 @@ router.get("/add", userRoute, adminRoute, productsController.add); //2 -- Formul
 
 router.get("/details/:id", productsController.details); //3 -- Detalle de un producto particular
 
-router.post("/add", upload.single("image"), validate.validateNewProduct , productsController.store); //4 -- Acción de creación (a donde se envía el formulario)
+router.post("/add", upload.single("image"), validate.validateProduct, productsController.store); //4 -- Acción de creación (a donde se envía el formulario)
 
 router.get("/edit/:id", userRoute, adminRoute, productsController.edit); // 5 -- Formulario de edición de productos
 
-router.put("/edit/:id", upload.single("image"), validate.validateNewProduct ,productsController.update); // 6 -- Acción de edición (a donde se envía el formulario):
+router.put("/edit/:id", upload.single("image"), validate.validateProduct, productsController.update); // 6 -- Acción de edición (a donde se envía el formulario):
 
 router.delete("/edit/:id", userRoute, adminRoute, productsController.delete); // 7 -- Acción de borrado
 

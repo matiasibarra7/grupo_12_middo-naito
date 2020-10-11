@@ -2,13 +2,14 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const path = require("path");
 const fs = require("fs");
 const db = require("../../database/models");
+const {product, cart, products_sizes} = require("../../database/models");
 const Op = db.Sequelize.Op;
 
 const { validationResult } = require('express-validator');
 
 const productsController = {
   main: (req, res) => {
-    db.product.findAndCountAll({
+    product.findAndCountAll({
       limit: 9,
       offset: req.query.page? req.query.page * 9 : 0
     })
@@ -25,7 +26,7 @@ const productsController = {
       })
   },
   search: (req, res) => {
-    db.product.findAndCountAll({where :{
+    product.findAndCountAll({where :{
       name: {[Op.like]: `%${req.query.search}%`}
     }, limit: 9,
     offset: req.query.page? req.query.page * 9 : 0}
@@ -40,9 +41,11 @@ const productsController = {
     });
   },
   details: (req, res) => {
-    db.product.findOne({
-      where: {id: req.params.id}
+    product.findOne({
+      where: {id: req.params.id},
+      include: ['category','sizes']
     }).then(productData => {
+      //return res.send(productData)
       res.render("./products/productDetail", { productData, toThousand });
     })
     .catch(error => {
@@ -51,8 +54,7 @@ const productsController = {
     
   },
   cart: (req, res) => {
-    //Falta ordenar la vista
-    db.cart.findAll({
+    cart.findAll({
       include: ['product', 'size'],
       where: {'userId': res.locals.user.id }
     })
@@ -68,7 +70,7 @@ const productsController = {
     let newCartItem = req.body;
     newCartItem.userId = res.locals.user? res.locals.user.id: "anon" ;
     // res.send(newCartItem)
-    db.cart.create(newCartItem)
+    cart.create(newCartItem)
     .then(()=>{
       res.redirect("/products/cart");
     })
@@ -77,7 +79,7 @@ const productsController = {
     })
   },
   removeFromCart: (req,res)=>{
-    db.cart.destroy({where: {
+    cart.destroy({where: {
       userId: res.locals.user.id,
       productId: req.params.productId,
     }})
@@ -92,10 +94,12 @@ const productsController = {
     res.render(`./products/productAdd`);
   },
   edit: (req, res) => {
-    db.product.findOne(
-      {where: {id: req.params.id}}
+    product.findOne(
+      {where: {id: req.params.id},
+      include: ['category','sizes']}
     )
     .then((product)=>{
+      //res.send(product)
       res.render(`./products/productEdit`, { product });
     })
     .catch(error => {
@@ -104,21 +108,20 @@ const productsController = {
   },
   update: (req, res) => {
     let { errors } = validationResult(req)
-    // res.send(errors);
 
-    if (errors.length > 1){
+    if (errors.length > 1) {
       if (req.file) {
         fs.unlinkSync(`${__dirname}/../../public/images/products/imagen - ${path.basename(req.file.originalname)}`)
       }
       res.send(errors); 
-    } else if (errors.length == 1 && errors[0].msg != "Debes ingresar una imagen para tu producto"){
-      res.send(errors)
+    } else if (errors.length == 1 && errors[0].msg != "Debes ingresar una imagen para tu producto") {
       if (req.file) {
         fs.unlinkSync(`${__dirname}/../../public/images/products/imagen - ${path.basename(req.file.originalname)}`)
       }
-    } else{
+      res.send(errors)
+    } else {
       
-      db.product.findOne({
+      product.findOne({
         where: {id: req.params.id}
       })
       .then((foundProduct)=>{
@@ -138,17 +141,33 @@ const productsController = {
         } else {
           updatedProduct.image = foundProduct.image;
         }
-        db.product.update(
+        product.update(
           updatedProduct,
           {where: {id: req.params.id}}
         )
         .then(() => {
-          db.products_sizes.upsert(
-            {productId: req.params.id, sizeId: req.body.size, stock: req.body.stock}, 
-            {where: {productId: parseInt(req.params.id), sizeId: parseInt(req.body.size)}}
+          // Creación de las nuevas relaciones de la tabla intermedia products_sizes
+          let newRelations = [
+            {productId: req.params.id, sizeId: 1, stock: parseInt(req.body.stockS)},
+            {productId: req.params.id, sizeId: 2, stock: parseInt(req.body.stockM)},
+            {productId: req.params.id, sizeId: 3, stock: parseInt(req.body.stockL)},
+            {productId: req.params.id, sizeId: 4, stock: parseInt(req.body.stockXL)},
+            {productId: req.params.id, sizeId: 5, stock: parseInt(req.body.stockXXL)}
+          ]
+
+          // Borrado de las relaciones anteriores
+          products_sizes.destroy( 
+            {where: {productId: parseInt(req.params.id)}}
           )
           .then(() => {
-            res.redirect("/products/details/" + req.params.id); 
+            // Carga masiva de las nuevas relaciones
+            products_sizes.bulkCreate(newRelations)
+            .then(() => {
+              res.redirect("/products/details/" + req.params.id); 
+            })
+            .catch(error => {
+              res.send(error)
+            })
           })
           .catch(error => {
             res.send(error)
@@ -171,12 +190,12 @@ const productsController = {
 
       res.send(errors)
 
-      // si se sube un archivo y el formulario trae errores, eliminamos el archivo subido
+      // Si se sube un archivo y el formulario trae errores, eliminamos el archivo subido
       if (req.file) {
         fs.unlinkSync(`${__dirname}/../../public/images/products/imagen - ${path.basename(req.file.originalname)}`)
       }
 
-      //subida normal de producto
+      // Subida normal de producto
     } else {
       
       let newProduct = {
@@ -187,16 +206,20 @@ const productsController = {
         alt: req.body.name,
         categoryId: req.body.category
       }
-      db.product.create(newProduct)
+      product.create(newProduct)
       .then(product => {
-        let newRelation = {
-          sizeId: parseInt(req.body.size),
-          stock: parseInt(req.body.stock),
-          productId: product.id
-        }
-        db.products_sizes.create(newRelation)
-        .then(result => {
-          res.redirect("/products/details/" + product.id);  
+        let newRelations = [
+          {productId: product.id, sizeId: 1, stock: parseInt(req.body.stockS)},
+          {productId: product.id, sizeId: 2, stock: parseInt(req.body.stockM)},
+          {productId: product.id, sizeId: 3, stock: parseInt(req.body.stockL)},
+          {productId: product.id, sizeId: 4, stock: parseInt(req.body.stockXL)},
+          {productId: product.id, sizeId: 5, stock: parseInt(req.body.stockXXL)}
+        ]
+      
+        // Carga masiva de las nuevas relaciones
+        products_sizes.bulkCreate(newRelations)
+        .then(() => {
+          res.redirect("/products/details/" + product.id); 
         })
         .catch(error => {
           res.send(error)
@@ -212,14 +235,14 @@ const productsController = {
   },
   delete: (req, res) => {
 
-    db.product.findOne({
+    product.findOne({
       where: {id: req.params.id}
     })
     .then(productToDelete => {
       if (productToDelete.image) {
         fs.unlinkSync(`${__dirname}/../../public/images/products/${productToDelete.image}`);
       }
-      db.product.destroy({
+      product.destroy({
         where: {id: req.params.id}
       })
       .then( () => {
@@ -235,7 +258,7 @@ const productsController = {
 
   },
   listAdmin: (req, res) => {
-    db.product.findAll({include: ['category','sizes']})
+    product.findAll({include: ['category','sizes']})
     .then(productsData => {
       res.render(`./products/productListAdmin`, { productsData, toThousand })
     }

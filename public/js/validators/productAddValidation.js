@@ -3,16 +3,14 @@ window.addEventListener('load', function(){
 })
 
 function validateNewProduct() {
-  const errors = {name: "", description: "", category: "", size: "", price: "", stock: "", image: ""};
+  const errors = {name: "", description: "", category: "", price: "", image: ""};
 
   const divForm = document.getElementById("newProduct")
 
   const productName = document.getElementById("productName");
   const productDescription = document.getElementById("productDescription");
   const productCategory = document.getElementById("productCategory");
-  const productSize = document.getElementById("productSize");
   const productPrice = document.getElementById("productPrice");
-  const productStock = document.getElementById("productStock");
   const productIMG = document.getElementById("productIMG");
 
   productName.addEventListener('blur', function() {
@@ -39,25 +37,9 @@ function validateNewProduct() {
     }
   })
 
-  productSize.addEventListener('blur',function() {
-    if (!this.value) {
-      handleFeedback(this,"*Debe elegir un talle")
-    } else {
-      handleFeedback(this)
-    }
-  })
-
   productPrice.addEventListener('blur',function() {
     if (!this.value) {
       handleFeedback(this, "*Debe ingresar un precio")
-    } else {
-      handleFeedback(this)
-    }
-  })
-
-  productStock.addEventListener('blur',function() {
-    if (!this.value) {
-      handleFeedback(this,"*Debe ingresar el stock")
     } else {
       handleFeedback(this)
     }
@@ -85,7 +67,6 @@ function validateNewProduct() {
       delete errors[inputElement.name];
     }
     msgContainer.innerText = msg;
-    canSubmit = true
 
     console.log(errors);
   }
