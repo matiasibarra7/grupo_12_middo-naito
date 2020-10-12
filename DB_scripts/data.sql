@@ -44,18 +44,23 @@ INSERT INTO products VALUES
 (DEFAULT, 'Remera Bleach ','Lorem ipsum\, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde\, soluta architecto sit voluptatem maxime\, labore excepturi\, enim facilis quas accusantium. Reprehenderit. ',1,1740,'remera-bleach.png','Remera Bleach'),
 (DEFAULT, 'Remera 3D System','Lorem ipsum\, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde\, soluta architecto sit voluptatem maxime\, labore excepturi\, enim facilis quas accusantium. Reprehenderit.',1,1980,'remera-3d.png','remera 3D system'),
 (DEFAULT, 'Remera Pretty Fly','Lorem ipsum\, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde\, soluta architecto sit voluptatem maxime\, labore excepturi\, enim facilis quas accusantium. Reprehenderit.',1,1820,'remera-verde.png','Remera verde'),
+(DEFAULT, 'Remera Scrolling Blue','Remera estampada genderless color blanco. Estampado en serigrafia color verde FLÚO y Azul. 100% algodón. Industria Argentina',1, 2590,'remera-blanca.png','Remera Scrolling Blue'),
+(DEFAULT, 'Remera Gorillaz','Remera estampada genderless color negro. Estampado en serigrafia color verde FLÚO y Azul. 100% algodón. Industria Argentina',1, 2820,'remera-gorillaz.png','Remera gorillaz'),
+(DEFAULT, 'Remera Global','Remera estampada genderless color negro. Estampado en serigrafia color rojo FLÚO y Azul. 100% algodón. Industria Argentina',1, 2890,'remera-black-estampada.png','Remera estampada negra'),
+(DEFAULT, 'Camisa Palm Springs','Lorem ipsum\, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Industria Argentina',2, 3890,'camisa-chillona.png','Camisa Palm Springs'),
 (DEFAULT, 'Buzo HDD Format CH','Lorem ipsum\, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde\, soluta architecto sit voluptatem maxime\, labore excepturi\, enim facilis quas accusantium. Reprehenderit.',3,3490,'canguro-marron.png','buzo canguro marron'),
 (DEFAULT, 'Buzo Disagree','Lorem ipsum\, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde\, soluta architecto sit voluptatem maxime\, labore excepturi\, enim facilis quas accusantium. Reprehenderit.',3,4790,'buzo.png','buzo disagree'),
 (DEFAULT, 'Chaleco Empathy','Lorem ipsum\, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde\, soluta architecto sit voluptatem maxime\, labore excepturi\, enim facilis quas accusantium. Reprehenderit.',3,3980,'chaleco-tribal.png','chaleco'),
 (DEFAULT, 'Campera Middle of ','Lorem ipsum\, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde\, soluta architecto sit voluptatem maxime\, labore excepturi\, enim facilis quas accusantium. Reprehenderit. ',3,3891,'campera-rosa.png',NULL),
+(DEFAULT, 'Buzo 1999 Rojo ','Lorem ipsum\, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde\, soluta architecto sit voluptatem maxime\, labore excepturi\, enim facilis quas accusantium. Reprehenderit. ',3,3890,'buzo-rojo.png','Buzo 1999 Rojo'),
 (DEFAULT, 'Pantalones corderoy marrón','Lorem ipsum\, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde\, soluta architecto sit voluptatem maxime\, labore excepturi\, enim facilis quas accusantium. Reprehenderit.',4,3590,'pants-corderoy.png','pantalones corderoy marron'),
 (DEFAULT, 'Pantalones corderoy negro','Lorem ipsum\, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde\, soluta architecto sit voluptatem maxime\, labore excepturi\, enim facilis quas accusantium. Reprehenderit.',4,3590,'corderoy-negro.png','pantalones corderoy negro'),
 (DEFAULT, 'Ultra skinny - Indy','Lorem ipsum\, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde\, soluta architecto sit voluptatem maxime\, labore excepturi\, enim facilis quas accusantium. Reprehenderit.',4,1820,'jean-blueroll.png','jean blue'),
+(DEFAULT, 'Pantalón Kazaa','Pantalón ergonómico negro\, especial para el invierno. Estético a la vista y confortable.',2, 3220,'imagen - pantalon kazaa pant 3220.png','Pantalón Kazaa'),
+(DEFAULT, 'Pantalón The Ozz ','Pantalón jean blanco\, estético y bonito. ',4,2112,'imagen - pantalon the ooz gr 2112.png','Pantalón The Ozz'),
 (DEFAULT, 'Gorro Beanie 2000','Lorem ipsum\, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde\, soluta architecto sit voluptatem maxime\, labore excepturi\, enim facilis quas accusantium. Reprehenderit.',5,990,'beanie.png','gorro beanie 2000'),
 (DEFAULT, 'Gorro Beanie Khaos  ','Lorem ipsum\, dolor sit amet consectetur adipisicing elit. Fugit iusto velit expedita eius labore? Esse magni aut unde\, soluta architecto sit voluptatem maxime\, labore excepturi\, enim facilis quas accusantium. Reprehenderit.',5,1390,'beanie-khaos.png',NULL),
 (DEFAULT, 'Cinturon Black Season ',' Cinturon negro\, hecho de cuero 100% paraguayo.',5, 560,'imagen - cinturon black season 560.png',NULL),
-(DEFAULT, 'Pantalón Kazaa','Pantalón ergonómico negro\, especial para el invierno. Estético a la vista y confortable.',2, 3220,'imagen - pantalon kazaa pant 3220.png','Pantalón Kazaa'),
-(DEFAULT, 'Pantalón The Ozz ','Pantalón jean blanco\, estético y bonito. ',4,2112,'imagen - pantalon the ooz gr 2112.png','Pantalón The Ozz'),
 (DEFAULT, 'Gorra Oblivion','Gorra de tela\, bien diseñada y cómoda.',5, 780,'imagen - imagen - gorra_oblivion.png','Gorra Oblivion');
 
 
@@ -140,6 +145,31 @@ insert into products_sizes (id, product_id, size_id, stock) values (null, 16, 2,
 insert into products_sizes (id, product_id, size_id, stock) values (null, 16, 3, 9);
 insert into products_sizes (id, product_id, size_id, stock) values (null, 16, 4, 5);
 insert into products_sizes (id, product_id, size_id, stock) values (null, 16, 5, 5);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 17, 1, 11);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 17, 2, 19);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 17, 3, 9);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 17, 4, 5);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 17, 5, 5);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 18, 1, 11);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 18, 2, 19);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 18, 3, 9);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 18, 4, 5);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 18, 5, 5);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 19, 1, 11);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 19, 2, 19);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 19, 3, 9);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 19, 4, 5);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 19, 5, 5);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 20, 1, 11);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 20, 2, 1);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 20, 3, 9);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 20, 4, 5);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 20, 5, 5);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 21, 1, 11);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 21, 2, 1);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 21, 3, 9);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 21, 4, 5);
+insert into products_sizes (id, product_id, size_id, stock) values (null, 21, 5, 5);
 
 -- carts
 
