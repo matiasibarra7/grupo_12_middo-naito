@@ -40,7 +40,7 @@ router.get("/cart", userRoute , productsController.cart);
 
 router.get("/productListAdmin", userRoute, adminRoute, productsController.listAdmin); 
 
-router.post("/addToCart", productsController.addToCart);
+router.post("/addToCart", userRoute, adminRoute, productsController.addToCart);
 
 router.delete("/removeFromCart/:productId", productsController.removeFromCart)
 

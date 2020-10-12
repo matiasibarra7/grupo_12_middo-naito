@@ -18,9 +18,9 @@ const usersController = {
     let { errors } = validationResult(req)
     // res.send(errors);
 
-    if (errors.length > 1){
+    if (errors.length > 1) {
       res.send(errors); 
-    } else if (errors.length == 1 && errors[0].msg != "Cannot read property 'originalname' of undefined"){
+    } else if (errors.length == 1 && errors[0].msg != "Cannot read property 'originalname' of undefined") {
       res.send(errors)
     } else {
       
@@ -152,17 +152,17 @@ const usersController = {
     })
     .then(user => { 
       if (user) {
-        if(bcryptjs.compareSync(req.body.password, user.password)){
+        if(bcryptjs.compareSync(req.body.password, user.password)) {
           delete user.password
           req.session.user = user;
         } else {
           res.redirect("/users/login")
         }
   
-        if (req.session.user.admin){
+        if (req.session.user.admin) {
           res.redirect("/users/panelAdmin");
         } else  {
-          if(req.body.remember){
+          if(req.body.remember) {
             const token = crypto.randomBytes(64).toString('base64');
             // Seteamos una cookie en el navegador   msec   seg  min  hs  dias  meses
             res.cookie('userToken', token, { maxAge: 1000 * 60 * 60 * 24 * 30 * 3} )
@@ -174,7 +174,7 @@ const usersController = {
           }
 
           // Este fragmento revisa las rutas visitadas y redirecciona según a donde quiso entrar el anónimo sin loguearse antes
-          let urls = req.session.history.filter(url => url != '/users/login')
+          let urls = req.session.history.filter(url => url != '/users/login' && url != '/products/addToCart')
 
           let theUrl = urls.pop()
 
@@ -230,7 +230,7 @@ const usersController = {
 
     let { errors } = validationResult(req)
     
-    if (errors.length){
+    if (errors.length) {
       res.send(errors);
     } else {
       db.user.findOne({

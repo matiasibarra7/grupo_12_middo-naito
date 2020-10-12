@@ -15,7 +15,7 @@ module.exports = {
       .notEmpty().withMessage('Debes seleccionar una categoria'),
 
     check('price')
-      .notEmpty().withMessage('Debes ingresar un valor mayor a 0 para el precio').isInt({ gt: 0 }),
+      .notEmpty().withMessage('Debes ingresar un valor mayor a 0 para el precio').bail().isInt({ gt: 0 }),
 
     //Validación de los stocks
     check('stockS')

@@ -51,7 +51,6 @@
                         <select name="gender" id="">
                             <option value="male" <%= locals.user.gender == "male"? "selected" : "" %>>Hombre</option>
                             <option value="female" <%= locals.user.gender == "female"? "selected" : "" %>>Mujer</option>
-                            <option value="unicorn" <%= locals.user.gender == "unicorn"? "selected" : "" %>>Unicornio</option>
                             <option value="undefined" <%= locals.user.gender  == "undefined" || undefined? "selected" : "" %>>Sin especificar</option>
                         </select>
                     </p>

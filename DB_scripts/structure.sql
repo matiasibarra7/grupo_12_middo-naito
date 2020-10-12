@@ -68,7 +68,7 @@ CREATE TABLE carts (
     FOREIGN KEY (product_id) REFERENCES products(id),
 	FOREIGN KEY (size_id) REFERENCES sizes(id)
 ); 
-CREATE UNIQUE INDEX idx_cart_userxproduct ON carts (user_id, product_id);
+CREATE UNIQUE INDEX idx_cart_userxproduct ON carts (user_id, product_id, size_id);
 
 CREATE TABLE tokens (
     id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,

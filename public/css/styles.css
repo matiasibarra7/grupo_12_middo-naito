@@ -312,8 +312,17 @@ main article img {
 }
 
 main .product-data {
-  margin: 6px 6px;
+  margin: 0.5rem;
+  padding: 0.5rem 0;
   border-bottom: 2px solid rgb(36, 10, 10);
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+main .product-data span {
+  margin: 0.5rem 0
 }
 
 main .btn-talle {
@@ -350,20 +359,43 @@ main .btn-talle {
 }
 
 .product-description {
-  margin: 6px 6px;
+  margin: 0 6px;
   display: flex;
   flex-wrap: wrap;
   text-align: left;
 }
 
 .description-title {
-  margin: 6px 6px;
-  margin-bottom: -15px;
-  border-top: 2px solid rgb(36, 10, 10);
+  margin: 6px;
   display: flex;
   font-size: 1em;
   justify-content: center;
-  padding-top: 1rem;
+}
+
+.description-title p,
+.product-description p {
+  margin: 0.5rem 0
+}
+
+.size-table-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.size-table-title p {
+  text-align: center; 
+  margin: 0 0 1rem;
+}
+
+.separator-details {
+  border-top: 2px solid black;
+  align-self: center; 
+  margin: 0.5rem 0.375rem;
+  max-width: 768px;
+}
+
+.separator-details.large {
+  margin: 2rem 0.375rem;
 }
 
 /* REGISTER Y LOGIN, EDIT y ADD PRODUCT html */
@@ -1316,7 +1348,7 @@ footer {
   }
 
   .product-description {
-    padding: 0.5rem;
+    padding: 0 0.5rem;
   }
 
   #details {
@@ -1334,15 +1366,16 @@ footer {
     display: flex;
     flex-direction: column;
     width: 60%;
-    position: relative;
+    /* position: relative; */
     /* top: 2rem; */
-    flex-grow: 1;
+    /* flex-grow: 1; */
   }
 
   .details-data {
-    position: relative;
-    top: 2rem;
-    width: 40%;
+    /* position: relative; */
+    /* top: 2rem; */
+    padding: 2rem 2rem 0;
+    width: 50%;
     max-width: 640px;
   }
 
@@ -1372,7 +1405,7 @@ footer {
     font-size: 18px;
     justify-content: flex-start;
     padding-top: 0;
-    padding-left: 1rem;
+    padding-left: 0.2rem;
   }
 
   .btn-black {
@@ -1576,6 +1609,9 @@ footer {
 
   .btn-grey {
     font-size: initial;
+  }
+
+  .index-main .btn-grey {
     margin: 4rem 0;
   }
 
@@ -1584,12 +1620,7 @@ footer {
   }
 
   .article-details {
-    width: 40%;
-  }
-
-  .details-data {
-    width: 35%;
-    margin-left: 30px;
+    width: 60%;
   }
 
   /* New product */

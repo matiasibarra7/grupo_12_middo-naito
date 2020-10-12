@@ -75,7 +75,8 @@ const productsController = {
       res.redirect("/products/cart");
     })
     .catch(error => {
-      res.send(error)
+      res.redirect("/products/cart");
+      console.log(error)
     })
   },
   removeFromCart: (req,res)=>{
