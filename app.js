@@ -31,10 +31,12 @@ app.use(history);
 const mainRoutes = require("./src/routes/main");
 const productsRoutes = require("./src/routes/products");
 const userRoutes = require("./src/routes/users");
+const apiRoutes = require("./src/api/api");
 
 app.use("/", mainRoutes);
 app.use("/products", productsRoutes);
 app.use("/users", userRoutes);
+app.use("/api", apiRoutes)
 
 
 app.listen(3000, () => {
