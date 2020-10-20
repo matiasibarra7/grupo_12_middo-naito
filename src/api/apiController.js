@@ -18,6 +18,7 @@ const productsController = {
       limit: 10,
       offset: req.query.page? req.query.page * 10 : 0})
       .then(productsData => {
+
         const productsList = productsData.rows.map(product => {
           product.dataValues.details = `${productUrl}/${product.id}`;
           return product
@@ -40,14 +41,17 @@ const productsController = {
         }
 
         // Paginado
+        // Metadata del paginado para la primer página
         if (!actualPage || actualPage == 0) {
           if (count > 10) {
             products.meta.next = `${productUrl}?page=${1}` 
           }
         } else {
+          // Metadata del paginado para cualquier página, menos la última
           if (count > actualPage * 10 + 10) {
             products.meta.next = `${productUrl}?page=${actualPage + 1}`;
           }
+          // Metadata del paginado para cualquier página, menos la primera
           products.meta.previous = `${productUrl}${actualPage - 1 > 0? `?page=${actualPage - 1}` : ""}`
         }
 
@@ -66,7 +70,6 @@ const productsController = {
     })
       .then(response => {
         response.dataValues.imageUrl = `http://localhost:3000/images/products/${response.image}`
-        console.log(response)
         res.json(response)
       })
   },

@@ -38,6 +38,7 @@ app.use("/products", productsRoutes);
 app.use("/users", userRoutes);
 app.use("/api", apiRoutes)
 
+app.get("*", (req, res) =>{ res.sendStatus(404)})
 
 app.listen(3000, () => {
     console.log("Middo Naito en marcha en puerto 3000");
