@@ -3,7 +3,7 @@ const {product, user} = require("../../database/models");
 
 
 
-const productsController = {
+const apiController = {
   products: (req, res) => {
     const actualPage = Number(req.query.page)
     const productUrl = 'http://localhost:3000/api/products'
@@ -20,8 +20,14 @@ const productsController = {
       .then(productsData => {
 
         const productsList = productsData.rows.map(product => {
-          product.dataValues.details = `${productUrl}/${product.id}`;
-          return product
+          let productZip = {
+            id: product.id,
+            name: product.name,
+            description: product.description,
+            category: product.category,
+            details: `${productUrl}/${product.id}`
+          }
+          return productZip
         })
 
         const count = productsData.count
@@ -75,10 +81,31 @@ const productsController = {
   },
 
   users: (req, res) => {
-    user.findAndCountAll()
-      .then(usersData => {
-        const usersList = usersData.rows
+    const actualPage = Number(req.query.page)
+    const usersUrl = 'http://localhost:3000/api/users'
+        
+    if (actualPage < 0) {
+      res.redirect(usersUrl)
+    };
 
+    user.findAndCountAll({
+      limit: 10,
+      offset: req.query.page? req.query.page * 10 : 0
+    })
+      .then(usersData => {
+        // const usersList = usersData.rows
+        
+        const usersList = usersData.rows.map(
+          user => {
+            let userZip = {
+              id: user.id,
+              firstName: user.firstName,
+              lastName: user.lastName,
+              email: user.email,
+              details: `http://localhost:3000/api/users/${user.id}`
+            }
+            return userZip
+          });
 
         let users = {
           meta: {
@@ -87,12 +114,36 @@ const productsController = {
           data: usersList
         }
 
+        // Paginado
+        // Metadata del paginado para la primer página
+        if (!actualPage || actualPage == 0) {
+          if (usersData.count > 10) {
+            users.meta.next = `${usersUrl}?page=${1}` 
+          }
+        } else {
+          // Metadata del paginado para cualquier página, menos la última
+          if (usersData.count > actualPage * 10 + 10) {
+            users.meta.next = `${usersUrl}?page=${actualPage + 1}`;
+          }
+          // Metadata del paginado para cualquier página, menos la primera
+          users.meta.previous = `${usersUrl}${actualPage - 1 > 0? `?page=${actualPage - 1}` : ""}`
+        }
+
         res.json(users)
       })
       .catch(error => {
         res.send(error)
       })
+  },
+  userDetails: (req, res) => {
+    user.findOne({where: {id: req.params.id}})
+    .then( usersData =>{
+      if(usersData.image){
+       usersData.dataValues.imageUrl = `http://localhost:3000/images/users/${usersData.image}`
+      }
+      res.json(usersData)
+      })
   }
 };
 
-module.exports = productsController;
+module.exports = apiController;
