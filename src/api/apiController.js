@@ -5,16 +5,41 @@ const {product, user} = require("../../database/models");
 
 const productsController = {
   products: (req, res) => {
+    const actualPage = Number(req.query.page)
+        
+    if (actualPage < 0) {
+      res.redirect('http://localhost:3000/api/products')
+    }
+
     product.findAndCountAll({
       include: ['category','sizes'],
-      limit: 10 ,
+      limit: 10,
       offset: req.query.page? req.query.page * 10 : 0})
       .then(productsData => {
-        const productsList = productsData.rows
+        const productsList = productsData.rows.map(product => {
+          // why it doesn't work?
+          product.details = `http://localhost:3000/products/details/${product.id}`;
+
+          // let aux = product;
+          // aux.details = `http://localhost:3000/products/details/${product.id}`;
+
+          return product
+        })
+
+        /* let productsList = []
+        for (let i = 0; i < productsData.rows.length; i++) {
+          const element = productsData.rows[i];
+          
+          let aux = element
+          aux.details = `http://localhost:3000/products/details/${product.id}`;
+          productsList.push(aux)
+          
+        } */
+
+
         /* El include de sizes hace que el count de 'findAndCountAll' devuelva la cantidad de productos * 5, por eso esta división >.<* Verificar el porqué */
         const realCount = productsData.count / 5
-        const actualPage = Number(req.query.page)
-
+        
         // Cuenta elementos por categoria
         const categories = {}
         for (let i = 0; i < productsList.length; i++) {
@@ -41,8 +66,7 @@ const productsController = {
           products.meta.previous = `http://localhost:3000/api/products${actualPage - 1 > 0? `?page=${actualPage - 1}` : ""}`
         }
 
-
-        res.json(products)
+        res.json(productsList)
 
       })
       .catch(error => {
