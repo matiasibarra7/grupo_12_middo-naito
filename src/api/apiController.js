@@ -1,5 +1,5 @@
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const {product, user} = require("../../database/models");
+const {product, user, category} = require("../../database/models");
 
 
 
@@ -33,15 +33,15 @@ const apiController = {
         const count = productsData.count
         
         // Cuenta elementos por categoria, solo esta funcionando con los 10 que trae
-        const categories = {}
+       /*  const categories = {}
         for (let i = 0; i < productsList.length; i++) {
           categories[productsList[i].category.name] = 1 + (categories[productsList[i].category.name] || 0);
-        }
+        } */
 
         const products = {
           meta: {
             count: productsData.count, 
-            countByCategories: categories,
+            //countByCategories: categories,
           },
           data: productsList
         }
@@ -61,7 +61,21 @@ const apiController = {
           products.meta.previous = `${productUrl}${actualPage - 1 > 0? `?page=${actualPage - 1}` : ""}`
         }
 
-        res.json(products)
+        product.findAll({ include: ['category'] })
+          .then(response => {
+            const categories = {}
+            for (let i = 0; i < response.length; i++) {
+              categories[response[i].category.name] = 1 + (categories[response[i].category.name] || 0);
+            }
+            products.meta.countByCategories = categories
+            // Envio de la data completa
+            res.json(products)
+          })
+          .catch(error => {
+            res.send(error)
+          })
+
+        //res.json(products)
 
       })
       .catch(error => {
@@ -142,7 +156,7 @@ const apiController = {
        usersData.dataValues.imageUrl = `http://localhost:3000/images/users/${usersData.image}`
       }
       res.json(usersData)
-      })
+    })
   }
 };
 
