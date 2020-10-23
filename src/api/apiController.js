@@ -94,6 +94,22 @@ const apiController = {
       })
   },
 
+  getLastProduct: (req, res) => {
+    product.findAll({
+      include: ['category', 'sizes']
+    })
+    .then(response => {
+      
+      let lastProduct = response.pop()
+      lastProduct.dataValues.imageUrl = `http://localhost:3000/images/products/${lastProduct.image}`
+
+      res.json(lastProduct)
+    })
+    .catch(error => {
+      res.send(error)
+    })
+  },
+
   users: (req, res) => {
     const actualPage = Number(req.query.page)
     const usersUrl = 'http://localhost:3000/api/users'

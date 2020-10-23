@@ -4,8 +4,9 @@ const session = require("express-session");
 const auth = require("./src/middlewares/auth");
 const history = require("./src/middlewares/history");
 const cookieParser = require('cookie-parser');
+const cors = require('cors')
 
-
+app.use(cors()) 
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
