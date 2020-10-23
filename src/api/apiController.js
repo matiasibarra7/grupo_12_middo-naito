@@ -109,6 +109,17 @@ const apiController = {
       res.send(error)
     })
   },
+  getAllProducts: (req, res) => {
+    product.findAll({
+      include: ['category', 'sizes']
+    })
+    .then(response => {
+      res.json(response);
+    })
+    .catch(error => {
+      res.send(error)
+    })
+  },
 
   users: (req, res) => {
     const actualPage = Number(req.query.page)
@@ -173,7 +184,24 @@ const apiController = {
       }
       res.json(usersData)
     })
-  }
+  },
+  getLastUser: (req, res) => {
+    user.findAll()
+    .then(response => {
+      
+      let lastUser = response.pop()
+      if(lastUser.image){
+        lastUser.dataValues.imageUrl = `http://localhost:3000/images/users/${lastUser.image}`
+      } else {
+        lastUser.dataValues.imageUrl = `http://localhost:3000/images/users/unnamed.jpg`
+      }     
+
+      res.json(lastUser)
+    })
+    .catch(error => {
+      res.send(error)
+    })
+  },
 };
 
 module.exports = apiController;
