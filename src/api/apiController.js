@@ -1,5 +1,5 @@
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const {product, user, category} = require("../../database/models");
+const {product, user} = require("../../database/models");
 
 
 
@@ -31,17 +31,10 @@ const apiController = {
         })
 
         const count = productsData.count
-        
-        // Cuenta elementos por categoria, solo esta funcionando con los 10 que trae
-       /*  const categories = {}
-        for (let i = 0; i < productsList.length; i++) {
-          categories[productsList[i].category.name] = 1 + (categories[productsList[i].category.name] || 0);
-        } */
 
         const products = {
           meta: {
-            count: productsData.count, 
-            //countByCategories: categories,
+            count: productsData.count
           },
           data: productsList
         }
@@ -109,6 +102,7 @@ const apiController = {
       res.send(error)
     })
   },
+
   getAllProducts: (req, res) => {
     product.findAll({
       include: ['category', 'sizes']
@@ -121,6 +115,26 @@ const apiController = {
     })
   },
 
+  getTotalPrice: (req, res) => {
+    product.findAll({
+      include: ['category', 'sizes']
+    })
+    .then(response => {
+
+      let sum = 0
+      response.forEach(product => {
+        sum += (product.sizes.reduce((acum, actual) => { return actual.products_sizes.stock + acum }, 0) * product.price)
+      });
+
+      res.json({total: sum});
+    })
+    .catch(error => {
+      res.send(error)
+    })
+  },
+
+
+  //EPs de usuarios
   users: (req, res) => {
     const actualPage = Number(req.query.page)
     const usersUrl = 'http://localhost:3000/api/users'
